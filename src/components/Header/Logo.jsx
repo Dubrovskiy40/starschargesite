@@ -1,13 +1,12 @@
-import header from './img/logo.svg'
-import "./_Header.scss"
+import { NavLink } from "react-router-dom";
+import header from "./img/logo.svg";
 
 const Logo = () => {
-
-    return(
-        <a href='#l' className='header__logo__link'>
-            <img src={header} alt='logo' className='header__logo'></img>
-        </a>
-    );
+  return (
+    <NavLink to="#l" className="header__logo__link">
+      <img src={header} alt="logo" className="header__logo"></img>
+    </NavLink>
+  );
 };
 
 export default Logo;

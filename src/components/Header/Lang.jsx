@@ -1,12 +1,16 @@
-import "./_Header.scss"
+import { NavLink } from "react-router-dom";
 
 const Lang = () => {
   return (
-    <div className='header__lang'>
-      <a href='#l' className='header__lang__link'>Рус</a>
-      <a href='#l' className='header__lang__link'>Eng</a>
+    <div className="header__lang">
+      <NavLink to="#l" className="header__lang__link">
+        Рус
+      </NavLink>
+      <NavLink to="#l" className="header__lang__link">
+        Eng
+      </NavLink>
     </div>
   );
-}
+};
 
 export default Lang;
