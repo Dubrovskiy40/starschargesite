@@ -1,0 +1,25 @@
+.successMessage {
+  &_show{
+    display: block;
+  }
+
+  &_hide {
+    display: none;
+  }
+
+  &__block {
+
+  }
+
+  &__block_green{
+    color: green;
+  }
+
+  &__block_red {
+    color: red;
+  }
+
+  &__btn {
+
+  }
+}

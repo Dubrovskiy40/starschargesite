@@ -1,0 +1,47 @@
+.feedback_wrap {
+  background: #333333;
+  color: #fff;
+}
+
+.feedback {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+.feedback__inp_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.feedback__inp_warning {
+  border: 1px solid red;
+}
+.feedback__inp_success {
+  border: 1px solid green;
+}
+.feedback__text_warning {
+  color: red;
+}
+.feedback__btn_wrap {
+  max-width: 30%;
+}
+.feedback__btn {
+  background: #60AD5E;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 26px 68px;
+}
+.feedback__btn:hover {
+  cursor: pointer;
+  background: #FFFFFF;
+  color: #60AD5E;
+  border: 2px solid #60AD5E;
+}
+
+/*# sourceMappingURL=feedback.module.css.map */
