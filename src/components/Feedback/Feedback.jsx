@@ -7,6 +7,8 @@ import AgreementText from './AgreementText/AgreementText';
 import {CmError} from "./CmError/CmError";
 import CmInput from "./CmInput/CmInput";
 
+import captchaImg from '../../assets/feedback/captcha.png';
+
 const Feedback = () => {
     const [openModalWindow, setOpenModalWindow] = useState(false); // модальное окно
 
@@ -14,6 +16,8 @@ const Feedback = () => {
     const [tel, setTel] = useState({isValid: true, value: ''});
     const [email, setEmail] = useState({isValid: true, value: ''});
     const [question, setQuestion] = useState({isValid: true, value: ''});
+
+    const [captcha, setCaptcha] = useState({isValid: false, value: ''});
 
     const [successfullySent, setSuccessfullySent] = useState(true); // статус отправки формы
     const [showSuccessBlock, setShowSuccessBlock] = useState(false); // блок подтверждения отправки формы
@@ -43,7 +47,7 @@ const Feedback = () => {
     const handleSubmitForm = (event) => {
         event.preventDefault();
 
-        if (name.isValid && tel.isValid && email.isValid && question.isValid) {
+        if (name.isValid && tel.isValid && email.isValid && question.isValid && captcha.isValid) {
             setShowSuccessBlock(true);
         } else setShowSuccessBlock(false);
     };
@@ -53,39 +57,45 @@ const Feedback = () => {
             case 'inpName':
                 let resultName = regValueTest(regName, value);
                 setName( {isValid: !!resultName, value: value});
-                setErrors({...errors, nameError: !resultName ? 'ошибка в имени' : ''});
+                setErrors({...errors, nameError: !resultName && 'ошибка в имени'});
                 break;
             case 'inpTel':
                 let resultTel = regValueTest(regTel, value);
                 setTel({isValid: !!resultTel, value: value});
-                setErrors({...errors, telError: !resultTel ? 'ошибка в номере телефона' : ''});
+                setErrors({...errors, telError: !resultTel && 'ошибка в номере телефона'});
                 break;
             case 'inpEmail':
                 let resultEmail = regValueTest(regEmail, value);
                 setEmail({isValid: !!resultEmail, value: value});
-                setErrors({...errors, emailError: !resultEmail ? 'ошибка в email' : ''});
+                setErrors({...errors, emailError: !resultEmail && 'ошибка в email'});
                 break;
             case 'inpArea':
                 let resultText = questionTest;
                 setQuestion({isValid: !!resultText, value: value});
-                setErrors({...errors, textareaError: !resultText ? 'ошибка в тексте' : ''});
+                setErrors({...errors, textareaError: !resultText && 'ошибка в тексте'});
                 break;
         }
     };
 
     useEffect(() => {
-        let data = name.value && tel.value && email.value && question.value;
+        let data = name.value && tel.value && email.value && question.value && captcha;
+
         if (data) {
-            console.log('отправка данных формы: ', name.value, tel.value, email.value, question.value);
+            console.log('отправка данных формы: ', name.value, tel.value, email.value, question.value, captcha);
         }
-    }, [name, tel, email, question]);
+
+        // setName({isValid: true, value: ''});
+        //         // setTel({isValid: true, value: ''});
+        //         // setEmail({isValid: true, value: ''});
+        //         // setQuestion({isValid: true, value: ''});
+    }, [name, tel, email, question, captcha]);
 
     return (
         <section className={style.feedback_wrap}>
-            <h1 className={style.feedback_wrap}>Задайте нам вопрос</h1>
+            <h1 className={style.feedback__title}>Задайте нам вопрос</h1>
             <form className={style.feedback} id="feedback-form" onSubmit={handleSubmitForm}>
-                <div className={style.feedback__inp_wrap}>
-                    <label className={style.label} htmlFor="inpName">
+                <div className={`${style.feedback__inp_wrap} ${style.feedback__grid1}`}>
+                    <label className={style.feedback__label} htmlFor="inpName">
                         Имя:
                     </label>
                     <CmInput
@@ -103,8 +113,8 @@ const Feedback = () => {
                     />
                     <CmError error={errors['nameError']} />
                 </div>
-                <div className={style.feedback__inp_wrap}>
-                    <label className={style.label} htmlFor="inpTel">
+                <div className={`${style.feedback__inp_wrap} ${style.feedback__grid2}`}>
+                    <label className={style.feedback__label} htmlFor="inpTel">
                         Телефон:
                     </label>
                     <CmInput
@@ -122,8 +132,8 @@ const Feedback = () => {
                     />
                     <CmError error={errors['telError']} />
                 </div>
-                <div className={style.feedback__inp_wrap}>
-                    <label className={style.label} htmlFor="inpMail">
+                <div className={`${style.feedback__inp_wrap} ${style.feedback__grid3}`}>
+                    <label className={style.feedback__label} htmlFor="inpMail">
                         Email-адрес:
                     </label>
                     <CmInput
@@ -139,8 +149,8 @@ const Feedback = () => {
                     />
                     <CmError error={errors['emailError']} />
                 </div>
-                <div className={style.feedback__inp_wrap}>
-                    <label className={style.label} htmlFor="inpArea">
+                <div className={`${style.feedback__inp_wrap} ${style.feedback__grid4}`}>
+                    <label className={style.feedback__label} htmlFor="inpArea">
                         Напишите ваш вопрос:
                     </label>
                     <CmInput
@@ -159,16 +169,21 @@ const Feedback = () => {
                     <CmError error={errors['textareaError']} />
                 </div>
                 {/*Капча*/}
-                {/*Пользовательское соглашение. Персональные данные*/}
-                <div className={style.feedback__agreement_wrap}>
-                    <Agreement openModalWindow={setOpenModalWindow}
-                               isReadAgreement={isReadAgreement}
-                               setIsReadAgreement={setIsReadAgreement}/>
+                <div className={`${style.captcha} ${style.feedback__grid5}`}>
+                    <img className={style.captcha__img} src={captchaImg} alt="капча"/>
+                    <input className={style.captcha__inp} type="text" placeholder="Введите код с картинки" onChange={(e => setCaptcha({...captcha, value: e.target.value}))} required={true} />
                 </div>
-                <div className={style.feedback__btn_wrap}>
-                    <button className={style.feedback__btn}
-                            type='submit'
-                            disabled={!isReadAgreement ? true : false}
+                {/*Пользовательское соглашение. Персональные данные*/}
+                <div className={`${style.feedback__btn_wrap} ${style.feedback__grid6}`}>
+                    <Agreement
+                        openModalWindow={setOpenModalWindow}
+                        isReadAgreement={isReadAgreement}
+                        setIsReadAgreement={setIsReadAgreement}
+                    />
+                    <button
+                      className={style.feedback__btn}
+                      type='submit'
+                      disabled={!isReadAgreement ? true : false}
                     >Отправить
                     </button>
                 </div>

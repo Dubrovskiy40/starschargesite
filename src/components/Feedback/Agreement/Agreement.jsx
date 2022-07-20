@@ -11,7 +11,7 @@ const Agreement = ({ openModalWindow, isReadAgreement, setIsReadAgreement }) => 
     return (
         <div className={style.agreement}>
             <label htmlFor="checkInp">
-                <input id='checkInp' type="checkbox" readOnly checked={isReadAgreement ? true : false} />
+                <input id="checkInp" type="checkbox" readOnly checked={isReadAgreement ? true : false} />
                 <span className={style.agreement__link} onClick={handleOpen}>Пользовательское соглашение</span>
             </label>
         </div>

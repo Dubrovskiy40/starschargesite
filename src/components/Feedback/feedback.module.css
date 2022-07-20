@@ -1,47 +1,112 @@
 .feedback_wrap {
   background: #333333;
   color: #fff;
+  padding: 100px 80px;
+  max-width: 1118px;
+}
+
+.feedback__title {
+  margin-bottom: 65px;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 100%;
+  color: #FFFFFF;
 }
 
 .feedback {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 56px;
+  column-gap: 24px;
 }
 .feedback__inp_wrap {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-.feedback__inp_warning {
-  border: 1px solid red;
-}
-.feedback__inp_success {
-  border: 1px solid green;
-}
-.feedback__text_warning {
-  color: red;
+.feedback__label {
+  margin-bottom: 5px;
 }
 .feedback__btn_wrap {
-  max-width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .feedback__btn {
-  background: #60AD5E;
+  margin-top: 10px;
   border-radius: 20px;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 28px;
+  padding: 26px 68px;
   display: flex;
   align-items: center;
   text-align: center;
-  color: #FFFFFF;
-  padding: 26px 68px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #fff;
+  background: #60AD5E;
 }
 .feedback__btn:hover {
   cursor: pointer;
   background: #FFFFFF;
   color: #60AD5E;
   border: 2px solid #60AD5E;
+}
+.feedback__grid1 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.feedback__grid2 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.feedback__grid3 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.feedback__grid4 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+.feedback__grid5 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+.feedback__grid6 {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+
+.captcha {
+  display: flex;
+  flex-direction: column;
+  max-width: 441px;
+}
+.captcha__img {
+  margin-bottom: 30px;
+  width: inherit;
+}
+.captcha__inp {
+  width: 100%;
+  padding: 22px 0 22px 31px;
+  border: 4px solid #60AD5E;
+  border-radius: 20px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #fff;
+  background: #333333;
 }
 
 /*# sourceMappingURL=feedback.module.css.map */
