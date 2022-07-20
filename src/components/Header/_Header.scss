@@ -1,16 +1,17 @@
 /* header */
 .header {
   display: flex;
+  position: fixed;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   padding: 20px 130px;
   background-color: #333333;
-  color: #fff;
 }
- 
+
 /* logo */
 .header__logo {
-  height: 70%;
+  height: 60px;
 }
 
 /* menu */
@@ -29,3 +30,38 @@
 .header__lang__link:not(:last-child) {
   margin-right: 23px;
 }
+
+@media(max-width: 1600px) {
+  .header {
+    padding: 25px 30px;
+  }
+
+  .header__nav__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  .header__logo {
+    height: 50px;
+  }
+
+  .header__lang__link:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+@media(max-width: 1024px) {
+  .header__nav {
+    display: none;
+  }
+
+  .header__logo {
+    height: 40px;
+  }
+}
+// @media(max-width: 577px) {
+//   .header {
+//     padding: 15px 30px;
+//   }
+
+
+// }
