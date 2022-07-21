@@ -1,34 +1,16 @@
 import { NavLink } from "react-router-dom";
 
-const Menu = () => {
+const Menu = ({ items }) => {
   return (
     <nav className="header__nav">
       <ul className="header__nav__list">
-        <li className="header__nav__item">
-          <NavLink to="#l" className="header__nav__link">
-            О станции
-          </NavLink>
-        </li>
-        <li className="header__nav__item">
-          <NavLink to="#l" className="header__nav__link">
-            Наша команда
-          </NavLink>
-        </li>
-        <li className="header__nav__item">
-          <NavLink to="#l" className="header__nav__link">
-            Как это работает
-          </NavLink>
-        </li>
-        <li className="header__nav__item">
-          <NavLink to="#l" className="header__nav__link">
-            Новости
-          </NavLink>
-        </li>
-        <li className="header__nav__item">
-          <NavLink to="#l" className="header__nav__link">
-            Контакты
-          </NavLink>
-        </li>
+        {items.map((item) => (
+          <li className="header__nav__item">
+            <NavLink to={item.href} className="header__nav__link">
+              {item.value}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
   );
