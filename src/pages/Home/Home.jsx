@@ -1,9 +1,9 @@
-import Header from "../../components/Header/Header";
+import HeaderMenu from "../../components/Header/HeaderMenu";
 
 const Home = () => {
   return (
     <>
-      <Header />
+      <HeaderMenu />
       <p>Здесь будет текст странички</p>;
     </>
   );
