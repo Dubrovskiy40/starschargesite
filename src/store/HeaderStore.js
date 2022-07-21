@@ -7,7 +7,7 @@ class HeaderStore {
     isLoading = true;
     // items = [];
     // заглушка
-    items = ['О станции', 'Наша команда', 'Как это работает', 'Новости', 'Контакты'];
+    items = [{value: "О станции", href:"#s"}, {value: "Наша команда", href:"#s"}, {value: "Как это работает", href:"#s"}, {value: "Новости", href:"#s"}, {value: "Контакты", href:"#s"}]
 
     constructor() {
         makeAutoObservable(this);
