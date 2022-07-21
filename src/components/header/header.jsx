@@ -5,7 +5,6 @@ import Burger from "./Burger";
 import HeaderStore from "../../store/HeaderStore";
 
 const Header = () => {
-  // const items = [{value: "О станции", href:"#s"}, {value: "Наша команда", href:"#s"}, {value: "Как это работает", href:"#s"}, {value: "Новости", href:"#s"}, {value: "Контакты", href:"#s"}]
   return (
     <header className="header">
       <Logo />
