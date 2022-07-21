@@ -1,12 +1,12 @@
-import Header from "../../components/Header/Header"
+import Header from "../../components/header/Header";
 
 const Home = () => {
-
-    return(
-       <>
-    <Header/>
-    <p>Здесь будет текст странички</p>;
-    </>)
+  return (
+    <>
+      <Header />
+      <p>Здесь будет текст странички</p>;
+    </>
+  );
 };
 
 export default Home;
