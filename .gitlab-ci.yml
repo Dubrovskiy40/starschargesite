@@ -1,25 +1,25 @@
 stages:
-  - build
+  # - build
   - deploy
 
-build-job:
-  stage: build
-#   tags:
-#       - "starscharge"
-  image: node:16.15.0
-  only:
-    - main
-    - develop
-  script:
-    - echo "Compiling the code..."
-    - mkdir build
-    - npm install --legacy-peer-deps    
-    - CI=false; npm run build    
-    - echo "Compile complete."
-  artifacts:
-    expire_in: 3 days
-    paths:
-      - build
+# build-job:
+#   stage: build
+# #   tags:
+# #       - "starscharge"
+#   image: node:16.15.0
+#   only:
+#     - main
+#     - develop
+#   script:
+#     - echo "Compiling the code..."
+#     - mkdir build
+#     - npm install --legacy-peer-deps    
+#     - CI=false; npm run build    
+#     - echo "Compile complete."
+#   artifacts:
+#     expire_in: 3 days
+#     paths:
+#       - build
 
 deploy-test-job:
   stage: deploy
@@ -35,8 +35,8 @@ deploy-test-job:
     - chmod 644 ~/.ssh/known_hosts
   only:
       - develop
-  needs:
-    - build-job
+  # needs:
+  #   - build-job
   script:
     - echo "Deploying application in test..."
     - ssh $SERVER_USERNAME@$SERVER_ADDRESS "rm -rf /usr/share/nginx/html/starscharge/test"
@@ -58,8 +58,8 @@ deploy-prod-job:
     - chmod 644 ~/.ssh/known_hosts
   only:
       - main
-  needs:
-    - build-job
+  # needs:
+  #   - build-job
   script:
     - echo "Deploying application in prod..."
     - ssh $SERVER_USERNAME@$SERVER_ADDRESS "rm -rf /usr/share/nginx/html/starscharge/prod"
