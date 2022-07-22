@@ -1,12 +1,15 @@
-import HeaderMenu from "../../components/Header/HeaderMenu";
+import { Cards, HeaderMenu, Feedback } from "../../components";
 
-const Home = () => {
+function Home() {
   return (
     <>
       <HeaderMenu />
-      <p>Здесь будет текст странички</p>;
+      <br />
+      <br />
+      <Cards />
+      <Feedback />
     </>
   );
-};
+}
 
 export default Home;
