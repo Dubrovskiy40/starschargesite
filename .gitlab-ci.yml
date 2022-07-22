@@ -39,9 +39,6 @@ deploy-test-job:
     - build-job
   script:
     - echo "Deploying application in test..."
-    - touch test_deploy_test.sh
-    # - ssh $SERVER_USERNAME@$SERVER_ADDRESS "rm -rf /usr/share/nginx/html/test"
-    # - scp -r build $SERVER_USERNAME@$SERVER_ADDRESS:/usr/share/nginx/html/test
     - ssh $SERVER_USERNAME@$SERVER_ADDRESS "rm -rf /usr/share/nginx/html/starscharge/test"
     - scp -r build $SERVER_USERNAME@$SERVER_ADDRESS:/usr/share/nginx/html/starscharge/test    
     - echo "Application successfully deployed in test."
