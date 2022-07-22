@@ -1,19 +1,26 @@
 import Logo from "./Logo";
 import Lang from "./Lang";
 import Menu from "./Menu";
-import Burger from "./Burger";
+import { useState } from "react";
 
 const Header = () => {
   const items = [{value: "О станции", href:"#s"}, {value: "Наша команда", href:"#s"}, {value: "Как это работает", href:"#s"}, {value: "Новости", href:"#s"}, {value: "Контакты", href:"#s"}]
+  const [modalActive, setModalActive] = useState(false)
   return (
-    <header className="header">
-      <Logo />
-      <Menu items={items}/>
-      <div className="header__rigth-block">
-        <Lang />
-        <Burger />
-      </div>
-    </header>
+    <div className="container">
+      <header className="header">
+        <div className="header__mobile">
+          <Logo />
+          <div className="header__rigth-block">
+            <Lang />
+            <button onClick={() => setModalActive(!modalActive)} className="burg__menu">
+              <span/>
+            </button>
+          </div>
+        </div>
+        <Menu items={items} active={modalActive} setActive={setModalActive}/>
+      </header>
+    </div>
   );
 };
 
