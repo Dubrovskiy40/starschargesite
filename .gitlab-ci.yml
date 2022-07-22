@@ -1,0 +1,70 @@
+stages:
+  - build
+  - deploy
+
+build-job:
+  stage: build
+#   tags:
+#       - "starscharge"
+  image: node:16.15.0
+  only:
+    - main
+    - develop
+  script:
+    - echo "Compiling the code..."
+    - mkdir build
+    - npm install --legacy-peer-deps    
+    - CI=false; npm run build    
+    - echo "Compile complete."
+  artifacts:
+    expire_in: 3 days
+    paths:
+      - build
+
+deploy-test-job:
+  stage: deploy
+#   tags:
+#   - "starscharge"
+  before_script:
+    - 'command -v ssh-agent >/dev/null || ( apk add --update openssh )' 
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 600 ~/.ssh
+    - ssh-keyscan $SERVER_ADDRESS >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  only:
+      - develop
+  needs:
+    - build-job
+  script:
+    - echo "Deploying application in test..."
+    - touch test_deploy_test.sh
+    # - ssh $SERVER_USERNAME@$SERVER_ADDRESS "rm -rf /usr/share/nginx/html/test"
+    # - scp -r build $SERVER_USERNAME@$SERVER_ADDRESS:/usr/share/nginx/html/test
+    - ssh $SERVER_USERNAME@$SERVER_ADDRESS "rm -rf /usr/share/nginx/html/starscharge/test"
+    - scp -r build $SERVER_USERNAME@$SERVER_ADDRESS:/usr/share/nginx/html/starscharge/test    
+    - echo "Application successfully deployed in test."
+
+
+deploy-prod-job:
+  stage: deploy
+#   tags:
+#   - "starscharge"
+  before_script:
+    - 'command -v ssh-agent >/dev/null || ( apk add --update openssh )' 
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 600 ~/.ssh
+    - ssh-keyscan $SERVER_ADDRESS >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  only:
+      - main
+  needs:
+    - build-job
+  script:
+    - echo "Deploying application in prod..."
+    - ssh $SERVER_USERNAME@$SERVER_ADDRESS "rm -rf /usr/share/nginx/html/starscharge/prod"
+    - scp -r build $SERVER_USERNAME@$SERVER_ADDRESS:/usr/share/nginx/html/starscharge/prod
+    - echo "Application successfully deployed in prod."
