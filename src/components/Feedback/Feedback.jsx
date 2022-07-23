@@ -91,113 +91,113 @@ const Feedback = () => {
     }, [name, tel, email, question, captcha]);
 
     return (
-        <section className={style.feedback_wrap}>
-            <h1 className={style.feedback__title}>Задайте нам вопрос</h1>
-            <form className={style.feedback} id="feedback-form" onSubmit={handleSubmitForm}>
-                <div className={`${style.feedback__inp_wrap} ${style.feedback__grid1}`}>
-                    <label className={style.feedback__label} htmlFor="inpName">
-                        Имя:
-                    </label>
-                    <CmInput
-                        isInput={true}
-                        id='inpName'
-                        name='inpName'
-                        type='text'
-                        value={name.value}
-                        placeholder='Имя'
-                        minLength={2}
-                        maxLength={30}
-                        required={true}
-                        isValid={name.isValid}
-                        onChange={onChangeInput}
-                    />
-                    <CmError error={errors['nameError']} />
-                </div>
-                <div className={`${style.feedback__inp_wrap} ${style.feedback__grid2}`}>
-                    <label className={style.feedback__label} htmlFor="inpTel">
-                        Телефон:
-                    </label>
-                    <CmInput
-                        isInput={true}
-                        id='inpTel'
-                        name='inpTel'
-                        type='tel'
-                        value={tel.value}
-                        placeholder='Телефон'
-                        minLength={10}
-                        maxLength={18}
-                        required={true}
-                        isValid={tel.isValid}
-                        onChange={onChangeInput}
-                    />
-                    <CmError error={errors['telError']} />
-                </div>
-                <div className={`${style.feedback__inp_wrap} ${style.feedback__grid3}`}>
-                    <label className={style.feedback__label} htmlFor="inpMail">
-                        Email-адрес:
-                    </label>
-                    <CmInput
-                        isInput={true}
-                        id='inpEmail'
-                        name='inpEmail'
-                        type='email'
-                        value={email.value}
-                        placeholder='E-mail'
-                        required={true}
-                        isValid={email.isValid}
-                        onChange={onChangeInput}
-                    />
-                    <CmError error={errors['emailError']} />
-                </div>
-                <div className={`${style.feedback__inp_wrap} ${style.feedback__grid4}`}>
-                    <label className={style.feedback__label} htmlFor="inpArea">
-                        Напишите ваш вопрос:
-                    </label>
-                    <CmInput
-                        isInput={false}
-                        id='inpArea'
-                        name='inpArea'
-                        value={question.value}
-                        placeholder='Напишите свой вопрос'
-                        rows="5"
-                        cols="30"
-                        minLength={10}
-                        maxLength={300}
-                        required={true}
-                        onChange={onChangeInput}
-                    />
-                    <CmError error={errors['textareaError']} />
-                </div>
-                {/*Капча*/}
-                <div className={`${style.captcha} ${style.feedback__grid5}`}>
-                    <img className={style.captcha__img} src={captchaImg} alt="капча"/>
-                    <input className={style.captcha__inp} type="text" placeholder="Введите код с картинки" onChange={(e => setCaptcha({...captcha, value: e.target.value}))} required={true} />
-                </div>
-                {/*Пользовательское соглашение. Персональные данные*/}
-                <div className={`${style.feedback__btn_wrap} ${style.feedback__grid6}`}>
-                    <Agreement
-                        openModalWindow={setOpenModalWindow}
-                        isReadAgreement={isReadAgreement}
-                        setIsReadAgreement={setIsReadAgreement}
-                    />
-                    <button
-                      className={style.feedback__btn}
-                      type='submit'
-                      disabled={!isReadAgreement ? true : false}
-                    >Отправить
-                    </button>
-                </div>
-            </form>
-            {/*/Сообщение об успешной отправки формы*/}
-            <div className={style.feedback__message_wrap}>
-                <SuccessMessage successfullySent={successfullySent} showSuccessBlock={showSuccessBlock}/>
-            </div>
-            <ModalWindow openModalWindow={openModalWindow}
-                         setOpenModalWindow={setOpenModalWindow}
-                         title='ПРАВИЛА ПОЛЬЗОВАТЕЛЬСКОГО СОГЛАШЕНИЯ'>
-                <AgreementText/>
-            </ModalWindow>
-        </section>
+      <section className={style.feedback_wrap}>
+          <h1 className={style.feedback__title}>Задайте нам вопрос</h1>
+          <form className={style.feedback} id="feedback-form" onSubmit={handleSubmitForm}>
+              <div className={`${style.feedback__inp_wrap} ${style.feedback__grid1}`}>
+                  <label className={style.feedback__label} htmlFor="inpName">
+                      Имя:
+                  </label>
+                  <CmInput
+                    isInput={true}
+                    id='inpName'
+                    name='inpName'
+                    type='text'
+                    value={name.value}
+                    placeholder='Имя'
+                    minLength={2}
+                    maxLength={30}
+                    required={true}
+                    isValid={name.isValid}
+                    onChange={onChangeInput}
+                  />
+                  <CmError error={errors['nameError']} />
+              </div>
+              <div className={`${style.feedback__inp_wrap} ${style.feedback__grid2}`}>
+                  <label className={style.feedback__label} htmlFor="inpTel">
+                      Телефон:
+                  </label>
+                  <CmInput
+                    isInput={true}
+                    id='inpTel'
+                    name='inpTel'
+                    type='tel'
+                    value={tel.value}
+                    placeholder='Телефон'
+                    minLength={10}
+                    maxLength={18}
+                    required={true}
+                    isValid={tel.isValid}
+                    onChange={onChangeInput}
+                  />
+                  <CmError error={errors['telError']} />
+              </div>
+              <div className={`${style.feedback__inp_wrap} ${style.feedback__grid3}`}>
+                  <label className={style.feedback__label} htmlFor="inpMail">
+                      Email-адрес:
+                  </label>
+                  <CmInput
+                    isInput={true}
+                    id='inpEmail'
+                    name='inpEmail'
+                    type='email'
+                    value={email.value}
+                    placeholder='E-mail'
+                    required={true}
+                    isValid={email.isValid}
+                    onChange={onChangeInput}
+                  />
+                  <CmError error={errors['emailError']} />
+              </div>
+              <div className={`${style.feedback__inp_wrap} ${style.feedback__grid4}`}>
+                  <label className={style.feedback__label} htmlFor="inpArea">
+                      Напишите ваш вопрос:
+                  </label>
+                  <CmInput
+                    isInput={false}
+                    id='inpArea'
+                    name='inpArea'
+                    value={question.value}
+                    placeholder='Напишите свой вопрос'
+                    rows="5"
+                    cols="30"
+                    minLength={10}
+                    maxLength={300}
+                    required={true}
+                    onChange={onChangeInput}
+                  />
+                  <CmError error={errors['textareaError']} />
+              </div>
+              {/*Капча*/}
+              <div className={`${style.captcha} ${style.feedback__grid5}`}>
+                  <img className={style.captcha__img} src={captchaImg} alt="капча"/>
+                  <input className={style.captcha__inp} type="text" placeholder="Введите код с картинки" onChange={(e => setCaptcha({...captcha, value: e.target.value}))} required={true} />
+              </div>
+              {/*Пользовательское соглашение. Персональные данные*/}
+              <div className={`${style.feedback__btn_wrap} ${style.feedback__grid6}`}>
+                  <Agreement
+                    openModalWindow={setOpenModalWindow}
+                    isReadAgreement={isReadAgreement}
+                    setIsReadAgreement={setIsReadAgreement}
+                  />
+                  <button
+                    className={style.feedback__btn}
+                    type='submit'
+                    disabled={!isReadAgreement ? true : false}
+                  >Отправить
+                  </button>
+              </div>
+          </form>
+          {/*/Сообщение об успешной отправки формы*/}
+          <div className={style.feedback__message_wrap}>
+              <SuccessMessage successfullySent={successfullySent} showSuccessBlock={showSuccessBlock}/>
+          </div>
+          <ModalWindow openModalWindow={openModalWindow}
+                       setOpenModalWindow={setOpenModalWindow}
+                       title='ПРАВИЛА ПОЛЬЗОВАТЕЛЬСКОГО СОГЛАШЕНИЯ'>
+              <AgreementText/>
+          </ModalWindow>
+      </section>
     );
 };
 

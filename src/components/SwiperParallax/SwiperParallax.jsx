@@ -51,8 +51,9 @@ const SwiperParallax = () => {
           slot="container-start"
           className="parallax-bg"
           style={{
-            "background":
+            "background-image":
               `url(${bgiImg})`,
+            "backgroundRepeat": "no-repeat",
           }}
           data-swiper-parallax="-23%"
         ></div>
@@ -75,7 +76,6 @@ const SwiperParallax = () => {
             )
           })
         }
-
       </Swiper>
     </section>
   );
