@@ -1,0 +1,50 @@
+.swiper-parallax {
+  height: calc(100vh - 120px);
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+    background: #000;
+  }
+
+  .swiper-slide {
+    font-size: 18px;
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .parallax-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 130%;
+    height: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .swiper-slide .title {
+    font-size: 41px;
+    font-weight: 300;
+    margin-bottom: 32px;
+  }
+
+  .swiper-slide .subtitle {
+    font-size: 21px;
+    margin-bottom: 32px;
+  }
+
+  .swiper-slide .text {
+    font-size: 14px;
+    max-width: 50%;
+    line-height: 1.3;
+  }
+}
+

@@ -4,7 +4,7 @@ import style from './agreementText.module.scss';
 const AgreementText = () => {
 
     return (
-        <div>
+        <div className={style.agreementText}>
             <h1 className={style.title}>Политика конфиденциальности</h1>
             <h3 className={style.subtitle}>1. Общие положения</h3>
 
