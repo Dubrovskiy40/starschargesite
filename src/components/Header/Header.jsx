@@ -9,16 +9,16 @@ const Header = () => {
   return (
     <div className="container">
       <header className="header">
-        <div className="header__mobile">
+        <div className="header__adaptive">
           <Logo />
+          <Menu items={items} active={modalActive} setActive={setModalActive}/>
           <div className="header__rigth-block">
             <Lang />
-            <button onClick={() => setModalActive(!modalActive)} className="burg__menu">
+            <button onClick={() => setModalActive(!modalActive)} className={modalActive ? "burg__menu burger--active" : "burg__menu"}>
               <span/>
             </button>
           </div>
         </div>
-        <Menu items={items} active={modalActive} setActive={setModalActive}/>
       </header>
     </div>
   );
