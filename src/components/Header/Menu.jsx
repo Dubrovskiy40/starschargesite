@@ -7,8 +7,12 @@ const Menu = ({ items, active, setActive }) => {
       onClick={() => setActive(false)}
     >
       <ul className="header__nav__list" onClick={(e) => e.stopPropagation()}>
-        {items.map((item) => (
-          <li className="header__nav__item" onClick={() => setActive(false)}>
+        {items.map((item, index) => (
+          <li
+            key={index}
+            className="header__nav__item"
+            onClick={() => setActive(false)}
+          >
             <NavLink to={item.href} className="header__nav__link">
               {item.value}
             </NavLink>

@@ -4,10 +4,8 @@ function Home() {
   return (
     <>
       <HeaderMenu />
-      <br />
-      <br />
       <Cards />
-      <Feedback />
+      {/* <Feedback /> */}
     </>
   );
 }
