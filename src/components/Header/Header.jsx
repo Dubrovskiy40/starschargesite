@@ -8,10 +8,10 @@ const Header = () => {
   const [modalActive, setModalActive] = useState(false)
   return (
     <div className="container">
+      <Menu items={items} active={modalActive} setActive={setModalActive}/>
       <header className="header">
         <div className="header__adaptive">
           <Logo />
-          <Menu items={items} active={modalActive} setActive={setModalActive}/>
           <div className="header__rigth-block">
             <Lang />
             <button onClick={() => setModalActive(!modalActive)} className={modalActive ? "burg__menu burger--active" : "burg__menu"}>
