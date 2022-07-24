@@ -137,7 +137,7 @@
     padding-left: 0;
     height: 100px;
     background-color: #333333;
-    transition: transform 0.6s ease-in-out;
+    transition: transform 0.4s ease-in-out;
 
     &.active {
       transform: translateY(105px);
@@ -208,7 +208,7 @@
   .header__nav {
     height: 100vh;
     padding-top: 60px;
-    transform: translateY(-400px);
+    transform: translateY(-900px);
     transition: transform 0.8s ease-in-out;
   }
 
