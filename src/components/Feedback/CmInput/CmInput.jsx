@@ -2,6 +2,9 @@ import React from 'react';
 import style from './cmInput.module.scss';
 import classnames from 'classnames';
 
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
+
 const CmInput = ({ isInput, id, name, type, value, placeholder, minLength, maxLength, required, isValid, onChange }) => {
 
     const inputClass = classnames(
@@ -23,7 +26,19 @@ const CmInput = ({ isInput, id, name, type, value, placeholder, minLength, maxLe
         <div className={style.inp__block}>
             {
                 isInput
-                    ? <input className={inputClass}
+                    ? type === 'tel'
+                        ? <PhoneInput className={inputClass}
+                            id={id}
+                            name={name}
+                            value={value}
+                            placeholder={placeholder}
+                            minLength={minLength}
+                            maxLength={maxLength}
+                            required={required}
+                            onChange={_onChange}
+                            country={'ru'}
+                    />
+                        : <input className={inputClass}
                              id={id}
                              name={name}
                              type={type}
@@ -33,7 +48,7 @@ const CmInput = ({ isInput, id, name, type, value, placeholder, minLength, maxLe
                              maxLength={maxLength}
                              required={required}
                              onChange={_onChange}
-                    />
+                        />
                     : <textarea className={inputClass}
                                 id={id}
                                 name={name}
@@ -47,7 +62,6 @@ const CmInput = ({ isInput, id, name, type, value, placeholder, minLength, maxLe
                                 onChange={_onChange}
                     />
             }
-
         </div>
     );
 };
