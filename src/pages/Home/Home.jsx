@@ -1,9 +1,9 @@
-import { Cards, HeaderMenu, Feedback } from "../../components";
+import { Cards, Header, Feedback } from "../../components";
 
 function Home() {
   return (
     <>
-      <HeaderMenu />
+      <Header />
       <Cards />
       {/* <Feedback /> */}
     </>
