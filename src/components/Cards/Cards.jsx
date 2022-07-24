@@ -79,7 +79,7 @@ const Cards = () => {
   const [widthScreen, setWidthScreen] = useState(window.innerWidth);
   const [deviceType, setDeviceType] = useState('desctop'); //desctop, tablet, mobile
 
-  const pagination = {
+  const pagination = deviceType !== 'mobile' && {
     clickable: true,
     renderBullet: function (index, className) {
       return '<span class="' + className + '">' + (index + 1) + "</span>";
@@ -110,15 +110,30 @@ const Cards = () => {
     return () => window.removeEventListener("resize", updateDimensions);
   }, []);
 
+  const handleAddCards = () => {
+    console.log('загрузить еще карточки')
+  };
+
   return (
     <section className="news">
       <div className="container">
       <Swiper
         slidesPerView={countCard}
         spaceBetween={25}
-        pagination={pagination}
+        pagination = {pagination}
         modules={[Pagination]}
         className="mySwiper"
+        // breakpoints={{
+        //   // when window width is >= 1190px
+        //   1190: {
+        //     width: 1190,
+        //     slidesPerView: 4,
+        //   },
+        //   768: {
+        //     width: 768,
+        //     slidesPerView: 3,
+        //   },
+        // }}
       >
         {
           data?.map((card) => {
@@ -145,32 +160,12 @@ const Cards = () => {
           })
           }
           </Swiper>
+        {
+          deviceType === 'mobile' && <button className="cards__btn" onClick={handleAddCards}>Ещё новости</button>
+        }
           </div>
       </section>
 
-
-          //   <section className="news">
-          //       <div className="container">
-          //           <ul className="cards">
-          //                   {
-          //                       data?.map((card) => {
-          //                           return (
-          //                             <Card
-          //                               key={card.id}
-          //                               imgPath={card.imgPath}
-          //                               title={card.title}
-          //                               text={card.text}
-          //                               dataPublic={card.dataPublic}
-          //                             />
-          //                           )
-          //                       })
-          //                   }
-          //           </ul>
-          //           <div className="cards__pagination">
-          //               <Pagination />
-          //           </div>
-          //       </div>
-          //   </section>
   );
 };
 

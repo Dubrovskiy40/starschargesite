@@ -128,7 +128,19 @@
   }
 }
 
-
+.cards__btn {
+  width: 100%;
+  padding: 19px 0 18px;
+  display: flex;
+  justify-content: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  color: #fff;
+  background: #60AD5E;
+  border-radius: 20px;
+}
 
 //.cards {
 //  display: grid;
