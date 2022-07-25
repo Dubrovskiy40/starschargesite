@@ -13,8 +13,8 @@ const Menu = ({ items, active, setActive }) => {
             className="header__nav__item"
             onClick={() => setActive(false)}
           >
-            <NavLink to={item.href} className="header__nav__link">
-              {item.value}
+            <NavLink to={`b${item.menu_order}`} className="header__nav__link">
+              {item.name}
             </NavLink>
           </li>
         ))}

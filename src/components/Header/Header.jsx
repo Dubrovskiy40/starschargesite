@@ -7,9 +7,10 @@ import HeaderStore from "../../store/HeaderStore";
 
 const Header = observer(() => {
   const [modalActive, setModalActive] = useState(false);
+    HeaderStore.fetchMenuItems().then() // запрос на динамические пункты меню
   return (
     <div className="container">
-      <Menu items={items} active={modalActive} setActive={setModalActive} />
+      <Menu items={HeaderStore.items} active={modalActive} setActive={setModalActive} />
       <header className="header">
         <div className="header__adaptive">
           <Logo />
