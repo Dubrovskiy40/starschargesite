@@ -1,13 +1,11 @@
-import { Cards, HeaderMenu, Feedback } from "../../components";
+import { Cards, Header, Feedback } from "../../components";
 
 function Home() {
   return (
     <>
-      <HeaderMenu />
-      <br />
-      <br />
+      <Header />
       <Cards />
-      <Feedback />
+      {/* <Feedback /> */}
     </>
   );
 }

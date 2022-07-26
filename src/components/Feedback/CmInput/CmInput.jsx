@@ -10,10 +10,10 @@ const CmInput = ({ isInput, id, name, type, value, placeholder, minLength, maxLe
     const inputClass = classnames(
         [style.inp__text],
         {
-            [style.inp__text_red]:  isValid === false,
+            [style.inp__text_red]: isValid === false,
         },
         {
-            [style.inp__text_green]:  isValid === true,
+            [style.inp__text_green]: isValid === true,
         }
     );
 
@@ -37,7 +37,7 @@ const CmInput = ({ isInput, id, name, type, value, placeholder, minLength, maxLe
                             required={required}
                             onChange={_onChange}
                             country={'ru'}
-                    />
+                        />
                         : <input className={inputClass}
                              id={id}
                              name={name}
