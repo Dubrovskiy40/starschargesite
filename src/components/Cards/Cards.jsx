@@ -123,17 +123,18 @@ const Cards = () => {
         pagination = {pagination}
         modules={[Pagination]}
         className="mySwiper"
-        // breakpoints={{
-        //   // when window width is >= 1190px
-        //   1190: {
-        //     width: 1190,
-        //     slidesPerView: 4,
-        //   },
-        //   768: {
-        //     width: 768,
-        //     slidesPerView: 3,
-        //   },
-        // }}
+        enabled={false}
+        breakpoints={{
+
+          1190: {
+            width: 1190,
+            enabled: true,
+          },
+          768: {
+            width: 768,
+            enabled: true,
+          },
+        }}
       >
         {
           data?.map((card) => {
