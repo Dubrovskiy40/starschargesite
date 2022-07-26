@@ -6,14 +6,14 @@ const Menu = ({ items, active, setActive }) => {
       className={active ? "header__nav active" : "header__nav"}
       onClick={() => setActive(false)}
     >
-      <ul className="header__nav__list" onClick={(e) => e.stopPropagation()}>
+      <ul className="header__nav-list" onClick={(e) => e.stopPropagation()}>
         {items.map((item, index) => (
           <li
             key={index}
-            className="header__nav__item"
+            className="header__nav-item"
             onClick={() => setActive(false)}
           >
-            <NavLink to={`b${item.menu_order}`} className="header__nav__link">
+            <NavLink to={`b${item.menu_order}`} className="header__nav-link">
               {item.name}
             </NavLink>
           </li>
