@@ -111,7 +111,10 @@ const Cards = () => {
   }, []);
 
   const handleAddCards = () => {
-    console.log('загрузить еще карточки')
+    console.log('загрузить еще карточки');
+    // if (data.length > countCard) {
+    //   setCountCard((prevState) => ++prevState);
+    // }
   };
 
   return (

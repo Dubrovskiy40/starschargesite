@@ -2,3 +2,9 @@
   color: red;
   margin: 5px 0 10px;
 }
+
+@media (max-width: 768px) {
+  .error__text {
+    margin: 2px 0 5px;
+  }
+}

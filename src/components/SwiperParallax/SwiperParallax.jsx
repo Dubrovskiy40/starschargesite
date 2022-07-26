@@ -4,7 +4,7 @@ import { Parallax, Pagination, Navigation } from "swiper";
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
-import bgiImg from '../../assets/sliderParallax/fon.jpg';
+import bgiImg from '../../assets/images/sliderParallax/fon.jpg';
 
 const SwiperParallax = () => {
   const arraySliders = [
