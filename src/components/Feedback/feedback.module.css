@@ -2,7 +2,7 @@
   background: #333333;
   color: #fff;
   padding: 100px 80px;
-  max-width: 1118px;
+  max-width: 58%;
 }
 
 .feedback__title {
@@ -26,6 +26,10 @@
 }
 .feedback__label {
   margin-bottom: 5px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FFFFFF;
 }
 .feedback__btn_wrap {
   display: flex;
@@ -37,7 +41,7 @@
   border-radius: 20px;
   border: 2px solid #60AD5E;
   padding: 26px 68px;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 24px;
   line-height: 28px;
   color: #fff;
@@ -98,13 +102,96 @@
 .captcha__inp {
   width: 100%;
   padding: 22px 0 22px 31px;
-  border: 4px solid #60AD5E;
+  border: 2px solid #60AD5E;
   border-radius: 20px;
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
   color: #fff;
   background: #333333;
+}
+
+@media (max-width: 1190px) {
+  .feedback_wrap {
+    padding: 100px 80px;
+    max-width: 58%;
+  }
+  .feedback__title {
+    margin-bottom: 32px;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 100%;
+  }
+  .feedback {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
+  }
+  .feedback__label {
+    font-size: 18px;
+    line-height: 21px;
+  }
+  .feedback__btn_wrap {
+    justify-content: flex-end;
+  }
+  .feedback__btn {
+    margin-top: 10px;
+    border-radius: 20px;
+    padding: 15px 40px;
+    font-size: 18px;
+    line-height: 21px;
+  }
+  .captcha {
+    max-width: 100%;
+  }
+  .captcha__inp {
+    width: 100%;
+    padding: 15px 0 15px 15px;
+    border: 2px solid #60AD5E;
+  }
+}
+@media (max-width: 768px) {
+  .feedback_wrap {
+    padding: 40px 30px;
+    max-width: 100%;
+  }
+  .feedback__title {
+    margin-bottom: 32px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 100%;
+  }
+  .feedback {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px;
+  }
+  .feedback__label {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .feedback__btn {
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 15px 15px;
+    border: 1px solid #60AD5E;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .captcha {
+    max-width: 100%;
+  }
+  .captcha__img {
+    width: 50%;
+  }
+  .captcha__inp {
+    width: 100%;
+    border-radius: 10px;
+    padding: 15px 0 15px 15px;
+    border: 1px solid #60AD5E;
+  }
 }
 
 /*# sourceMappingURL=feedback.module.css.map */
