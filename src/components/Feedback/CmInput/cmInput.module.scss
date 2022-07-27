@@ -24,6 +24,18 @@
   }
 }
 
+.react-tel-input {
+  width: 100%;
+  padding: 22px 0 22px 31px;
+  border: 2px solid #60AD5E;
+  border-radius: 20px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #fff;
+  background: #333333;
+}
+
 @media (max-width: 1190px) {
   .inp__text {
     width: inherit;

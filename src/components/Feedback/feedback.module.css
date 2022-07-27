@@ -183,6 +183,9 @@
   .captcha {
     max-width: 100%;
   }
+  .captcha__img {
+    width: 50%;
+  }
   .captcha__inp {
     width: 100%;
     border-radius: 10px;
