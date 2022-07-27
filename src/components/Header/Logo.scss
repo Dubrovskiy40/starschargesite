@@ -1,0 +1,19 @@
+.header__logo-link {
+  height: 56px;
+}
+
+.header__logo {
+  height: inherit;
+}
+
+@media(max-width: 1500px) {
+  .header__logo-link {
+    height: 46px;
+  }
+}
+
+@media(max-width: 1024px) {
+  .header__logo-link {
+    height: 40px;
+  }
+}
