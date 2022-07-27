@@ -1,13 +1,18 @@
 import Logo from "./Logo";
 import Lang from "./Lang";
 import Menu from "./Menu";
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import { observer } from "mobx-react";
 import HeaderStore from "../../store/HeaderStore";
 
 const Header = observer(() => {
   const [modalActive, setModalActive] = useState(false);
-    HeaderStore.fetchMenuItems().then() // запрос на динамические пункты меню
+    useEffect(() => {
+        (async () => {
+            await HeaderStore.fetchMenuItems().then() // запрос на динамические пункты меню
+        })();
+    }, []);
+
   return (
     <div className="container">
       <Menu items={HeaderStore.items} active={modalActive} setActive={setModalActive} />
