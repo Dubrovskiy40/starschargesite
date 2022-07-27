@@ -19,9 +19,14 @@ const Header = observer(() => {
           }
         >
           <Menu items={HeaderStore.items} active={modalActive} setActive={setModalActive} />
+          <div className="header__lang-mobile">
+            <Lang />
+          </div>
         </div>
         <div className="header__right-block">
-          <Lang />
+          <div className="header__lang-desktop">
+            <Lang />
+          </div>
           <button
             onClick={() => setModalActive(!modalActive)}
             className={
