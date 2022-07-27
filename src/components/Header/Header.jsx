@@ -12,10 +12,15 @@ const Header = observer(() => {
     <div className="header">
       <div className="header__container">
         <Logo />
-        <div className="header__menu">
+        <div 
+          onClick={() => setModalActive(!modalActive)}
+          className={
+            modalActive ? "header__menu active" : "header__menu"
+          }
+        >
           <Menu items={HeaderStore.items} active={modalActive} setActive={setModalActive} />
         </div>
-        <div className="header__rigth-block">
+        <div className="header__right-block">
           <Lang />
           <button
             onClick={() => setModalActive(!modalActive)}
