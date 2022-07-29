@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { Home } from "./pages/";
+import MapContainer from "./components/MapContainer/MapContainer";
 
 function App() {
   return (

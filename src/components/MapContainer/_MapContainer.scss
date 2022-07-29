@@ -1,0 +1,76 @@
+:root {
+  /* Font Color */
+  --light-theme: #f8f9fa;
+  --black-theme: #202020;
+
+  /* Circle Width */
+  --circle-diameter: 400px;
+}
+/* Basic Setting */
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+.map{
+
+  &__title {
+    margin-bottom: 16px;
+    align-self: flex-start;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    color: #fff;
+  }
+
+  &__main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    min-height: 640px;
+    background-color: var(--black-theme);
+  }
+  /* Content Style */
+  &__yandex {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--circle-diameter);
+    height: var(--circle-diameter);
+    overflow: hidden;
+    border-radius: var(--circle-diameter);
+    background-color: inherit;
+    transition: 1500ms;
+    cursor: grab;
+    /* Interactive Effect */
+    &:hover {
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+    }
+  }
+
+  & .map-frame {
+    width: 100vw;
+    height: calc(100vh - 100px);
+    background-color: var(--light-theme);
+  }
+
+  & iframe {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: visibleStroke;
+  }
+}
+
+::selection {
+  color: #fff;
+  background-color: var(--light-theme);
+}
