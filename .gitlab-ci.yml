@@ -4,8 +4,8 @@ stages:
 
 build-job:
   stage: build
-  tags:
-      - "starscharge_front"
+  # tags:
+      # - "starscharge_front"
   image: node:16.15.0
   only:
     - main
@@ -23,8 +23,8 @@ build-job:
 
 deploy-test-job:
   stage: deploy
-  tags:
-      - "starscharge_front"
+  # tags:
+      # - "starscharge_front"
   before_script:
     - 'command -v ssh-agent >/dev/null || ( apk add --update openssh )' 
     - eval $(ssh-agent -s)
@@ -46,8 +46,8 @@ deploy-test-job:
 
 deploy-prod-job:
   stage: deploy
-  tags:
-      - "starscharge_front"
+  # tags:
+      # - "starscharge_front"
   before_script:
     - 'command -v ssh-agent >/dev/null || ( apk add --update openssh )' 
     - eval $(ssh-agent -s)
