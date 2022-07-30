@@ -1,4 +1,4 @@
-import { Cards, Header, Feedback } from "../../components";
+import { Footer, Cards, Header, Feedback } from "../../components";
 
 function Home() {
   return (
@@ -6,6 +6,7 @@ function Home() {
       <Header />
       <Cards />
       {/* <Feedback /> */}
+      <Footer />
     </>
   );
 }
