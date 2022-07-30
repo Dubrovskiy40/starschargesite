@@ -1,4 +1,4 @@
-import { Cards, Header, Feedback } from "../../components";
+import { Cards, Header, Feedback, Footer, ScrollButton } from "../../components";
 import MapContainer from "../../components/MapContainer/MapContainer";
 
 function Home() {
@@ -8,6 +8,8 @@ function Home() {
       <Cards />
       {/* <Feedback /> */}
       <MapContainer />
+      <Footer />
+      <ScrollButton />
     </>
   );
 }

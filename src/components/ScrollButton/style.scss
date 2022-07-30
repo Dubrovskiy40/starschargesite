@@ -1,0 +1,29 @@
+$light-grey: rgba(82, 82, 82, 0.75);
+
+.button {
+	width: 90px;
+	height: 90px;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background: $light-grey;
+	cursor: pointer;
+	border-radius: 50%;
+	.img {
+		width: 70px;
+	}
+}
+.button:hover {
+	filter: invert(1);
+}
+
+@media (max-width: 768px) {
+	.button {
+    width: 60px;
+	  height: 60px;
+		.img{
+      width: 50px;
+    }
+	}
+}
+/* Just some color boxes to make the page longer */
