@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import { useState } from "react";
 
 const BurgerBtnClose = () => {
-  document.querySelectorAll('.menu').forEach(btn => {
-    btn.addEventListener('click', e => {
-      btn.classList.toggle('active');
+  document.querySelectorAll(".menu").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
     });
   });
   const [isActive, setIsActive] = useState(false);

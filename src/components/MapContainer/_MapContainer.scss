@@ -12,8 +12,7 @@ body {
   scroll-behavior: smooth;
 }
 
-.map{
-
+.map {
   &__title {
     margin-bottom: 16px;
     align-self: flex-start;
@@ -50,7 +49,7 @@ body {
     cursor: grab;
     /* Interactive Effect */
     &:hover {
-      width: 100vw;
+      width: 80vw;
       height: 100vh;
       border-radius: 0;
     }
