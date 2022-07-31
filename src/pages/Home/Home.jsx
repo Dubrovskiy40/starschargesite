@@ -14,10 +14,10 @@ function Home() {
   return (
     <>
       <Header />
+      <Cards />
       {/* <Carousel /> */}
       <SwiperParallax />
       <Puzzle />
-      <Cards />
       <MapContainer />
       <Feedback />
       <ScrollButton />

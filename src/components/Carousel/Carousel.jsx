@@ -2,7 +2,7 @@ import React from "react";
 import style from "./slider.module.scss";
 import CarouselItem from "./CarouselItem/CarouselItem";
 
-import Slider from "react-slick";
+// import Slider from "react-slick";
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 
@@ -40,18 +40,18 @@ const Carousel = () => {
   return (
     <div className={style.carousel}>
       <h2> Single Item</h2>
-      <Slider {...settings}>
-        {arraySliders.map((slide) => {
-          return (
-            <CarouselItem
-              key={slide.id}
-              title={slide.title}
-              subtitle={slide.subtitle}
-              text={slide.text}
-            />
-          );
-        })}
-      </Slider>
+      {/* <Slider {...settings}> */}
+      {arraySliders.map((slide) => {
+        return (
+          <CarouselItem
+            key={slide.id}
+            title={slide.title}
+            subtitle={slide.subtitle}
+            text={slide.text}
+          />
+        );
+      })}
+      {/* </Slider> */}
     </div>
   );
 };
