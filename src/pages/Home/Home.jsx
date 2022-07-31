@@ -1,13 +1,27 @@
-import { Cards, Header, Puzzle, Carousel, Feedback } from "../../components";
+import {
+  Cards,
+  Header,
+  Puzzle,
+  // Carousel,
+  Feedback,
+  Footer,
+  MapContainer,
+  ScrollButton,
+  SwiperParallax,
+} from "../../components";
 
 function Home() {
   return (
     <>
       <Header />
-      <Puzzle />
       <Cards />
-      {/* <Feedback /> */}
-      <Footer />
+      {/* <Carousel /> */}
+      {/* <SwiperParallax />
+      <Puzzle />
+      <MapContainer />
+      <Feedback />
+      <ScrollButton />
+      <Footer /> */}
     </>
   );
 }
