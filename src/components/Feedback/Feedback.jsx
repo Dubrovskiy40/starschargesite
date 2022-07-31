@@ -7,7 +7,7 @@ import AgreementText from './AgreementText/AgreementText';
 import {CmError} from "./CmError/CmError";
 import CmInput from "./CmInput/CmInput";
 
-import captchaImg from '../../assets/feedback/captcha.png';
+import captchaImg from '../../assets/images/feedback/captcha.png';
 
 const Feedback = () => {
     const [openModalWindow, setOpenModalWindow] = useState(false); // модальное окно

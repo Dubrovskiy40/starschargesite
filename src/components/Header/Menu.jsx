@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const Menu = ({ items, active, setActive }) => {
   return (
     <nav
-      className="header__nav"
+      className={active ? "header__nav active" : "header__nav"}
       onClick={() => setActive(false)}
     >
       <ul className="header__nav-list" onClick={(e) => e.stopPropagation()}>
