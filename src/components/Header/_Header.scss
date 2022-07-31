@@ -1,4 +1,3 @@
-// header 
 .header {
   position: fixed;
   width: 100%;
@@ -10,9 +9,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
   padding: 20px 100px;
   width: 100%;
+}
+
+.header__logo-link {
+  height: 56px;
+}
+
+.header__logo {
+  height: inherit;
 }
 
 .header__nav-list {
@@ -23,8 +29,16 @@
   margin-right: 75px;
 }
 
+.header__lang-link:not(:last-child) {
+  margin-right: 23px;
+}
+
 .header__right-block {
   display: flex;
+}
+
+.header__lang {
+  margin-right: 60px;
 }
 
 // hover, active effect
@@ -52,18 +66,12 @@
   }
 }
 
-// mobile version
-.burg__menu {
-  display: none;
-}
-
-.header__lang-mobile {
-  display: none;
-}
-
-@media(max-width: 1500px) {
-
+@media (max-width: 1500px) {
   .header {
+    font-size: 16px;
+  }
+
+  .header__lang {
     font-size: 16px;
   }
 
@@ -71,21 +79,32 @@
     padding: 20px 40px;
   }
 
+  .header__logo-link {
+    height: 46px;
+  }
+
   .header__nav-item:not(:last-child) {
     margin-right: 35px;
   }
 }
 
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
+  .header__logo-link {
+    height: 40px;
+  }
 
   .header__right-block {
-    display: flex;
     align-items: center;
+  }
+
+  .header__lang {
+    margin-right: 60px;
+    font-size: 14px;
   }
 
   // burger
   .burg__menu {
-    display: block;
+    // display: flex;
     position: relative;
     width: 20px;
     height: 17px;
@@ -151,79 +170,24 @@
   }
 
   .header__menu {
-    z-index: -100;
+    // display: none;
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 0px;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    background-color: #333;
     font-size: 14px;
     line-height: 14px;
-    transition: top 0.4s ease-in-out;
-    &.active {
-      top: 82px;
-    }
   }
 }
 
-@media(max-width: 768px) {
-
-
+@media (max-width: 768px) {
   .header__container {
     padding: 25px 30px;
   }
 
-  .header__menu {
-    top: -900px;
-    flex-direction: column;
-    height: 100vh;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 18px;
-    &.active {
-      top: 92px;
-    }
-  }
-
-  .header__nav {
-    position: relative;
-    margin-bottom: 100px;
-    width: 100%;
-    text-align: center;
-    margin-top: -50%;
-    font-weight: 500;
-
-    &::after {
-      content: "";
-      position: absolute;
-      height: 3px;
-      width: 70%;
-      left: 15%;
-      right: 15%;
-      bottom: -64px;
-      background-color: #202020;
-    }
-  }
-
-  .header__nav-list {
-    flex-direction: column;
-  }
-
-  .header__nav-item:not(:last-child) {
-    margin-right: 0;
-    margin-bottom: 60px;
-  }
-
-  .header__lang-desktop {
+  .header__lang {
     display: none;
   }
 
-  .header__lang-mobile {
-    display: block;
+  .header__lang-link {
+    margin-right: 10px;
   }
 
   .burg__menu {
