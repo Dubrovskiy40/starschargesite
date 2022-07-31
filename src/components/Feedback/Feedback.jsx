@@ -13,7 +13,7 @@ const Feedback = () => {
     const [openModalWindow, setOpenModalWindow] = useState(false); // модальное окно
 
     const [name, setName] = useState({isValid: true, value: ''});
-    const [tel, setTel] = useState({isValid: true, value: ''});
+    const [tel, setTel] = useState({isValid: true, value: '+7'});
     const [email, setEmail] = useState({isValid: true, value: ''});
     const [question, setQuestion] = useState({isValid: true, value: ''});
 
@@ -164,6 +164,7 @@ const Feedback = () => {
                     minLength={10}
                     maxLength={300}
                     required={true}
+                    isValid={question.isValid}
                     onChange={onChangeInput}
                   />
                   <CmError error={errors['textareaError']} />
