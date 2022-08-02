@@ -19,7 +19,7 @@ const getCards = (currentCard, visibleCards) => {
 
     for (let index = currentCard; index < currentCard + visibleCards; index++) {
         content.push(<div
-            className={(index === currentCard ? Style.grid__firstCell : Style.grid__restCell)} > <CardForPuzzle id={`c${index}`} imgPath=
+            className={(index === currentCard ? Style.grid__firstCell : ((index === currentCard + 1) & (visibleCards = 5)) ? Style.grid__secondCell : Style.grid__restCell)} > <CardForPuzzle id={`c${index}`} imgPath=
                 {TextOfCard.imgPath}
                 title={`${index} ${TextOfCard.title}`}
                 dataPublic={TextOfCard.dataPublic} /></div >);
@@ -41,7 +41,7 @@ export const useWindowSize = () => {
         return () => window.removeEventListener('resize', handleResize)
     }, [size])
 
-    return (size[0] < 480 ? 1 : (size[0] < 768 ? 3 : (size[0] < 992 ? 5 : (size[0] < 1200 ? 7 : 9))))
+    return (size[0] < 480 ? 1 : (size[0] < 768 ? 3 : (size[0] < 992 ? 5 : (size[0] < 1200 ? 7 : 4))))
 }
 
 const Puzzle = () => {
@@ -50,20 +50,23 @@ const Puzzle = () => {
 
     return (
         <>
-            <div className={Style.grid}>
-                {getCards(currentCard, visibleCards)}
+            <div className="container">
+                <div className={Style.grid}>
+                    {getCards(currentCard, visibleCards)}
+                </div>
+                <button onClick={() => (currentCard === 0) ? setcurrentCard(currentCard) : setcurrentCard(currentCard - 1)}
+                    className={Style.buttonNext}
+
+                >Предыдущая новость
+                </button>
+
+                <button onClick={() => (currentCard === (10 - visibleCards)) ? setcurrentCard(currentCard) : setcurrentCard(currentCard + 1)}
+                    className={Style.buttonNext}
+
+                >Следующая новость
+                </button>
             </div>
-            <button onClick={() => (currentCard === 0) ? setcurrentCard(currentCard) : setcurrentCard(currentCard - 1)}
-                className={Style.buttonNext}
-
-            >Предыдущая новость
-            </button>
-
-            <button onClick={() => (currentCard === (10 - visibleCards)) ? setcurrentCard(currentCard) : setcurrentCard(currentCard + 1)}
-                className={Style.buttonNext}
-
-            >Следующая новость
-            </button>
+            
 
         </>
     );
