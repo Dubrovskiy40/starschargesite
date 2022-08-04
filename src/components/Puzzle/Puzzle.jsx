@@ -44,7 +44,7 @@ export const useWindowSize = () => {
         return () => window.removeEventListener('resize', handleResize)
     }, [size])
 
-    return (size[0] < 480 ? 1 : (size[0] < 768 ? 3 : (size[0] < 992 ? 5 : (size[0] < 1200 ? 7 : 4))))
+    return (size[0] < 480 ? 1 : (size[0] < 768 ? 3 : (size[0] < 992 ? 3 : (size[0] < 1200 ? 5 : 4))))
 }
 
 const Puzzle = () => {

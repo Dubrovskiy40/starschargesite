@@ -6,14 +6,14 @@
 
 @media (max-width: 1190px) {
   .container {
-    max-width: calc(768px - 32px * 2);
+    max-width: calc(1190px - 32px * 2);
     padding: 0 calc(5vw / 2);
   }
 }
 
 @media (max-width: 768px) {
   .container {
-    max-width: calc(375px - 16px * 2);
+    max-width: calc(768px - 16px * 2);
     padding: 0 calc(5vw / 2);
   }
 }
