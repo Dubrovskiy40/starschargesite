@@ -1,10 +1,11 @@
-import { Cards, Header, Puzzle, Carousel, Feedback } from "../../components";
+import { Cards, Header, Puzzle, Carousel, Feedback, SwiperLine } from "../../components";
+
 
 function Home() {
   return (
     <>
       <Header />
-      <Puzzle />
+      <SwiperLine />
       <Cards />
       {/* <Feedback /> */}
     </>

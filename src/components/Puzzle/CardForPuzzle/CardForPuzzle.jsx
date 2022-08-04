@@ -13,11 +13,9 @@ const CardForPuzzle = ({ id, imgPath, title, paragraph, dataPublic }) => {
                 <p className={Style.card__paragraph}>
                     {paragraph}
                 </p> 
-                <div>
-                    <span className={Style.card__data}>
-                        {dataPublic}
-                    </span>
-                </div>
+                <span className={Style.card__data}>
+                    {dataPublic}
+                </span>
             </div>
         </li>
     );
