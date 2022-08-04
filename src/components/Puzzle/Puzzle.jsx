@@ -7,7 +7,9 @@ const TextOfCard = {
     imgPath:
         "https://thumbs.dreamstime.com/b/%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D0%B7%D0%B0%D1%80%D1%8F%D0%B4-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8F-%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%B0%D1%8F-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%B7%D0%B0%D1%80%D1%8F%D0%B4%D0%BD%D0%B0%D1%8F-222433714.jpg",
     title:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio sint rerum quisquam quae maxime, exercitationem ipsum magni saepe repudiandae ab voluptatum amet dicta unde, veritatis est quis temporibus ducimus rem?",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio sint re.",
+    paragraph:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim consequuntur beatae quibusdam quis ad repellat, eaque sapiente esse cupiditate, deserunt hic expedita corrupti porro repudiandae, eligendi amet. Placeat, magni aliquid?piente esse cupi",
     dataPublic: "18.07.2022",
 }
 
@@ -22,6 +24,7 @@ const getCards = (currentCard, visibleCards) => {
             className={(index === currentCard ? Style.grid__firstCell : ((index === currentCard + 1) & (visibleCards = 5)) ? Style.grid__secondCell : Style.grid__restCell)} > <CardForPuzzle id={`c${index}`} imgPath=
                 {TextOfCard.imgPath}
                 title={`${index} ${TextOfCard.title}`}
+                paragraph={TextOfCard.paragraph}
                 dataPublic={TextOfCard.dataPublic} /></div >);
     }
     return content;
