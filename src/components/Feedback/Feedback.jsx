@@ -13,11 +13,10 @@ const Feedback = () => {
     const [openModalWindow, setOpenModalWindow] = useState(false); // модальное окно
 
     const [name, setName] = useState({isValid: true, value: ''});
-    const [tel, setTel] = useState({isValid: true, value: '+7'});
+    const [tel, setTel] = useState({isValid: true, value: ''});
     const [email, setEmail] = useState({isValid: true, value: ''});
     const [question, setQuestion] = useState({isValid: true, value: ''});
-
-    const [captcha, setCaptcha] = useState({isValid: false, value: ''});
+    const [captcha, setCaptcha] = useState({isValid: true, value: ''}); // пока true, переделать как будет бэк
 
     const [successfullySent, setSuccessfullySent] = useState(true); // статус отправки формы
     const [showSuccessBlock, setShowSuccessBlock] = useState(false); // блок подтверждения отправки формы
@@ -26,13 +25,15 @@ const Feedback = () => {
         nameError: '',
         telError: '',
         emailError: '',
-        textareaError: ''
+        textareaError: '',
+        captchaError: ''
     }); // объект ошибок
 
     const regName = /^[a-zA-Zа-яА-ЯёЁ'][a-zA-Z-а-яА-ЯёЁ' ]+[a-zA-Zа-яА-ЯёЁ']?$/;
-    const regTel = /\+7|8[\s(]?(\d{3})[\s)]?(\d{3})[\s-]?(\d{2})[\s-]?(\d{2})/g;
+    const regTel = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;   // /\+7|8[\s(]?(\d{3})[\s)]?(\d{3})[\s-]?(\d{2})[\s-]?(\d{2})/g;
     const regEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     let questionTest = question.value.length > 10;
+    let captchaTest = captcha.value.length > 6; // пока true, переделать как будет бэк
 
     function regValueTest(regExp, value) {
         if (!regExp.test(value)) {
@@ -43,14 +44,6 @@ const Feedback = () => {
             return regExp.test(value)
         }
     }
-
-    const handleSubmitForm = (event) => {
-        event.preventDefault();
-
-        if (name.isValid && tel.isValid && email.isValid && question.isValid && captcha.isValid) {
-            setShowSuccessBlock(true);
-        } else setShowSuccessBlock(false);
-    };
 
     const onChangeInput = (value, name) => {
         switch(name) {
@@ -74,20 +67,36 @@ const Feedback = () => {
                 setQuestion({isValid: !!resultText, value: value});
                 setErrors({...errors, textareaError: !resultText && 'ошибка в тексте'});
                 break;
+            case 'inpСaptcha':
+                let resultСaptcha = captchaTest;
+                setCaptcha({isValid: !!resultСaptcha, value: value});
+                setErrors({...errors, captchaError: !resultСaptcha && 'ошибка в капче'});
+                break;
         }
     };
 
+    const handleSubmitForm = (event) => {
+        event.preventDefault();
+
+        if (name.isValid && tel.isValid && email.isValid && question.isValid && captcha.isValid) {
+            setShowSuccessBlock(true);
+
+            setName({isValid: true, value: ''});
+            setTel({isValid: true, value: ''});
+            setEmail({isValid: true, value: ''});
+            setQuestion({isValid: true, value: ''});
+            setCaptcha({isValid: true, value: ''}); // пока true, переделать как будет бэк
+        } else setShowSuccessBlock(false);
+
+
+    };
+
     useEffect(() => {
-        let data = name.value && tel.value && email.value && question.value && captcha;
+        let data = name.value && tel.value && email.value && question.value && captcha.value;
 
         if (data) {
-            console.log('отправка данных формы: ', name.value, tel.value, email.value, question.value, captcha);
+            console.log('отправка данных формы: ', name.value, tel.value, email.value, question.value, captcha.value);
         }
-
-        // setName({isValid: true, value: ''});
-        //         // setTel({isValid: true, value: ''});
-        //         // setEmail({isValid: true, value: ''});
-        //         // setQuestion({isValid: true, value: ''});
     }, [name, tel, email, question, captcha]);
 
     return (
@@ -172,7 +181,18 @@ const Feedback = () => {
               {/*Капча*/}
               <div className={`${style.captcha} ${style.feedback__grid5}`}>
                   <img className={style.captcha__img} src={captchaImg} alt="капча"/>
-                  <input className={style.captcha__inp} type="text" placeholder="Введите код с картинки" onChange={(e => setCaptcha({...captcha, value: e.target.value}))} required={true} />
+                  <CmInput
+                    isInput={true}
+                    id='inpCaptcha'
+                    name='inpCaptcha'
+                    type='text'
+                    value={captcha.value}
+                    placeholder='Введите код с картинки'
+                    required={true}
+                    isValid={captcha.isValid}
+                    onChange={onChangeInput}
+                  />
+                  {/*<input className={style.captcha__inp}onChange={(e => setCaptcha({...captcha, value: e.target.value}))} required={true} />*/}
               </div>
               {/*Пользовательское соглашение. Персональные данные*/}
               <div className={`${style.feedback__btn_wrap} ${style.feedback__grid6}`}>
@@ -190,13 +210,15 @@ const Feedback = () => {
               </div>
           </form>
           {/*/Сообщение об успешной отправки формы*/}
-          <div className={style.feedback__message_wrap}>
-              <SuccessMessage successfullySent={successfullySent} showSuccessBlock={showSuccessBlock}/>
-          </div>
+          {
+            showSuccessBlock && <div className={style.feedback__message_wrap}>
+                <SuccessMessage successfullySent={successfullySent} />
+            </div>
+          }
           <ModalWindow openModalWindow={openModalWindow}
-                       setOpenModalWindow={setOpenModalWindow}
-                       title='ПРАВИЛА ПОЛЬЗОВАТЕЛЬСКОГО СОГЛАШЕНИЯ'>
-              <AgreementText/>
+            setOpenModalWindow={setOpenModalWindow}
+            title='ПРАВИЛА ПОЛЬЗОВАТЕЛЬСКОГО СОГЛАШЕНИЯ'>
+            <AgreementText/>
           </ModalWindow>
       </section>
     );

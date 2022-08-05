@@ -843,8 +843,8 @@ body {
 }
 .map__yandex:hover {
   width: 80vw;
-  height: 100vh;
-  border-radius: 0;
+  height: 80vh;
+  border-radius: 20px;
 }
 .map .map-frame {
   width: 100vw;
