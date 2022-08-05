@@ -4,7 +4,7 @@ import style from './cmError.module.scss';
 
 export const CmError = (props) => {
     const {error} = props;
-    console.log('error:',error)
+
     return (
         <div>
             {!!error && (
