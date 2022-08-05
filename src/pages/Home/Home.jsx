@@ -2,20 +2,22 @@ import {
   Cards,
   Header,
   Puzzle,
-  // Carousel,
+  Carousel,
   Feedback,
-  Footer,
+  SwiperLine,
+  SwiperParallax,
   MapContainer,
   ScrollButton,
-  SwiperParallax,
+  Footer,
 } from "../../components";
 
 function Home() {
   return (
     <>
       <Header />
+      <SwiperLine />
       <Cards />
-      {/* <Carousel /> */}
+      <Carousel />
       <SwiperParallax />
       <Puzzle />
       <MapContainer />

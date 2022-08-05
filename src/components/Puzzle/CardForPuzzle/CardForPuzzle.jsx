@@ -1,7 +1,7 @@
 import Style from "./cards.module.scss"
 import PropTypes from 'prop-types';
 
-const CardForPuzzle = ({ id, imgPath, title, dataPublic }) => {
+const CardForPuzzle = ({ id, imgPath, title, paragraph, dataPublic }) => {
 
     return (
         <li key={id} className={Style.card} >
@@ -10,11 +10,12 @@ const CardForPuzzle = ({ id, imgPath, title, dataPublic }) => {
                 <h3 className={Style.card__title}>
                     {title}
                 </h3>
-                <div>
-                    <span className={Style.card__data}>
-                        {dataPublic}
-                    </span>
-                </div>
+                <p className={Style.card__paragraph}>
+                    {paragraph}
+                </p> 
+                <span className={Style.card__data}>
+                    {dataPublic}
+                </span>
             </div>
         </li>
     );
