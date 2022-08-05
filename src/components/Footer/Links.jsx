@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 
 const Links = () => {
 	return (
-		<links>
+		<div>
 			<ul className="ul">
 				<li className="link">
 					<NavLink to="#">About App</NavLink>
@@ -32,7 +32,7 @@ const Links = () => {
 					<NavLink to="#">Privacy Policy</NavLink>
 				</li>
 			</ul>
-		</links>
+		</div>
 	)
 }
 

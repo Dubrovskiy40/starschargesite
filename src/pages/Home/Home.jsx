@@ -14,12 +14,12 @@ function Home() {
       <SwiperLine />
       <Cards />
       {/* <Carousel /> */}
-      {/* <SwiperParallax />
+      <SwiperParallax />
       <Puzzle />
       <MapContainer />
       <Feedback />
       <ScrollButton />
-      <Footer /> */}
+      <Footer />
     </>
   );
 }

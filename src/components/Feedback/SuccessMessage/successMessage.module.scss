@@ -1,10 +1,7 @@
 .successMessage {
+  margin-top: 10px;
   &_show{
     display: block;
-  }
-
-  &_hide {
-    display: none;
   }
 
   &__block {

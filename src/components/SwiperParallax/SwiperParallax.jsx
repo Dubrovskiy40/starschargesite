@@ -51,7 +51,7 @@ const SwiperParallax = () => {
           slot="container-start"
           className="parallax-bg"
           style={{
-            "background-image":
+            "backgroundImage":
               `url(${bgiImg})`,
             "backgroundRepeat": "no-repeat",
           }}
