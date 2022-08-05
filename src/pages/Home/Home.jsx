@@ -5,6 +5,10 @@ import {
   Carousel,
   Feedback,
   SwiperLine,
+  SwiperParallax,
+  MapContainer,
+  ScrollButton,
+  Footer,
 } from "../../components";
 
 function Home() {
@@ -13,7 +17,7 @@ function Home() {
       <Header />
       <SwiperLine />
       <Cards />
-      {/* <Carousel /> */}
+      <Carousel />
       <SwiperParallax />
       <Puzzle />
       <MapContainer />
