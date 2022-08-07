@@ -1,29 +1,24 @@
-$light-grey: rgba(82, 82, 82, 0.75);
-
 .button {
-	width: 90px;
-	height: 90px;
+	z-index: 99;
+	width: 40px;
+	height: 40px;
 	position: fixed;
 	bottom: 20px;
-	right: 20px;
-	background: $light-grey;
+	right: 50px;
+	background: rgba(82, 82, 82, 0.75);
 	cursor: pointer;
 	border-radius: 50%;
 	.img {
-		width: 70px;
+		filter: invert(1);
+		width: 20px;
 	}
 }
 .button:hover {
-	filter: invert(1);
+	background: rgba(82, 82, 82, 0.9);
 }
 
 @media (max-width: 768px) {
 	.button {
-    width: 60px;
-	  height: 60px;
-		.img{
-      width: 50px;
-    }
+		right: 20px;
 	}
 }
-/* Just some color boxes to make the page longer */
