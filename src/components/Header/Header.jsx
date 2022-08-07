@@ -1,17 +1,12 @@
 import Logo from "./Logo";
 import Lang from "./Lang";
 import Menu from "./Menu";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { observer } from "mobx-react";
-import HeaderStore from "../../store/HeaderStore";
+import MenuStore from "../../store/MenuStore";
 
 const Header = observer(() => {
   const [modalActive, setModalActive] = useState(false);
-  useEffect(() => {
-    (async () => {
-      await HeaderStore.fetchMenuItems().then(); // запрос на динамические пункты меню
-    })();
-  }, []);
 
   return (
     <div className="header">
@@ -22,7 +17,7 @@ const Header = observer(() => {
           className={modalActive ? "header__menu active" : "header__menu"}
         >
           <Menu
-            items={HeaderStore.items}
+            items={MenuStore.items}
             active={modalActive}
             setActive={setModalActive}
           />

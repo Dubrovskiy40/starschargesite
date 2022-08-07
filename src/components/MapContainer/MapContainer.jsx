@@ -1,8 +1,6 @@
-import React from "react";
-
-const MapContainer = () => {
+const MapContainer = (props) => {
   return (
-    <section id="b4" className="map">
+    <section id={props.menuName} className="map">
       <div className="container">
         <div className="map__main">
           <h2 className="map__title">Наши станции на карте</h2>
