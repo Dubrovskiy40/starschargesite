@@ -538,7 +538,8 @@ button {
     line-height: 18px;
   }
   .header__menu.active {
-    top: 92px;
+    top: 93px;
+    height: 100vh;
   }
   .header__nav {
     position: relative;
@@ -871,14 +872,14 @@ body {
 
 @media (max-width: 1190px) {
   .container {
-    max-width: 704px;
+    max-width: 1126px;
     padding: 0 2.5vw;
   }
 }
 @media (max-width: 768px) {
   .container {
-    max-width: 343px;
-    padding: 0 2.5vw;
+    max-width: 716px;
+    padding: 0 10vw;
   }
 }
 .news {

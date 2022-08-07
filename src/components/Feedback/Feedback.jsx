@@ -33,7 +33,7 @@ const Feedback = () => {
     const regTel = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;   // /\+7|8[\s(]?(\d{3})[\s)]?(\d{3})[\s-]?(\d{2})[\s-]?(\d{2})/g;
     const regEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     let questionTest = question.value.length > 10;
-    let captchaTest = captcha.value.length > 6; // пока true, переделать как будет бэк
+    let captchaTest = captcha.value === 'v4xBG'; // пока true, переделать как будет бэк
 
     function regValueTest(regExp, value) {
         if (!regExp.test(value)) {
@@ -67,7 +67,7 @@ const Feedback = () => {
                 setQuestion({isValid: !!resultText, value: value});
                 setErrors({...errors, textareaError: !resultText && 'ошибка в тексте'});
                 break;
-            case 'inpСaptcha':
+            case 'inpCaptcha':
                 let resultСaptcha = captchaTest;
                 setCaptcha({isValid: !!resultСaptcha, value: value});
                 setErrors({...errors, captchaError: !resultСaptcha && 'ошибка в капче'});
@@ -87,8 +87,6 @@ const Feedback = () => {
             setQuestion({isValid: true, value: ''});
             setCaptcha({isValid: true, value: ''}); // пока true, переделать как будет бэк
         } else setShowSuccessBlock(false);
-
-
     };
 
     useEffect(() => {
@@ -192,6 +190,7 @@ const Feedback = () => {
                     isValid={captcha.isValid}
                     onChange={onChangeInput}
                   />
+                  <CmError error={errors['captchaError']} />
                   {/*<input className={style.captcha__inp}onChange={(e => setCaptcha({...captcha, value: e.target.value}))} required={true} />*/}
               </div>
               {/*Пользовательское соглашение. Персональные данные*/}
@@ -210,11 +209,11 @@ const Feedback = () => {
               </div>
           </form>
           {/*/Сообщение об успешной отправки формы*/}
-          {
-            showSuccessBlock && <div className={style.feedback__message_wrap}>
+          {showSuccessBlock && (
+            <div className={style.feedback__message_wrap}>
                 <SuccessMessage successfullySent={successfullySent} />
             </div>
-          }
+          )}
           <ModalWindow openModalWindow={openModalWindow}
             setOpenModalWindow={setOpenModalWindow}
             title='ПРАВИЛА ПОЛЬЗОВАТЕЛЬСКОГО СОГЛАШЕНИЯ'>

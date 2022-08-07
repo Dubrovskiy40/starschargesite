@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 // import Card from "./Card/Card";
 // import Pagination from "./Pagination/Pagination";
 // import PropTypes from 'prop-types';
+import {getScreenWidth} from '../../hoc/getScreenWidth';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/scss";
 import "swiper/scss/pagination";
 
-const Cards = () => {
+const Cards = (props) => {
   const data = [
     {
       id: "1",
@@ -103,39 +104,47 @@ const Cards = () => {
   ];
 
   const [countCard, setCountCard] = useState(4);
-  const [widthScreen, setWidthScreen] = useState(window.innerWidth);
-  const [deviceType, setDeviceType] = useState("desctop"); //desctop, tablet, mobile
+  // const [widthScreen, setWidthScreen] = useState(window.innerWidth);
+  // const [deviceType, setDeviceType] = useState("desctop"); //desctop, tablet, mobile
 
-  const pagination = deviceType !== "mobile" && {
+  const pagination = props.deviceType !== "mobile" && {
     clickable: true,
     renderBullet: function (index, className) {
       return '<span class="' + className + '">' + (index + 1) + "</span>";
     },
   };
 
-  const updateDimensions = () => {
-    setWidthScreen(window.innerWidth);
-  };
+  // const updateDimensions = () => {
+  //   setWidthScreen(window.innerWidth);
+  // };
+
+  // useEffect(() => {
+  //   window.addEventListener("resize", updateDimensions);
+  //   // console.log('widthScreen',widthScreen);
+  //
+  //   if (widthScreen > 1190) {
+  //     setCountCard(4);
+  //     setDeviceType("desctop");
+  //   }
+  //   if (widthScreen > 768 && widthScreen <= 1190) {
+  //     setCountCard(3);
+  //     setDeviceType("tablet");
+  //   }
+  //   if (widthScreen <= 768) {
+  //     setCountCard(1);
+  //     setDeviceType("mobile");
+  //   }
+  //
+  //   return () => window.removeEventListener("resize", updateDimensions);
+  // }, []);
 
   useEffect(() => {
-    window.addEventListener("resize", updateDimensions);
-    // console.log('widthScreen',widthScreen);
-
-    if (widthScreen > 1190) {
-      setCountCard(4);
-      setDeviceType("desctop");
-    }
-    if (widthScreen > 768 && widthScreen <= 1190) {
-      setCountCard(3);
-      setDeviceType("tablet");
-    }
-    if (widthScreen <= 768) {
-      setCountCard(1);
-      setDeviceType("mobile");
-    }
-
-    return () => window.removeEventListener("resize", updateDimensions);
-  }, []);
+    props.deviceType === 'desctop'
+      ? setCountCard(4)
+      : props.deviceType === 'tablet'
+        ? setCountCard(3)
+        : setCountCard(1)
+  }, [])
 
   const handleAddCards = () => {
     console.log("загрузить еще карточки");
@@ -182,7 +191,7 @@ const Cards = () => {
             );
           })}
         </Swiper>
-        {deviceType === "mobile" && (
+        {props.deviceType === "mobile" && (
           <button className="cards__btn" onClick={handleAddCards}>
             Ещё новости
           </button>
@@ -196,4 +205,4 @@ const Cards = () => {
 //     data: PropTypes.arrayOf(PropTypes.object).isRequired
 // }
 
-export default Cards;
+export default getScreenWidth(Cards);
