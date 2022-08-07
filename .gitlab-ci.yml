@@ -44,6 +44,7 @@ deploy-test-job:
     - echo "Application successfully deployed in test."
 
 
+
 deploy-prod-job:
   stage: deploy
   # tags:
