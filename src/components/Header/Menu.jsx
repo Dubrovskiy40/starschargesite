@@ -1,11 +1,6 @@
-import { NavLink } from "react-router-dom";
-
 const Menu = ({ items, active, setActive }) => {
   return (
-    <nav
-      className="header__nav"
-      onClick={() => setActive(false)}
-    >
+    <nav className="header__nav" onClick={() => setActive(false)}>
       <ul className="header__nav-list" onClick={(e) => e.stopPropagation()}>
         {items.map((item, index) => (
           <li
@@ -13,9 +8,9 @@ const Menu = ({ items, active, setActive }) => {
             className="header__nav-item"
             onClick={() => setActive(false)}
           >
-            <NavLink to={`b${item.menu_order}`} className="header__nav-link">
+            <a href={`#b${item.menu_order}`} className="header__nav-link">
               {item.name}
-            </NavLink>
+            </a>
           </li>
         ))}
       </ul>

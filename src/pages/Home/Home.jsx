@@ -1,7 +1,6 @@
 import {
   Cards,
   Header,
-  Puzzle,
   Carousel,
   Feedback,
   SwiperLine,
@@ -15,11 +14,14 @@ function Home() {
   return (
     <>
       <Header />
+      <section id="b1" />
       <SwiperLine />
-      <Cards />
+      <section id="b2" />
       <Carousel />
       <SwiperParallax />
-      <Puzzle />
+      <section id="b3" />
+      <Cards />
+      <section id="b4" />
       <MapContainer />
       <Feedback />
       <ScrollButton />
