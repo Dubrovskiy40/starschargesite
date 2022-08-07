@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import Puzzle from "../Puzzle/Puzzle"
+import Puzzle from "../Puzzle/Puzzle";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -9,6 +9,7 @@ import { Pagination, Navigation } from "swiper";
 export default function SwiperLine() {
   return (
     <>
+      <section id="b1" />
       <Swiper
         pagination={{
           type: "progressbar",
@@ -36,7 +37,6 @@ export default function SwiperLine() {
         <SwiperSlide>
           <Puzzle />
         </SwiperSlide>
-
       </Swiper>
     </>
   );

@@ -38,21 +38,24 @@ const Carousel = () => {
   ];
 
   return (
-    <div className={style.carousel}>
-      <h2> Single Item</h2>
-      {/* <Slider {...settings}> */}
-      {arraySliders.map((slide) => {
-        return (
-          <CarouselItem
-            key={slide.id}
-            title={slide.title}
-            subtitle={slide.subtitle}
-            text={slide.text}
-          />
-        );
-      })}
-      {/* </Slider> */}
-    </div>
+    <>
+      <section id="b2" />
+      <div className={style.carousel}>
+        <h2> Single Item</h2>
+        {/* <Slider {...settings}> */}
+        {arraySliders.map((slide) => {
+          return (
+            <CarouselItem
+              key={slide.id}
+              title={slide.title}
+              subtitle={slide.subtitle}
+              text={slide.text}
+            />
+          );
+        })}
+        {/* </Slider> */}
+      </div>
+    </>
   );
 };
 
