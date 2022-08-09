@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 // import Card from "./Card/Card";
 // import Pagination from "./Pagination/Pagination";
 // import PropTypes from 'prop-types';
-import {getScreenWidth} from '../../hoc/getScreenWidth';
+import { getScreenWidth } from "../../hoc/getScreenWidth";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
@@ -139,12 +139,12 @@ const Cards = (props) => {
   // }, []);
 
   useEffect(() => {
-    props.deviceType === 'desctop'
+    props.deviceType === "desctop"
       ? setCountCard(4)
-      : props.deviceType === 'tablet'
-        ? setCountCard(3)
-        : setCountCard(1)
-  }, [])
+      : props.deviceType === "tablet"
+      ? setCountCard(3)
+      : setCountCard(1);
+  }, []);
 
   const handleAddCards = () => {
     console.log("загрузить еще карточки");
@@ -154,7 +154,7 @@ const Cards = (props) => {
   };
 
   return (
-    <section className="news">
+    <section id={props.menuName} className="news">
       <div className="container">
         <Swiper
           slidesPerView={countCard}
