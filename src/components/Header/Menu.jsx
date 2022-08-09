@@ -8,7 +8,7 @@ const Menu = ({ items, active, setActive }) => {
             className="header__nav-item"
             onClick={() => setActive(false)}
           >
-            <a href={`#b${item.menu_order}`} className="header__nav-link">
+            <a href={`#${item.name}`} className="header__nav-link">
               {item.name}
             </a>
           </li>

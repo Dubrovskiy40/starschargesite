@@ -6,7 +6,7 @@ import "swiper/scss/navigation";
 import "swiper/scss/pagination";
 import bgiImg from "../../assets/images/sliderParallax/fon.jpg";
 
-const SwiperParallax = () => {
+const SwiperParallax = (props) => {
   const arraySliders = [
     {
       id: "1",
@@ -35,7 +35,7 @@ const SwiperParallax = () => {
   ];
 
   return (
-    <section id="b3" className="swiper-parallax">
+    <section id={props.menuName} className="swiper-parallax">
       <Swiper
         style={{
           "--swiper-navigation-color": "#fff",

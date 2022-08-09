@@ -5,11 +5,12 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./swiperStyles.css";
 import { Pagination, Navigation } from "swiper";
+import MenuStore from "../../store/MenuStore";
 
-export default function SwiperLine() {
+export default function SwiperLine(props) {
   return (
     <>
-      <section id="b1" />
+      <section id={props.menuName} />
       <Swiper
         pagination={{
           type: "progressbar",

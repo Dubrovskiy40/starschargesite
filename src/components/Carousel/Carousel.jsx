@@ -15,7 +15,7 @@ const settings = {
   autoplay: true,
 };
 
-const Carousel = () => {
+const Carousel = (props) => {
   const arraySliders = [
     {
       id: "1",
@@ -39,7 +39,7 @@ const Carousel = () => {
 
   return (
     <>
-      <section id="b2" />
+      <section id={props.menuName} />
       <div className={style.carousel}>
         <h2> Single Item</h2>
         {/* <Slider {...settings}> */}

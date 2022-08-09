@@ -7,4 +7,4 @@ export { default as Puzzle } from "./Puzzle/Puzzle";
 export { default as Carousel } from "./Carousel/Carousel";
 export { default as MapContainer } from "./MapContainer/MapContainer";
 export { default as SwiperParallax } from "./SwiperParallax/SwiperParallax";
-export { default as SwiperLine } from "./SwiperSlide/Swiper";
+export { default as SwiperLine } from "./SwiperLine/Swiper";
