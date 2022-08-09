@@ -1,11 +1,16 @@
 import React from "react";
 
+import { useTranslation } from "react-i18next";
+import '../../utils/i18next';
+
 const MapContainer = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="b4" className="map">
       <div className="container">
         <div className="map__main">
-          <h2 className="map__title">Наши станции на карте</h2>
+          <h2 className="map__title">{t("mapContainer.title")}</h2>
           <section className="map__yandex">
             <div className="map-frame">
               <iframe

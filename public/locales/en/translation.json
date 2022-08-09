@@ -1,0 +1,68 @@
+{
+  "cards": {
+    "data": {
+      "title1": "His room, a real, perhaps too small, but ordinary room, rested peacefully within its four well-known walls.",
+      "text1": "Above the table, where the unpacked samples of cloth were laid out - Samsa was a traveling salesman - hung a portrait that he had recently cut out of an illustrated magazine and inserted into a beautiful gilded frame.",
+      "title2": "His room, a real, perhaps too small, but ordinary room, rested peacefully within its four well-known walls.",
+      "text2": "Above the table, where the unpacked samples of cloth were laid out - Samsa was a traveling salesman - hung a portrait that he had recently cut out of an illustrated magazine and inserted into a beautiful gilded frame.",
+      "title3": "His room, a real, perhaps too small, but ordinary room, rested peacefully within its four well-known walls.",
+      "text3": "Above the table, where the unpacked samples of cloth were laid out - Samsa was a traveling salesman - hung a portrait that he had recently cut out of an illustrated magazine and inserted into a beautiful gilded frame.",
+      "title4": "His room, a real, perhaps too small, but ordinary room, rested peacefully within its four well-known walls.",
+      "text4": "Above the table, where the unpacked samples of cloth were laid out - Samsa was a traveling salesman - hung a portrait that he had recently cut out of an illustrated magazine and inserted into a beautiful gilded frame.",
+      "title5": "His room, a real, perhaps too small, but ordinary room, rested peacefully within its four well-known walls.",
+      "text5": "Above the table, where the unpacked samples of cloth were laid out - Samsa was a traveling salesman - hung a portrait that he had recently cut out of an illustrated magazine and inserted into a beautiful gilded frame.",
+      "title6": "His room, a real, perhaps too small, but ordinary room, rested peacefully within its four well-known walls.",
+      "text6": "Above the table, where the unpacked samples of cloth were laid out - Samsa was a traveling salesman - hung a portrait that he had recently cut out of an illustrated magazine and inserted into a beautiful gilded frame.",
+      "title7": "His room, a real, perhaps too small, but ordinary room, rested peacefully within its four well-known walls.",
+      "text7": "Above the table, where the unpacked samples of cloth were laid out - Samsa was a traveling salesman - hung a portrait that he had recently cut out of an illustrated magazine and inserted into a beautiful gilded frame.",
+      "title8": "His room, a real, perhaps too small, but ordinary room, rested peacefully within its four well-known walls.",
+      "text8": "Above the table, where the unpacked samples of cloth were laid out - Samsa was a traveling salesman - hung a portrait that he had recently cut out of an illustrated magazine and inserted into a beautiful gilded frame.",
+      "title9": "His room, a real, perhaps too small, but ordinary room, rested peacefully within its four well-known walls.",
+      "text9": "Above the table, where the unpacked samples of cloth were laid out - Samsa was a traveling salesman - hung a portrait that he had recently cut out of an illustrated magazine and inserted into a beautiful gilded frame."
+    },
+    "buttonName": "More news"
+  },
+  "mapContainer": {
+    "title": "Our stations on the map"
+  },
+  "feedback": {
+    "title": "Ask us a question",
+    "labelName": "Name",
+    "placeholderName": "Name",
+    "inpNameErrMess": "name error",
+    "labelPhone": "Phone",
+    "placeholderPhone": "Phone",
+    "inpPhoneErrMess": "phone number error",
+    "labelEmail": "Email",
+    "placeholderEmail": "Email",
+    "inpEmailErrMess": "error in email",
+    "labelArea": "Write your question",
+    "placeholderArea": "Write your question",
+    "inpAreaErrMess": "error in text",
+    "placeholderCaptcha": "Enter the code from the image",
+    "inpCaptchaErrMess": "error in captcha",
+    "termsOfUse": "Terms of use",
+    "agreement": {
+      "title": "Privacy Policy",
+      "subtitle1": "General provisions",
+      "text1": "",
+      "subtitle2": "Basic concepts used in the Policy",
+      "text2": "",
+      "subtitle3": "The Operator may process the following personal data of the User",
+      "text3": "",
+      "subtitle4": "Purposes of personal data processing",
+      "text4": "",
+      "subtitle5": "Legal grounds for the processing of personal data",
+      "text5": "",
+      "subtitle6": "The procedure for collecting, storing, transferring and other types of processing of personal data",
+      "text6": "",
+      "subtitle7": "Cross-border transfer of personal data",
+      "text7": "",
+      "subtitle8": "Final provisions",
+      "text8": ""
+    },
+    "buttonName": "Send",
+    "cmError": {
+    }
+  }
+}

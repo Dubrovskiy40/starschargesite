@@ -6,10 +6,13 @@ import ModalWindow from "../ModalWindow/ModalWindow";
 import AgreementText from './AgreementText/AgreementText';
 import {CmError} from "./CmError/CmError";
 import CmInput from "./CmInput/CmInput";
-
 import captchaImg from '../../assets/images/feedback/captcha.png';
 
+import { useTranslation } from "react-i18next";
+import '../../utils/i18next';
+
 const Feedback = () => {
+    const { t } = useTranslation();
     const [openModalWindow, setOpenModalWindow] = useState(false); // модальное окно
 
     const [name, setName] = useState({isValid: true, value: ''});
@@ -50,7 +53,7 @@ const Feedback = () => {
             case 'inpName':
                 let resultName = regValueTest(regName, value);
                 setName( {isValid: !!resultName, value: value});
-                setErrors({...errors, nameError: !resultName && 'ошибка в имени'});
+                setErrors({...errors, nameError: !resultName && t("feedback.inpNameErrMess")});
                 break;
             case 'inpTel':
                 let resultTel = regValueTest(regTel, value);
@@ -99,11 +102,11 @@ const Feedback = () => {
 
     return (
       <section className={style.feedback_wrap}>
-          <h1 className={style.feedback__title}>Задайте нам вопрос</h1>
+          <h1 className={style.feedback__title}>{t("feedback.title")}</h1>
           <form className={style.feedback} id="feedback-form" onSubmit={handleSubmitForm}>
               <div className={`${style.feedback__inp_wrap} ${style.feedback__grid1}`}>
                   <label className={style.feedback__label} htmlFor="inpName">
-                      Имя:
+                      {t("feedback.labelName")}:
                   </label>
                   <CmInput
                     isInput={true}
@@ -111,7 +114,7 @@ const Feedback = () => {
                     name='inpName'
                     type='text'
                     value={name.value}
-                    placeholder='Имя'
+                    placeholder={t("feedback.placeholderName")}
                     minLength={2}
                     maxLength={30}
                     required={true}
@@ -122,7 +125,7 @@ const Feedback = () => {
               </div>
               <div className={`${style.feedback__inp_wrap} ${style.feedback__grid2}`}>
                   <label className={style.feedback__label} htmlFor="inpTel">
-                      Телефон:
+                      {t("feedback.labelPhone")}:
                   </label>
                   <CmInput
                     isInput={true}
@@ -130,7 +133,7 @@ const Feedback = () => {
                     name='inpTel'
                     type='tel'
                     value={tel.value}
-                    placeholder='Телефон'
+                    placeholder={t("feedback.placeholderPhone")}
                     minLength={10}
                     maxLength={18}
                     required={true}
@@ -141,7 +144,7 @@ const Feedback = () => {
               </div>
               <div className={`${style.feedback__inp_wrap} ${style.feedback__grid3}`}>
                   <label className={style.feedback__label} htmlFor="inpMail">
-                      Email-адрес:
+                      {t("feedback.labelEmail")}:
                   </label>
                   <CmInput
                     isInput={true}
@@ -149,7 +152,7 @@ const Feedback = () => {
                     name='inpEmail'
                     type='email'
                     value={email.value}
-                    placeholder='E-mail'
+                    placeholder={t("feedback.placeholderEmail")}
                     required={true}
                     isValid={email.isValid}
                     onChange={onChangeInput}
@@ -158,14 +161,14 @@ const Feedback = () => {
               </div>
               <div className={`${style.feedback__inp_wrap} ${style.feedback__grid4}`}>
                   <label className={style.feedback__label} htmlFor="inpArea">
-                      Напишите ваш вопрос:
+                      {t("feedback.labelArea")}:
                   </label>
                   <CmInput
                     isInput={false}
                     id='inpArea'
                     name='inpArea'
                     value={question.value}
-                    placeholder='Напишите свой вопрос'
+                    placeholder={t("feedback.placeholderArea")}
                     rows="5"
                     cols="30"
                     minLength={10}
@@ -185,7 +188,7 @@ const Feedback = () => {
                     name='inpCaptcha'
                     type='text'
                     value={captcha.value}
-                    placeholder='Введите код с картинки'
+                    placeholder={t("feedback.placeholderCaptcha")}
                     required={true}
                     isValid={captcha.isValid}
                     onChange={onChangeInput}
@@ -204,7 +207,7 @@ const Feedback = () => {
                     className={style.feedback__btn}
                     type='submit'
                     disabled={!isReadAgreement ? true : false}
-                  >Отправить
+                  >{t("feedback.buttonName")}
                   </button>
               </div>
           </form>
@@ -216,7 +219,7 @@ const Feedback = () => {
           )}
           <ModalWindow openModalWindow={openModalWindow}
             setOpenModalWindow={setOpenModalWindow}
-            title='ПРАВИЛА ПОЛЬЗОВАТЕЛЬСКОГО СОГЛАШЕНИЯ'>
+          >
             <AgreementText/>
           </ModalWindow>
       </section>
