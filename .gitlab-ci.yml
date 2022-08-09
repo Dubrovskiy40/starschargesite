@@ -43,8 +43,6 @@ deploy-test-job:
     - scp -r build $SERVER_USERNAME@$SERVER_ADDRESS:/usr/share/nginx/html/starscharge/test    
     - echo "Application successfully deployed in test."
 
-
-
 deploy-prod-job:
   stage: deploy
   # tags:
