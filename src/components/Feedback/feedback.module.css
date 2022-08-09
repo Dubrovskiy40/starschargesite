@@ -61,12 +61,12 @@
 }
 .feedback__grid2 {
   grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 3;
 }
 .feedback__grid3 {
-  grid-column-start: 3;
+  grid-column-start: 2;
   grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 3;
@@ -79,12 +79,12 @@
 }
 .feedback__grid5 {
   grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-end: 2;
   grid-row-start: 4;
   grid-row-end: 4;
 }
 .feedback__grid6 {
-  grid-column-start: 3;
+  grid-column-start: 2;
   grid-column-end: 4;
   grid-row-start: 4;
   grid-row-end: 4;
