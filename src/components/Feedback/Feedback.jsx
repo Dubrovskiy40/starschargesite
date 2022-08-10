@@ -58,22 +58,22 @@ const Feedback = () => {
             case 'inpTel':
                 let resultTel = regValueTest(regTel, value);
                 setTel({isValid: !!resultTel, value: value});
-                setErrors({...errors, telError: !resultTel && 'ошибка в номере телефона'});
+                setErrors({...errors, telError: !resultTel && t("feedback.inpPhoneErrMess")});
                 break;
             case 'inpEmail':
                 let resultEmail = regValueTest(regEmail, value);
                 setEmail({isValid: !!resultEmail, value: value});
-                setErrors({...errors, emailError: !resultEmail && 'ошибка в email'});
+                setErrors({...errors, emailError: !resultEmail && t("feedback.inpEmailErrMess")});
                 break;
             case 'inpArea':
                 let resultText = questionTest;
                 setQuestion({isValid: !!resultText, value: value});
-                setErrors({...errors, textareaError: !resultText && 'ошибка в тексте'});
+                setErrors({...errors, textareaError: !resultText && t("feedback.inpAreaErrMess")});
                 break;
             case 'inpCaptcha':
                 let resultСaptcha = captchaTest;
                 setCaptcha({isValid: !!resultСaptcha, value: value});
-                setErrors({...errors, captchaError: !resultСaptcha && 'ошибка в капче'});
+                setErrors({...errors, captchaError: !resultСaptcha && t("feedback.inpCaptchaErrMess")});
                 break;
         }
     };

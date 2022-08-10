@@ -13,6 +13,9 @@
   color: #fff;
   background: #333333;
 }
+.inp__text:focus {
+  border: 3px solid #60AD5E;
+}
 .inp__text_green {
   color: #60AD5E;
   border: 2px solid #60AD5E;
@@ -49,6 +52,9 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
+  }
+  .inp__text:focus {
+    border: 2px solid #60AD5E;
   }
   .inp__text_green {
     border: 1px solid #60AD5E;
