@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import "../../utils/i18next";
 
-const MapContainer = () => {
+const MapContainer = (props) => {
   const { t } = useTranslation();
   return (
     <section id={props.menuName} className="map">
