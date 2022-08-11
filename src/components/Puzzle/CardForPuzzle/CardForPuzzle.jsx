@@ -1,11 +1,10 @@
 import Style from "./cards.module.scss"
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom"
 
 const CardForPuzzle = ({ id, imgPath, title, paragraph, dataPublic }) => {
 
     return (
-        <Link to="idCard" className={Style.card__link}>
+        <a href="https://www.asus.com/ru/" target="_blank" rel="noreferrer" className={Style.card__link}>
             <li key={id} className={Style.card} >
                 <img className={Style.card__img} src={imgPath} alt="img" />
                 <div className={Style.card__text_block}>
@@ -20,7 +19,7 @@ const CardForPuzzle = ({ id, imgPath, title, paragraph, dataPublic }) => {
                     </span>
                 </div>
             </li>
-        </Link>
+        </a>
     );
 };
 
