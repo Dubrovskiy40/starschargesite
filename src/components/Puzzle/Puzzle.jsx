@@ -64,28 +64,30 @@ const Puzzle = () => {
 
   return (
     <>
-      <div className={Style.grid}>{getCards(currentCard, visibleCards)}</div>
-      <button
-        onClick={() =>
-          currentCard === 0
-            ? setcurrentCard(currentCard)
-            : setcurrentCard(currentCard - 1)
-        }
-        className={Style.buttonNext}
-      >
-        Предыдущая новость
-      </button>
+      <div className="container">
+        <div className={Style.grid}>{getCards(currentCard, visibleCards)}</div>
+          <button
+            onClick={() =>
+              currentCard === 0
+                ? setcurrentCard(currentCard)
+                : setcurrentCard(currentCard - 1)
+            }
+            className={Style.buttonNext}
+          >
+            Предыдущая новость
+          </button>
 
-      <button
-        onClick={() =>
-          currentCard === 10 - visibleCards
-            ? setcurrentCard(currentCard)
-            : setcurrentCard(currentCard + 1)
-        }
-        className={Style.buttonNext}
-      >
-        Следующая новость
-      </button>
+          <button
+            onClick={() =>
+              currentCard === 10 - visibleCards
+                ? setcurrentCard(currentCard)
+                : setcurrentCard(currentCard + 1)
+            }
+            className={Style.buttonNext}
+          >
+            Следующая новость
+          </button>
+        </div>
     </>
   );
 };
