@@ -71,16 +71,22 @@ img {
     .link {
       display: inline;
       :hover {
-        filter: drop-shadow(0 0 5px #60ad5e);
+        svg path {
+          fill: #60ad5e;
+        }
       }
-      .img {
-        margin: 10px;
+      :active {
+        svg path {
+          fill: #60ad5e;
+        }
+      }
+      svg {
         width: 30px;
         .tg {
           height: 20px;
         }
         .vk {
-          height: 17px;
+          height: 20px;
         }
       }
     }

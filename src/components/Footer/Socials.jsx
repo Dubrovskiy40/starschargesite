@@ -1,22 +1,22 @@
-import { NavLink } from "react-router-dom"
-import vk from "../../assets/images/footer/VK.png"
-import tg from "../../assets/images/footer/Telegram.png"
+import { NavLink } from "react-router-dom";
+import { Vk } from "./SVG/Vk";
+import { Tg } from "./SVG/Tg";
 
 const Socials = () => {
-	return (
-		<div className="socials">
-			<li className="link">
-				<NavLink className="img" to="#">
-					<img src={tg} alt="Telegram" className="tg"></img>
-				</NavLink>
-			</li>
-			<li className="link">
-				<NavLink className="img" to="#">
-					<img src={vk} alt="Вконтакте" className="vk"></img>
-				</NavLink>
-			</li>
-		</div>
-	)
-}
+  return (
+    <div className="socials">
+      <li className="link">
+        <NavLink className="img" to="#">
+          <Tg />
+        </NavLink>
+      </li>
+      <li className="link">
+        <NavLink className="img" to="#">
+          <Vk />
+        </NavLink>
+      </li>
+    </div>
+  );
+};
 
-export default Socials
+export default Socials;
