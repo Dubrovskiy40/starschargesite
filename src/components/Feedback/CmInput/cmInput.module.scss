@@ -13,6 +13,10 @@
   color: #fff;
   background: #333333;
 
+  &:focus {
+    border: 3px solid #60AD5E;
+  }
+
   &_green {
     color: #60AD5E;
     border: 2px solid #60AD5E;
@@ -52,6 +56,10 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
+
+    &:focus {
+      border: 2px solid #60AD5E;
+    }
 
     &_green {
       border: 1px solid #60AD5E;

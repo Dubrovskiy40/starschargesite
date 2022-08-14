@@ -188,7 +188,7 @@ const Cards = (props) => {
           })}
         </Swiper>
         {props.deviceType === "mobile" && (
-          <button className="cards__btn" onClick={handleAddCards}>
+          <button className="cards__btn" type="button" onClick={handleAddCards}>
             Ещё новости
           </button>
         )}
