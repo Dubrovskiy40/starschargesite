@@ -10,7 +10,7 @@ import "swiper/scss";
 import "swiper/scss/pagination";
 
 import { useTranslation } from "react-i18next";
-import '../../utils/i18next';
+import "../../utils/i18next";
 
 const Cards = (props) => {
   const { t } = useTranslation();
@@ -135,12 +135,14 @@ const Cards = (props) => {
   // }, []);
 
   useEffect(() => {
-    props.deviceType === "desctop"
+    props.deviceType === "superdesctop"
+      ? setCountCard(5)
+      : props.deviceType === "desctop"
       ? setCountCard(4)
       : props.deviceType === "tablet"
       ? setCountCard(3)
       : setCountCard(1);
-  }, []);
+  }, [props.deviceType]);
 
   const handleAddCards = () => {
     console.log("загрузить еще карточки");

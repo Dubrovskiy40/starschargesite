@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from "react";
 
 export function getScreenWidth(Component) {
   let WrapperContainer = (props) => {
@@ -11,24 +11,23 @@ export function getScreenWidth(Component) {
 
     useEffect(() => {
       window.addEventListener("resize", updateDimensions);
-
-      if (widthScreen > 1190) {
+      if (widthScreen > 2000) {
+        setDeviceType("superdesctop");
+      } else if (widthScreen < 1190) {
         setDeviceType("desctop");
-      }
-      if (widthScreen > 768 && widthScreen <= 1190) {
+      } else if (widthScreen > 768) {
         setDeviceType("tablet");
-      }
-      if (widthScreen <= 768) {
+      } else {
         setDeviceType("mobile");
       }
 
       return () => window.removeEventListener("resize", updateDimensions);
-    }, []);
+    }, [widthScreen]);
 
     return (
       <Component {...props} deviceType={deviceType} widthScreen={widthScreen} />
-    )
-  }
+    );
+  };
 
   return WrapperContainer;
-};
+}

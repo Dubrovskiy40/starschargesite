@@ -1,6 +1,7 @@
 import CardForPuzzle from "./CardForPuzzle/CardForPuzzle";
 import Style from "./puzzle.module.scss";
 import { useState, useEffect } from "react";
+import { getScreenWidth } from "../../hoc/getScreenWidth";
 
 const TextOfCard = {
   id: "3",
@@ -41,55 +42,67 @@ const getCards = (currentCard, visibleCards) => {
   return content;
 };
 
-export const useWindowSize = () => {
-  const [size, setSize] = useState([window.innerWidth]);
+//export const useWindowSize = () => {
+//  const [size, setSize] = useState([window.innerWidth]);
 
-  const handleResize = () => {
-    setSize([window.innerWidth]);
-  };
+//  const handleResize = () => {
 
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
+//    setSize([window.innerWidth]);
+//  };
 
-    return () => window.removeEventListener("resize", handleResize);
-  }, [size]);
+//useEffect(() => {
+//  window.addEventListener("resize", handleResize);
+//
+//    return () => window.removeEventListener("resize", handleResize);
+//  }, [size]);
 
-  // return (size[0] < 480 ? 3 : (size[0] < 768 ? 3 : (size[0] < 1200 ? 5 : 4)))
-  return size[0] < 768 ? 3 : size[0] < 1200 ? 5 : size[0] < 2000 ? 4 : 8;
-};
+// return (size[0] < 480 ? 3 : (size[0] < 768 ? 3 : (size[0] < 1200 ? 5 : 4)))
+//  return size[0] < 768 ? 3 : size[0] < 1200 ? 5 : size[0] < 2000 ? 4 : 8;
+//};
 
-const Puzzle = () => {
+const Puzzle = (props) => {
+  //const Puzzle = () => {
   const [currentCard, setcurrentCard] = useState(0);
-  const visibleCards = useWindowSize();
+  const [visibleCards, setCountCard] = useState(1);
+  useEffect(() => {
+    props.deviceType === "desctop"
+      ? setCountCard(4)
+      : props.deviceType === "tablet"
+      ? setCountCard(5)
+      : props.deviceType === "superdesctop"
+      ? setCountCard(8)
+      : setCountCard(3);
+  }, [props.deviceType]);
 
   return (
     <>
       <div className="container">
         <div className={Style.grid}>{getCards(currentCard, visibleCards)}</div>
-          <button
-            onClick={() =>
-              currentCard === 0
-                ? setcurrentCard(currentCard)
-                : setcurrentCard(currentCard - 1)
-            }
-            className={Style.buttonNext}
-          >
-            Предыдущая новость
-          </button>
+        <button
+          onClick={() =>
+            currentCard === 0
+              ? setcurrentCard(currentCard)
+              : setcurrentCard(currentCard - 1)
+          }
+          className={Style.buttonNext}
+        >
+          Предыдущая новость
+        </button>
 
-          <button
-            onClick={() =>
-              currentCard === 10 - visibleCards
-                ? setcurrentCard(currentCard)
-                : setcurrentCard(currentCard + 1)
-            }
-            className={Style.buttonNext}
-          >
-            Следующая новость
-          </button>
-        </div>
+        <button
+          onClick={() =>
+            currentCard === 10 - visibleCards
+              ? setcurrentCard(currentCard)
+              : setcurrentCard(currentCard + 1)
+          }
+          className={Style.buttonNext}
+        >
+          Следующая новость
+        </button>
+      </div>
     </>
   );
+  //  };
 };
 
-export default Puzzle;
+export default getScreenWidth(Puzzle);
