@@ -1,3 +1,7 @@
+.header__lang :hover {
+  color: #60ad5e;
+}
+
 .header__lang-link:not(:last-child) {
   margin-right: 23px;
 }

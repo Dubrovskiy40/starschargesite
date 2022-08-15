@@ -844,7 +844,7 @@ body {
 }
 .map__yandex:hover {
   width: 80vw;
-  height: 80vh;
+  height: 50vh;
   border-radius: 20px;
 }
 .map .map-frame {
