@@ -1,14 +1,23 @@
 import { useTranslation } from "react-i18next";
 import "../../utils/i18next";
+import { useDoubleTap } from 'use-double-tap';
+import {useState} from "react";
 
 const MapContainer = (props) => {
   const { t } = useTranslation();
+  const [isDubleClick, setIsDubleClick] = useState(false);
+
+  const bind = useDoubleTap((event) => {
+    console.log('Double tapped', event);
+    setIsDubleClick(!isDubleClick);
+  });
+
   return (
     <section id={props.menuName} className="map">
       <div className="container">
         <div className="map__main">
           <h2 className="map__title">{t("mapContainer.title")}</h2>
-          <section className="map__yandex">
+          <section className="map__yandex" {...bind}>
             <div className="map-frame">
               <iframe
                 src="https://yandex.ru/map-widget/v1/?um=constructor%3A5919a4499abe294201804f138c5c39eb9519b5e6b5fd791b20adf349051d6dc3&amp;source=constructor"

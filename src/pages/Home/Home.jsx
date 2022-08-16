@@ -1,7 +1,6 @@
 import {
   Cards,
   Header,
-  Carousel,
   Feedback,
   SwiperLine,
   SwiperParallax,
@@ -30,7 +29,6 @@ function Home() {
     <>
       <Header />
       <SwiperLine menuName={itemslocal[0]} />
-      <Carousel />
       <SwiperParallax menuName={itemslocal[1]} />
       <Cards menuName={itemslocal[2]} />
       <MapContainer menuName={itemslocal[3]} />
