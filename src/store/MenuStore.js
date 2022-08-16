@@ -23,10 +23,10 @@ class MenuStore {
         const itemRes = await itemReq.json();
         if (itemReq.ok) {
             runInAction(() => {
-                this.items = itemRes;
+                this.items = itemRes.sort((prev, next) => prev.menu_order - next.menu_order); // сортировка
             });
         }
-        //console.log(itemRes)
+        // console.log(itemRes)
         this.setLoading(false);
     };
 
