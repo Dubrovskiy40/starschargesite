@@ -13,7 +13,7 @@ export function getScreenWidth(Component) {
       window.addEventListener("resize", updateDimensions);
       if (widthScreen > 2000) {
         setDeviceType("superdesctop");
-      } else if (widthScreen < 1190) {
+      } else if (widthScreen > 1190) {
         setDeviceType("desctop");
       } else if (widthScreen > 768) {
         setDeviceType("tablet");
