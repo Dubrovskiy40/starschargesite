@@ -73,3 +73,27 @@ body {
   color: #fff;
   background-color: var(--light-theme);
 }
+
+@media (max-width: 1190px) {
+
+}
+
+@media (max-width: 768px) {
+  .map {
+
+    &__title {
+      font-size: 16px;
+      line-height: 18px;
+    }
+
+    &__yandex {
+      width: 250px;
+      height: 250px;
+      overflow: hidden;
+      border-radius: 250px;
+      background-color: inherit;
+      transition: 1500ms;
+      cursor: grab;
+    }
+  }
+}

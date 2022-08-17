@@ -22,6 +22,9 @@
     },
     "buttonName": "More news"
   },
+  "team": {
+    "title": "Our team"
+  },
   "mapContainer": {
     "title": "Our stations on the map"
   },

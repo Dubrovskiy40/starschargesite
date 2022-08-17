@@ -1,0 +1,78 @@
+.team {
+
+  &__title {
+    margin-bottom: 16px;
+    align-self: flex-start;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    color: #fff;
+  }
+
+  &__list {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, 23%);
+  }
+
+  &__item {
+    position: relative;
+    transition: 0.5s;
+    border: 4px solid #60ad5e;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    padding: 15px;
+  }
+
+  &__item_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: rgba(58, 56, 56, 0.86);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.5s;
+    border-radius: inherit;
+  }
+
+  &__item_fName {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: #FFFFFF;
+    margin-bottom: 5px;
+  }
+
+  &__item_lName {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+  }
+
+  &__item_post {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    color: #FFFFFF;
+  }
+}
+
+.team__item:hover .team__item_overlay {
+  opacity: 1;
+}
