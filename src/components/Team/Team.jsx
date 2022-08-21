@@ -12,7 +12,7 @@ const Team = () => {
   ];
 
   return (
-    <div className="team">
+    <section className="team">
       <div className="container">
         <h2 className="team__title">{t("team.title")}</h2>
         <ul className="team__list">
@@ -32,7 +32,7 @@ const Team = () => {
           }
         </ul>
       </div>
-    </div>
+    </section>
   );
 };
 
