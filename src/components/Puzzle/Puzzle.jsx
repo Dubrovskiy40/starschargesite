@@ -22,8 +22,7 @@ const getCards = (currentCard, visibleCards) => {
         className={
           index === currentCard
             ? Style.grid__firstCell
-            : (index === currentCard + 1) &
-              (visibleCards === 4)
+            : (index === currentCard + 1) & (visibleCards === 4)
             ? Style.grid__secondCell
             : Style.grid__restCell
         }
@@ -66,28 +65,7 @@ const Puzzle = () => {
     <>
       <div className="container">
         <div className={Style.grid}>{getCards(currentCard, visibleCards)}</div>
-          <button
-            onClick={() =>
-              currentCard === 0
-                ? setcurrentCard(currentCard)
-                : setcurrentCard(currentCard - 1)
-            }
-            className={Style.buttonNext}
-          >
-            Предыдущая новость
-          </button>
-
-          <button
-            onClick={() =>
-              currentCard === 10 - visibleCards
-                ? setcurrentCard(currentCard)
-                : setcurrentCard(currentCard + 1)
-            }
-            className={Style.buttonNext}
-          >
-            Следующая новость
-          </button>
-        </div>
+      </div>
     </>
   );
 };

@@ -1,6 +1,5 @@
-import { NavLink } from "react-router-dom";
-import "./Lang.scss"
-import {useTranslation} from "react-i18next";
+import "./Lang.scss";
+import { useTranslation } from "react-i18next";
 
 const Lang = ({ active, setActive }) => {
   const { t, i18n } = useTranslation();
@@ -11,10 +10,16 @@ const Lang = ({ active, setActive }) => {
 
   return (
     <div className="header__lang">
-      <button className="header__lang-link" onClick={() => changeLanguage("ru")}>
+      <button
+        className="header__lang-link"
+        onClick={() => changeLanguage("ru")}
+      >
         Рус
       </button>
-      <button className="header__lang-link" onClick={() => changeLanguage("en")}>
+      <button
+        className="header__lang-link"
+        onClick={() => changeLanguage("en")}
+      >
         Eng
       </button>
     </div>
