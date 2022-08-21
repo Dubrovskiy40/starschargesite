@@ -2,7 +2,7 @@
   background: #333333;
   color: #fff;
   padding: 100px 80px;
-  max-width: 58%;
+
 }
 
 .feedback__title {
@@ -18,6 +18,7 @@
   grid-template-columns: repeat(2, 1fr);
   row-gap: 56px;
   column-gap: 24px;
+  max-width: 58%;
 
   &__inp_wrap {
     display: flex;
@@ -115,7 +116,6 @@
 @media (max-width: 1190px) {
   .feedback_wrap {
     padding: 100px 80px;
-    max-width: 58%;
   }
 
   .feedback__title {
@@ -130,6 +130,7 @@
     flex-direction: column;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 30px;
+    max-width: 58%;
 
     &__label {
       font-size: 18px;
@@ -162,7 +163,6 @@
 @media (max-width: 768px) {
   .feedback_wrap {
     padding: 40px 30px;
-    max-width: 100%;
   }
 
   .feedback__title {
@@ -177,6 +177,7 @@
     flex-direction: column;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 20px;
+    max-width: 100%;
 
     &__label {
       font-size: 14px;
