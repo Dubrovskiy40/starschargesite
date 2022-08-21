@@ -45,7 +45,7 @@ build-job-prod:
   stage: build
   image: node:16.15.0
   only:
-    - develop
+    - main
   script:
     - echo "Compiling the code..."
     - mkdir build
