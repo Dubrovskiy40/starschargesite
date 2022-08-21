@@ -17,9 +17,9 @@ function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      await MenuStore.fetchMenuItems().then(); // запрос на динамические пункты меню
-
-      setItemsLocal(MenuStore.items.map((item) => item.name));
+      await MenuStore.fetchMenuItems().then(
+        setItemsLocal(MenuStore.items.map((item) => item.name))
+      );
     };
     fetchData();
   }, []);
