@@ -2,18 +2,16 @@ stages:
   - build
   - deploy
 
-build-job:
+build-job-develop:
   stage: build
-  # tags:
-      # - "starscharge_front"
   image: node:16.15.0
   only:
-    - main
     - develop
   script:
     - echo "Compiling the code..."
     - mkdir build
     - npm install --legacy-peer-deps    
+    - cat $env_dev >> .env    
     - CI=false; npm run build    
     - echo "Compile complete."
   artifacts:
@@ -21,7 +19,7 @@ build-job:
     paths:
       - build
 
-deploy-test-job:
+deploy-job-develop:
   stage: deploy
   # tags:
       # - "starscharge_front"
@@ -36,17 +34,32 @@ deploy-test-job:
   only:
       - develop
   needs:
-    - build-job
+    - build-job-develop
   script:
     - echo "Deploying application in test..."
     - ssh $SERVER_USERNAME@$SERVER_ADDRESS "rm -rf /usr/share/nginx/html/starscharge/test"
     - scp -r build $SERVER_USERNAME@$SERVER_ADDRESS:/usr/share/nginx/html/starscharge/test    
     - echo "Application successfully deployed in test."
 
-deploy-prod-job:
+build-job-prod:
+  stage: build
+  image: node:16.15.0
+  only:
+    - develop
+  script:
+    - echo "Compiling the code..."
+    - mkdir build
+    - npm install --legacy-peer-deps    
+    - cat $env >> .env
+    - CI=false; npm run build    
+    - echo "Compile complete."
+  artifacts:
+    expire_in: 3 days
+    paths:
+      - build
+
+deploy-job-prod:
   stage: deploy
-  # tags:
-      # - "starscharge_front"
   before_script:
     - 'command -v ssh-agent >/dev/null || ( apk add --update openssh )' 
     - eval $(ssh-agent -s)
@@ -58,7 +71,7 @@ deploy-prod-job:
   only:
       - main
   needs:
-    - build-job
+    - build-job-prod
   script:
     - echo "Deploying application in prod..."
     - ssh $SERVER_USERNAME@$SERVER_ADDRESS "rm -rf /usr/share/nginx/html/starscharge/prod"
