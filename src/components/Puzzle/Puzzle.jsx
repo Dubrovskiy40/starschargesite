@@ -23,7 +23,7 @@ const getCards = (currentCard, visibleCards) => {
           index === currentCard
             ? Style.grid__firstCell
             : (index === currentCard + 1) &
-              (visibleCards === 4 || visibleCards === 3)
+              (visibleCards === 4)
             ? Style.grid__secondCell
             : Style.grid__restCell
         }
