@@ -72,6 +72,8 @@ const Feedback = () => {
                 break;
             case 'inpCaptcha':
                 let resultСaptcha = captchaTest;
+                console.log('resultСaptcha',resultСaptcha)
+                console.log('case resultСaptcha',captcha.value)
                 setCaptcha({isValid: !!resultСaptcha, value: value});
                 setErrors({...errors, captchaError: !resultСaptcha && t("feedback.inpCaptchaErrMess")});
                 break;
@@ -81,7 +83,11 @@ const Feedback = () => {
     const handleSubmitForm = (event) => {
         event.preventDefault();
 
-        if (name.isValid && tel.isValid && email.isValid && question.isValid && captcha.isValid) {
+        let isTrue = name.isValid && tel.isValid && email.isValid && question.isValid && captcha.isValid;
+        let isValue = name.value && tel.value && email.value && question.value && captcha.value;
+
+        if (isTrue && isValue) {
+            console.log('отправка данных формы: ', `Имя: ${name.value}, Телефон: ${tel.value}, Email: ${email.value}, Вопрос: ${question.value}, Капча: ${captcha.value}`)
             setShowSuccessBlock(true);
 
             setName({isValid: true, value: ''});
@@ -92,13 +98,8 @@ const Feedback = () => {
         } else setShowSuccessBlock(false);
     };
 
-    useEffect(() => {
-        let data = name.value && tel.value && email.value && question.value && captcha.value;
-
-        if (data) {
-            console.log('отправка данных формы: ', name.value, tel.value, email.value, question.value, captcha.value);
-        }
-    }, [name, tel, email, question, captcha]);
+    // useEffect(() => {
+    // }, [name, tel, email, question, captcha]);
 
     return (
       <section className={style.feedback_wrap}>

@@ -863,6 +863,70 @@ button {
   opacity: 1;
 }
 
+:root {
+  /* Font Color */
+  --light-theme: #f8f9fa;
+  --black-theme: #202020;
+  /* Circle Width */
+  --circle-diameter: 400px;
+}
+
+/* Basic Setting */
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+.map {
+  /* Content Style */
+}
+.map__main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  min-height: 640px;
+  background-color: var(--black-theme);
+}
+.map__yandex {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--circle-diameter);
+  height: var(--circle-diameter);
+  overflow: hidden;
+  border-radius: var(--circle-diameter);
+  background-color: inherit;
+  transition: 1500ms;
+  cursor: grab;
+  /* Interactive Effect */
+}
+.map__yandex:hover {
+  width: 80vw;
+  height: 80vh;
+  border-radius: 20px;
+}
+.map .map-frame {
+  width: 100vw;
+  height: calc(100vh - 100px);
+  background-color: var(--light-theme);
+}
+.map iframe {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: visibleStroke;
+}
+
+::selection {
+  color: #fff;
+  background-color: var(--light-theme);
+}
+
 .map {
   margin: 130px 0 0 0;
 }
@@ -909,6 +973,15 @@ button {
   }
   .map__title {
     font-size: 18px;
+  }
+  .map__yandex {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 250px;
+    background-color: inherit;
+    transition: 1500ms;
+    cursor: grab;
   }
 }
 .container {
