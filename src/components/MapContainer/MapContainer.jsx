@@ -103,7 +103,7 @@ const MapContainer = (props) => {
                 src="https://yandex.ru/map-widget/v1/?um=constructor%3A5919a4499abe294201804f138c5c39eb9519b5e6b5fd791b20adf349051d6dc3&amp;source=constructor"
                 width="100%"
                 height="500px"
-                frameborder="0"
+                frameBorder="0"
               ></iframe>
             </div>
           </section>
