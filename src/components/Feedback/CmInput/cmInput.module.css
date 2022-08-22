@@ -5,7 +5,7 @@
 .inp__text {
   width: inherit;
   padding: 22px 0 22px 31px;
-  border: 2px solid #60AD5E;
+  border: 2px solid #60ad5e;
   border-radius: 20px;
   font-weight: 400;
   font-size: 18px;
@@ -14,11 +14,11 @@
   background: #333333;
 }
 .inp__text:focus {
-  border: 3px solid #60AD5E;
+  border: 3px solid #60ad5e;
 }
 .inp__text_green {
-  color: #60AD5E;
-  border: 2px solid #60AD5E;
+  color: #60ad5e;
+  border: 2px solid #60ad5e;
 }
 .inp__text_red {
   color: red;
@@ -28,7 +28,7 @@
 .react-tel-input {
   width: 100%;
   padding: 22px 0 22px 31px;
-  border: 2px solid #60AD5E;
+  border: 2px solid #60ad5e;
   border-radius: 20px;
   font-weight: 400;
   font-size: 18px;
@@ -47,21 +47,19 @@
   .inp__text {
     width: inherit;
     padding: 10px 0 10px 7px;
-    border: 1px solid #60AD5E;
+    border: 1px solid #60ad5e;
     border-radius: 10px;
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
   }
   .inp__text:focus {
-    border: 2px solid #60AD5E;
+    border: 2px solid #60ad5e;
   }
   .inp__text_green {
-    border: 1px solid #60AD5E;
+    border: 1px solid #60ad5e;
   }
   .inp__text_red {
     border: 1px solid red;
   }
 }
-
-/*# sourceMappingURL=cmInput.module.css.map */
