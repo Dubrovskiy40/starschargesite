@@ -84,15 +84,9 @@
     line-height: 9px;
   }
   .grid__restCell li img {
-    width: 35%;
+    min-width: 35%;
     height: unset;
     object-fit: cover;
-  }
-  .grid__firstCell {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 3;
   }
 }
 @media (min-width: 1200px) {
@@ -151,7 +145,7 @@
     line-height: 9px;
   }
   .grid__restCell li img {
-    width: 35%;
+    min-width: 35%;
     object-fit: cover;
   }
 }
@@ -183,3 +177,5 @@
     font-size: 10px;
   }
 }
+
+/*# sourceMappingURL=puzzle.module.css.map */

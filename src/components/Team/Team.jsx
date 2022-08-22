@@ -20,11 +20,13 @@ const Team = () => {
             teamsList?.map((man) => {
               return (
                 <li className="team__item" key={man.id}>
-                  <img className="team__img" src={man.imgPath} alt="avatar"/>
-                  <div className="team__item_overlay">
-                    <p className="team__item_fName">{man.firstName}</p>
-                    <p className="team__item_lName">{man.lastName}</p>
-                    <p className="team__item_post">{man.post}</p>
+                  <div>
+                    <img className="team__img" src={man.imgPath} alt="avatar"/>
+                    <div className="team__item_overlay">
+                      <p className="team__item_fName">{man.firstName}</p>
+                      <p className="team__item_lName">{man.lastName}</p>
+                      <p className="team__item_post">{man.post}</p>
+                    </div>
                   </div>
                 </li>
               )
