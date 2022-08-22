@@ -1,4 +1,6 @@
-const Menu = ({ items, active, setActive }) => {
+import {observer} from "mobx-react";
+
+const Menu = observer(({ items, active, setActive }) => {
   return (
     <nav className="header__nav" onClick={() => setActive(false)}>
       <ul className="header__nav-list" onClick={(e) => e.stopPropagation()}>
@@ -16,6 +18,6 @@ const Menu = ({ items, active, setActive }) => {
       </ul>
     </nav>
   );
-};
+});
 
 export default Menu;

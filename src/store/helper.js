@@ -6,16 +6,14 @@ export const POSTCORS = (data) => {
     body: JSON.stringify(data),
     headers: {
       "Content-Type": "application/json",
+      "X-ACCESS-TOKEN": process.env.REACT_APP_TOKEN,
     },
   };
 };
 
 export const CORS = {
-  // mode: "no-cors",
-  // method: "GET",
   headers: {
     "Content-Type": "application/json",
-    // "Access-Control-Allow-Origin": "http://localhost:3000",
-    // Origin: "http://localhost:3000",
+    "X-ACCESS-TOKEN": process.env.REACT_APP_TOKEN,
   },
 };

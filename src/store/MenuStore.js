@@ -27,7 +27,7 @@ class MenuStore {
         ); // сортировка
       });
     }
-    // console.log(itemRes)
+    // console.log('itemRes',itemRes)
     this.setLoading(false);
   };
 }
