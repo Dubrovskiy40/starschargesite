@@ -11,6 +11,7 @@ import {
 import MenuStore from "../../store/MenuStore";
 import { useEffect, useState } from "react";
 import Team from "../../components/Team/Team";
+import Table from "../../components/Table/Table"
 
 function Home() {
   const [itemslocal, setItemsLocal] = useState([]);
@@ -33,6 +34,7 @@ function Home() {
       <SwiperParallax menuName={itemslocal[1]} />
       <Cards menuName={itemslocal[2]} />
       <Team />
+      <Table />
       <MapContainer menuName={itemslocal[3]} />
       <Feedback />
       <ScrollButton />
