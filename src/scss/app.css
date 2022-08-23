@@ -804,12 +804,14 @@ button {
   color: #fff;
 }
 .team__list {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
-  grid-template-columns: repeat(auto-fit, 23%);
 }
 .team__item {
-  position: relative;
+  width: 300px;
+  height: 300px;
   transition: 0.5s;
   border: 4px solid #60ad5e;
   border-radius: 20px;
@@ -817,18 +819,24 @@ button {
   align-items: center;
   justify-content: center;
 }
-.team__img {
+.team__item > div {
   width: 250px;
   height: 250px;
+  position: relative;
   border-radius: 50%;
-  padding: 15px;
+}
+.team__img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
 }
 .team__item_overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 100%;
+  width: inherit;
+  height: inherit;
   background-color: rgba(58, 56, 56, 0.86);
   display: flex;
   flex-direction: column;
@@ -842,27 +850,93 @@ button {
   font-weight: 400;
   font-size: 24px;
   line-height: 28px;
-  color: #FFFFFF;
+  color: #fff;
   margin-bottom: 5px;
 }
 .team__item_lName {
   font-weight: 400;
   font-size: 24px;
   line-height: 28px;
-  color: #FFFFFF;
+  color: #fff;
   margin-bottom: 15px;
 }
 .team__item_post {
   font-weight: 400;
   font-size: 18px;
   line-height: 18px;
-  color: #FFFFFF;
+  color: #fff;
 }
 
 .team__item:hover .team__item_overlay {
   opacity: 1;
 }
 
+@media (max-width: 1190px) {
+  .team {
+    margin: 0 0 50px 0;
+  }
+  .team__title {
+    font-size: 38px;
+  }
+  .team__list {
+    gap: 20px;
+  }
+  .team__item {
+    width: 300px;
+    height: 300px;
+    border: 2px solid #60ad5e;
+    border-radius: 20px;
+  }
+  .team__item > div {
+    width: 250px;
+    height: 250px;
+  }
+  .team__item_fName {
+    font-size: 20px;
+    line-height: 21px;
+  }
+  .team__item_lName {
+    font-size: 20px;
+    line-height: 21px;
+  }
+  .team__item_post {
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
+@media (max-width: 768px) {
+  .team {
+    margin: 0 0 30px 0;
+  }
+  .team__title {
+    font-size: 18px;
+  }
+  .team__list {
+    gap: 15px;
+  }
+  .team__item {
+    width: 300px;
+    height: 300px;
+    border: 1px solid #60ad5e;
+    border-radius: 10px;
+  }
+  .team__item > div {
+    width: 250px;
+    height: 250px;
+  }
+  .team__item_fName {
+    font-size: 18px;
+    line-height: 18px;
+  }
+  .team__item_lName {
+    font-size: 18px;
+    line-height: 18px;
+  }
+  .team__item_post {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
 :root {
   /* Font Color */
   --light-theme: #f8f9fa;
@@ -984,6 +1058,14 @@ body {
     cursor: grab;
   }
 }
+.loader__wrap {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
   max-width: 1920px;
   margin: 0 auto;
@@ -1005,3 +1087,5 @@ body {
 .news {
   padding-top: 103px;
 }
+
+/*# sourceMappingURL=app.css.map */

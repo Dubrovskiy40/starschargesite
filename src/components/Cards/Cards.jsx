@@ -109,11 +109,9 @@ const Cards = (props) => {
   };
 
   useEffect(() => {
-    props.deviceType === "desctop"
-      ? setCountCard(4)
-      : props.deviceType === "tablet"
-      ? setCountCard(3)
-      : setCountCard(1);
+    if (props.deviceType === "desctop") {setCountCard(4)}
+    if (props.deviceType === "tablet") {setCountCard(3)}
+    if (props.deviceType === "mobile") {setCountCard(1)}
   }, [props.deviceType]);
 
   const handleAddCards = () => {
@@ -127,21 +125,29 @@ const Cards = (props) => {
     <section id={props.menuName} className="news">
       <div className="container">
         <Swiper
-          slidesPerView={countCard}
+          // slidesPerView={countCard}
           spaceBetween={25}
           pagination={pagination}
           modules={[Pagination]}
           className="mySwiper"
           enabled={false}
           breakpoints={{
-            1190: {
-              width: 1190,
+            0: {
               enabled: true,
+              slidesPerView: 1,
+              // direction: 'vertical'
             },
             768: {
               width: 768,
               enabled: true,
-              // direction: 'vertical'
+              slidesPerView: 4,
+              direction: 'horizontal'
+            },
+            1190: {
+              width: 1190,
+              enabled: true,
+              slidesPerView: 5,
+              direction: 'horizontal'
             },
           }}
         >
