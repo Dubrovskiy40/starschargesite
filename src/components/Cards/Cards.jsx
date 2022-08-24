@@ -125,7 +125,7 @@ const Cards = (props) => {
     <section id={props.menuName} className="news">
       <div className="container">
         <Swiper
-          // slidesPerView={countCard}
+          slidesPerView={countCard}
           spaceBetween={25}
           pagination={pagination}
           modules={[Pagination]}

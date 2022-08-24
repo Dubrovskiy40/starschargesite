@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import style from "./feedback.module.scss";
 import SuccessMessage from "./SuccessMessage/SuccessMessage";
 import Agreement from "./Agreement/Agreement";
@@ -10,6 +10,7 @@ import captchaImg from "../../assets/images/feedback/captcha.png";
 
 import { useTranslation } from "react-i18next";
 import "../../utils/i18next";
+import {logDOM} from "@testing-library/react";
 
 const Feedback = () => {
   const { t } = useTranslation();
@@ -85,9 +86,7 @@ const Feedback = () => {
         break;
       case "inpCaptcha":
         let resultСaptcha = captchaTest;
-        console.log("resultСaptcha", resultСaptcha);
-        console.log("case resultСaptcha", captcha.value);
-        setCaptcha({ isValid: !!resultСaptcha, value: value });
+        setCaptcha({isValid: !!resultСaptcha, value: value});
         setErrors({
           ...errors,
           captchaError: !resultСaptcha && t("feedback.inpCaptchaErrMess"),
@@ -122,9 +121,6 @@ const Feedback = () => {
       setCaptcha({ isValid: true, value: "" }); // пока true, переделать как будет бэк
     } else setShowSuccessBlock(false);
   };
-
-  // useEffect(() => {
-  // }, [name, tel, email, question, captcha]);
 
   return (
     <section className={style.feedback_wrap}>
