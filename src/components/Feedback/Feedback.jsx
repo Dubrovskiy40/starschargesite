@@ -37,7 +37,6 @@ const Feedback = () => {
   const regEmail =
     /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
   let questionTest = question.value.length > 10;
-  let captchaTest = captcha.value === "v4xBG"; // пока true, переделать как будет бэк
 
   function regValueTest(regExp, value) {
     if (!regExp.test(value)) {
@@ -84,15 +83,14 @@ const Feedback = () => {
         });
         break;
       case "inpCaptcha":
-        let resultСaptcha = captchaTest;
-        console.log("resultСaptcha", resultСaptcha);
-        console.log("case resultСaptcha", captcha.value);
-        setCaptcha({ isValid: !!resultСaptcha, value: value });
+        let isValid = value === "v4xBG"; // пока true, переделать как будет бэк
+        setCaptcha({ isValid, value });
         setErrors({
           ...errors,
-          captchaError: !resultСaptcha && t("feedback.inpCaptchaErrMess"),
+          captchaError: !isValid && t("feedback.inpCaptchaErrMess"),
         });
         break;
+      default: // линт выдает ошибку без этой строчки
     }
   };
 
