@@ -15,90 +15,6 @@ import '../../utils/i18next';
 const Cards = (props) => {
   const { t } = useTranslation();
 
-  const data = [
-    {
-      id: "1",
-      imgPath:
-        "https://thumbs.dreamstime.com/b/%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D0%B7%D0%B0%D1%80%D1%8F%D0%B4-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8F-%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%B0%D1%8F-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%B7%D0%B0%D1%80%D1%8F%D0%B4%D0%BD%D0%B0%D1%8F-222433714.jpg",
-      title: t("cards.data.title1"),
-      text: t("cards.data.text1"),
-      dataPublic: "16.07.2022",
-      cardPath: "",
-    },
-    {
-      id: "2",
-      imgPath:
-        "https://thumbs.dreamstime.com/b/%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D0%B7%D0%B0%D1%80%D1%8F%D0%B4-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8F-%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%B0%D1%8F-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%B7%D0%B0%D1%80%D1%8F%D0%B4%D0%BD%D0%B0%D1%8F-222433714.jpg",
-      title: t("cards.data.title2"),
-      text: t("cards.data.text2"),
-      dataPublic: "17.07.2022",
-      cardPath: "",
-    },
-    {
-      id: "3",
-      imgPath:
-        "https://thumbs.dreamstime.com/b/%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D0%B7%D0%B0%D1%80%D1%8F%D0%B4-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8F-%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%B0%D1%8F-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%B7%D0%B0%D1%80%D1%8F%D0%B4%D0%BD%D0%B0%D1%8F-222433714.jpg",
-      title: t("cards.data.title3"),
-      text: t("cards.data.text3"),
-      dataPublic: "18.07.2022",
-      cardPath: "",
-    },
-    {
-      id: "4",
-      imgPath:
-        "https://thumbs.dreamstime.com/b/%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D0%B7%D0%B0%D1%80%D1%8F%D0%B4-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8F-%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%B0%D1%8F-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%B7%D0%B0%D1%80%D1%8F%D0%B4%D0%BD%D0%B0%D1%8F-222433714.jpg",
-      title: t("cards.data.title4"),
-      text: t("cards.data.text4"),
-      dataPublic: "19.07.2022",
-      cardPath: "",
-    },
-    {
-      id: "5",
-      imgPath:
-        "https://thumbs.dreamstime.com/b/%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D0%B7%D0%B0%D1%80%D1%8F%D0%B4-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8F-%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%B0%D1%8F-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%B7%D0%B0%D1%80%D1%8F%D0%B4%D0%BD%D0%B0%D1%8F-222433714.jpg",
-      title: t("cards.data.title5"),
-      text: t("cards.data.text5"),
-      dataPublic: "20.07.2022",
-      cardPath: "",
-    },
-    {
-      id: "6",
-      imgPath:
-        "https://thumbs.dreamstime.com/b/%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D0%B7%D0%B0%D1%80%D1%8F%D0%B4-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8F-%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%B0%D1%8F-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%B7%D0%B0%D1%80%D1%8F%D0%B4%D0%BD%D0%B0%D1%8F-222433714.jpg",
-      title: t("cards.data.title6"),
-      text: t("cards.data.text6"),
-      dataPublic: "21.07.2022",
-      cardPath: "",
-    },
-    {
-      id: "7",
-      imgPath:
-        "https://thumbs.dreamstime.com/b/%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D0%B7%D0%B0%D1%80%D1%8F%D0%B4-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8F-%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%B0%D1%8F-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%B7%D0%B0%D1%80%D1%8F%D0%B4%D0%BD%D0%B0%D1%8F-222433714.jpg",
-      title: t("cards.data.title7"),
-      text: t("cards.data.text7"),
-      dataPublic: "22.07.2022",
-      cardPath: "",
-    },
-    {
-      id: "8",
-      imgPath:
-        "https://thumbs.dreamstime.com/b/%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D0%B7%D0%B0%D1%80%D1%8F%D0%B4-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8F-%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%B0%D1%8F-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%B7%D0%B0%D1%80%D1%8F%D0%B4%D0%BD%D0%B0%D1%8F-222433714.jpg",
-      title: t("cards.data.title8"),
-      text: t("cards.data.text8"),
-      dataPublic: "23.07.2022",
-      cardPath: "",
-    },
-    {
-      id: "9",
-      imgPath:
-        "https://thumbs.dreamstime.com/b/%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D0%B7%D0%B0%D1%80%D1%8F%D0%B4-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8F-%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%B0%D1%8F-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%B7%D0%B0%D1%80%D1%8F%D0%B4%D0%BD%D0%B0%D1%8F-222433714.jpg",
-      title: t("cards.data.title9"),
-      text: t("cards.data.text9"),
-      dataPublic: "24.07.2022",
-      cardPath: "",
-    },
-  ];
-
   const [countCard, setCountCard] = useState(4);
 
   const pagination = props.deviceType !== "mobile" && {
@@ -109,15 +25,15 @@ const Cards = (props) => {
   };
 
   useEffect(() => {
-    if (props.deviceType === "desctop") {setCountCard(4)}
-    if (props.deviceType === "tablet") {setCountCard(3)}
-    if (props.deviceType === "mobile") {setCountCard(1)}
+    if (props.deviceType === "desctop") { setCountCard(4) }
+    if (props.deviceType === "tablet") { setCountCard(3) }
+    if (props.deviceType === "mobile") { setCountCard(1) }
   }, [props.deviceType]);
 
   const handleAddCards = () => {
     console.log("загрузить еще карточки");
-    if (data.length > countCard) {
-      setCountCard((prevState) => ++prevState );
+    if (props.cardsList.length > countCard) {
+      setCountCard((prevState) => ++prevState);
     }
   };
 
@@ -151,16 +67,16 @@ const Cards = (props) => {
             },
           }}
         >
-          {data?.map((card) => {
+          {props.cardsList?.map((card) => {
             return (
               <SwiperSlide key={card.id}>
                 <div className="card">
                   <img className="card__img" src={card.imgPath} alt="img" />
                   <div className="card__text_block">
-                    <h3 className="card__title">{card.title}</h3>
+                    <h3 className="card__title">{card.header}</h3>
                     <p className="card__text">{card.text}</p>
                     <div>
-                      <span className="card__data">{card.dataPublic}</span>
+                      <span className="card__data">{card.date}</span>
                     </div>
                   </div>
                 </div>

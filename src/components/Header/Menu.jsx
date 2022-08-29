@@ -5,7 +5,6 @@ const Menu = observer(({ items, active, setActive }) => {
     <nav className="header__nav" onClick={() => setActive(false)}>
       <ul className="header__nav-list" onClick={(e) => e.stopPropagation()}>
         {items
-          .filter((item) => item.show_menu)
           .map((item, index) => (
             <li
               key={index}

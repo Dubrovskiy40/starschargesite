@@ -18,13 +18,14 @@ class MenuStore {
   };
 
   fetchMenuItems = async () => {
-    const itemReq = await fetch(`${host}/GetMenuList`, CORS);
+    const itemReq = await fetch(`${host}/GetContent`, CORS);
     const itemRes = await itemReq.json();
     if (itemReq.ok && itemRes !== null) {
       runInAction(() => {
-        this.items = itemRes.sort(
-          (prev, next) => prev.menu_order - next.menu_order
-        ); // сортировка
+        this.items = itemRes
+          .sort(
+            (prev, next) => prev.menu_order - next.menu_order
+          ); // сортировка
       });
     }
     // console.log('itemRes',itemRes)

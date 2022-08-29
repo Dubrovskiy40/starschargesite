@@ -13,7 +13,7 @@ const CardForPuzzle = ({ id, imgPath, title, paragraph, dataPublic }) => {
                     </h3>
                     <p className={Style.card__paragraph}>
                         {paragraph}
-                    </p> 
+                    </p>
                     <span className={Style.card__data}>
                         {dataPublic}
                     </span>

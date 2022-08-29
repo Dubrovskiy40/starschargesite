@@ -21,22 +21,6 @@ export default function SwiperLine(props) {
         <SwiperSlide>
           <Puzzle />
         </SwiperSlide>
-
-        <SwiperSlide>
-          <Puzzle />
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <Puzzle />
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <Puzzle />
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <Puzzle />
-        </SwiperSlide>
       </Swiper>
     </>
   );
