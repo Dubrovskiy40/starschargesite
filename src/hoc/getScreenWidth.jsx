@@ -20,7 +20,6 @@ export function getScreenWidth(Component) {
       } else {
         setDeviceType("mobile");
       }
-
       return () => window.removeEventListener("resize", updateDimensions);
     }, [widthScreen]);
 
