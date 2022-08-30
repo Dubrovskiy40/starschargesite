@@ -45,7 +45,7 @@ const CmInput = ({isInput, id, name, type, value, placeholder, minLength, maxLen
               maxLength={maxLength}
               required={required}
               onChange={_onChange}
-          />
+            />
       }
     </div>
   );
