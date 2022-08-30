@@ -10,7 +10,7 @@ import "swiper/scss";
 import "swiper/scss/pagination";
 
 import { useTranslation } from "react-i18next";
-import '../../utils/i18next';
+import "../../utils/i18next";
 
 const Cards = (props) => {
   const { t } = useTranslation();
@@ -25,9 +25,18 @@ const Cards = (props) => {
   };
 
   useEffect(() => {
-    if (props.deviceType === "desctop") { setCountCard(4) }
-    if (props.deviceType === "tablet") { setCountCard(3) }
-    if (props.deviceType === "mobile") { setCountCard(1) }
+    if (props.deviceType === "superdesctop") {
+      setCountCard(4);
+    }
+    if (props.deviceType === "desctop") {
+      setCountCard(4);
+    }
+    if (props.deviceType === "tablet") {
+      setCountCard(3);
+    }
+    if (props.deviceType === "mobile") {
+      setCountCard(1);
+    }
   }, [props.deviceType]);
 
   const handleAddCards = () => {
@@ -57,13 +66,13 @@ const Cards = (props) => {
               width: 768,
               enabled: true,
               slidesPerView: 4,
-              direction: 'horizontal'
+              direction: "horizontal",
             },
             1190: {
               width: 1190,
               enabled: true,
               slidesPerView: 5,
-              direction: 'horizontal'
+              direction: "horizontal",
             },
           }}
         >

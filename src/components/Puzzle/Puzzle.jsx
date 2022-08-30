@@ -12,8 +12,8 @@ const getCards = (currentCard, visibleCards, cardsList) => {
           index === currentCard
             ? Style.grid__firstCell
             : (index === currentCard + 1) & (visibleCards === 4)
-              ? Style.grid__secondCell
-              : Style.grid__restCell
+            ? Style.grid__secondCell
+            : Style.grid__restCell
         }
       >
         <CardForPuzzle
@@ -30,24 +30,29 @@ const getCards = (currentCard, visibleCards, cardsList) => {
 };
 
 const Puzzle = (props) => {
-
   const [currentCard, setcurrentCard] = useState(0);
   const [visibleCards, setCountCard] = useState(1);
   useEffect(() => {
     props.deviceType === "desctop"
       ? setCountCard(4)
       : props.deviceType === "tablet"
-        ? setCountCard(5)
-        //: props.deviceType === "superdesctop"
-        //? setCountCard(8)
-        : setCountCard(3);
+      ? setCountCard(5)
+      : props.deviceType === "superdesctop"
+      ? setCountCard(8)
+      : setCountCard(3);
   }, [props.deviceType]);
 
   return (
     <>
       <section id={props.menuName} />
       <div className="container">
-        <div className={Style.grid}>{getCards(currentCard, Math.min(visibleCards, props.cardsList.length), props.cardsList)}</div>
+        <div className={Style.grid}>
+          {getCards(
+            currentCard,
+            Math.min(visibleCards, props.cardsList.length),
+            props.cardsList
+          )}
+        </div>
         <button
           onClick={() =>
             currentCard === 0
@@ -69,7 +74,6 @@ const Puzzle = (props) => {
         >
           &gt;
         </button>
-
       </div>
     </>
   );
