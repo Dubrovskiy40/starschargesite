@@ -21,7 +21,6 @@ export function getScreenWidth(Component) {
       if (widthScreen <= 768) {
         setDeviceType("mobile");
       }
-
       return () => window.removeEventListener("resize", updateDimensions);
     }, []);
 
