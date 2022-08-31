@@ -7,7 +7,7 @@ import AgreementText from "./AgreementText/AgreementText";
 import { CmError } from "./CmError/CmError";
 import CmInput from "./CmInput/CmInput";
 import captchaImg from "../../assets/images/feedback/captcha.png";
-
+import carImg from '../../assets/images/feedback/Car.png';
 import { useTranslation } from "react-i18next";
 import "../../utils/i18next";
 import { logDOM } from "@testing-library/react";
@@ -126,141 +126,148 @@ const Feedback = () => {
     <section className={style.feedback_wrap}>
       <div className="container">
         <h1 className={style.feedback__title}>{t("feedback.title")}</h1>
-        <form
-          className={style.feedback}
-          id="feedback-form"
-          onSubmit={handleSubmitForm}
-        >
-          <div
-            className={`${style.feedback__inp_wrap} ${style.feedback__grid1}`}
-          >
-            <label className={style.feedback__label} htmlFor="inpName">
-              {t("feedback.labelName")}:
-            </label>
-            <CmInput
-              isInput={true}
-              id="inpName"
-              name="inpName"
-              type="text"
-              value={name.value}
-              placeholder={t("feedback.placeholderName")}
-              minLength={2}
-              maxLength={30}
-              required={true}
-              isValid={name.isValid}
-              onChange={onChangeInput}
-            />
-            <CmError error={errors["nameError"]} />
-          </div>
-          <div
-            className={`${style.feedback__inp_wrap} ${style.feedback__grid2}`}
-          >
-            <label className={style.feedback__label} htmlFor="inpTel">
-              {t("feedback.labelPhone")}:
-            </label>
-            <CmInput
-              isInput={true}
-              id="inpTel"
-              name="inpTel"
-              type="tel"
-              value={tel.value}
-              placeholder={t("feedback.placeholderPhone")}
-              minLength={10}
-              maxLength={18}
-              required={true}
-              isValid={tel.isValid}
-              onChange={onChangeInput}
-            />
-            <CmError error={errors["telError"]} />
-          </div>
-          <div
-            className={`${style.feedback__inp_wrap} ${style.feedback__grid3}`}
-          >
-            <label className={style.feedback__label} htmlFor="inpMail">
-              {t("feedback.labelEmail")}:
-            </label>
-            <CmInput
-              isInput={true}
-              id="inpEmail"
-              name="inpEmail"
-              type="email"
-              value={email.value}
-              placeholder={t("feedback.placeholderEmail")}
-              required={true}
-              isValid={email.isValid}
-              onChange={onChangeInput}
-            />
-            <CmError error={errors["emailError"]} />
-          </div>
-          <div
-            className={`${style.feedback__inp_wrap} ${style.feedback__grid4}`}
-          >
-            <label className={style.feedback__label} htmlFor="inpArea">
-              {t("feedback.labelArea")}:
-            </label>
-            <CmInput
-              isInput={false}
-              id="inpArea"
-              name="inpArea"
-              value={question.value}
-              placeholder={t("feedback.placeholderArea")}
-              rows="5"
-              cols="30"
-              minLength={10}
-              maxLength={300}
-              required={true}
-              isValid={question.isValid}
-              onChange={onChangeInput}
-            />
-            <CmError error={errors["textareaError"]} />
-          </div>
-          {/*Капча*/}
-          <div className={`${style.captcha} ${style.feedback__grid5}`}>
-            <img className={style.captcha__img} src={captchaImg} alt="капча" />
-            <CmInput
-              isInput={true}
-              id="inpCaptcha"
-              name="inpCaptcha"
-              type="text"
-              value={captcha.value}
-              placeholder={t("feedback.placeholderCaptcha")}
-              required={true}
-              isValid={captcha.isValid}
-              onChange={onChangeInput}
-            />
-            <CmError error={errors["captchaError"]} />
-            {/*<input className={style.captcha__inp}onChange={(e => setCaptcha({...captcha, value: e.target.value}))} required={true} />*/}
-          </div>
-          {/*Пользовательское соглашение. Персональные данные*/}
-          <div
-            className={`${style.feedback__btn_wrap} ${style.feedback__grid6}`}
-          >
-            <Agreement
-              openModalWindow={setOpenModalWindow}
-              isReadAgreement={isReadAgreement}
-              setIsReadAgreement={setIsReadAgreement}
-            />
-            <button
-              className={style.feedback__btn}
-              type="submit"
-              disabled={!isReadAgreement ? true : false}
+        <div className={style.feedback__content}>
+          <div className={style.feedback__form_wrap}>
+            <form
+              className={style.feedback}
+              id="feedback-form"
+              onSubmit={handleSubmitForm}
             >
-              {t("feedback.buttonName")}
-            </button>
+              <div
+                className={`${style.feedback__inp_wrap} ${style.feedback__grid1}`}
+              >
+                <label className={style.feedback__label} htmlFor="inpName">
+                  {t("feedback.labelName")}:
+                </label>
+                <CmInput
+                  isInput={true}
+                  id="inpName"
+                  name="inpName"
+                  type="text"
+                  value={name.value}
+                  placeholder={t("feedback.placeholderName")}
+                  minLength={2}
+                  maxLength={30}
+                  required={true}
+                  isValid={name.isValid}
+                  onChange={onChangeInput}
+                />
+                <CmError error={errors["nameError"]} />
+              </div>
+              <div
+                className={`${style.feedback__inp_wrap} ${style.feedback__grid2}`}
+              >
+                <label className={style.feedback__label} htmlFor="inpTel">
+                  {t("feedback.labelPhone")}:
+                </label>
+                <CmInput
+                  isInput={true}
+                  id="inpTel"
+                  name="inpTel"
+                  type="tel"
+                  value={tel.value}
+                  placeholder={t("feedback.placeholderPhone")}
+                  minLength={10}
+                  maxLength={18}
+                  required={true}
+                  isValid={tel.isValid}
+                  onChange={onChangeInput}
+                />
+                <CmError error={errors["telError"]} />
+              </div>
+              <div
+                className={`${style.feedback__inp_wrap} ${style.feedback__grid3}`}
+              >
+                <label className={style.feedback__label} htmlFor="inpMail">
+                  {t("feedback.labelEmail")}:
+                </label>
+                <CmInput
+                  isInput={true}
+                  id="inpEmail"
+                  name="inpEmail"
+                  type="email"
+                  value={email.value}
+                  placeholder={t("feedback.placeholderEmail")}
+                  required={true}
+                  isValid={email.isValid}
+                  onChange={onChangeInput}
+                />
+                <CmError error={errors["emailError"]} />
+              </div>
+              <div
+                className={`${style.feedback__inp_wrap} ${style.feedback__grid4}`}
+              >
+                <label className={style.feedback__label} htmlFor="inpArea">
+                  {t("feedback.labelArea")}:
+                </label>
+                <CmInput
+                  isInput={false}
+                  id="inpArea"
+                  name="inpArea"
+                  value={question.value}
+                  placeholder={t("feedback.placeholderArea")}
+                  rows="5"
+                  cols="30"
+                  minLength={10}
+                  maxLength={300}
+                  required={true}
+                  isValid={question.isValid}
+                  onChange={onChangeInput}
+                />
+                <CmError error={errors["textareaError"]} />
+              </div>
+              {/*Капча*/}
+              <div className={`${style.captcha} ${style.feedback__grid5}`}>
+                <img className={style.captcha__img} src={captchaImg} alt="капча" />
+                <CmInput
+                  isInput={true}
+                  id="inpCaptcha"
+                  name="inpCaptcha"
+                  type="text"
+                  value={captcha.value}
+                  placeholder={t("feedback.placeholderCaptcha")}
+                  required={true}
+                  isValid={captcha.isValid}
+                  onChange={onChangeInput}
+                />
+                <CmError error={errors["captchaError"]} />
+                {/*<input className={style.captcha__inp}onChange={(e => setCaptcha({...captcha, value: e.target.value}))} required={true} />*/}
+              </div>
+              {/*Пользовательское соглашение. Персональные данные*/}
+              <div
+                className={`${style.feedback__btn_wrap} ${style.feedback__grid6}`}
+              >
+                <Agreement
+                  openModalWindow={setOpenModalWindow}
+                  isReadAgreement={isReadAgreement}
+                  setIsReadAgreement={setIsReadAgreement}
+                />
+                <button
+                  className={style.feedback__btn}
+                  type="submit"
+                  disabled={!isReadAgreement ? true : false}
+                >
+                  {t("feedback.buttonName")}
+                </button>
+              </div>
+            </form>
+            {/*/Сообщение об успешной отправки формы*/}
+            {showSuccessBlock && (
+              <div className={style.feedback__message_wrap}>
+                <SuccessMessage successfullySent={successfullySent} />
+              </div>
+            )}
+            <ModalWindow
+              openModalWindow={openModalWindow}
+              setOpenModalWindow={setOpenModalWindow}
+            >
+              <AgreementText />
+            </ModalWindow>
           </div>
-        </form>
-        {/*/Сообщение об успешной отправки формы*/}
-        {showSuccessBlock && (
-          <div className={style.feedback__message_wrap}>
-            <SuccessMessage successfullySent={successfullySent} />
+          <div className={style.feedback__img_wrap}>
+            <img className={style.feedback__img} src={carImg} alt="car"/>
           </div>
-        )}
-        <ModalWindow
-          openModalWindow={openModalWindow}
-          setOpenModalWindow={setOpenModalWindow}
-        >
-          <AgreementText />
-        </ModalWindow>
+        </div>
       </div>
     </section>
   );

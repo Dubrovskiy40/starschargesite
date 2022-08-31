@@ -9,7 +9,15 @@
   font-weight: 700;
   font-size: 52px;
   line-height: 100%;
-  color: #ffffff;
+  color: #fff;
+}
+
+.feedback__content {
+  display: flex;
+}
+
+.feedback__form_wrap {
+  width: 100%;
 }
 
 .feedback {
@@ -17,7 +25,7 @@
   grid-template-columns: repeat(2, 1fr);
   row-gap: 56px;
   column-gap: 24px;
-  max-width: 58%;
+  margin-right: 25px;
 
   &__inp_wrap {
     display: flex;
@@ -30,7 +38,7 @@
     font-weight: 400;
     font-size: 24px;
     line-height: 28px;
-    color: #ffffff;
+    color: #fff;
   }
 
   &__btn_wrap {
@@ -110,6 +118,14 @@
     color: #fff;
     background: #333333;
   }
+}
+
+.feedback__img_wrap {
+  width: 100%;
+}
+
+.feedback__img {
+  width: inherit;
 }
 
 @media (max-width: 1190px) {

@@ -9,14 +9,14 @@ const Table = (props) => {
             return (
               <a
                 className={Style.cell}
-                key={card.id}
+                // key={card.id}
                 href="https://www.asus.com/ru/"
                 target="_blank"
                 rel="noreferrer"
               >
                 <img
                   className={Style.img}
-                  src={card.imgPath}
+                  // src={card.imgPath}
                   alt="product img"
                 ></img>
                 <h3 className={Style.title}>{content.header}</h3>

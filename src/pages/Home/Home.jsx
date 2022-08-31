@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import Team from "../../components/Team/Team";
 import Table from "../../components/Table/Table";
 import { getCardUtilityClass } from "@mui/material";
+import Statistics from "../../components/Statistics/Statistics";
 
 function Home() {
   const [itemslocal, setItemsLocal] = useState([]);
@@ -48,6 +49,7 @@ function Home() {
           )
         );
       })}
+      <Statistics />
       <Feedback />
       <ScrollButton />
       <Footer />
