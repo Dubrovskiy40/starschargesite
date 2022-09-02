@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 // import Team from "../../components/Team/Team";
 import Table from "../../components/Table/Table";
 import App from "../../components/App/App"
+import Team from "../../components/Team/Team"
 // import { getCardUtilityClass } from "@mui/material";
 
 function Home() {
@@ -50,6 +51,7 @@ function Home() {
         );
       })}
       <App />
+      <Team />
       <Feedback />
       <ScrollButton />
       <Footer />
