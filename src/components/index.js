@@ -8,3 +8,4 @@ export { default as Statistics } from "./Statistics/Statistics";
 export { default as MapContainer } from "./MapContainer/MapContainer";
 // export { default as SwiperParallax } from "./SwiperParallax/SwiperParallax";
 export { default as SwiperLine } from "./SwiperLine/Swiper";
+export { default as App } from "./App/App";

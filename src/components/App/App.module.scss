@@ -1,0 +1,30 @@
+.app_wrapper {
+  padding: 64px;
+  border-radius: 20px;
+  background-color: #333333;
+}
+
+.app {  
+  &__title {
+    margin-bottom: 32px;
+  }
+
+  &__descr {
+    margin-right: 74px;
+  }
+  
+  &__text {
+    margin-bottom: 64px;
+  }
+
+  &__link {
+    display: inline-block;
+    border-radius: 35px;
+    padding: 18px 38px;
+    background-color: #000000;
+  }
+
+  &__appStore_link {
+    margin-right: 16px;
+  }
+}
