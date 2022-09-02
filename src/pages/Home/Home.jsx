@@ -3,16 +3,17 @@ import {
   Header,
   Feedback,
   Puzzle,
-  SwiperParallax,
-  MapContainer,
+  // SwiperParallax,
+  // MapContainer,
   ScrollButton,
   Footer,
 } from "../../components";
 import MenuStore from "../../store/MenuStore";
 import { useEffect, useState } from "react";
-import Team from "../../components/Team/Team";
+// import Team from "../../components/Team/Team";
 import Table from "../../components/Table/Table";
-import { getCardUtilityClass } from "@mui/material";
+import App from "../../components/App/App"
+// import { getCardUtilityClass } from "@mui/material";
 
 function Home() {
   const [itemslocal, setItemsLocal] = useState([]);
@@ -48,6 +49,7 @@ function Home() {
           )
         );
       })}
+      <App />
       <Feedback />
       <ScrollButton />
       <Footer />

@@ -1,11 +1,11 @@
 import Style from "./table.module.scss";
 
-const Table = (props) => {
+const Table = (card) => {
   return (
-    <section id={props.menuName} className="table">
+    <section id={card.menuName} className="table">
       <div className="container">
         <ul className={Style.tableGrid}>
-          {props.cardsList?.map((content) => {
+          {card.cardsList?.map((content) => {
             return (
               <a
                 className={Style.cell}
