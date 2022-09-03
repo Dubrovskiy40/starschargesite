@@ -1061,7 +1061,7 @@ body {
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;
-  color: #fff;
+  color: #ffffff;
 }
 .agreement__link:hover {
   cursor: pointer;
@@ -1069,64 +1069,56 @@ body {
 
 @media (max-width: 1190px) {
   .agreement__link {
-    font-size: 18px;
-    line-height: 21px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
   }
 }
 @media (max-width: 768px) {
   .agreement__link {
-    font-size: 14px;
-    line-height: 16px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
   }
 }
 .agreementText {
-  color: #000000;
+  color: #202020;
 }
 
 .title {
   text-align: center;
   font-weight: 700;
-  font-size: 52px;
+  font-size: 36px;
   line-height: 100%;
-  color: #000;
+  color: #202020;
 }
 
 .subtitle {
-  font-weight: 700;
-  font-size: 38px;
-  line-height: 100%;
-  color: #000;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #202020;
 }
 
 .text {
   font-weight: 400;
-  font-size: 24px;
-  line-height: 28px;
-  color: #000;
+  font-size: 16px;
+  line-height: 14px;
+  color: #202020;
 }
 
 @media (max-width: 1190px) {
-  .title {
-    font-size: 38px;
-  }
-  .subtitle {
-    font-size: 24px;
-  }
   .text {
-    font-size: 18px;
-    line-height: 21px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
   }
 }
 @media (max-width: 768px) {
-  .title {
-    font-size: 18px;
-  }
-  .subtitle {
-    font-size: 16px;
-  }
   .text {
-    font-size: 14px;
-    line-height: 16px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
   }
 }
 .error__text {
@@ -1139,6 +1131,7 @@ body {
 
 @media (max-width: 768px) {
   .error__text {
+    font-weight: 400;
     font-size: 10px;
     line-height: 12px;
     margin: 2px 0 5px;
@@ -1152,8 +1145,8 @@ body {
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;
-  color: #fff;
-  background: #333;
+  color: #ffffff;
+  background: #333333;
 }
 .inp__text:focus {
   border: 4px solid #60AD5E;
@@ -1175,8 +1168,8 @@ body {
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;
-  color: #fff;
-  background: #333;
+  color: #ffffff;
+  background: #333333;
 }
 
 @media (max-width: 1190px) {
@@ -1212,14 +1205,14 @@ body {
   display: block;
 }
 .successMessage__block_green {
-  color: green;
+  color: #005005;
 }
 .successMessage__block_red {
   color: red;
 }
 .feedback_wrap {
-  background: #333;
-  color: #fff;
+  background: #333333;
+  color: #ffffff;
   padding: 83px 0 57px;
 }
 
@@ -1228,7 +1221,7 @@ body {
   font-weight: 700;
   font-size: 36px;
   line-height: 100%;
-  color: #fff;
+  color: #ffffff;
 }
 
 .feedback__content {
@@ -1259,22 +1252,22 @@ body {
   justify-content: flex-end;
 }
 .feedback__btn {
-  width: 100%;
+  width: 281px;
   margin-top: 10px;
   border-radius: 20px;
-  border: 2px solid #60ad5e;
+  border: 2px solid #60AD5E;
   padding: 16px 0;
   font-weight: 400;
   font-size: 24px;
   line-height: 28px;
-  color: #fff;
-  background: #60ad5e;
+  color: #ffffff;
+  background: #60AD5E;
 }
 .feedback__btn:hover {
   cursor: pointer;
-  background: #fff;
-  color: #60ad5e;
-  border: 4px solid #60ad5e;
+  background: #ffffff;
+  color: #60AD5E;
+  border: 4px solid #60AD5E;
 }
 .feedback__grid1 {
   grid-column: 1/3;
@@ -1312,13 +1305,13 @@ body {
 .captcha__inp {
   width: 100%;
   padding: 22px 0 22px 31px;
-  border: 4px solid #60ad5e;
+  border: 4px solid #60AD5E;
   border-radius: 15px;
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;
-  color: #fff;
-  background: #333;
+  color: #ffffff;
+  background: #333333;
 }
 
 @media (max-width: 1190px) {
@@ -1354,7 +1347,7 @@ body {
   .captcha__inp {
     width: 100%;
     padding: 15px 0 15px 15px;
-    border: 2px solid #60ad5e;
+    border: 2px solid #60AD5E;
   }
 }
 @media (max-width: 768px) {
@@ -1378,7 +1371,7 @@ body {
     margin-top: 10px;
     border-radius: 10px;
     padding: 15px 15px;
-    border: 1px solid #60ad5e;
+    border: 1px solid #60AD5E;
     font-size: 14px;
     line-height: 16px;
   }
@@ -1392,7 +1385,7 @@ body {
     width: 100%;
     border-radius: 10px;
     padding: 15px 0 15px 15px;
-    border: 1px solid #60ad5e;
+    border: 1px solid #60AD5E;
   }
 }
 .container {

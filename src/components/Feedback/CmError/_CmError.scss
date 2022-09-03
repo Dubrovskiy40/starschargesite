@@ -1,16 +1,12 @@
 .error__text {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 14px;
-  color: red;
+  @include font_16;
+  color: $color-red;
   margin: 5px 0 10px;
-
 }
 
 @media (max-width: 768px) {
   .error__text {
-    font-size: 10px;
-    line-height: 12px;
+    @include font_10;
     margin: 2px 0 5px;
   }
 }

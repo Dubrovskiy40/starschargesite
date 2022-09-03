@@ -1,55 +1,47 @@
 .agreementText {
-  color: #000000;
+  color: $color-black;
 }
 
 .title {
   text-align: center;
-  font-weight: 700;
-  font-size: 52px;
-  line-height: 100%;
-  color: #000;
+  @include font_36;
+  color: $color-black;
 }
 
 .subtitle {
-  font-weight: 700;
-  font-size: 38px;
-  line-height: 100%;
-  color: #000;
+  @include font_24;
+  color: $color-black;
 }
 
 .text{
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 28px;
-  color: #000;
+  @include font_16;
+  color: $color-black;
 }
 
 @media (max-width: 1190px) {
   .title {
-    font-size: 38px;
+    //font-size: 38px;
   }
 
   .subtitle {
-    font-size: 24px;
+    //font-size: 24px;
   }
 
   .text{
-    font-size: 18px;
-    line-height: 21px;
+    @include font_10;;
   }
 }
 
 @media (max-width: 768px) {
   .title {
-    font-size: 18px;
+    //font-size: 18px;
   }
 
   .subtitle {
-    font-size: 16px;
+    //font-size: 16px;
   }
 
   .text{
-    font-size: 14px;
-    line-height: 16px;
+    @include font_10;
   }
 }

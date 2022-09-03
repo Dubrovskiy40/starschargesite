@@ -5,17 +5,15 @@
 @import "./SuccessMessage/SuccessMessage";
 
 .feedback_wrap {
-  background: #333;
-  color: #fff;
+  background: $color-grey;
+  color: $color-white;
   padding: 83px 0 57px;
 }
 
 .feedback__title {
   margin-bottom: 65px;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 100%;
-  color: #fff;
+  @include font_36;
+  color: $color-white;
 }
 
 .feedback__content {
@@ -48,22 +46,20 @@
   }
 
   &__btn {
-    width: 100%;
+    width: 281px;
     margin-top: 10px;
     border-radius: 20px;
-    border: 2px solid #60ad5e;
+    border: 2px solid $color-salad;
     padding: 16px 0;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 28px;
-    color: #fff;
-    background: #60ad5e;
+    @include font_24;
+    color: $color-white;
+    background: $color-salad;
 
     &:hover {
       cursor: pointer;
-      background: #fff;
-      color: #60ad5e;
-      border: 4px solid #60ad5e;
+      background: $color-white;
+      color: $color-salad;
+      border: 4px solid $color-salad;
     }
   }
 
@@ -100,7 +96,6 @@
 
 .captcha {
   display: flex;
-  //max-width: 441px;
 
   &__img {
     margin-right: 25px;
@@ -111,13 +106,11 @@
   &__inp {
     width: 100%;
     padding: 22px 0 22px 31px;
-    border: 4px solid #60ad5e;
+    border: 4px solid $color-salad;
     border-radius: 15px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 100%;
-    color: #fff;
-    background: #333;
+    @include font_14;
+    color: $color-white;
+    background: $color-grey;
   }
 }
 
@@ -158,7 +151,7 @@
     &__inp {
       width: 100%;
       padding: 15px 0 15px 15px;
-      border: 2px solid #60ad5e;
+      border: 2px solid $color-salad;
     }
   }
 }
@@ -186,7 +179,7 @@
       margin-top: 10px;
       border-radius: 10px;
       padding: 15px 15px;
-      border: 1px solid #60ad5e;
+      border: 1px solid $color-salad;
       font-size: 14px;
       line-height: 16px;
     }
@@ -202,7 +195,7 @@
       width: 100%;
       border-radius: 10px;
       padding: 15px 0 15px 15px;
-      border: 1px solid #60ad5e;
+      border: 1px solid $color-salad;
     }
   }
 }

@@ -2,10 +2,8 @@
 
   &__link {
     margin-left: 5px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 100%;
-    color: #fff;
+    @include font_14;
+    color: $color-white;
 
     &:hover {
       cursor: pointer;
@@ -15,14 +13,12 @@
 
 @media (max-width: 1190px) {
   .agreement__link {
-    font-size: 18px;
-    line-height: 21px;
+    @include font_10;
   }
 }
 
 @media (max-width: 768px) {
   .agreement__link {
-    font-size: 14px;
-    line-height: 16px;
+    @include font_10;
   }
 }
