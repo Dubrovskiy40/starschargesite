@@ -1,12 +1,11 @@
 import React from 'react';
-import style from './successMessage.module.scss';
 
 const SuccessMessage = ({ successfullySent }) => {
 
     return (
-      <div className={style.successMessage}>
+      <div className="successMessage">
         <div
-          className={`${style.successMessage__block} ${successfullySent ? style.successMessage__block_green : style.successMessage__block_red}`}>
+          className="successMessage__block ${successfullySent ? successMessage__block_green : successMessage__block_red}">
           {successfullySent ? 'Форма успешно отправлена.' : 'Форма не отправлена. Устраните ошибки и повторите отправку.'}
         </div>
       </div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import style from './agreement.module.scss';
 
 import { useTranslation } from "react-i18next";
 import '../../../utils/i18next';
@@ -13,10 +12,10 @@ const Agreement = ({ openModalWindow, isReadAgreement, setIsReadAgreement }) => 
     };
 
     return (
-        <div className={style.agreement}>
+        <div className="agreement">
             <label htmlFor="checkInp">
                 <input id="checkInp" type="checkbox" readOnly checked={isReadAgreement ? true : false} />
-                <span className={style.agreement__link} onClick={handleOpen}>{t("feedback.termsOfUse")}</span>
+                <span className="agreement__link" onClick={handleOpen}>{t("feedback.termsOfUse")}</span>
             </label>
         </div>
     );
