@@ -71,7 +71,7 @@ const Cards = (props) => {
             return (
               <SwiperSlide key={card.id}>
                 <div className="card">
-                  <img className="card__img" src={card.imgPath} alt="img" />
+                  <img className="card__img" src={`data:image/jpeg;base64,${card.img}`} alt="img" />
                   <div className="card__text_block">
                     <h3 className="card__title">{card.header}</h3>
                     <p className="card__text">{card.text}</p>

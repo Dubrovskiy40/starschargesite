@@ -4,21 +4,20 @@ import { useState, useEffect } from "react";
 
 const getCards = (currentCard, visibleCards, cardsList) => {
   let content = [];
-
   for (let index = currentCard; index < currentCard + visibleCards; index++) {
     content.push(
       <div
         className={
           index === currentCard
             ? Style.grid__firstCell
-            : (index === currentCard + 1) & (visibleCards === 4)
+            : (index === currentCard + 1) && (visibleCards === 4)
               ? Style.grid__secondCell
               : Style.grid__restCell
         }
       >
         <CardForPuzzle
           id={`c${index}`}
-          //imgPath={cardsList[index].imgPath}
+          imgPath={cardsList[index].img}
           title={`${cardsList[index].header}`}
           paragraph={cardsList[index].text}
           dataPublic={cardsList[index].date}

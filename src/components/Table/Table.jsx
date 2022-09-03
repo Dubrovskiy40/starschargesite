@@ -11,7 +11,7 @@ const Table = (props) => {
               <a className={Style.cell} key={content.id} href="https://www.asus.com/ru/" target="_blank" rel="noreferrer">
                 <img
                   className={Style.img}
-                  src={content.imgPath}
+                  src={`data:image/jpeg;base64,${content.img}`}
                   alt="product img"
                 ></img>
                 <h3 className={Style.title}>{content.header}</h3>
