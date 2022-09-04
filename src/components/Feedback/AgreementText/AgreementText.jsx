@@ -8,7 +8,7 @@ const AgreementText = () => {
 
   return (
     <div className="agreementText">
-      <h1 className="title">{t("feedback.agreement.title")}</h1>
+      <h1 className="agreement-title">{t("feedback.agreement.title")}</h1>
       <h3 className="subtitle">1. {t("feedback.agreement.subtitle1")}</h3>
       <p className="text">
         1.1. Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального

@@ -45,6 +45,7 @@ const Puzzle = (props) => {
     <>
       <section id={props.menuName} />
       <div className="container">
+        <h2 className="title">Новости</h2>
         <div className={Style.grid}>
           {getCards(
             currentCard,
