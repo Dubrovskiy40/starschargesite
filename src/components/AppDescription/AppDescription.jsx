@@ -18,7 +18,7 @@ const App = () => {
                 вопроса и коварных точках c запятой, но текст не дал сбить себя
                 c толку.
               </p>
-              <di className="flex">
+              <div className="flex">
                 <a
                   className={`${style.app__appStore_link} ${style.app__link}`}
                   href="#s"
@@ -35,7 +35,7 @@ const App = () => {
                 >
                   <img src={googleStore} alt=""></img>
                 </a>
-              </di>
+              </div>
             </div>
             <img src={charge}></img>
             <div className={style.app__img}></div>

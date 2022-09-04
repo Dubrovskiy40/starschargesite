@@ -57,7 +57,6 @@ const SwiperParallax = (props) => {
           data-swiper-parallax="-23%"
         ></div>
         {arraySliders?.map((slide) => {
-          console.log("arraySlides", slide);
           return (
             <SwiperSlide>
               <div className="flex hero__descr">
