@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import SuccessMessage from "./SuccessMessage/SuccessMessage";
 import Agreement from "./Agreement/Agreement";
 import ModalWindow from "../ModalWindow/ModalWindow";
@@ -119,6 +119,15 @@ const Feedback = () => {
       setCaptcha({ isValid: true, value: "" }); // пока true, переделать как будет бэк
     } else setShowSuccessBlock(false);
   };
+
+  useEffect(() => {
+    fetch('http://85.193.84.173:9164/GetCaptchaImg')
+      .then((res) => res.json())
+      .then((data) => console.log('captchaImg', data))
+    fetch('http://85.193.84.173:9164/GetCaptchaText')
+      .then((res) => res.json())
+      .then((data) => console.log('captchaText', data))
+  });
 
   return (
     <section className="feedback_wrap">
