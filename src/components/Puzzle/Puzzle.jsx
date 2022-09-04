@@ -1,6 +1,7 @@
 import CardForPuzzle from "./CardForPuzzle/CardForPuzzle";
 import Style from "./puzzle.module.scss";
 import { useState, useEffect } from "react";
+import { getScreenWidth } from "../../hoc/getScreenWidth";
 
 const getCards = (currentCard, visibleCards, cardsList) => {
   let content = [];
@@ -79,4 +80,4 @@ const Puzzle = (props) => {
   );
 };
 
-export default Puzzle;
+export default getScreenWidth(Puzzle);
