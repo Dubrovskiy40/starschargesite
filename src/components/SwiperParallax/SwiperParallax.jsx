@@ -24,6 +24,7 @@ const SwiperParallax = (props) => {
       text:
         "Найдите нужную станцию. Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. " +
         "Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана.",
+      img: firstSlide,
     },
     {
       id: "3",
@@ -32,6 +33,7 @@ const SwiperParallax = (props) => {
       text:
         "Найдите нужную станцию. Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. " +
         "Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана.",
+      img: firstSlide,
     },
   ];
 
@@ -60,10 +62,7 @@ const SwiperParallax = (props) => {
           return (
             <SwiperSlide>
               <div className="flex hero__descr">
-                <div
-                  className="hero__title title"
-                  data-swiper-parallax="-300"
-                >
+                <div className="hero__title title" data-swiper-parallax="-300">
                   {slide.title}
                 </div>
                 <div className="hero__subtitle" data-swiper-parallax="-200">

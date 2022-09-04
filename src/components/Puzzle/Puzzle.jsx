@@ -54,27 +54,6 @@ const Puzzle = (props) => {
             props.cardsList
           )}
         </div>
-        <button
-          onClick={() =>
-            currentCard === 0
-              ? setcurrentCard(currentCard)
-              : setcurrentCard(currentCard - 1)
-          }
-          className={Style.button}
-        >
-          &lt;
-        </button>
-
-        <button
-          onClick={() =>
-            currentCard === props.cardsList.length - visibleCards
-              ? setcurrentCard(currentCard)
-              : setcurrentCard(currentCard + 1)
-          }
-          className={Style.button}
-        >
-          &gt;
-        </button>
       </div>
     </>
   );
