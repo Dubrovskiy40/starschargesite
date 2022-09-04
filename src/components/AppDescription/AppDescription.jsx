@@ -1,7 +1,7 @@
-import style from "./App.module.scss";
-import appStore from "../../assets/images/app/appStore.png"
-import googleStore from "../../assets/images/app/googleStore.png"
-import charge from "../../assets/images/app/chargeImg.png"
+import style from "./AppDescription.module.scss";
+import appStore from "../../assets/images/app/appStore.png";
+import googleStore from "../../assets/images/app/googleStore.png";
+import charge from "../../assets/images/app/chargeImg.png";
 
 const App = () => {
   return (

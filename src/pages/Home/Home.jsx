@@ -1,22 +1,18 @@
+import { useEffect, useState } from "react";
+import MenuStore from "../../store/MenuStore";
 import {
   Cards,
   Header,
   Feedback,
   Puzzle,
   SwiperParallax,
-  MapContainer,
   ScrollButton,
   Footer,
+  Team,
+  Table,
+  AppDescription,
+  Statistics,
 } from "../../components";
-import MenuStore from "../../store/MenuStore";
-import { useEffect, useState } from "react";
-// import Team from "../../components/Team/Team";
-import Table from "../../components/Table/Table";
-import { getCardUtilityClass } from "@mui/material";
-import Statistics from "../../components/Statistics/Statistics";
-import App from "../../components/App/App"
-import Team from "../../components/Team/Team"
-// import { getCardUtilityClass } from "@mui/material";
 
 function Home() {
   const [itemslocal, setItemsLocal] = useState([]);
@@ -32,14 +28,16 @@ function Home() {
   return (
     <>
       <Header />
+      <SwiperParallax />
+      <Team />
       {itemslocal.map((menuItem, menuItemIndex) => {
-        return menuItem.sections.map((sectionItem, sectionItemIndex) =>
-          sectionItem.section_type_id == 1 ? (
+        return menuItem.sections.map((sectionItem) =>
+          sectionItem.section_type_id === 1 ? (
             <Puzzle
               menuName={itemslocal[menuItemIndex].name}
               cardsList={sectionItem.cards}
             />
-          ) : sectionItem.section_type_id == 2 ? (
+          ) : sectionItem.section_type_id === 2 ? (
             <Cards
               menuName={itemslocal[menuItemIndex].name}
               cardsList={sectionItem.cards}
@@ -55,6 +53,7 @@ function Home() {
       <Statistics />
       <Feedback />
       <ScrollButton />
+      <AppDescription />
       <Footer />
     </>
   );
