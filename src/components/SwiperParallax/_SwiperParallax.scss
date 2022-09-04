@@ -1,22 +1,23 @@
 .swiper-parallax {
-  height: calc(100vh - 120px);
+  // height: calc(100vh - 120px);
 
   .swiper {
     width: 100%;
     height: 100%;
-    background: #000;
   }
 
   .swiper-slide {
-    font-size: 18px;
-    color: #fff;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 40px 60px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     justify-content: center;
+
+    img {
+      max-width: 55%;
+    }
   }
 
   .parallax-bg {
@@ -30,9 +31,7 @@
     background-position: center;
   }
 
-  .swiper-slide .title {
-    font-size: 41px;
-    font-weight: 300;
+  .parallax-title {
     margin-bottom: 32px;
   }
 
@@ -42,9 +41,12 @@
   }
 
   .swiper-slide .text {
+    color: #fff;
     font-size: 14px;
-    max-width: 50%;
     line-height: 1.3;
   }
 }
 
+.hero__descr {
+  flex-direction: column;
+}

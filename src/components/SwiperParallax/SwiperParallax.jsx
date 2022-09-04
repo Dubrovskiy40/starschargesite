@@ -4,7 +4,7 @@ import { Parallax, Pagination, Navigation } from "swiper";
 import "swiper/scss";
 import "swiper/scss/navigation";
 import "swiper/scss/pagination";
-import bgiImg from "../../assets/images/sliderParallax/fon.jpg";
+import firstSlide from "../../assets/images/sliderParallax/station.png";
 
 const SwiperParallax = (props) => {
   const arraySliders = [
@@ -15,6 +15,7 @@ const SwiperParallax = (props) => {
       text:
         "Найдите нужную станцию. Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. " +
         "Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана.",
+      img: firstSlide,
     },
     {
       id: "2",
@@ -53,24 +54,27 @@ const SwiperParallax = (props) => {
         <div
           slot="container-start"
           className="parallax-bg"
-          style={{
-            backgroundImage: `url(${bgiImg})`,
-            backgroundRepeat: "no-repeat",
-          }}
           data-swiper-parallax="-23%"
         ></div>
         {arraySliders?.map((slide) => {
+          console.log("arraySlides", slide);
           return (
             <SwiperSlide>
-              <div className="parallax-title title" data-swiper-parallax="-300">
-                {slide.title}
+              <div className="flex hero__descr">
+                <div
+                  className="hero__title title"
+                  data-swiper-parallax="-300"
+                >
+                  {slide.title}
+                </div>
+                <div className="hero__subtitle" data-swiper-parallax="-200">
+                  {slide.subtitle}
+                </div>
+                <div className="text hero__text" data-swiper-parallax="-100">
+                  <p>{slide.text}</p>
+                </div>
               </div>
-              <div className="subtitle" data-swiper-parallax="-200">
-                {slide.subtitle}
-              </div>
-              <div className="text" data-swiper-parallax="-100">
-                <p>{slide.text}</p>
-              </div>
+              <img src={slide.img} alt="descrImg"></img>
             </SwiperSlide>
           );
         })}

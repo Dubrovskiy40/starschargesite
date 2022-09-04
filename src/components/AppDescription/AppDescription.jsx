@@ -18,22 +18,24 @@ const App = () => {
                 вопроса и коварных точках c запятой, но текст не дал сбить себя
                 c толку.
               </p>
-              <a
-                className={`${style.app__appStore_link} ${style.app__link}`}
-                href="#s"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src={appStore} alt=""></img>
-              </a>
-              <a
-                className={`${style.app__googleStore_link} ${style.app__link}`}
-                href="#s"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src={googleStore} alt=""></img>
-              </a>
+              <di className="flex">
+                <a
+                  className={`${style.app__appStore_link} ${style.app__link}`}
+                  href="#s"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src={appStore} alt=""></img>
+                </a>
+                <a
+                  className={`${style.app__googleStore_link} ${style.app__link}`}
+                  href="#s"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src={googleStore} alt=""></img>
+                </a>
+              </di>
             </div>
             <img src={charge}></img>
             <div className={style.app__img}></div>
