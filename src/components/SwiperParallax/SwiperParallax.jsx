@@ -35,7 +35,7 @@ const SwiperParallax = (props) => {
   ];
 
   return (
-    <section id={props.menuName} className="swiper-parallax">
+    <section id={props.menuName} className="container swiper-parallax">
       <Swiper
         style={{
           "--swiper-navigation-color": "#fff",
@@ -62,7 +62,7 @@ const SwiperParallax = (props) => {
         {arraySliders?.map((slide) => {
           return (
             <SwiperSlide>
-              <div className="title" data-swiper-parallax="-300">
+              <div className="parallax-title title" data-swiper-parallax="-300">
                 {slide.title}
               </div>
               <div className="subtitle" data-swiper-parallax="-200">

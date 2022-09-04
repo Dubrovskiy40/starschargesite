@@ -81,7 +81,7 @@ const MapContainer = (props) => {
     <section id={props.menuName} className="map">
       <div className="container">
         <div className="map__main">
-          <h2 className="map__title">{t("mapContainer.title")}</h2>
+          <h2 className="map__title title">{t("mapContainer.title")}</h2>
           <span className="map__subtitle">Двигать карту</span>
           <FormGroup>
             <Stack direction="row" spacing={1} alignItems="center">

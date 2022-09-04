@@ -8,29 +8,3 @@
 @import "allComponents";
 @import "allPage";
 @import "media";
-
-.news {
-  padding-top: 103px; //Высота хедера
-}
-
-/* общие стили */
-.section {
-  margin-bottom: 256px;
-}
-
-.title {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 100%;
-  margin-bottom: 64px;
-}
-
-.descr {
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 100%;
-}
-
-.flex {
-  display: flex;
-}

@@ -2,7 +2,7 @@
   color: $color-black;
 }
 
-.title {
+.agreement-title {
   text-align: center;
   @include font_36;
   color: $color-black;
@@ -19,7 +19,7 @@
 }
 
 @media (max-width: 1190px) {
-  .title {
+  .agreement-title {
     //font-size: 38px;
   }
 
@@ -33,7 +33,7 @@
 }
 
 @media (max-width: 768px) {
-  .title {
+  .agreement-title {
     //font-size: 18px;
   }
 
