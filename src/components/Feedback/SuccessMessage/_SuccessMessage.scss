@@ -1,22 +1,19 @@
 .successMessage {
   margin-top: 10px;
+
   &_show{
     display: block;
   }
 
-  &__block {
-
-  }
+  &__block {}
 
   &__block_green{
-    color: green;
+    color: $color-green;
   }
 
   &__block_red {
-    color: red;
+    color: $color-red;
   }
 
-  &__btn {
-
-  }
+  &__btn {}
 }

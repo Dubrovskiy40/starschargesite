@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import style from "./feedback.module.scss";
+import {useState} from "react";
 import SuccessMessage from "./SuccessMessage/SuccessMessage";
 import Agreement from "./Agreement/Agreement";
 import ModalWindow from "../ModalWindow/ModalWindow";
@@ -7,10 +6,9 @@ import AgreementText from "./AgreementText/AgreementText";
 import { CmError } from "./CmError/CmError";
 import CmInput from "./CmInput/CmInput";
 import captchaImg from "../../assets/images/feedback/captcha.png";
-
+import carImg from '../../assets/images/feedback/car_bg.png';
 import { useTranslation } from "react-i18next";
 import "../../utils/i18next";
-import { logDOM } from "@testing-library/react";
 
 const Feedback = () => {
   const { t } = useTranslation();
@@ -123,20 +121,15 @@ const Feedback = () => {
   };
 
   return (
-    <section className={style.feedback_wrap}>
+    <section className="feedback_wrap">
       <div className="container">
-        <h1 className={style.feedback__title}>{t("feedback.title")}</h1>
+        <h1 className="feedback__title">{t("feedback.title")}</h1>
         <form
-          className={style.feedback}
+          className="feedback"
           id="feedback-form"
           onSubmit={handleSubmitForm}
         >
-          <div
-            className={`${style.feedback__inp_wrap} ${style.feedback__grid1}`}
-          >
-            <label className={style.feedback__label} htmlFor="inpName">
-              {t("feedback.labelName")}:
-            </label>
+          <div className="feedback__inp_wrap feedback__grid1">
             <CmInput
               isInput={true}
               id="inpName"
@@ -152,12 +145,7 @@ const Feedback = () => {
             />
             <CmError error={errors["nameError"]} />
           </div>
-          <div
-            className={`${style.feedback__inp_wrap} ${style.feedback__grid2}`}
-          >
-            <label className={style.feedback__label} htmlFor="inpTel">
-              {t("feedback.labelPhone")}:
-            </label>
+          <div className="feedback__inp_wrap feedback__grid2">
             <CmInput
               isInput={true}
               id="inpTel"
@@ -173,12 +161,7 @@ const Feedback = () => {
             />
             <CmError error={errors["telError"]} />
           </div>
-          <div
-            className={`${style.feedback__inp_wrap} ${style.feedback__grid3}`}
-          >
-            <label className={style.feedback__label} htmlFor="inpMail">
-              {t("feedback.labelEmail")}:
-            </label>
+          <div className="feedback__inp_wrap feedback__grid3">
             <CmInput
               isInput={true}
               id="inpEmail"
@@ -192,12 +175,7 @@ const Feedback = () => {
             />
             <CmError error={errors["emailError"]} />
           </div>
-          <div
-            className={`${style.feedback__inp_wrap} ${style.feedback__grid4}`}
-          >
-            <label className={style.feedback__label} htmlFor="inpArea">
-              {t("feedback.labelArea")}:
-            </label>
+          <div className="feedback__inp_wrap feedback__grid4">
             <CmInput
               isInput={false}
               id="inpArea"
@@ -215,8 +193,8 @@ const Feedback = () => {
             <CmError error={errors["textareaError"]} />
           </div>
           {/*Капча*/}
-          <div className={`${style.captcha} ${style.feedback__grid5}`}>
-            <img className={style.captcha__img} src={captchaImg} alt="капча" />
+          <div className="captcha feedback__grid5">
+            <img className="captcha__img" src={captchaImg} alt="капча" />
             <CmInput
               isInput={true}
               id="inpCaptcha"
@@ -232,16 +210,14 @@ const Feedback = () => {
             {/*<input className={style.captcha__inp}onChange={(e => setCaptcha({...captcha, value: e.target.value}))} required={true} />*/}
           </div>
           {/*Пользовательское соглашение. Персональные данные*/}
-          <div
-            className={`${style.feedback__btn_wrap} ${style.feedback__grid6}`}
-          >
+          <div className="feedback__btn_wrap feedback__grid6">
             <Agreement
               openModalWindow={setOpenModalWindow}
               isReadAgreement={isReadAgreement}
               setIsReadAgreement={setIsReadAgreement}
             />
             <button
-              className={style.feedback__btn}
+              className="feedback__btn"
               type="submit"
               disabled={!isReadAgreement ? true : false}
             >
@@ -251,7 +227,7 @@ const Feedback = () => {
         </form>
         {/*/Сообщение об успешной отправки формы*/}
         {showSuccessBlock && (
-          <div className={style.feedback__message_wrap}>
+          <div className="feedback__message_wrap">
             <SuccessMessage successfullySent={successfullySent} />
           </div>
         )}

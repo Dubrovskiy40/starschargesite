@@ -1,23 +1,36 @@
+@import "./Agreement/Agreement";
+@import "./AgreementText/AgreementText";
+@import "./CmError/CmError";
+@import "./CmInput/CmInput";
+@import "./SuccessMessage/SuccessMessage";
+
 .feedback_wrap {
-  background: #333333;
-  color: #fff;
-  padding: 100px 80px;
+  background: $color-grey;
+  color: $color-white;
+  padding: 83px 0 57px;
 }
 
 .feedback__title {
   margin-bottom: 65px;
-  font-weight: 700;
-  font-size: 52px;
-  line-height: 100%;
-  color: #ffffff;
+  @include font_36;
+  color: $color-white;
+}
+
+.feedback__content {
+  display: flex;
+}
+
+.feedback__form_wrap {
+  width: 100%;
 }
 
 .feedback {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 56px;
+  grid-template-columns: repeat(3, 20%);
+  justify-content: space-between;
+  row-gap: 24px;
   column-gap: 24px;
-  max-width: 58%;
+  background: url("../../assets/images/feedback/car_bg.png") no-repeat top right;
 
   &__inp_wrap {
     display: flex;
@@ -25,41 +38,33 @@
     align-items: flex-start;
   }
 
-  &__label {
-    margin-bottom: 5px;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 28px;
-    color: #ffffff;
-  }
-
   &__btn_wrap {
+    max-width: 281px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
   }
 
   &__btn {
+    width: 281px;
     margin-top: 10px;
     border-radius: 20px;
-    border: 2px solid #60ad5e;
-    padding: 26px 68px;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 28px;
-    color: #fff;
-    background: #60ad5e;
+    border: 2px solid $color-salad;
+    padding: 16px 0;
+    @include font_24;
+    color: $color-white;
+    background: $color-salad;
 
     &:hover {
       cursor: pointer;
-      background: #ffffff;
-      color: #60ad5e;
-      border: 2px solid #60ad5e;
+      background: $color-white;
+      color: $color-salad;
+      border: 4px solid $color-salad;
     }
   }
 
   &__grid1 {
-    grid-column: 1 / 4;
+    grid-column: 1 / 3;
     grid-row: 1 / 2;
   }
 
@@ -69,46 +74,43 @@
   }
 
   &__grid3 {
-    grid-column: 2 / 4;
+    grid-column: 2 / 3;
     grid-row: 2 / 3;
   }
 
   &__grid4 {
-    grid-column: 1 / 4;
+    grid-column: 1 / 3;
     grid-row: 3 / 4;
   }
 
   &__grid5 {
-    grid-column: 1 / 2;
-    grid-row: 4 / 4;
+    grid-column: 1 / 3;
+    grid-row: 4 / 5;
   }
 
   &__grid6 {
-    grid-column: 2 / 4;
-    grid-row: 4 / 4;
+    grid-column: 4 / 4;
+    grid-row: 5 / 6;
   }
 }
 
 .captcha {
   display: flex;
-  flex-direction: column;
-  max-width: 441px;
 
   &__img {
-    margin-bottom: 30px;
-    width: inherit;
+    margin-right: 25px;
+    width: 217px;
+    height: 64px;
   }
 
   &__inp {
     width: 100%;
     padding: 22px 0 22px 31px;
-    border: 2px solid #60ad5e;
-    border-radius: 20px;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
-    color: #fff;
-    background: #333333;
+    border: 4px solid $color-salad;
+    border-radius: 15px;
+    @include font_14;
+    color: $color-white;
+    background: $color-grey;
   }
 }
 
@@ -131,11 +133,6 @@
     row-gap: 30px;
     max-width: 58%;
 
-    &__label {
-      font-size: 18px;
-      line-height: 21px;
-    }
-
     &__btn_wrap {
       justify-content: flex-end;
     }
@@ -154,7 +151,7 @@
     &__inp {
       width: 100%;
       padding: 15px 0 15px 15px;
-      border: 2px solid #60ad5e;
+      border: 2px solid $color-salad;
     }
   }
 }
@@ -178,16 +175,11 @@
     row-gap: 20px;
     max-width: 100%;
 
-    &__label {
-      font-size: 14px;
-      line-height: 16px;
-    }
-
     &__btn {
       margin-top: 10px;
       border-radius: 10px;
       padding: 15px 15px;
-      border: 1px solid #60ad5e;
+      border: 1px solid $color-salad;
       font-size: 14px;
       line-height: 16px;
     }
@@ -203,7 +195,7 @@
       width: 100%;
       border-radius: 10px;
       padding: 15px 0 15px 15px;
-      border: 1px solid #60ad5e;
+      border: 1px solid $color-salad;
     }
   }
 }
