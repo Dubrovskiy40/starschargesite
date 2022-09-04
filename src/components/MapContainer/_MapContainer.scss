@@ -1,7 +1,7 @@
 :root {
   /* Font Color */
   --light-theme: #f8f9fa;
-  --black-theme: #202020;
+  --black-theme: $color-black;
 
   /* Circle Width */
   --circle-diameter: 400px;
@@ -60,7 +60,7 @@ body {
 }
 
 ::selection {
-  color: #fff;
+  color: $color-white;
   background-color: var(--light-theme);
 }
 
@@ -74,7 +74,7 @@ body {
     font-weight: 700;
     font-size: 48px;
     line-height: 100%;
-    color: #fff;
+    color: $color-white;
   }
 
   &__subtitle {
@@ -82,14 +82,14 @@ body {
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
-    color: #fff;
+    color: $color-white;
   }
 
   &__lable {
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
-    color: #fff
+    color: $color-white
   }
 
   &-frame {
@@ -109,7 +109,7 @@ body {
       font-weight: 400;
       font-size: 18px;
       line-height: 21px;
-      color: #fff;
+      color: $color-white;
     }
   }
 }

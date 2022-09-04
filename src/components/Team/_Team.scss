@@ -6,7 +6,7 @@
     font-weight: 700;
     font-size: 48px;
     line-height: 100%;
-    color: #fff;
+    color: $color-white;
   }
 
   &__list {
@@ -65,7 +65,7 @@
     font-weight: 400;
     font-size: 24px;
     line-height: 28px;
-    color: #fff;
+    color: $color-white;
     margin-bottom: 5px;
   }
 
@@ -73,7 +73,7 @@
     font-weight: 400;
     font-size: 24px;
     line-height: 28px;
-    color: #fff;
+    color: $color-white;
     margin-bottom: 15px;
   }
 
@@ -81,7 +81,7 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 18px;
-    color: #fff;
+    color: $color-white;
   }
 }
 
@@ -141,7 +141,7 @@
     &__item {
       width: 300px;
       height: 300px;
-      border: 1px solid #60ad5e;
+      border: 1px solid $color-salad;
       border-radius: 10px;
 
       & > div {
