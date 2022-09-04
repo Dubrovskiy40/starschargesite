@@ -16,7 +16,7 @@ const Table = (card) => {
               >
                 <img
                   className={Style.img}
-                  src={card.imgPath}
+                  src={`data:image/jpeg;base64,${content.img}`}
                   alt="product img"
                 ></img>
                 <h3 className={Style.title}>{content.header}</h3>
