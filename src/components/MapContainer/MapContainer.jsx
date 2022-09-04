@@ -68,13 +68,23 @@ const MapContainer = (props) => {
   //
   //   console.log('heighthMap',heighthMap)
 
-  const handleMuveMap = () => {
-    console.log("moveMap", moveMap);
+  // const handleMuveMap = () => {
+  //   console.log("moveMap", moveMap);
+  //   setMoveMap((prevState) => !prevState);
+  // };
+
+  const handleDoubleClick = () => {
+    console.log("doubleClick", moveMap);
     setMoveMap((prevState) => !prevState);
   };
 
-  const handleDoubleClick = () => {
-    console.log("doubleClick");
+  const handleBlur = () => {
+    setMoveMap((prevState) => {
+      if (prevState) {
+        console.log("blur", moveMap);
+        return !prevState
+      }
+    });
   };
 
   return (
@@ -82,22 +92,21 @@ const MapContainer = (props) => {
       <div className="container">
         <div className="map__main">
           <h2 className="map__title title">{t("mapContainer.title")}</h2>
-          <span className="map__subtitle">Двигать карту</span>
-          <FormGroup>
-            <Stack direction="row" spacing={1} alignItems="center">
-              <Typography className="map__lable" htmlFor="radio">
-                выкл
-              </Typography>
-              <AntSwitch
-                id="radio"
-                onClick={handleMuveMap}
-                inputProps={{ "aria-label": "ant design" }}
-              />
-              <Typography>вкл</Typography>
-            </Stack>
-          </FormGroup>
+          {/*<span className="map__subtitle">Двигать карту</span>*/}
+          {/*<FormGroup>*/}
+            {/*<Stack direction="row" spacing={1} alignItems="center">*/}
+              {/*<Typography className="map__lable" htmlFor="radio">*/}
+              {/*  выкл*/}
+              {/*</Typography>*/}
+            {/*  <AntSwitch*/}
+            {/*    id="radio"*/}
+            {/*    inputProps={{ "aria-label": "ant design" }}*/}
+            {/*  />*/}
+            {/*  <Typography>вкл</Typography>*/}
+            {/*</Stack>*/}
+          {/*</FormGroup>*/}
           <section className="map__yandex">
-            <div className="map-frame" onDoubleClick={handleDoubleClick}>
+            <div className="map-frame" onDoubleClick={handleDoubleClick} onBlur={handleBlur}>
               <iframe
                 style={{ pointerEvents: `${moveMap ? "auto" : "none"}` }}
                 src="https://yandex.ru/map-widget/v1/?um=constructor%3A5919a4499abe294201804f138c5c39eb9519b5e6b5fd791b20adf349051d6dc3&amp;source=constructor"
