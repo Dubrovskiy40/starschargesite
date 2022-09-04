@@ -65,8 +65,6 @@ body {
 }
 
 .map {
-
-  margin-bottom: $section;
   
   &__title {
     margin-bottom: 16px;
@@ -78,20 +76,20 @@ body {
     color: $color-white;
   }
 
-  &__subtitle {
-    margin: 0 0 10px 0;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
-    color: $color-white;
-  }
+  //&__subtitle {
+  //  margin: 0 0 10px 0;
+  //  font-weight: 400;
+  //  font-size: 18px;
+  //  line-height: 21px;
+  //  color: $color-white;
+  //}
 
-  &__lable {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
-    color: $color-white
-  }
+  //&__lable {
+  //  font-weight: 400;
+  //  font-size: 18px;
+  //  line-height: 21px;
+  //  color: $color-white
+  //}
 
   &-frame {
   }
@@ -105,13 +103,13 @@ body {
     //   font-size: 38px;
 
     // }
+    //&__lable {
+    //  font-weight: 400;
+    //  font-size: 18px;
+    //  line-height: 21px;
+    //  color: $color-white;
+    //}
 
-    &__lable {
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 21px;
-      color: $color-white;
-    }
   }
 }
 

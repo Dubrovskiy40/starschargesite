@@ -1021,37 +1021,15 @@ body {
   background-color: var(--light-theme);
 }
 
-.map {
-  margin-bottom: 256px;
-}
 .map__title {
   margin-bottom: 16px;
   align-self: flex-start;
   font-style: normal;
   color: #ffffff;
 }
-.map__subtitle {
-  margin: 0 0 10px 0;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
-  color: #ffffff;
-}
-.map__lable {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
-  color: #ffffff;
-}
 @media (max-width: 1190px) {
   .map {
     margin: 60px 0 0 0;
-  }
-  .map__lable {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
-    color: #ffffff;
   }
 }
 @media (max-width: 768px) {

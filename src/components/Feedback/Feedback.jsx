@@ -124,9 +124,6 @@ const Feedback = () => {
     fetch('http://85.193.84.173:9164/GetCaptchaImg')
       .then((res) => res.json())
       .then((data) => console.log('captchaImg', data))
-    fetch('http://85.193.84.173:9164/GetCaptchaText')
-      .then((res) => res.json())
-      .then((data) => console.log('captchaText', data))
   });
 
   return (
