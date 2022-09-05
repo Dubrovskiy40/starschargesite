@@ -1,7 +1,5 @@
 .statistics {
-  padding-top: 313px;
-  padding-bottom: $section;
-
+  padding: 316px 0 258px;
 
   &__list {
     display: flex;
@@ -28,18 +26,12 @@
 
   &__title {
     margin-bottom: 16px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 42px;
-    line-height: 100%;
+    @include font_42;
     color: $color-white;
   }
 
   &__text {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 100%;
+    @include font_18;
     color: $color-white;
   }
 }
