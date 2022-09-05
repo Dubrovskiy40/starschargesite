@@ -23,7 +23,7 @@ const MapContainer = (props) => {
               <div className="map-frame">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d74099.63593886809!2d36.2676224!3d54.522675199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1662397395047!5m2!1sru!2sru"
-                  width="600"
+                  width="100%"
                   height="450"
                   allowFullScreen=""
                   loading="lazy"

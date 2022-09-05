@@ -1,3 +1,10 @@
+@mixin font_42 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 100%;
+}
+
 @mixin font_36 {
   font-weight: 700;
   font-size: 36px;
@@ -11,9 +18,10 @@
 }
 
 @mixin font_18 {
-  font-weight: 500;
+  font-style: normal;
+  font-weight: 400;
   font-size: 18px;
-  line-height: 18px;
+  line-height: 100%;
 }
 
 @mixin font_16 {

@@ -39,8 +39,8 @@ body {
     cursor: grab;
     /* Interactive Effect */
     &:hover {
-      width: 80vw;
-      height: 80vh;
+      width: 85%;
+      height: 80%;
       border-radius:20px;
     }
   }
@@ -95,6 +95,9 @@ body {
       background-color: inherit;
       transition: 1500ms;
       cursor: grab;
+
+      &:hover {
+      }
     }
   }
 }
