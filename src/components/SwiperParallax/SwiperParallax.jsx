@@ -5,6 +5,8 @@ import "swiper/scss";
 import "swiper/scss/navigation";
 import "swiper/scss/pagination";
 import firstSlide from "../../assets/images/sliderParallax/station.png";
+import secondSlide from "../../assets/images/sliderParallax/station.png";
+import thirdSlide from "../../assets/images/sliderParallax/station.png";
 
 const SwiperParallax = (props) => {
   const arraySliders = [
@@ -24,7 +26,7 @@ const SwiperParallax = (props) => {
       text:
         "Найдите нужную станцию. Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. " +
         "Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана.",
-      img: firstSlide,
+      img: secondSlide,
     },
     {
       id: "3",
@@ -33,7 +35,7 @@ const SwiperParallax = (props) => {
       text:
         "Найдите нужную станцию. Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. " +
         "Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана.",
-      img: firstSlide,
+      img: thirdSlide,
     },
   ];
 

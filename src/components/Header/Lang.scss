@@ -1,21 +1,27 @@
-.header__lang {
-  :hover {
-    color: #60ad5e;
-  }
+.header__lang-link {
 
-  .header__lang-link {
-    cursor: pointer;
+  font-weight: 700;
+  
+  cursor: pointer;
+  color: #fff;
+  transition: color .3s ease-in-out;
 
-    &:not(:last-child) {
-      margin-right: 23px;
-    }
+  &:not(:last-child) {
+    margin-right: 23px;
   }
+}
+
+.header__lang-link.active {
+  color:#60ad5e;
+}
+
+.header__lang-link:hover {
+  color: #60ad5e;
 }
 
 @media (max-width: 1500px) {
   .header__lang {
-    font-size: 16px;
-    margin-right: 60px;
+    font-size: 14px;
   }
 }
 
@@ -33,7 +39,6 @@
   }
 
   .header__lang {
-    margin-right: 0;
     font-size: 18px;
   }
 
