@@ -1,4 +1,34 @@
-@charset "UTF-8";
+.content-container {
+  padding-top: 100px;
+}
+
+.section {
+  margin-bottom: 256px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 100%;
+  margin-bottom: 64px;
+}
+
+.descr {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 4.5vw;
+}
+
 @font-face {
   font-family: "Ubuntu";
   src: url("./Ubuntu-Bold.ttf");
@@ -345,10 +375,10 @@ html {
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
   background-color: #202020;
-  color: #fff;
-  font-size: 20px;
-  line-height: 100%;
-  font-weight: 500;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
 }
 
 body {
@@ -386,14 +416,14 @@ button {
   position: fixed;
   width: 100%;
   z-index: 100;
-  background-color: #333;
+  background-color: #333333;
 }
 
 .header__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  background-color: #333333;
   padding: 20px 100px;
   width: 100%;
 }
@@ -403,7 +433,7 @@ button {
 }
 
 .header__nav-item:not(:last-child) {
-  margin-right: 75px;
+  margin-right: 88px;
 }
 
 .header__right-block {
@@ -420,7 +450,7 @@ button {
   bottom: -3px;
   width: 100%;
   height: 3px;
-  background-image: radial-gradient(50% 50% at 50% 50%, #60ad5e 46.35%, #005005 89.58%);
+  background-image: radial-gradient(50% 50% at 50% 50%, #60AD5E 46.35%, #005005 89.58%);
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
@@ -438,13 +468,12 @@ button {
 
 @media (max-width: 1500px) {
   .header {
-    font-size: 16px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
   }
   .header__container {
     padding: 20px 40px;
-  }
-  .header__nav-item:not(:last-child) {
-    margin-right: 35px;
   }
 }
 @media (max-width: 1024px) {
@@ -468,7 +497,7 @@ button {
     width: inherit;
     height: 3px;
     border-radius: 3px;
-    background-color: #fff;
+    background-color: #ffffff;
   }
   .burg__menu::after {
     content: "";
@@ -478,7 +507,7 @@ button {
     width: inherit;
     height: 3px;
     border-radius: 3px;
-    background-color: #fff;
+    background-color: #ffffff;
   }
   .burg__menu span {
     position: absolute;
@@ -487,7 +516,7 @@ button {
     height: 3px;
     border-radius: 3px;
     top: 7px;
-    background-color: #fff;
+    background-color: #ffffff;
   }
   .burger--active span {
     opacity: 0;
@@ -517,9 +546,10 @@ button {
     left: 0;
     width: 100%;
     height: 80px;
-    background-color: #333;
+    background-color: #333333;
+    font-weight: 700;
     font-size: 14px;
-    line-height: 14px;
+    line-height: 100%;
     transition: top 0.4s ease-in-out;
   }
   .header__menu.active {
@@ -534,9 +564,10 @@ button {
     top: -900px;
     flex-direction: column;
     height: 100vh;
+    font-style: normal;
+    font-weight: 400;
     font-size: 18px;
-    font-weight: 500;
-    line-height: 18px;
+    line-height: 100%;
   }
   .header__menu.active {
     top: 93px;
@@ -548,7 +579,6 @@ button {
     width: 100%;
     text-align: center;
     margin-top: -50%;
-    font-weight: 500;
   }
   .header__nav::after {
     content: "";
@@ -608,18 +638,18 @@ button {
   text-align: center;
   line-height: 24px;
   font-size: 14px;
-  color: #fff;
+  color: #ffffff;
   opacity: 1;
   background: none;
 }
 .news .swiper-pagination-bullet-active {
-  color: #fff;
-  background: #60ad5e;
+  color: #ffffff;
+  background: #60AD5E;
 }
 .news .card {
   width: inherit;
   height: inherit;
-  border: 4px solid #60ad5e;
+  border: 4px solid #60AD5E;
   border-radius: 20px;
   background: #333333;
   box-sizing: border-box;
@@ -641,7 +671,7 @@ button {
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
-  color: #fff;
+  color: #ffffff;
   overflow: hidden;
   position: relative;
   height: 70px;
@@ -662,7 +692,7 @@ button {
   font-weight: 400;
   font-size: 24px;
   line-height: 28px;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 64px;
   overflow: hidden;
   position: relative;
@@ -684,7 +714,7 @@ button {
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
-  color: #60ad5e;
+  color: #60AD5E;
 }
 
 .cards__btn {
@@ -696,8 +726,8 @@ button {
   font-weight: 700;
   font-size: 18px;
   line-height: 21px;
-  color: #fff;
-  background: #60ad5e;
+  color: #ffffff;
+  background: #60AD5E;
   border-radius: 20px;
 }
 
@@ -753,7 +783,7 @@ button {
   }
 }
 .statistics {
-  padding: 313px 0 256px;
+  padding: 316px 0 258px;
 }
 .statistics__list {
   display: flex;
@@ -777,14 +807,14 @@ button {
   font-weight: 700;
   font-size: 42px;
   line-height: 100%;
-  color: #fff;
+  color: #ffffff;
 }
 .statistics__text {
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 100%;
-  color: #fff;
+  color: #ffffff;
 }
 
 .team__title {
@@ -794,7 +824,7 @@ button {
   font-weight: 700;
   font-size: 48px;
   line-height: 100%;
-  color: #fff;
+  color: #ffffff;
 }
 .team__list {
   display: flex;
@@ -845,21 +875,21 @@ button {
   font-weight: 400;
   font-size: 24px;
   line-height: 28px;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 5px;
 }
 .team__item_lName {
   font-weight: 400;
   font-size: 24px;
   line-height: 28px;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 15px;
 }
 .team__item_post {
   font-weight: 400;
   font-size: 18px;
   line-height: 18px;
-  color: #fff;
+  color: #ffffff;
 }
 
 .team__item:hover .team__item_overlay {
@@ -907,7 +937,7 @@ button {
   .team__item {
     width: 300px;
     height: 300px;
-    border: 1px solid #60ad5e;
+    border: 1px solid #60AD5E;
     border-radius: 10px;
   }
   .team__item > div {
@@ -930,7 +960,7 @@ button {
 :root {
   /* Font Color */
   --light-theme: #f8f9fa;
-  --black-theme: #202020;
+  --black-theme: $color-black;
   /* Circle Width */
   --circle-diameter: 400px;
 }
@@ -970,8 +1000,8 @@ body {
   /* Interactive Effect */
 }
 .map__yandex:hover {
-  width: 80vw;
-  height: 80vh;
+  width: 85%;
+  height: 80%;
   border-radius: 20px;
 }
 .map .map-frame {
@@ -987,56 +1017,24 @@ body {
 }
 
 ::selection {
-  color: #fff;
+  color: #ffffff;
   background-color: var(--light-theme);
 }
 
-.map {
-  margin: 130px 0 0 0;
-}
 .map__title {
   margin-bottom: 16px;
   align-self: flex-start;
   font-style: normal;
-  font-weight: 700;
-  font-size: 48px;
-  line-height: 100%;
-  color: #fff;
-}
-.map__subtitle {
-  margin: 0 0 10px 0;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
-  color: #fff;
-}
-.map__lable {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
-  color: #fff;
+  color: #ffffff;
 }
 @media (max-width: 1190px) {
   .map {
     margin: 60px 0 0 0;
   }
-  .map__title {
-    margin-bottom: 16px;
-    font-size: 38px;
-  }
-  .map__lable {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
-    color: #fff;
-  }
 }
 @media (max-width: 768px) {
   .map {
     margin: 30px 0 0 0;
-  }
-  .map__title {
-    font-size: 18px;
   }
   .map__yandex {
     width: 250px;
@@ -1058,7 +1056,7 @@ body {
 
 .agreement__link {
   margin-left: 5px;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 14px;
   line-height: 100%;
   color: #ffffff;
@@ -1085,7 +1083,7 @@ body {
   color: #202020;
 }
 
-.title {
+.agreement-title {
   text-align: center;
   font-weight: 700;
   font-size: 36px;
@@ -1103,7 +1101,7 @@ body {
 .text {
   font-weight: 400;
   font-size: 16px;
-  line-height: 14px;
+  line-height: 16px;
   color: #202020;
 }
 
@@ -1124,7 +1122,7 @@ body {
 .error__text {
   font-weight: 400;
   font-size: 16px;
-  line-height: 14px;
+  line-height: 16px;
   color: red;
   margin: 5px 0 10px;
 }
@@ -1142,7 +1140,7 @@ body {
   padding: 18px 0 18px 24px;
   border: 4px solid #60AD5E;
   border-radius: 15px;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 14px;
   line-height: 100%;
   color: #ffffff;
@@ -1165,7 +1163,7 @@ body {
   padding: 18px 0 18px 24px;
   border: 4px solid #60AD5E;
   border-radius: 15px;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 14px;
   line-height: 100%;
   color: #ffffff;
@@ -1234,7 +1232,7 @@ body {
 
 .feedback {
   display: grid;
-  grid-template-columns: repeat(3, 20%);
+  grid-template-columns: repeat(3, 17%);
   justify-content: space-between;
   row-gap: 24px;
   column-gap: 24px;
@@ -1307,7 +1305,7 @@ body {
   padding: 22px 0 22px 31px;
   border: 4px solid #60AD5E;
   border-radius: 15px;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 14px;
   line-height: 100%;
   color: #ffffff;
@@ -1388,12 +1386,6 @@ body {
     border: 1px solid #60AD5E;
   }
 }
-.container {
-  max-width: 1920px;
-  margin: 0 auto;
-  padding: 0 4.5vw;
-}
-
 @media (max-width: 1190px) {
   .container {
     max-width: 1126px;
@@ -1405,31 +1397,6 @@ body {
     max-width: 716px;
     padding: 0 10vw;
   }
-}
-.news {
-  padding-top: 103px;
-}
-
-/* общие стили */
-.section {
-  margin-bottom: 256px;
-}
-
-.title {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 100%;
-  margin-bottom: 64px;
-}
-
-.descr {
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 100%;
-}
-
-.flex {
-  display: flex;
 }
 
 /*# sourceMappingURL=app.css.map */
