@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export function getScreenWidth(Component) {
   let WrapperContainer = (props) => {
     const [widthScreen, setWidthScreen] = useState(window.innerWidth);
-    const [deviceType, setDeviceType] = useState("desctop"); //desctop, tablet, mobile
+    const [deviceType, setDeviceType] = useState("desctop"); //superdesctop, desctop, tablet, mobile
 
     const updateDimensions = () => {
       setWidthScreen(window.innerWidth);

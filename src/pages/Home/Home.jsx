@@ -29,7 +29,7 @@ function Home() {
   return (
     <>
       <Header />
-      <div className="content-container">
+
         <SwiperParallax />
         <Statistics />
         {itemslocal.map((menuItem, menuItemIndex) => {
@@ -57,7 +57,7 @@ function Home() {
         <Team />
         <Feedback />
         <ScrollButton />
-      </div>
+
       <Footer />
     </>
   );
