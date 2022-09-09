@@ -68,7 +68,7 @@ const SwiperParallax = (props) => {
                 <div className="hero__subtitle" data-swiper-parallax="-200">
                   {slide.subtitle}
                 </div>
-                <div className="text hero__text" data-swiper-parallax="-100">
+                <div className="hero__text" data-swiper-parallax="-100">
                   <p>{slide.text}</p>
                 </div>
               </div>

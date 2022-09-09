@@ -30,13 +30,6 @@
     background-size: cover;
     background-position: center;
   }
-
-  .swiper-slide .text {
-    color: #fff;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 100%;
-  }
 }
 
 .hero__descr {
@@ -45,10 +38,31 @@
   margin-right: 30px;
 }
 
+.hero__text {
+  color: #fff;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+}
+
 .hero__title {
   margin-bottom: 32px;
 }
 
 .hero__subtitle {
   margin-bottom: 32px;
+}
+
+@media(max-width: 1500px) {
+  .hero__title {
+    font-size: 30px;
+  }
+
+  .hero__descr {
+    font-size: 20px;
+  }
+
+  .hero__text {
+    font-size: 18px;
+  }
 }
