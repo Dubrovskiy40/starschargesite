@@ -37,8 +37,26 @@
   }
 
   &__bottomCard {
+    flex-direction: column;
+    align-items: center;
     padding: 20px 48px;
     border-radius: 35px;
     background-color: #fff;
+
+    p {
+      color: #000000;
+    }
+
+    &:hover {
+      background-color: #60AD5E;
+
+      path {
+        fill: #fff;
+      }
+
+      p {
+        color: #fff;
+      }
+    }
   }
 }

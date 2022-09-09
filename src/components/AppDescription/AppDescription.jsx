@@ -43,19 +43,19 @@ const App = () => {
           <ul className={`${style.app__bottomCards} flex`}>
             <li className={`${style.app__bottomCard} flex`}>
               <AppCard className={style.svg} />
-              <p></p>
+              <p>Качество</p>
             </li>
             <li className={`${style.app__bottomCard} flex`}>
               <AppCard className={style.svg} />
-              <p></p>
+              <p>Скорость</p>
             </li>
             <li className={`${style.app__bottomCard} flex`}>
               <AppCard className={style.svg} />
-              <p></p>
+              <p>Местоположения</p>
             </li>
             <li className={`${style.app__bottomCard} flex`}>
               <AppCard className={style.svg} />
-              <p></p>
+              <p>Комфорт</p>
             </li>
           </ul>
         </div>

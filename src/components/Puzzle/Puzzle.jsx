@@ -15,7 +15,8 @@ const getCards = (currentCard, visibleCards, cardsList) => {
             : (index === currentCard + 1 && visibleCards === 4) ||
               ((index === 1 || index === 2 || index === 3 || index === 4) &&
                 visibleCards === 7) ||
-              (index === 2 && visibleCards === 5)
+              (index === 2 && visibleCards === 5) ||
+              (index === 2 && visibleCards === 3)
             ? Style.grid__secondCell
             : Style.grid__restCell
         }
