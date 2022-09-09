@@ -24,7 +24,7 @@
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1920px;
   margin: 0 auto;
   padding: 0 4.5vw;
 }
@@ -417,6 +417,7 @@ button {
   width: 100%;
   z-index: 100;
   background-color: #333333;
+  font-weight: 700;
 }
 
 .header__container {
@@ -607,6 +608,51 @@ button {
     width: 22px;
   }
 }
+.swiper-parallax .swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-parallax .swiper-slide {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+.swiper-parallax .swiper-slide img {
+  max-width: 55%;
+}
+.swiper-parallax .parallax-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 130%;
+  height: 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+.swiper-parallax .swiper-slide .text {
+  color: #fff;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+}
+
+.hero__descr {
+  flex-direction: column;
+}
+
+.hero__title {
+  margin-bottom: 32px;
+}
+
+.hero__subtitle {
+  margin-bottom: 32px;
+}
+
 .news {
   padding: 200px 0 50px;
   background: #202020;
@@ -828,7 +874,6 @@ button {
 }
 .team__list {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 25px;
 }
@@ -1265,7 +1310,6 @@ body {
   cursor: pointer;
   background: #ffffff;
   color: #60AD5E;
-  border: 4px solid #60AD5E;
 }
 .feedback__grid1 {
   grid-column: 1/3;
