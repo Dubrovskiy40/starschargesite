@@ -4,7 +4,7 @@
   background-color: #333333;
 }
 
-.app {  
+.app {
   &__title {
     margin-bottom: 32px;
   }
@@ -17,6 +17,10 @@
     margin-bottom: 64px;
   }
 
+  &__top {
+    margin-bottom: 64px;
+  }
+
   &__link {
     display: inline-block;
     border-radius: 35px;
@@ -26,5 +30,15 @@
 
   &__appStore_link {
     margin-right: 16px;
+  }
+
+  &__bottomCards {
+    justify-content: space-between;
+  }
+
+  &__bottomCard {
+    padding: 20px 48px;
+    border-radius: 35px;
+    background-color: #fff;
   }
 }
