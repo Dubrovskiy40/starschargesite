@@ -846,6 +846,10 @@ button {
   justify-content: space-between;
   align-items: center;
 }
+.statistics__img {
+  width: 77px;
+  height: 77px;
+}
 .statistics__description {
   margin-left: 28px;
   display: flex;
@@ -868,6 +872,58 @@ button {
   color: #ffffff;
 }
 
+@media (max-width: 1190px) {
+  .statistics {
+    padding: 256px 0;
+  }
+  .statistics__img {
+    width: 65px;
+    height: 65px;
+  }
+  .statistics__description {
+    margin-left: 24px;
+  }
+  .statistics__title {
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 100%;
+  }
+  .statistics__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .statistics {
+    padding: 89px 0 81px;
+  }
+  .statistics__list {
+    flex-direction: column;
+  }
+  .statistics__item:not(:last-child) {
+    margin-bottom: 64px;
+  }
+  .statistics__img {
+    width: 45px;
+    height: 45px;
+  }
+  .statistics__description {
+    margin-left: 16px;
+  }
+  .statistics__title {
+    margin-bottom: 8px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+  }
+  .statistics__text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+  }
+}
 .team__title {
   margin-bottom: 16px;
   align-self: flex-start;
