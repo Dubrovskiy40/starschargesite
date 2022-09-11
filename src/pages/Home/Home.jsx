@@ -34,22 +34,20 @@ function Home() {
         <Statistics />
         {itemslocal.map((menuItem, menuItemIndex) => {
           return menuItem.sections.map((sectionItem) =>
-            sectionItem.section_type_id === 1 ? (
-              <Puzzle
-                menuName={itemslocal[menuItemIndex].name}
-                cardsList={sectionItem.cards}
-              />
-            ) : sectionItem.section_type_id === 2 ? (
-              <Cards
-                menuName={itemslocal[menuItemIndex].name}
-                cardsList={sectionItem.cards}
-              />
-            ) : (
-              <Table
-                menuName={itemslocal[menuItemIndex].name}
-                cardsList={sectionItem.cards}
-              />
-            )
+            sectionItem.section_type_id === 1
+              ? <Puzzle
+                  menuName={itemslocal[menuItemIndex].name}
+                  cardsList={sectionItem.cards}
+                />
+              : sectionItem.section_type_id === 2
+                ? <Cards
+                    menuName={itemslocal[menuItemIndex].name}
+                    cardsList={sectionItem.cards}
+                  />
+                : <Table
+                    menuName={itemslocal[menuItemIndex].name}
+                    cardsList={sectionItem.cards}
+                  />
           );
         })}
         <MapContainer />

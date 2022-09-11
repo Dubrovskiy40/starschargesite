@@ -35,7 +35,8 @@ const getCards = (currentCard, visibleCards, cardsList) => {
 
 const Puzzle = (props) => {
   const {widthScreen, menuName, deviceType, cardsList} = props;
-
+  console.log('widthScreen',widthScreen);
+  console.log('deviceType',deviceType);
   const [currentCard, setcurrentCard] = useState(0);
   const [visibleCards, setCountCard] = useState(1);
 
