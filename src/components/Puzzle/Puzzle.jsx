@@ -9,9 +9,14 @@ const getCards = (currentCard, visibleCards, cardsList) => {
     content.push(
       <div
         className={
-          index === currentCard
+          index === currentCard ||
+          (index === currentCard + 1 && visibleCards === 5)
             ? Style.grid__firstCell
-            : index === currentCard + 1 && visibleCards === 4
+            : (index === currentCard + 1 && visibleCards === 4) ||
+              ((index === 1 || index === 2 || index === 3 || index === 4) &&
+                visibleCards === 7) ||
+              (index === 2 && visibleCards === 5) ||
+              (index === 2 && visibleCards === 3)
             ? Style.grid__secondCell
             : Style.grid__restCell
         }
@@ -34,11 +39,11 @@ const Puzzle = (props) => {
   const [visibleCards, setCountCard] = useState(1);
   useEffect(() => {
     props.deviceType === "desctop"
-      ? setCountCard(4)
-      : props.deviceType === "tablet"
       ? setCountCard(5)
+      : props.deviceType === "tablet"
+      ? setCountCard(4)
       : props.deviceType === "superdesctop"
-      ? setCountCard(8)
+      ? setCountCard(7)
       : setCountCard(3);
   }, [props.deviceType]);
 

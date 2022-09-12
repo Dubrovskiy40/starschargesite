@@ -1,93 +1,99 @@
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
   grid-gap: 24px 24px;
-  padding-bottom: 256px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 91px;
+
+  img {
+    object-fit: cover;
+  }
+
+  div {
+    width: 100%;
+  }
 }
 
 @media (min-width: 320px) {
   .grid {
-    &__firstCell {
-      div {
-        padding: 21px;
-        max-height: 200px;
-      }
-    }
+    // &__firstCell {
+    //   div {
+    //     padding: 21px;
+    //     max-height: 200px;
+    //   }
+    // }
 
-    &__secondCell {
-      li {
-        display: flex;
-        flex-direction: row-reverse;
-        min-height: 145px;
-        padding: 10px;
+    // &__secondCell {
+    //   li {
+    //     display: flex;
+    //     flex-direction: row-reverse;
+    //     min-height: 145px;
+    //     padding: 10px;
 
-        h3 {
-          font-size: 10px;
-          line-height: 11px;
-        }
+    //     h3 {
+    //       font-size: 10px;
+    //       line-height: 11px;
+    //     }
 
-        p {
-          font-size: 8px;
-          line-height: 9px;
-        }
+    //     p {
+    //       font-size: 8px;
+    //       line-height: 9px;
+    //     }
 
-        img {
-          width: 100px;
-          height: 100px;
-          object-fit: cover;
-          border-radius: inherit;
-        }
-      }
-    }
+    //     img {
+    //       width: 100px;
+    //       height: 100px;
+    //       object-fit: cover;
+    //       border-radius: inherit;
+    //     }
+    //   }
+    // }
 
-    &__restCell {
-      li {
-        display: flex;
-        flex-direction: row-reverse;
-        height: unset;
-        max-height: 145px;
-        padding: 10px;
+    // &__restCell {
+    //   li {
+    //     display: flex;
+    //     flex-direction: row-reverse;
+    //     height: unset;
+    //     max-height: 145px;
+    //     padding: 10px;
 
-        h3 {
-          font-size: 10px;
-          line-height: 11px;
-        }
+    //     h3 {
+    //       font-size: 10px;
+    //       line-height: 11px;
+    //     }
 
-        p {
-          font-size: 8px;
-          line-height: 9px;
-        }
+    //     p {
+    //       font-size: 8px;
+    //       line-height: 9px;
+    //     }
 
-        img {
-          width: 100px;
-          height: 100px;
-          object-fit: cover;
-          border-radius: inherit;
-        }
-      }
-    }
+    //     img {
+    //       width: 100px;
+    //       height: 100px;
+    //       object-fit: cover;
+    //       border-radius: inherit;
+    //     }
+    //   }
+    // }
   }
 }
 
 @media (min-width: 768px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
 
     &__firstCell {
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 1;
-      grid-row-end: 3;
+      grid-row: span 4;
+    }
+
+    &__secondCell {
+      grid-row: span 4;
     }
 
     &__restCell {
+      grid-row: span 2;
+
       li {
         display: flex;
         flex-direction: row-reverse;
-        min-height: 190px;
-        padding: 0;
 
         div {
           padding: 15px;
@@ -105,87 +111,54 @@
         }
 
         img {
-          min-width: 35%;
-          height: unset;
-          object-fit: cover;
+          max-width: 148px;
         }
       }
     }
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1190px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-
     &__firstCell {
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 1;
-      grid-row-end: 3;
-
-      li {
-        div {
-          padding: 25px 30px;
-          max-height: unset;
-        }
-      }
+      grid-row: span 4;
+       img {
+        max-height: 206px;
+       }
     }
 
     &__secondCell {
-      grid-column-start: 2;
-      grid-column-end: 2;
-      grid-row-start: 1;
-      grid-row-end: 3;
+      grid-row: span 2;
 
       li {
-        max-height: unset;
-        display: block;
-        padding: 0;
+        display: flex;
+        flex-direction: row-reverse;
+      }
 
-        img {
-          width: unset;
-          height: unset;
-        }
-
-        h3 {
-          font-size: 14px;
-          line-height: 16px;
-        }
-
-        p {
-          font-size: 10px;
-          line-height: 11px;
-        }
+      img {
+        max-width: 148px;
       }
     }
 
     &__restCell {
+      grid-row: span 1;
+
+      img {
+        max-width: 146px;
+      }
+
       li {
         display: flex;
         flex-direction: row-reverse;
-        min-height: 100%;
+      }
 
-        div {
-          padding: 30px;
-        }
+      p {
+        display: none;
+      }
 
-        h3 {
-          font-size: 10px;
-          line-height: 11px;
-        }
-
-        p {
-          height: unset;
-          font-size: 8px;
-          line-height: 9px;
-        }
-
-        img {
-          min-width: 35%;
-          object-fit: cover;
-        }
+      div {
+        padding-top: 16px;
+        padding-bottom: 16px;
       }
     }
   }
@@ -194,44 +167,66 @@
 @media (min-width: 2000px) {
   .grid {
     &__firstCell {
+      grid-column-start: 1;
+      grid-row-start: 1;
+      grid-row-end: 6;
+
+    h3 {
+      font-size: 20px;
+      line-height: 16px;
+    }
+
+    img {
+      max-height: 206px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 15px;
+    }
+
+    span {
+      font-size: 12px;
+    }
+    }
+
+    &__secondCell {
+      grid-row: span 2;
+
       li {
-        h3 {
-          font-size: 20px;
-          line-height: 16px;
-        }
-
-        p {
-          font-size: 14px;
-          line-height: 15px;
-        }
-
-        span {
-          font-size: 12px;
-        }
+        display: flex;
+        flex-direction: row-reverse;
       }
+
+      img {
+        max-width: 127px;
+      }
+
+      // div {
+      //   width: 100%;
+      // }
     }
 
     &__restCell {
+
       li {
-        div {
-          padding: 30px;
-        }
+        display: flex;
+        flex-direction: row-reverse;
+      }
 
-        h3 {
-          font-size: 16px;
-          line-height: 16px;
-        }
+      img {
+        max-width: 130px;
+        // height: 69px;
+      }
 
-        p {
-          height: unset;
-          font-size: 12px;
-          line-height: 16px;
-        }
+      div {
+        padding: 15px;
+      }
 
-        span {
-          font-size: 10px;
-        }
+      p {
+        display: none;
       }
     }
   }
 }
+

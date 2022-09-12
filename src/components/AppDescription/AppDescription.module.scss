@@ -4,7 +4,7 @@
   background-color: #333333;
 }
 
-.app {  
+.app {
   &__title {
     margin-bottom: 32px;
   }
@@ -17,6 +17,10 @@
     margin-bottom: 64px;
   }
 
+  &__top {
+    margin-bottom: 64px;
+  }
+
   &__link {
     display: inline-block;
     border-radius: 35px;
@@ -26,5 +30,78 @@
 
   &__appStore_link {
     margin-right: 16px;
+  }
+
+  &__bottomCards {
+    justify-content: space-between;
+  }
+
+  &__bottomCard {
+    flex-direction: column;
+    align-items: center;
+    width: 240px;
+    padding: 20px 48px;
+    border-radius: 35px;
+    background-color: #fff;
+
+    p {
+      color: #000000;
+    }
+
+    svg {
+      margin-bottom: 15px;
+    }
+
+    &:hover {
+      background-color: #60AD5E;
+
+      path {
+        fill: #fff;
+      }
+
+      p {
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1500px) {
+  .app {
+
+    img {
+      min-width: 600px;
+      max-height: 400px;
+    }
+
+    &__title {
+      font-size: 30px;
+    }
+
+    &__bottomCard {
+
+      svg {
+        margin-bottom: 10px;
+      }
+
+      width: 200px;
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .app {
+    &__bottomCard {
+
+      padding: 10px 35px;
+
+      svg {
+        width: 50%;
+        height: 50%;
+        margin-bottom: 5px;
+      }
+    }
   }
 }

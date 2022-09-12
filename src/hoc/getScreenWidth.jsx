@@ -11,11 +11,11 @@ export function getScreenWidth(Component) {
 
     useEffect(() => {
       window.addEventListener("resize", updateDimensions);
-      if (widthScreen > 2000) {
+      if (widthScreen >= 2000) {
         setDeviceType("superdesctop");
-      } else if (widthScreen > 1190) {
+      } else if (widthScreen >= 1190) {
         setDeviceType("desctop");
-      } else if (widthScreen > 768) {
+      } else if (widthScreen >= 768) {
         setDeviceType("tablet");
       } else {
         setDeviceType("mobile");

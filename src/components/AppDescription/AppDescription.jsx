@@ -2,13 +2,14 @@ import style from "./AppDescription.module.scss";
 import appStore from "../../assets/images/app/appStore.png";
 import googleStore from "../../assets/images/app/googleStore.png";
 import charge from "../../assets/images/app/chargeImg.png";
+import { AppCard } from "./svg";
 
 const App = () => {
   return (
     <section className="section app" id="Приложение">
       <div className="container">
         <div className={style.app_wrapper}>
-          <div className="flex">
+          <div className={`${style.app__top} flex`}>
             <div className={style.app__descr}>
               <h3 className={`${style.app__title} title`}>
                 Бронируй и заряжай c нашим приложением
@@ -37,10 +38,26 @@ const App = () => {
                 </a>
               </div>
             </div>
-            <img src={charge}></img>
-            <div className={style.app__img}></div>
+            <img src={charge} alt="description"></img>
           </div>
-          <div className={style.app__bottomCards}></div>
+          <ul className={`${style.app__bottomCards} flex`}>
+            <li className={`${style.app__bottomCard} flex`}>
+              <AppCard className={style.svg} />
+              <p>Качество</p>
+            </li>
+            <li className={`${style.app__bottomCard} flex`}>
+              <AppCard className={style.svg} />
+              <p>Скорость</p>
+            </li>
+            <li className={`${style.app__bottomCard} flex`}>
+              <AppCard className={style.svg} />
+              <p>Местоположения</p>
+            </li>
+            <li className={`${style.app__bottomCard} flex`}>
+              <AppCard className={style.svg} />
+              <p>Комфорт</p>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
