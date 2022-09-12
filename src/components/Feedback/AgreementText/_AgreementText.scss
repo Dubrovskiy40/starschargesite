@@ -14,7 +14,7 @@
 }
 
 .text{
-  @include font_16;
+  @include font_14;
   color: $color-black;
 }
 
@@ -28,7 +28,7 @@
   }
 
   .text{
-    @include font_10;;
+    @include font_10;
   }
 }
 
@@ -38,7 +38,7 @@
   }
 
   .subtitle {
-    //font-size: 16px;
+    //font-size: 14px;
   }
 
   .text{

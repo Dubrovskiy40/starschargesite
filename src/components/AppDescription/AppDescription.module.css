@@ -13,6 +13,9 @@
 .app__text {
   margin-bottom: 64px;
 }
+.app__top {
+  margin-bottom: 64px;
+}
 .app__link {
   display: inline-block;
   border-radius: 35px;
@@ -21,6 +24,14 @@
 }
 .app__appStore_link {
   margin-right: 16px;
+}
+.app__bottomCards {
+  justify-content: space-between;
+}
+.app__bottomCard {
+  padding: 20px 48px;
+  border-radius: 35px;
+  background-color: #fff;
 }
 
 /*# sourceMappingURL=AppDescription.module.css.map */

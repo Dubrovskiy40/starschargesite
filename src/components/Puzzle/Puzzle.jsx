@@ -35,28 +35,32 @@ const getCards = (currentCard, visibleCards, cardsList) => {
 };
 
 const Puzzle = (props) => {
+  const {widthScreen, menuName, deviceType, cardsList} = props;
+  console.log('widthScreen',widthScreen);
+  console.log('deviceType',deviceType);
   const [currentCard, setcurrentCard] = useState(0);
   const [visibleCards, setCountCard] = useState(1);
+
   useEffect(() => {
-    props.deviceType === "desctop"
-      ? setCountCard(5)
-      : props.deviceType === "tablet"
-      ? setCountCard(4)
-      : props.deviceType === "superdesctop"
+    deviceType === "superdesctop"
       ? setCountCard(7)
-      : setCountCard(3);
-  }, [props.deviceType]);
+      : deviceType === "desctop"
+        ? setCountCard(5)
+        : deviceType === "tablet"
+          ? setCountCard(4)
+          : setCountCard(3);
+  }, [deviceType]);
 
   return (
     <>
-      <section id={props.menuName} />
+      <section id={menuName} />
       <div className="container">
         <h2 className="title">Новости</h2>
         <div className={Style.grid}>
           {getCards(
             currentCard,
-            Math.min(visibleCards, props.cardsList.length),
-            props.cardsList
+            Math.min(visibleCards, cardsList.length),
+            cardsList
           )}
         </div>
       </div>
