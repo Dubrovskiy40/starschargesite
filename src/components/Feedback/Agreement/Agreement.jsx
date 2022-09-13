@@ -13,8 +13,8 @@ const Agreement = ({ openModalWindow, isReadAgreement, setIsReadAgreement }) => 
 
     return (
         <div className="agreement">
-            <label htmlFor="checkInp">
-                <input id="checkInp" type="checkbox" readOnly checked={isReadAgreement ? true : false} />
+            <label className="agreement__check">
+                <input className="agreement__inp" type="checkbox" readOnly checked={isReadAgreement ? true : false} />
                 <span className="agreement__link" onClick={handleOpen}>{t("feedback.termsOfUse")}</span>
             </label>
         </div>

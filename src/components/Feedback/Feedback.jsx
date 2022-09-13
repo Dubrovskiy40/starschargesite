@@ -126,6 +126,10 @@ const Feedback = () => {
       .then((data) => console.log('captchaImg', data))
   });
 
+  const handleUpdateCode = () => {
+    console.log('update code');
+  };
+
   return (
     <section className="feedback_wrap">
       <div className="container">
@@ -213,15 +217,19 @@ const Feedback = () => {
               onChange={onChangeInput}
             />
             <CmError error={errors["captchaError"]} />
-            {/*<input className={style.captcha__inp}onChange={(e => setCaptcha({...captcha, value: e.target.value}))} required={true} />*/}
+          </div>
+          <div className="feedback__update-code feedback__grid6" onClick={handleUpdateCode}>
+            <span className="feedback__update-code_text">Обновить код</span>
           </div>
           {/*Пользовательское соглашение. Персональные данные*/}
-          <div className="feedback__btn_wrap feedback__grid6">
+          <div className="feedback__agreement feedback__grid7">
             <Agreement
               openModalWindow={setOpenModalWindow}
               isReadAgreement={isReadAgreement}
               setIsReadAgreement={setIsReadAgreement}
             />
+          </div>
+          <div className="feedback__btn_wrap feedback__grid8">
             <button
               className="feedback__btn"
               type="submit"
@@ -229,6 +237,9 @@ const Feedback = () => {
             >
               {t("feedback.buttonName")}
             </button>
+          </div>
+          <div className="feedback__img_wrap feedback__grid9">
+            {/*<img className="feedback__img" src={carImg} alt="fon"/>*/}
           </div>
         </form>
         {/*/Сообщение об успешной отправки формы*/}

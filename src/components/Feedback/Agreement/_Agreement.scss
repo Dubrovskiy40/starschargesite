@@ -1,7 +1,16 @@
 .agreement {
 
+  &__check {
+  }
+
+  &__inp {
+    //position: absolute;
+    //-webkit-appearance: none;
+    //-moz-appearance: none;
+    //appearance: none;
+  }
+
   &__link {
-    margin-left: 5px;
     @include font_14;
     color: $color-white;
 
@@ -12,13 +21,7 @@
 }
 
 @media (max-width: 1190px) {
-  .agreement__link {
-    @include font_10;
-  }
 }
 
 @media (max-width: 768px) {
-  .agreement__link {
-    @include font_10;
-  }
 }

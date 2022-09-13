@@ -33,32 +33,11 @@
 }
 
 @media (max-width: 1190px) {
-  .inp__text {
-    width: inherit;
-    padding: 15px 0 15px 15px;
-  }
 }
 
 @media (max-width: 768px) {
   .inp__text {
-    width: inherit;
-    padding: 10px 0 10px 7px;
-    border: 1px solid $color-salad;
-    border-radius: 10px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-
-    &:focus {
-      border: 2px solid $color-salad;
-    }
-
-    &_green {
-      border: 1px solid $color-salad;
-    }
-
-    &_red {
-      border: 1px solid $color-red;
-    }
+    padding: 19px 0 19px 17px;
+    @include font_12;
   }
 }
