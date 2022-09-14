@@ -174,9 +174,6 @@ body {
 }
 
 @media (max-width: 1190px) {
-  .map {margin: 60px 0 0 0;
-  }
-
 
   .type {
     &:not(:last-child) {
@@ -187,7 +184,6 @@ body {
 
 @media (max-width: 768px) {
   .map {
-    margin: 30px 0 0 0;
 
     &__yandex {
       width: 250px;
@@ -202,9 +198,6 @@ body {
       }
     }
   }
-
-
-
 
   .station {
     margin: 19px 0;
@@ -238,7 +231,6 @@ body {
     }
 
     &__bottom {
-
     }
 
     &__title_bottom {

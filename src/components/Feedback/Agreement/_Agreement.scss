@@ -4,10 +4,10 @@
   }
 
   &__inp {
-    //position: absolute;
-    //-webkit-appearance: none;
-    //-moz-appearance: none;
-    //appearance: none;
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 
   &__link {
@@ -18,6 +18,17 @@
       cursor: pointer;
     }
   }
+}
+
+.agreement__check .agreement__link {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 0 10px 40px;
+  background: url(../../../assets/images/feedback/checkMarkOff.png) no-repeat left center;
+}
+
+.agreement__check .agreement__inp:checked ~ .agreement__link {
+  background: url(../../../assets/images/feedback/checked.svg) no-repeat left center;
 }
 
 @media (max-width: 1190px) {

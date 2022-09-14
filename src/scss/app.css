@@ -1227,17 +1227,11 @@ body {
 }
 
 @media (max-width: 1190px) {
-  .map {
-    margin: 60px 0 0 0;
-  }
   .type:not(:last-child) {
     margin-bottom: 16px;
   }
 }
 @media (max-width: 768px) {
-  .map {
-    margin: 30px 0 0 0;
-  }
   .map__yandex {
     width: 250px;
     height: 250px;
@@ -1312,6 +1306,12 @@ body {
   align-items: center;
 }
 
+.agreement__inp {
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 .agreement__link {
   font-weight: 700;
   font-size: 14px;
@@ -1320,6 +1320,17 @@ body {
 }
 .agreement__link:hover {
   cursor: pointer;
+}
+
+.agreement__check .agreement__link {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 0 10px 40px;
+  background: url(../../../assets/images/feedback/checkMarkOff.png) no-repeat left center;
+}
+
+.agreement__check .agreement__inp:checked ~ .agreement__link {
+  background: url(../../../assets/images/feedback/checked.svg) no-repeat left center;
 }
 
 .agreementText {
@@ -1364,7 +1375,7 @@ body {
 }
 .error__text {
   font-weight: 400;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 100%;
   color: red;
   margin: 5px 0 5px;
@@ -1373,7 +1384,7 @@ body {
 @media (max-width: 768px) {
   .error__text {
     font-weight: 400;
-    font-size: 8px;
+    font-size: 10px;
     line-height: 100%;
     margin: 2px 0 5px;
   }
@@ -1473,9 +1484,6 @@ body {
 .feedback__update-code:hover {
   cursor: pointer;
 }
-.feedback__btn_wrap {
-  max-width: 281px;
-}
 .feedback__btn {
   border-radius: 20px;
   border: 2px solid #60AD5E;
@@ -1494,6 +1502,7 @@ body {
 .feedback__img_wrap {
   width: 100%;
   background: url("../../assets/images/feedback/car_bg.png") no-repeat center;
+  background-size: cover;
 }
 .feedback__grid1 {
   grid-column: 1/3;
@@ -1572,13 +1581,20 @@ body {
     grid-template-columns: repeat(1, 100%);
     row-gap: 18px;
     column-gap: 18px;
+    max-width: 375px;
+    margin: 0 auto;
   }
   .feedback__btn_wrap {
-    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
   .feedback__btn {
-    width: 100%;
+    width: 256px;
     padding: 16px 0;
+  }
+  .feedback__img_wrap {
+    background-size: contain;
   }
   .feedback__update-code {
     font-weight: 400;
@@ -1626,7 +1642,7 @@ body {
   }
   .feedback__grid9 {
     grid-column: 1/2;
-    grid-row: 9/10;
+    grid-row: 9/20;
   }
   .captcha {
     flex-direction: column;
@@ -1634,8 +1650,8 @@ body {
   .captcha__img {
     align-self: center;
     margin: 0 0 19px 0;
-    width: 256px;
-    height: 64px;
+    width: 100%;
+    height: auto;
   }
 }
 @media (max-width: 1190px) {

@@ -238,9 +238,7 @@ const Feedback = () => {
               {t("feedback.buttonName")}
             </button>
           </div>
-          <div className="feedback__img_wrap feedback__grid9">
-            {/*<img className="feedback__img" src={carImg} alt="fon"/>*/}
-          </div>
+          <div className="feedback__img_wrap feedback__grid9"></div>
         </form>
         {/*/Сообщение об успешной отправки формы*/}
         {showSuccessBlock && (
