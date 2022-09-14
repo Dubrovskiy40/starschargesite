@@ -11,10 +11,10 @@ const App = () => {
         <div className={style.app_wrapper}>
           <div className={`${style.app__top} flex`}>
             <div className={style.app__descr}>
-              <h3 className={`${style.app__title} title`}>
+              <h3 className={`${style.app__title}`}>
                 Бронируй и заряжай c нашим приложением
               </h3>
-              <p className={`${style.app__text} descr`}>
+              <p className={`${style.app__text}`}>
                 Великий Оксмокс предупреждал ee o злых запятых, диких знаках
                 вопроса и коварных точках c запятой, но текст не дал сбить себя
                 c толку.

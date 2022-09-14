@@ -9,15 +9,18 @@ const getCards = (currentCard, visibleCards, cardsList) => {
     content.push(
       <div
         className={
-          index === currentCard ||
-          (index === currentCard + 1 && visibleCards === 5)
-            ? Style.grid__firstCell
-            : (index === currentCard + 1 && visibleCards === 4) ||
+          index === currentCard
+            ? // || (index === currentCard + 1 && visibleCards === 5)
+              Style.grid__firstCell
+            : (index === currentCard + 1 && visibleCards === 6) ||
               ((index === 1 || index === 2 || index === 3 || index === 4) &&
                 visibleCards === 7) ||
-              (index === 2 && visibleCards === 5) ||
-              (index === 2 && visibleCards === 3)
+              (index === currentCard + 1 && visibleCards === 5) ||
+              (index === currentCard + 1 && visibleCards === 3)
             ? Style.grid__secondCell
+            : (index === currentCard + 2 && visibleCards === 5) ||
+              (index === currentCard + 2 && visibleCards === 6)
+            ? Style.grid__thirdCell
             : Style.grid__restCell
         }
       >
@@ -35,9 +38,9 @@ const getCards = (currentCard, visibleCards, cardsList) => {
 };
 
 const Puzzle = (props) => {
-  const {widthScreen, menuName, deviceType, cardsList} = props;
-  console.log('widthScreen',widthScreen);
-  console.log('deviceType',deviceType);
+  const { widthScreen, menuName, deviceType, cardsList } = props;
+  console.log("widthScreen", widthScreen);
+  console.log("deviceType", deviceType);
   const [currentCard, setcurrentCard] = useState(0);
   const [visibleCards, setCountCard] = useState(1);
 
@@ -45,10 +48,10 @@ const Puzzle = (props) => {
     deviceType === "superdesctop"
       ? setCountCard(7)
       : deviceType === "desctop"
-        ? setCountCard(5)
-        : deviceType === "tablet"
-          ? setCountCard(4)
-          : setCountCard(3);
+      ? setCountCard(5)
+      : deviceType === "tablet"
+      ? setCountCard(6)
+      : setCountCard(3);
   }, [deviceType]);
 
   return (

@@ -1,5 +1,5 @@
 .content-container {
-  padding-top: 100px; //отступ контента от края страницы из-за фиксации хедера
+  padding-top: 90px; //отступ контента от края страницы из-за фиксации хедера
 }
 
 .section {
@@ -32,3 +32,9 @@
 }
 
 $section: 256px;
+
+@media(max-width: 768px) {
+  .section {
+    margin-bottom: 88px; // отступ после каждой секции
+  }
+}
