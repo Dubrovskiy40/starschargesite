@@ -1,15 +1,11 @@
 @media (max-width: 1190px) {
   .container {
     max-width: calc(1190px - 32px * 2);
-    //padding: 0 30px;
-    //max-width: calc(768px - 30px * 2);
   }
 }
 
 @media (max-width: 768px) {
   .container {
-    max-width: calc(768px - 26px * 2);
-    //padding: 0 32px;
-    //max-width: calc(375px - 32px * 2);
+    max-width: calc(768px - 32px * 2);
   }
 }

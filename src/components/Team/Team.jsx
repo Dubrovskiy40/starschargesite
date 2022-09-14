@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import "../../utils/i18next";
-import teamDescr from "../../assets/images/team/team.png"
+import teamDescr from "../../assets/images/team/team.png";
 
 const Team = () => {
   const { t } = useTranslation();

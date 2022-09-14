@@ -4,6 +4,7 @@
   
   cursor: pointer;
   color: #fff;
+  opacity: 0.5;
   transition: color .3s ease-in-out;
 
   &:not(:last-child) {
@@ -12,11 +13,11 @@
 }
 
 .header__lang-link.active {
-  color:#60ad5e;
+  opacity: 1;
 }
 
 .header__lang-link:hover {
-  color: #60ad5e;
+  opacity: 1;
 }
 
 @media (max-width: 1500px) {
@@ -40,6 +41,7 @@
 
   .header__lang {
     font-size: 18px;
+    margin-right: 0;
   }
 
   .header__lang-link:not(:last-child) {
