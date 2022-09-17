@@ -55,7 +55,7 @@ function Home() {
       <MapContainer />
       <AppDescription />
       <Team />
-      {/* <Feedback /> */}
+      <Feedback />
       <ScrollButton />
 
       <Footer />
