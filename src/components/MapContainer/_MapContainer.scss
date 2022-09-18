@@ -26,6 +26,12 @@ body {
     min-height: 640px;
     background-color: var(--black-theme);
   }
+
+  &__title {
+    align-self: flex-start;
+    color: $color-white;
+  }
+
   /* Content Style */
   &__yandex {
     position: relative;
@@ -64,19 +70,6 @@ body {
 ::selection {
   color: $color-white;
   background-color: var(--light-theme);
-}
-
-.map {
-  
-  &__title {
-    margin-bottom: 16px;
-    align-self: flex-start;
-    font-style: normal;
-    color: $color-white;
-  }
-
-  &-frame {
-  }
 }
 
 .station {

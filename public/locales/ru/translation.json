@@ -63,5 +63,9 @@
     "buttonName": "Отправить",
     "cmError": {
     }
+  },
+  "footer" : {
+    "policy": "StarsCharge, все права защищены",
+    "politics": "Политика конфиденциальности"
   }
 }

@@ -8,9 +8,7 @@
 
 //общие стили для заголовков
 .title {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 100%;
+  @include font_36_1;
   margin-bottom: 64px;
 }
 
@@ -33,8 +31,19 @@
 
 $section: 256px;
 
+@media(max-width: 1190px) {
+  .title {
+    margin-bottom: 32px;
+  }
+}
+
 @media(max-width: 768px) {
   .section {
     margin-bottom: 88px; // отступ после каждой секции
+  }
+
+  .title {
+    @include font_24_1;
+    margin-bottom: 24px;
   }
 }

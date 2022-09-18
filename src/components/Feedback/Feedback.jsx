@@ -133,7 +133,7 @@ const Feedback = () => {
   return (
     <section className="feedback_wrap">
       <div className="container">
-        <h1 className="feedback__title">{t("feedback.title")}</h1>
+        <h1 className="feedback__title title">{t("feedback.title")}</h1>
         <form
           className="feedback"
           id="feedback-form"

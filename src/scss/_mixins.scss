@@ -13,19 +13,25 @@
 }
 
 @mixin font_36 {
-  font-weight: 700;
+  font-weight: 400;
   font-size: 36px;
   line-height: 100%;
 }
 
 @mixin font_36_1 {
-  font-weight: 400;
+  font-weight: 700;
   font-size: 36px;
   line-height: 100%;
 }
 
 @mixin font_24 {
   font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+}
+
+@mixin font_24_1 {
+  font-weight: 700;
   font-size: 24px;
   line-height: 100%;
 }
@@ -45,13 +51,13 @@
 }
 
 @mixin font_14 {
-  font-weight: 700;
+  font-weight: 400;
   font-size: 14px;
   line-height: 100%;
 }
 
 @mixin font_14_1 {
-  font-weight: 400;
+  font-weight: 700;
   font-size: 14px;
   line-height: 100%;
 }

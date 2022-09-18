@@ -63,5 +63,9 @@
     "buttonName": "Send",
     "cmError": {
     }
+  },
+  "footer" : {
+    "policy": "StarsCharge, all rights reserved",
+    "politics": "Privacy Policy"
   }
 }
