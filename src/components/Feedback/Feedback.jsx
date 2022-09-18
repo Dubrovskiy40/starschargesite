@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import SuccessMessage from "./SuccessMessage/SuccessMessage";
 import Agreement from "./Agreement/Agreement";
 import ModalWindow from "../ModalWindow/ModalWindow";
@@ -6,7 +6,7 @@ import AgreementText from "./AgreementText/AgreementText";
 import { CmError } from "./CmError/CmError";
 import CmInput from "./CmInput/CmInput";
 import captchaImg from "../../assets/images/feedback/captcha.png";
-import carImg from '../../assets/images/feedback/car_bg.png';
+import carImg from "../../assets/images/feedback/car_bg.png";
 import { useTranslation } from "react-i18next";
 import "../../utils/i18next";
 
@@ -121,17 +121,17 @@ const Feedback = () => {
   };
 
   useEffect(() => {
-    fetch('http://85.193.84.173:9164/GetCaptchaImg')
+    fetch("http://85.193.84.173:9164/GetCaptchaImg")
       .then((res) => res.json())
-      .then((data) => console.log('captchaImg', data))
+      .then((data) => console.log("captchaImg", data));
   });
 
   const handleUpdateCode = () => {
-    console.log('update code');
+    console.log("update code");
   };
 
   return (
-    <section className="feedback_wrap">
+    <section className="feedback_wrap" id="Контакты">
       <div className="container">
         <h1 className="feedback__title">{t("feedback.title")}</h1>
         <form
@@ -218,7 +218,10 @@ const Feedback = () => {
             />
             <CmError error={errors["captchaError"]} />
           </div>
-          <div className="feedback__update-code feedback__grid6" onClick={handleUpdateCode}>
+          <div
+            className="feedback__update-code feedback__grid6"
+            onClick={handleUpdateCode}
+          >
             <span className="feedback__update-code_text">Обновить код</span>
           </div>
           {/*Пользовательское соглашение. Персональные данные*/}

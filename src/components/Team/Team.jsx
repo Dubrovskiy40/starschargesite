@@ -41,7 +41,7 @@ const Team = () => {
   ];
 
   return (
-    <section className="section team">
+    <section className="section team" id="Команда">
       <div className="container">
         <h2 className="title">{t("team.title")}</h2>
         <div className="flex team__descr">
