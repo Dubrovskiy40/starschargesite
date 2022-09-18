@@ -26,12 +26,137 @@
   margin-right: 16px;
 }
 .app__bottomCards {
-  justify-content: space-between;
+  justify-content: center;
+  margin: 0 auto;
 }
 .app__bottomCard {
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 240px;
   padding: 20px 48px;
   border-radius: 35px;
   background-color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+.app__bottomCard:not(:last-child) {
+  margin-right: 37px;
+}
+.app__bottomCard p {
+  color: #000000;
+}
+.app__bottomCard svg {
+  margin-bottom: 15px;
+}
+.app__bottomCard:hover {
+  background-color: #60AD5E;
+}
+.app__bottomCard:hover path {
+  fill: #fff;
+}
+.app__bottomCard:hover p {
+  color: #fff;
+}
+
+@media (max-width: 1500px) {
+  .app img {
+    min-width: 600px;
+    max-height: 400px;
+  }
+  .app__title {
+    font-size: 30px;
+  }
+  .app__bottomCard {
+    font-size: 14px;
+  }
+  .app__bottomCard svg {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 1200px) {
+  .app__bottomCard {
+    padding: 10px 35px;
+    border-radius: 25px;
+  }
+  .app__bottomCard svg {
+    width: 50%;
+    height: 50%;
+    margin-bottom: 5px;
+  }
+}
+@media (max-width: 1000px) {
+  .app_wrapper {
+    padding: 54px;
+    text-align: center;
+  }
+  .app__top {
+    flex-direction: column;
+    align-items: center;
+  }
+  .app__top img {
+    max-width: 55%;
+  }
+  .app__descr {
+    margin: 0;
+  }
+  .app__descr div {
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+  .app__title {
+    margin-bottom: 24px;
+  }
+  .app__bottomCards {
+    flex-wrap: wrap;
+    max-width: 88%;
+    align-items: center;
+  }
+  .app__bottomCard:not(:last-child) {
+    margin: 0;
+  }
+  .app__bottomCard:nth-child(1) {
+    margin-bottom: 8px;
+  }
+  .app__bottomCard:nth-child(2) {
+    margin-bottom: 8px;
+  }
+  .app__bottomCard:nth-child(2n-1) {
+    margin-right: 8px;
+  }
+}
+@media (max-width: 768px) {
+  .app_wrapper {
+    padding: 24px;
+  }
+  .app__top {
+    margin-bottom: 37px;
+  }
+  .app__top img {
+    max-width: 80%;
+  }
+  .app__title {
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 16px;
+  }
+  .app__text {
+    font-size: 12px;
+    line-height: 12px;
+    margin-bottom: 32px;
+  }
+  .app__link {
+    padding: 12px 18px;
+  }
+  .app__link img {
+    max-width: 100%;
+  }
+  .app__bottomCard {
+    max-width: 33%;
+    padding: 17px;
+    border-radius: 15px;
+    font-size: 8px;
+  }
 }
 
 /*# sourceMappingURL=AppDescription.module.css.map */

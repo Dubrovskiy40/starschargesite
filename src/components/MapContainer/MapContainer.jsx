@@ -18,7 +18,7 @@ const MapContainer = (props) => {
         <div className="map__main">
           <h2 className="map__title title">{t("mapContainer.title")}</h2>
           <section className="map__yandex">
-              <div className="map-frame">
+              <div className="map-frame" id="map">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d74099.63593886809!2d36.2676224!3d54.522675199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1662397395047!5m2!1sru!2sru"
                   width="100%"
@@ -29,34 +29,34 @@ const MapContainer = (props) => {
                 </iframe>
             </div>
           </section>
-          <section className="station">
-            <div className="station__top">
-              <div className="station__title_wrap">
-                <h2 className="station__title_top">Hotel Petr</h2>
-                <span className="station__count">4.5</span>
-              </div>
-              <span className="station__description">Приморский парк Победы, Крестовский проспект 21, г. Санкт-Петербург</span>
-            </div>
-            <div className="station__bottom">
-              <h3 className="station__title_bottom">Доступные тарифы</h3>
-              <div className="station__types_wrap">
-                {
-                  data?.map((el) => {
-                    return (
-                      <div key={el.id} className="type">
-                        <img className="type__img" src={el.path} alt={el.title}/>
-                        <div className="type__description_wrap">
-                          <h5 className="type__title">{el.title}</h5>
-                          <span className="type__characteristics">{el.characteristics}</span>
-                          <span className="type__price">{el.cost}</span>
-                        </div>
-                      </div>
-                    )
-                  })
-                }
-              </div>
-            </div>
-          </section>
+          {/*<section className="station">*/}
+          {/*  <div className="station__top">*/}
+          {/*    <div className="station__title_wrap">*/}
+          {/*      <h2 className="station__title_top">Hotel Petr</h2>*/}
+          {/*      <span className="station__count">4.5</span>*/}
+          {/*    </div>*/}
+          {/*    <span className="station__description">Приморский парк Победы, Крестовский проспект 21, г. Санкт-Петербург</span>*/}
+          {/*  </div>*/}
+          {/*  <div className="station__bottom">*/}
+          {/*    <h3 className="station__title_bottom">Доступные тарифы</h3>*/}
+          {/*    <div className="station__types_wrap">*/}
+          {/*      {*/}
+          {/*        data?.map((el) => {*/}
+          {/*          return (*/}
+          {/*            <div key={el.id} className="type">*/}
+          {/*              <img className="type__img" src={el.path} alt={el.title}/>*/}
+          {/*              <div className="type__description_wrap">*/}
+          {/*                <h5 className="type__title">{el.title}</h5>*/}
+          {/*                <span className="type__characteristics">{el.characteristics}</span>*/}
+          {/*                <span className="type__price">{el.cost}</span>*/}
+          {/*              </div>*/}
+          {/*            </div>*/}
+          {/*          )*/}
+          {/*        })*/}
+          {/*      }*/}
+          {/*    </div>*/}
+          {/*  </div>*/}
+          {/*</section>*/}
         </div>
       </div>
     </section>

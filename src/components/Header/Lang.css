@@ -2,6 +2,7 @@
   font-weight: 700;
   cursor: pointer;
   color: #fff;
+  opacity: 0.5;
   transition: color 0.3s ease-in-out;
 }
 .header__lang-link:not(:last-child) {
@@ -9,11 +10,11 @@
 }
 
 .header__lang-link.active {
-  color: #60ad5e;
+  opacity: 1;
 }
 
 .header__lang-link:hover {
-  color: #60ad5e;
+  opacity: 1;
 }
 
 @media (max-width: 1500px) {
@@ -34,6 +35,7 @@
   }
   .header__lang {
     font-size: 18px;
+    margin-right: 0;
   }
   .header__lang-link:not(:last-child) {
     margin-right: 10px;

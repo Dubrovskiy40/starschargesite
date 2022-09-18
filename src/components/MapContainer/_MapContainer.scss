@@ -13,6 +13,8 @@ body {
 }
 
 .map {
+  padding: 0 0 32px 0;
+
   &__main {
     position: relative;
     display: flex;
@@ -195,6 +197,7 @@ body {
       cursor: grab;
 
       &:hover {
+        height: 80%;
       }
     }
   }
