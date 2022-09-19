@@ -35,7 +35,7 @@ const SwiperParallax = (props) => {
   ];
 
   return (
-    <section id={props.menuName} className="container swiper-parallax">
+    <section id="Главная" className="container swiper-parallax">
       <Swiper
         scrollbar={{
           draggable: true,
