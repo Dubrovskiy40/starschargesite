@@ -219,7 +219,7 @@ const Feedback = () => {
             <CmError error={errors["captchaError"]} />
           </div>
           <div className="feedback__update-code feedback__grid6" onClick={handleUpdateCode}>
-            <span className="feedback__update-code_text">Обновить код</span>
+            <span className="feedback__update-code_text">{t("feedback.code")}</span>
           </div>
           {/*Пользовательское соглашение. Персональные данные*/}
           <div className="feedback__agreement feedback__grid7">

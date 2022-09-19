@@ -43,7 +43,7 @@ const Team = () => {
   return (
     <section className="section team">
       <div className="container">
-        <h2 className="title">{t("team.title")}</h2>
+        <h2 className="team__title title">{t("team.title")}</h2>
         <div className="flex team__descr">
           <p className="descr team__text">
             Проснувшись однажды утром после беспокойного сна, Грегор Замза

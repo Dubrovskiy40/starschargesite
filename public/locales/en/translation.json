@@ -28,6 +28,13 @@
   "mapContainer": {
     "title": "Stations"
   },
+  "app": {
+    "title": "Book and charge with our app",
+    "item1": "Quality",
+    "item2": "Speed",
+    "item3": "Locations",
+    "item4": "Comfort"
+  },
   "feedback": {
     "title": "Ask us a question",
     "placeholderName": "Name",
@@ -40,6 +47,7 @@
     "inpAreaErrMess": "error in text",
     "placeholderCaptcha": "Enter the code from the image",
     "inpCaptchaErrMess": "error in captcha",
+    "code": "Update Code",
     "termsOfUse": "By clicking the button, I accept the terms of the User Agreement and give my consent to the processing of my personal data, in accordance with Federal Law No. 152-FZ of July 27, 2006 \"On Personal Data.",
     "agreement": {
       "title": "Privacy Policy",

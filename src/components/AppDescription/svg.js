@@ -1,8 +1,8 @@
 export const AppCard = () => {
   return (
-    <svg
-      width="102"
-      height="68"
+    <svg className="card__svg"
+      // width="102"
+      // height="68"
       viewBox="0 0 102 68"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
