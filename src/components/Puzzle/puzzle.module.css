@@ -6,6 +6,11 @@
 }
 .grid div {
   width: 100%;
+  filter: grayscale(1);
+  transition: 1s;
+}
+.grid div:hover {
+  filter: grayscale(0);
 }
 
 @media (min-width: 320px) {

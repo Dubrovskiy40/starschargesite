@@ -53,18 +53,33 @@ const Team = () => {
             чешуйками живот, на верхушке которого еле держалось готовое вот-вот
             окончательно сползти одеяло.
           </p>
-          <img src={teamDescr} alt=""></img>
+          <img src={teamDescr} alt="team background image" />
         </div>
         <ul className="team__list">
           {teamsList?.map((man) => {
             return (
-              <li className="team__item" key={man.id}>
-                <div>
-                  <img className="team__img" src={man.imgPath} alt="avatar" />
-                  <div className="team__item_overlay">
-                    <p className="team__item_fName">{man.firstName}</p>
-                    <p className="team__item_lName">{man.lastName}</p>
-                    <p className="team__item_post">{man.post}</p>
+              // <li className="team__item" key={man.id}>
+              //   <div>
+              //     <img className="team__img" src={man.imgPath} alt="avatar" />
+              //     <div className="team__item_overlay">
+              //       <p className="team__item_fName">{man.firstName}</p>
+              //       <p className="team__item_lName">{man.lastName}</p>
+              //       <p className="team__item_post">{man.post}</p>
+              //     </div>
+              //   </div>
+              // </li>
+              <li className="team__item image-parlax" key={man.id}>
+                <div className="image-container">
+                  <div className="front-side" style={{"backgroundImage": `url(${man.imgPath})`}}>
+                    <div className="inner">
+                      <p>{man.firstName}</p>
+                      <p>{man.lastName}</p>
+                    </div>
+                  </div>
+                  <div className="back-side">
+                    <div className="inner">
+                      <p>{man.post}</p>
+                    </div>
                   </div>
                 </div>
               </li>
