@@ -4,7 +4,7 @@ import { Scrollbar } from "swiper";
 import "swiper/scss";
 import "swiper/scss/scrollbar";
 
-import firstSlide from "../../assets/images/sliderParallax/group.png";
+import { FirstSlide } from "../../assets/images/sliderParallax/Vector";
 import secondSlide from "../../assets/images/sliderParallax/station.png";
 import thirdSlide from "../../assets/images/sliderParallax/light.png";
 
@@ -16,7 +16,7 @@ const SwiperParallax = (props) => {
       text:
         "Найдите нужную станцию. Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. " +
         "Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана.",
-      img: firstSlide,
+      img: <FirstSlide />,
     },
     {
       id: "2",
@@ -59,7 +59,8 @@ const SwiperParallax = (props) => {
                   <p>{slide.text}</p>
                 </div>
               </div>
-              <img src={slide.img} alt="descrImg"></img>
+              {/* <img src={slide.img} alt="descrImg"></img> */}
+              <div className="svg">{slide.img}</div>
             </SwiperSlide>
           );
         })}
