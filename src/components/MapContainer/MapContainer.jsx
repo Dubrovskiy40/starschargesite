@@ -8,7 +8,7 @@ const MapContainer = (props) => {
   const { t } = useTranslation();
 
   return (
-    <section id={props.menuName} className="map">
+    <section id="Станции" className="map">
       <div className="container">
         <div className="map__main">
           <h2 className="map__title title">{t("mapContainer.title")}</h2>

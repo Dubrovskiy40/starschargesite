@@ -2,7 +2,7 @@ import Style from "./table.module.scss";
 
 const Table = (card) => {
   return (
-    <section id={card.menuName} className="table">
+    <section className="table">
       <div className="container">
         <ul className={Style.tableGrid}>
           {card.cardsList?.map((content) => {
