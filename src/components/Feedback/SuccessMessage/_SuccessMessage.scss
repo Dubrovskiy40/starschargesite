@@ -5,7 +5,9 @@
     display: block;
   }
 
-  &__block {}
+  &__block {
+    @include font_14;
+  }
 
   &__block_green{
     color: $color-green;
