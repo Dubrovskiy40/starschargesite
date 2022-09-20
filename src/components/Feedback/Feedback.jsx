@@ -6,7 +6,6 @@ import AgreementText from "./AgreementText/AgreementText";
 import { CmError } from "./CmError/CmError";
 import CmInput from "./CmInput/CmInput";
 import captchaImg from "../../assets/images/feedback/captcha.png";
-import carImg from "../../assets/images/feedback/car_bg.png";
 import { useTranslation } from "react-i18next";
 import "../../utils/i18next";
 

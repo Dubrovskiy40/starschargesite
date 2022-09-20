@@ -1485,8 +1485,8 @@ body {
   border-radius: 20px;
 }
 .map .map-frame {
-  width: 100vw;
-  height: calc(100vh - 100px);
+  width: 96vw;
+  height: 70vh;
   background-color: var(--light-theme);
 }
 .map .map-frame > iframe {
@@ -1496,16 +1496,17 @@ body {
   pointer-events: visibleStroke;
 }
 
-.gm-style > div:nth-child(4) > div {
-  top: 80px;
-  left: 50px;
-}
-
 ::selection {
   color: #ffffff;
   background-color: var(--light-theme);
 }
 
+@media (max-width: 1190px) {
+  .map .map-frame {
+    width: 93vw;
+    height: 70vh;
+  }
+}
 @media (max-width: 768px) {
   .map__google {
     width: 250px;
@@ -1518,6 +1519,10 @@ body {
   }
   .map__google:hover {
     height: 80%;
+  }
+  .map .map-frame {
+    width: 89vw;
+    height: 82vh;
   }
 }
 .loader__wrap {

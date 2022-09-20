@@ -56,8 +56,8 @@ body {
   }
 
   & .map-frame {
-    width: 100vw;
-    height: calc(100vh - 100px);
+    width: 96vw;
+    height: 70vh;
     background-color: var(--light-theme);
 
     & > iframe {
@@ -69,17 +69,19 @@ body {
   }
 }
 
-.gm-style > div:nth-child(4) > div {
-  top: 80px;
-  left: 50px;
-}
-
 ::selection {
   color: $color-white;
   background-color: var(--light-theme);
 }
 
 @media (max-width: 1190px) {
+  .map {
+
+    & .map-frame {
+      width: 93vw;
+      height: 70vh;
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -97,6 +99,11 @@ body {
       &:hover {
         height: 80%;
       }
+    }
+
+    & .map-frame {
+      width: 89vw;
+      height: 82vh;
     }
   }
 }

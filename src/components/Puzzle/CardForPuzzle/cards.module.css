@@ -6,6 +6,10 @@
   background: #202020;
   box-sizing: border-box;
 }
+.card:hover {
+  transform: scale(1.02);
+  transition: transform 0.5s ease-in-out;
+}
 .card__img {
   width: 100%;
   border-radius: inherit;
