@@ -1528,8 +1528,8 @@ body {
   border-radius: 20px;
 }
 .map .map-frame {
-  width: 96vw;
-  height: 70vh;
+  width: 97vw;
+  height: 89vh;
   background-color: var(--light-theme);
 }
 .map .map-frame > iframe {
@@ -1547,7 +1547,7 @@ body {
 @media (max-width: 1190px) {
   .map .map-frame {
     width: 93vw;
-    height: 70vh;
+    height: 89vh;
   }
 }
 @media (max-width: 768px) {
@@ -1565,7 +1565,7 @@ body {
   }
   .map .map-frame {
     width: 89vw;
-    height: 82vh;
+    height: 83vh;
   }
 }
 .loader__wrap {
