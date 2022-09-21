@@ -7,6 +7,25 @@
     height: 100%;
   }
 
+  .svg path {
+    stroke: 10px;
+    animation: glowing 1100ms infinite;
+  }
+  @keyframes glowing {
+    0% {
+      stroke: #005005;
+      // box-shadow: 0 0 3px #0091b2;
+    }
+    50% {
+      stroke: #398837;
+      // box-shadow: 0 0 15px #21c7ed;
+    }
+    100% {
+      stroke: #60AD5E;
+      // box-shadow: 0 0 3px #0091b2;
+    }
+  }
+
   .swiper-slide {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -18,6 +37,7 @@
 
     img {
       max-width: 55%;
+      animation: glowing 1300ms infinite;
     }
   }
 
