@@ -1,5 +1,5 @@
 .swiper-parallax {
-  height: 100vh; // как лучше?
+  height: 100vh;
   justify-content: space-between;
 
   .swiper {
@@ -7,22 +7,64 @@
     height: 100%;
   }
 
-  .svg path {
-    stroke: 10px;
-    animation: glowing 1100ms infinite;
+  img {
+    animation: scale 1400ms infinite;
   }
-  @keyframes glowing {
+
+  .hero__img {
+    position: relative;
+  }
+
+  .hero__animation {
+    animation: none;
+    position: absolute;
+    left: -100px;
+    bottom: 0;
+  }
+
+  @keyframes scale {
     0% {
-      stroke: #005005;
-      // box-shadow: 0 0 3px #0091b2;
+      transform: scale(0.9);
     }
+
+    10% {
+      transform: scale(0.91);
+    }
+
+    20% {
+      transform: scale(0.92);
+    }
+
+    30% {
+      transform: scale(0.93);
+    }
+
+    40% {
+      transform: scale(0.94);
+    }
+
     50% {
-      stroke: #398837;
-      // box-shadow: 0 0 15px #21c7ed;
+      transform: scale(0.95);
     }
+
+    60% {
+      transform: scale(0.94);
+    }
+
+    70% {
+      transform: scale(0.93);
+    }
+
+    80% {
+      transform: scale(0.92);
+    }
+
+    90% {
+      transform: scale(0.91);
+    }
+
     100% {
-      stroke: #60AD5E;
-      // box-shadow: 0 0 3px #0091b2;
+      transform: scale(0.9);
     }
   }
 
@@ -33,12 +75,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-
-    img {
-      max-width: 55%;
-      animation: glowing 1300ms infinite;
-    }
+    justify-content: space-between;
   }
 
   .parallax-bg {
@@ -69,7 +106,7 @@
 
 .hero__descr {
   flex-direction: column;
-  max-width: 70%;
+  max-width: 40%;
   margin-right: 30px;
 }
 
