@@ -30,18 +30,6 @@
     margin-right: 16px;
   }
 
-  &__appStore_img {
-
-  }
-
-  &__googleStore_link {
-
-  }
-
-  &__googleStore_img {
-
-  }
-
   &__img_bg {
     width: 50%;
   }
@@ -62,6 +50,7 @@
     border-radius: 35px;
     background-color: $color-white;
     @include font_14_1;
+    transition: 0.4s ease-in-out;
 
     &:not(:last-child) {
       margin-right: 37px;

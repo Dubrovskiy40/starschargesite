@@ -1,10 +1,71 @@
 .swiper-parallax {
-  height: 100vh; // как лучше?
+  height: 100vh;
   justify-content: space-between;
 
   .swiper {
     width: 100%;
     height: 100%;
+  }
+
+  img {
+    animation: scale 1400ms infinite;
+  }
+
+  .hero__img {
+    position: relative;
+  }
+
+  .hero__animation {
+    animation: none;
+    position: absolute;
+    left: -100px;
+    bottom: 0;
+  }
+
+  @keyframes scale {
+    0% {
+      transform: scale(0.9);
+    }
+
+    10% {
+      transform: scale(0.91);
+    }
+
+    20% {
+      transform: scale(0.92);
+    }
+
+    30% {
+      transform: scale(0.93);
+    }
+
+    40% {
+      transform: scale(0.94);
+    }
+
+    50% {
+      transform: scale(0.95);
+    }
+
+    60% {
+      transform: scale(0.94);
+    }
+
+    70% {
+      transform: scale(0.93);
+    }
+
+    80% {
+      transform: scale(0.92);
+    }
+
+    90% {
+      transform: scale(0.91);
+    }
+
+    100% {
+      transform: scale(0.9);
+    }
   }
 
   .swiper-slide {
@@ -14,11 +75,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-
-    img {
-      max-width: 55%;
-    }
+    justify-content: space-between;
   }
 
   .parallax-bg {
@@ -49,7 +106,7 @@
 
 .hero__descr {
   flex-direction: column;
-  max-width: 70%;
+  max-width: 40%;
   margin-right: 30px;
 }
 
