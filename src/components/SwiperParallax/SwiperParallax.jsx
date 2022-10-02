@@ -4,9 +4,8 @@ import { Scrollbar } from "swiper";
 import "swiper/scss";
 import "swiper/scss/scrollbar";
 
-import { FirstSlide } from "../../assets/images/sliderParallax/Vector";
-import secondSlide from "../../assets/images/sliderParallax/station.png";
-import thirdSlide from "../../assets/images/sliderParallax/light.png";
+import staticStation from "../../assets/images/sliderParallax/station.png";
+import firstSlide from "../../assets/images/sliderParallax/light.png";
 
 const SwiperParallax = (props) => {
   const arraySliders = [
@@ -16,13 +15,13 @@ const SwiperParallax = (props) => {
       text:
         "Найдите нужную станцию. Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. " +
         "Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана.",
-      img: <FirstSlide />,
+      img: firstSlide,
     },
     {
       id: "2",
       title: "Рыбный текст для проверки",
       text: "Его комната, настоящая, разве что слишком маленькая, но обычная комната, мирно покоилась в своих четырех хорошо знакомых стенах.",
-      img: secondSlide,
+      img: firstSlide,
     },
     {
       id: "3",
@@ -30,7 +29,7 @@ const SwiperParallax = (props) => {
       text:
         "Найдите нужную станцию. Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. " +
         "Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана.",
-      img: thirdSlide,
+      img: firstSlide,
     },
   ];
 
@@ -59,8 +58,14 @@ const SwiperParallax = (props) => {
                   <p>{slide.text}</p>
                 </div>
               </div>
-              {/* <img src={slide.img} alt="descrImg"></img> */}
-              <div className="svg">{slide.img}</div>
+              <div className="hero__img">
+                <img src={slide.img} alt="descrImg"></img>
+                <img
+                  className="hero__animation"
+                  src={staticStation}
+                  alt="descrImg"
+                ></img>
+              </div>
             </SwiperSlide>
           );
         })}
