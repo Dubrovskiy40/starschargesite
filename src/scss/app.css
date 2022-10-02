@@ -497,7 +497,7 @@ button {
 
 @media (max-width: 1500px) {
   .header {
-    font-weight: 400;
+    font-weight: 700;
     font-size: 14px;
     line-height: 100%;
   }
@@ -644,6 +644,53 @@ button {
   width: 100%;
   height: 100%;
 }
+.swiper-parallax img {
+  animation: scale 1400ms infinite;
+}
+.swiper-parallax .hero__img {
+  position: relative;
+}
+.swiper-parallax .hero__animation {
+  animation: none;
+  position: absolute;
+  left: -100px;
+  bottom: 0;
+}
+@keyframes scale {
+  0% {
+    transform: scale(0.9);
+  }
+  10% {
+    transform: scale(0.91);
+  }
+  20% {
+    transform: scale(0.92);
+  }
+  30% {
+    transform: scale(0.93);
+  }
+  40% {
+    transform: scale(0.94);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  60% {
+    transform: scale(0.94);
+  }
+  70% {
+    transform: scale(0.93);
+  }
+  80% {
+    transform: scale(0.92);
+  }
+  90% {
+    transform: scale(0.91);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
 .swiper-parallax .swiper-slide {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -651,10 +698,7 @@ button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-}
-.swiper-parallax .swiper-slide img {
-  max-width: 55%;
+  justify-content: space-between;
 }
 .swiper-parallax .parallax-bg {
   position: absolute;
@@ -683,7 +727,7 @@ button {
 
 .hero__descr {
   flex-direction: column;
-  max-width: 70%;
+  max-width: 40%;
   margin-right: 30px;
 }
 
@@ -1035,6 +1079,7 @@ button {
   font-weight: 700;
   font-size: 14px;
   line-height: 100%;
+  transition: 0.4s ease-in-out;
 }
 .app__bottomCard:not(:last-child) {
   margin-right: 37px;
@@ -1798,6 +1843,12 @@ body {
 .feedback__grid5 {
   grid-column: 1/3;
   grid-row: 4/5;
+  position: relative;
+}
+.feedback__grid5 div {
+  position: absolute;
+  top: 62px;
+  left: 240px;
 }
 .feedback__grid6 {
   grid-column: 1/2;
@@ -1831,6 +1882,10 @@ body {
   }
   .feedback {
     padding-left: 0;
+  }
+  .feedback__grid5 div {
+    top: 62px;
+    left: 178px;
   }
   .captcha__img {
     width: 156px;
@@ -1893,6 +1948,10 @@ body {
     flex-direction: column;
     grid-column: 1/2;
     grid-row: 5/6;
+    position: static;
+  }
+  .feedback__grid5 div {
+    position: static;
   }
   .feedback__grid6 {
     grid-column: 1/2;
