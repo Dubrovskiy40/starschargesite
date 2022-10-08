@@ -54,6 +54,10 @@
       background: $color-white;
       color: $color-salad;
     }
+
+    &_disabled {
+      opacity: .5;
+    }
   }
 
   &__img_wrap {
