@@ -28,6 +28,7 @@
   max-width: 1920px;
   margin: 0 auto;
   padding: 0 30px;
+  padding-top: 90px;
 }
 
 @media (max-width: 1190px) {
@@ -1545,7 +1546,6 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
   min-height: 640px;
   background-color: var(--black-theme);
 }
@@ -1771,7 +1771,7 @@ body {
 .feedback_wrap {
   background: #333333;
   color: #ffffff;
-  padding: 83px 0 57px;
+  padding: 0 57px;
 }
 
 .feedback__title {
@@ -1784,7 +1784,6 @@ body {
   justify-content: space-between;
   row-gap: 24px;
   column-gap: 24px;
-  padding-left: 64px;
 }
 .feedback__inp_wrap {
   display: flex;
@@ -1818,6 +1817,9 @@ body {
   cursor: pointer;
   background: #ffffff;
   color: #60AD5E;
+}
+.feedback__btn_disabled {
+  opacity: 0.5;
 }
 .feedback__img_wrap {
   width: 100%;

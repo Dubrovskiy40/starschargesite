@@ -2,9 +2,10 @@ import React, {useEffect, useState} from "react";
 import { getScreenWidth } from "../../hoc/getScreenWidth";
 import { useTranslation } from "react-i18next";
 import "../../utils/i18next";
-// import Station from "./Station/Station";
+import {observer} from "mobx-react";
+import FormStore from "../../store/FormStore";
 
-const MapContainer = (props) => {
+const MapContainer = observer((props) => {
   const { t } = useTranslation();
 
   const { widthScreen, deviceType} = props;
@@ -32,6 +33,6 @@ const MapContainer = (props) => {
       </div>
     </section>
   );
-};
+});
 
 export default getScreenWidth(MapContainer);

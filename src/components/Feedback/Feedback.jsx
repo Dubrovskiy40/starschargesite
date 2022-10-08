@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SuccessMessage from "./SuccessMessage/SuccessMessage";
 import Agreement from "./Agreement/Agreement";
 import ModalWindow from "../ModalWindow/ModalWindow";
 import AgreementText from "./AgreementText/AgreementText";
 import { CmError } from "./CmError/CmError";
 import CmInput from "./CmInput/CmInput";
-import captchaImg from "../../assets/images/feedback/captcha.png";
 import { useTranslation } from "react-i18next";
 import "../../utils/i18next";
 import {observer} from "mobx-react";
@@ -19,7 +18,7 @@ const Feedback = observer(() => {
   const [tel, setTel] = useState({ isValid: true, value: "" });
   const [email, setEmail] = useState({ isValid: true, value: "" });
   const [question, setQuestion] = useState({ isValid: true, value: "" });
-  const [captcha, setCaptcha] = useState({ isValid: true, value: "" }); // пока true, переделать как будет бэк
+  const [captcha, setCaptcha] = useState({ isValid: true, value: "" });
 
   const [successfullySent, setSuccessfullySent] = useState(true); // статус отправки формы
   const [showSuccessBlock, setShowSuccessBlock] = useState(false); // блок подтверждения отправки формы
@@ -83,8 +82,8 @@ const Feedback = observer(() => {
         });
         break;
       case "inpCaptcha":
-        let isValid = value === "v4xBG"; // пока true, переделать как будет бэк
-        setCaptcha({ isValid, value });
+        let isValid = 'OK' === FormStore.captchaIsValid;
+        setCaptcha({ isValid, value});
         setErrors({
           ...errors,
           captchaError: !isValid && t("feedback.inpCaptchaErrMess"),
@@ -120,16 +119,9 @@ const Feedback = observer(() => {
       setTel({ isValid: true, value: "" });
       setEmail({ isValid: true, value: "" });
       setQuestion({ isValid: true, value: "" });
-      setCaptcha({ isValid: true, value: "" }); // пока true, переделать как будет бэк
+      setCaptcha({ isValid: true, value: "" });
     } else setShowSuccessBlock(false);
   };
-
-  // useEffect(() => {
-  //   fetch("http://85.193.84.173:9164/GetCaptchaImg")
-  //     .then((res) => res.json())
-  //     .then((data) => console.log("captchaImg", data));
-  // });
-
 
   const handleUpdateCode = () => {
     console.log("update code");
@@ -144,6 +136,7 @@ const Feedback = observer(() => {
           className="feedback"
           id="feedback-form"
           onSubmit={handleSubmitForm}
+          noValidate
         >
           <div className="feedback__inp_wrap feedback__grid1">
             <CmInput
@@ -240,7 +233,7 @@ const Feedback = observer(() => {
           </div>
           <div className="feedback__btn_wrap feedback__grid8">
             <button
-              className="feedback__btn"
+              className={!isReadAgreement ? "feedback__btn feedback__btn_disabled" : "feedback__btn"}
               type="submit"
               disabled={!isReadAgreement ? true : false}
             >

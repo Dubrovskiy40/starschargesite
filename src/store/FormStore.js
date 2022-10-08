@@ -8,6 +8,7 @@ class FormStore {
   captchaImg = null;
   captchaUUID = null;
   captchaText = null;
+  captchaIsValid = '';// OK Error
 
   constructor() {
     makeAutoObservable(this);
@@ -34,6 +35,12 @@ class FormStore {
     this.setLoading(false);
   };
 
+  setCaptchaIsValid = (text) => {
+    runInAction(() => {
+      this.captchaIsValid = text;
+    });
+  };
+
   setCaptchaText = (text) => {
     runInAction(() => {
       this.captchaText = text;
@@ -47,6 +54,7 @@ class FormStore {
     if (itemReq.ok && itemRes !== null) {
       runInAction(() => {
         console.log("Статус капчи",itemRes)
+        this.setCaptchaIsValid(itemRes)
       });
     }
     this.setLoading(false);
