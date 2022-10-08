@@ -8,8 +8,10 @@ import CmInput from "./CmInput/CmInput";
 import captchaImg from "../../assets/images/feedback/captcha.png";
 import { useTranslation } from "react-i18next";
 import "../../utils/i18next";
+import {observer} from "mobx-react";
+import FormStore from "../../store/FormStore";
 
-const Feedback = () => {
+const Feedback = observer(() => {
   const { t } = useTranslation();
   const [openModalWindow, setOpenModalWindow] = useState(false); // модальное окно
 
@@ -95,6 +97,9 @@ const Feedback = () => {
   const handleSubmitForm = (event) => {
     event.preventDefault();
 
+    // для проверки работоспособности капчи
+    FormStore.checkCaptcha()
+
     let isTrue =
       name.isValid &&
       tel.isValid &&
@@ -119,14 +124,16 @@ const Feedback = () => {
     } else setShowSuccessBlock(false);
   };
 
-  useEffect(() => {
-    fetch("http://85.193.84.173:9164/GetCaptchaImg")
-      .then((res) => res.json())
-      .then((data) => console.log("captchaImg", data));
-  });
+  // useEffect(() => {
+  //   fetch("http://85.193.84.173:9164/GetCaptchaImg")
+  //     .then((res) => res.json())
+  //     .then((data) => console.log("captchaImg", data));
+  // });
+
 
   const handleUpdateCode = () => {
     console.log("update code");
+    FormStore.getCaptchaImg();
   };
 
   return (
@@ -201,19 +208,22 @@ const Feedback = () => {
             />
             <CmError error={errors["textareaError"]} />
           </div>
+
           {/*Капча*/}
           <div className="captcha feedback__grid5">
-            <img className="captcha__img" src={captchaImg} alt="капча" />
+            {FormStore.captchaImg &&
+              <img className="captcha__img" src={URL.createObjectURL(FormStore.captchaImg)} alt="капча" />
+            }
             <CmInput
               isInput={true}
               id="inpCaptcha"
               name="inpCaptcha"
               type="text"
-              value={captcha.value}
+              // value={captcha.value}
               placeholder={t("feedback.placeholderCaptcha")}
               required={true}
               isValid={captcha.isValid}
-              onChange={onChangeInput}
+              onChange={e => FormStore.setCaptchaText(e)}
             />
             <CmError error={errors["captchaError"]} />
           </div>
@@ -254,6 +264,6 @@ const Feedback = () => {
       </div>
     </section>
   );
-};
+});
 
 export default Feedback;
