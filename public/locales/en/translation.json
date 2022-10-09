@@ -22,9 +22,6 @@
     },
     "buttonName": "More news"
   },
-  "team": {
-    "title": "Our team"
-  },
   "mapContainer": {
     "title": "Stations"
   },
@@ -34,6 +31,30 @@
     "item2": "Speed",
     "item3": "Location",
     "item4": "Comfort"
+  },
+  "team": {
+    "title": "Our team",
+    "description": "",
+    "member1":{
+      "firstName": "Ilya",
+      "lastName": "Denisov",
+      "position": "Director"
+    },
+    "member2":{
+      "firstName": "Vadim",
+      "lastName": "Malkov",
+      "position": "Technical Director"
+    },
+    "member3":{
+      "firstName": "Dmitry",
+      "lastName": "Kravchenko",
+      "position": "IT Architect"
+    },
+    "member4":{
+      "firstName": "Stanislav",
+      "lastName": "Shvedovich",
+      "position": "Chief Engineer"
+    }
   },
   "feedback": {
     "title": "Ask us a question",

@@ -22,9 +22,6 @@
     },
     "buttonName": "Ещё новости"
   },
-  "team": {
-    "title": "Наша команда"
-  },
   "mapContainer": {
     "title": "Станции"
   },
@@ -34,6 +31,30 @@
     "item2": "Скорость",
     "item3": "Локация",
     "item4": "Комфорт"
+  },
+  "team": {
+    "title": "Наша команда",
+    "description": "",
+    "member1":{
+      "firstName": "Илья",
+      "lastName": "Денисов",
+      "position": "Директор"
+    },
+    "member2":{
+      "firstName": "Вадим",
+      "lastName": "Малков",
+      "position": "Технический директор"
+    },
+    "member3":{
+      "firstName": "Дмитрий",
+      "lastName": "Кравченко",
+      "position": "Архитектор ИТ"
+    },
+    "member4":{
+      "firstName": "Станислав",
+      "lastName": "Шведович",
+      "position": "Главный инженер"
+    }
   },
   "feedback": {
     "title": "Задайте нам вопрос",

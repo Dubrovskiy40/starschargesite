@@ -35,57 +35,7 @@
       border-radius: 20px;
     }
   }
-
-  //&__img {
-  //  width: 100%;
-  //  height: 100%;
-  //  object-fit: cover;
-  //  border-radius: inherit;
-  //}
-
-  //&__item_overlay {
-  //  position: absolute;
-  //  top: 0;
-  //  left: 0;
-  //  right: 0;
-  //  width: inherit;
-  //  height: inherit;
-  //  background-color: rgba(58, 56, 56, 0.86);
-  //  display: flex;
-  //  flex-direction: column;
-  //  justify-content: center;
-  //  align-items: center;
-  //  opacity: 0;
-  //  transition: 0.5s;
-  //  border-radius: inherit;
-  //}
-
-  //&__item_fName {
-  //  @include font_24;
-  //  color: $color-white;
-  //  margin-bottom: 5px;
-  //}
-  //
-  //&__item_lName {
-  //  @include font_24;
-  //  color: $color-white;
-  //  margin-bottom: 15px;
-  //}
-  //
-  //&__item_post {
-  //  @include font_18;
-  //  color: $color-white;
-  //}
 }
-
-//.team__item:hover .team__item_overlay {
-//  opacity: 1;
-//}
-
-
-
-
-
 
 .image-parlax{
   cursor: pointer;
