@@ -8,33 +8,33 @@ const Team = () => {
   const teamsList = [
     {
       id: "1",
-      firstName: "Имя1",
-      lastName: "Фамилия1",
-      post: "Директор",
+      firstName: t("team.member1.firstName"),
+      lastName: t("team.member1.lastName"),
+      position: t("team.member1.position"),
       imgPath:
         "https://storage.yandexcloud.net/newspressfeed/wp-content/uploads/2018/11/marketing-director.jpg",
     },
     {
       id: "2",
-      firstName: "Имя2",
-      lastName: "Фамилия2",
-      post: "Дизайнер",
+      firstName: t("team.member2.firstName"),
+      lastName: t("team.member2.lastName"),
+      position: t("team.member2.position"),
       imgPath:
         "https://storage.yandexcloud.net/newspressfeed/wp-content/uploads/2018/11/marketing-director.jpg",
     },
     {
       id: "3",
-      firstName: "Имя3",
-      lastName: "Фамилия3",
-      post: "Администратор",
+      firstName: t("team.member3.firstName"),
+      lastName: t("team.member3.lastName"),
+      position: t("team.member3.position"),
       imgPath:
         "https://storage.yandexcloud.net/newspressfeed/wp-content/uploads/2018/11/marketing-director.jpg",
     },
     {
       id: "4",
-      firstName: "Имя4",
-      lastName: "Фамилия4",
-      post: "Дворник",
+      firstName: t("team.member4.firstName"),
+      lastName: t("team.member4.lastName"),
+      position: t("team.member4.position"),
       imgPath:
         "https://storage.yandexcloud.net/newspressfeed/wp-content/uploads/2018/11/marketing-director.jpg",
     },
@@ -78,7 +78,7 @@ const Team = () => {
                   </div>
                   <div className="back-side">
                     <div className="inner">
-                      <p>{man.post}</p>
+                      <p>{man.position}</p>
                     </div>
                   </div>
                 </div>

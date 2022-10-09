@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import SuccessMessage from "./SuccessMessage/SuccessMessage";
 import Agreement from "./Agreement/Agreement";
 import ModalWindow from "../ModalWindow/ModalWindow";
@@ -18,7 +18,7 @@ const Feedback = observer(() => {
   const [tel, setTel] = useState({ isValid: true, value: "" });
   const [email, setEmail] = useState({ isValid: true, value: "" });
   const [question, setQuestion] = useState({ isValid: true, value: "" });
-  const [captcha, setCaptcha] = useState({ isValid: true, value: "" });
+  const [captcha, setCaptcha] = useState({ isValid: true, value: FormStore.captchaIsValid });
 
   const [successfullySent, setSuccessfullySent] = useState(true); // статус отправки формы
   const [showSuccessBlock, setShowSuccessBlock] = useState(false); // блок подтверждения отправки формы
@@ -83,7 +83,7 @@ const Feedback = observer(() => {
         break;
       case "inpCaptcha":
         let isValid = 'OK' === FormStore.captchaIsValid;
-        setCaptcha({ isValid, value});
+        setCaptcha({ isValid, value: FormStore.captchaIsValid});
         setErrors({
           ...errors,
           captchaError: !isValid && t("feedback.inpCaptchaErrMess"),
@@ -92,6 +92,10 @@ const Feedback = observer(() => {
       default: // линт выдает ошибку без этой строчки
     }
   };
+
+  useEffect(() => {
+    console.log('123captcha', captcha)
+  },[captcha.value]);
 
   const handleSubmitForm = (event) => {
     event.preventDefault();
@@ -106,7 +110,7 @@ const Feedback = observer(() => {
       question.isValid &&
       captcha.isValid;
     let isValue =
-      name.value && tel.value && email.value && question.value && captcha.value;
+      name.value && tel.value && email.value && question.value && captcha.value === 'OK';
 
     if (isTrue && isValue) {
       console.log(
@@ -119,7 +123,7 @@ const Feedback = observer(() => {
       setTel({ isValid: true, value: "" });
       setEmail({ isValid: true, value: "" });
       setQuestion({ isValid: true, value: "" });
-      setCaptcha({ isValid: true, value: "" });
+      setCaptcha({ isValid: true, value: FormStore.captchaIsValid });
     } else setShowSuccessBlock(false);
   };
 
