@@ -40,6 +40,7 @@ deploy-job-develop:
     - ssh $SERVER_USERNAME@$SERVER_ADDRESS "mv /usr/share/nginx/html/starscharge/test/static/media/photos/ /usr/share/nginx/html/starscharge/photos/"
     - ssh $SERVER_USERNAME@$SERVER_ADDRESS "rm -rf /usr/share/nginx/html/starscharge/test"
     - scp -r build $SERVER_USERNAME@$SERVER_ADDRESS:/usr/share/nginx/html/starscharge/test
+    - ssh $SERVER_USERNAME@$SERVER_ADDRESS "mkdir -p /usr/share/nginx/html/starscharge/test/static/media/"
     - ssh $SERVER_USERNAME@$SERVER_ADDRESS "mv /usr/share/nginx/html/starscharge/photos/ /usr/share/nginx/html/starscharge/test/static/media/photos/"
     - echo "Application successfully deployed in test."
 
@@ -79,6 +80,7 @@ deploy-job-prod:
     - ssh $SERVER_USERNAME@$SERVER_ADDRESS "mv /usr/share/nginx/html/starscharge/prod/static/media/photos/ /usr/share/nginx/html/starscharge/photos/"
     - ssh $SERVER_USERNAME@$SERVER_ADDRESS "rm -rf /usr/share/nginx/html/starscharge/prod"
     - scp -r build $SERVER_USERNAME@$SERVER_ADDRESS:/usr/share/nginx/html/starscharge/prod
+    - ssh $SERVER_USERNAME@$SERVER_ADDRESS "mkdir -p /usr/share/nginx/html/starscharge/prod/static/media/"
     - ssh $SERVER_USERNAME@$SERVER_ADDRESS "mv /usr/share/nginx/html/starscharge/photos/ /usr/share/nginx/html/starscharge/prod/static/media/photos/"
     - echo "Application successfully deployed in prod."
     
