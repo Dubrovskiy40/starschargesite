@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import MenuStore from "../../store/MenuStore";
 import {
   Cards,
   Header,
@@ -14,6 +13,7 @@ import {
   Statistics,
   MapContainer,
 } from "../../components";
+import MenuStore from "../../store/MenuStore";
 import FormStore from "../../store/FormStore";
 
 function Home() {
