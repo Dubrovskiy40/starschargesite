@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useState } from "react";
 import SuccessMessage from "./SuccessMessage/SuccessMessage";
 import Agreement from "./Agreement/Agreement";
 import ModalWindow from "../ModalWindow/ModalWindow";
@@ -7,129 +7,49 @@ import { CmError } from "./CmError/CmError";
 import CmInput from "./CmInput/CmInput";
 import { useTranslation } from "react-i18next";
 import "../../utils/i18next";
-import {observer} from "mobx-react";
-import FormStore from "../../store/FormStore";
+import { observer } from "mobx-react";
+import { useCaptcha } from "../../store/CaptchaStore";
+import { useFeedbackStore } from "../../store/FeedbackStore";
 
 const Feedback = observer(() => {
-  const { t } = useTranslation();
-  const [openModalWindow, setOpenModalWindow] = useState(false); // модальное окно
+  const capthcaStore = useCaptcha();
+  const { values, errors, inputChange, clearForm } = useFeedbackStore();
 
-  const [name, setName] = useState({ isValid: true, value: "" });
-  const [tel, setTel] = useState({ isValid: true, value: "" });
-  const [email, setEmail] = useState({ isValid: true, value: "" });
-  const [question, setQuestion] = useState({ isValid: true, value: "" });
-  const [captcha, setCaptcha] = useState({ isValid: true, value: FormStore.captchaIsValid });
+  const { t } = useTranslation();
+
+  const [openModalWindow, setOpenModalWindow] = useState(false); // модальное окно
+  const [isReadAgreement, setIsReadAgreement] = useState(false); // прочитано ли соглашение
 
   const [successfullySent, setSuccessfullySent] = useState(true); // статус отправки формы
   const [showSuccessBlock, setShowSuccessBlock] = useState(false); // блок подтверждения отправки формы
-  const [isReadAgreement, setIsReadAgreement] = useState(false); // прочитано ли соглашение
-  const [errors, setErrors] = useState({
-    nameError: "",
-    telError: "",
-    emailError: "",
-    textareaError: "",
-    captchaError: "",
-  }); // объект ошибок
-
-  const regName = /^[a-zA-Zа-яА-ЯёЁ'][a-zA-Z-а-яА-ЯёЁ' ]+[a-zA-Zа-яА-ЯёЁ']?$/;
-  const regTel = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/; // /\+7|8[\s(]?(\d{3})[\s)]?(\d{3})[\s-]?(\d{2})[\s-]?(\d{2})/g;
-  const regEmail =
-    /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-  let questionTest = question.value.length > 10;
-
-  function regValueTest(regExp, value) {
-    if (!regExp.test(value)) {
-      setSuccessfullySent(false);
-      return false;
-    } else {
-      setSuccessfullySent(true);
-      return regExp.test(value);
-    }
-  }
-
-  const onChangeInput = (value, name) => {
-    switch (name) {
-      case "inpName":
-        let resultName = regValueTest(regName, value);
-        setName({ isValid: !!resultName, value: value });
-        setErrors({
-          ...errors,
-          nameError: !resultName && t("feedback.inpNameErrMess"),
-        });
-        break;
-      case "inpTel":
-        let resultTel = regValueTest(regTel, value);
-        setTel({ isValid: !!resultTel, value: value });
-        setErrors({
-          ...errors,
-          telError: !resultTel && t("feedback.inpPhoneErrMess"),
-        });
-        break;
-      case "inpEmail":
-        let resultEmail = regValueTest(regEmail, value);
-        setEmail({ isValid: !!resultEmail, value: value });
-        setErrors({
-          ...errors,
-          emailError: !resultEmail && t("feedback.inpEmailErrMess"),
-        });
-        break;
-      case "inpArea":
-        let resultText = questionTest;
-        setQuestion({ isValid: !!resultText, value: value });
-        setErrors({
-          ...errors,
-          textareaError: !resultText && t("feedback.inpAreaErrMess"),
-        });
-        break;
-      case "inpCaptcha":
-        let isValid = 'OK' === FormStore.captchaIsValid;
-        setCaptcha({ isValid, value: FormStore.captchaIsValid});
-        setErrors({
-          ...errors,
-          captchaError: !isValid && t("feedback.inpCaptchaErrMess"),
-        });
-        break;
-      default: // линт выдает ошибку без этой строчки
-    }
-  };
-
-  useEffect(() => {
-    console.log('123captcha', captcha)
-  },[captcha.value]);
 
   const handleSubmitForm = (event) => {
     event.preventDefault();
 
     // для проверки работоспособности капчи
-    FormStore.checkCaptcha()
+    capthcaStore.checkCaptcha().then((isCapthaValid) => {
+      if (isCapthaValid) {
+        let isTrue =
+          values.name.isValid &&
+          values.tel.isValid &&
+          values.email.isValid &&
+          values.question.isValid;
 
-    let isTrue =
-      name.isValid &&
-      tel.isValid &&
-      email.isValid &&
-      question.isValid &&
-      captcha.isValid;
-    let isValue =
-      name.value && tel.value && email.value && question.value && captcha.value === 'OK';
-
-    if (isTrue && isValue) {
-      console.log(
-        "отправка данных формы: ",
-        `Имя: ${name.value}, Телефон: ${tel.value}, Email: ${email.value}, Вопрос: ${question.value}, Капча: ${captcha.value}`
-      );
-      setShowSuccessBlock(true);
-
-      setName({ isValid: true, value: "" });
-      setTel({ isValid: true, value: "" });
-      setEmail({ isValid: true, value: "" });
-      setQuestion({ isValid: true, value: "" });
-      setCaptcha({ isValid: true, value: FormStore.captchaIsValid });
-    } else setShowSuccessBlock(false);
+        /// поход на бэк, очистка формы
+        if (isTrue) {
+          setShowSuccessBlock(true);
+          clearForm();
+          handleUpdateCode();
+          capthcaStore.store.value = "";
+        } else setShowSuccessBlock(false);
+      } else {
+        // ничего
+      }
+    });
   };
 
   const handleUpdateCode = () => {
-    console.log("update code");
-    FormStore.getCaptchaImg();
+    capthcaStore.fetchCaptchaImg();
   };
 
   return (
@@ -148,15 +68,15 @@ const Feedback = observer(() => {
               id="inpName"
               name="inpName"
               type="text"
-              value={name.value}
+              value={values.name.value}
               placeholder={t("feedback.placeholderName")}
               minLength={2}
               maxLength={30}
               required={true}
-              isValid={name.isValid}
-              onChange={onChangeInput}
+              isValid={values.name.isValid}
+              onChange={inputChange}
             />
-            <CmError error={errors["nameError"]} />
+            <CmError error={errors.name} />
           </div>
           <div className="feedback__inp_wrap feedback__grid2">
             <CmInput
@@ -164,15 +84,15 @@ const Feedback = observer(() => {
               id="inpTel"
               name="inpTel"
               type="tel"
-              value={tel.value}
+              value={values.tel.value}
               placeholder={t("feedback.placeholderPhone")}
               minLength={10}
               maxLength={18}
               required={true}
-              isValid={tel.isValid}
-              onChange={onChangeInput}
+              isValid={values.tel.isValid}
+              onChange={inputChange}
             />
-            <CmError error={errors["telError"]} />
+            <CmError error={errors.tel} />
           </div>
           <div className="feedback__inp_wrap feedback__grid3">
             <CmInput
@@ -180,52 +100,61 @@ const Feedback = observer(() => {
               id="inpEmail"
               name="inpEmail"
               type="email"
-              value={email.value}
+              value={values.email.value}
               placeholder={t("feedback.placeholderEmail")}
               required={true}
-              isValid={email.isValid}
-              onChange={onChangeInput}
+              isValid={values.email.isValid}
+              onChange={inputChange}
             />
-            <CmError error={errors["emailError"]} />
+            <CmError error={errors.email} />
           </div>
           <div className="feedback__inp_wrap feedback__grid4">
             <CmInput
               isInput={false}
               id="inpArea"
               name="inpArea"
-              value={question.value}
+              value={values.question.value}
               placeholder={t("feedback.placeholderArea")}
               rows="5"
               cols="30"
               minLength={10}
               maxLength={300}
               required={true}
-              isValid={question.isValid}
-              onChange={onChangeInput}
+              isValid={values.question.isValid}
+              onChange={inputChange}
             />
-            <CmError error={errors["textareaError"]} />
+            <CmError error={errors.question} />
           </div>
 
           {/*Капча*/}
           <div className="captcha feedback__grid5">
-            {FormStore.captchaImg &&
-              <img className="captcha__img" src={URL.createObjectURL(FormStore.captchaImg)} alt="капча" />
-            }
+            {capthcaStore.store.img && (
+              <img
+                className="captcha__img"
+                src={URL.createObjectURL(capthcaStore.store.img)}
+                alt="капча"
+              />
+            )}
             <CmInput
               isInput={true}
               id="inpCaptcha"
               name="inpCaptcha"
               type="text"
-              // value={captcha.value}
+              value={capthcaStore.store.value}
               placeholder={t("feedback.placeholderCaptcha")}
               required={true}
-              isValid={captcha.isValid}
-              onChange={e => FormStore.setCaptchaText(e)}
+              isValid={capthcaStore.store.valid}
+              onChange={(value) => capthcaStore.changeCaptchaValue(value)}
             />
-            <CmError error={errors["captchaError"]} />
+            <CmError error={errors.captcha} />
           </div>
-          <div className="feedback__update-code feedback__grid6" onClick={handleUpdateCode}>
-            <span className="feedback__update-code_text">{t("feedback.code")}</span>
+          <div
+            className="feedback__update-code feedback__grid6"
+            onClick={handleUpdateCode}
+          >
+            <span className="feedback__update-code_text">
+              {t("feedback.code")}
+            </span>
           </div>
           {/*Пользовательское соглашение. Персональные данные*/}
           <div className="feedback__agreement feedback__grid7">
@@ -237,7 +166,11 @@ const Feedback = observer(() => {
           </div>
           <div className="feedback__btn_wrap feedback__grid8">
             <button
-              className={!isReadAgreement ? "feedback__btn feedback__btn_disabled" : "feedback__btn"}
+              className={
+                !isReadAgreement
+                  ? "feedback__btn feedback__btn_disabled"
+                  : "feedback__btn"
+              }
               type="submit"
               disabled={!isReadAgreement ? true : false}
             >
