@@ -14,13 +14,11 @@ import {
   MapContainer,
 } from "../../components";
 import MenuStore from "../../store/MenuStore";
-import FormStore from "../../store/FormStore";
 
 function Home() {
   const [itemslocal, setItemsLocal] = useState([]);
   const fetchData = async () => {
     await MenuStore.fetchMenuItems();
-    await FormStore.getCaptchaImg();
     setItemsLocal(MenuStore.items.map((item) => item));
   };
 
