@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import style from './cmError.module.scss';
 
 import { useTranslation } from "react-i18next";
 import '../../../utils/i18next';
@@ -14,7 +13,7 @@ export const CmError = (props) => {
     return (
         <div>
             {!!error && (
-                <span className={style.error__text}>
+                <span className="error__text">
                     {`${error}`}
                 </span>
             )}

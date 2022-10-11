@@ -5,6 +5,11 @@
   border-radius: 20px;
   background: #202020;
   box-sizing: border-box;
+  transition: 0.3s linear;
+}
+.card:hover {
+  transform: scale(1.02);
+  -webkit-transform: scale(1.02);
 }
 .card__img {
   width: 100%;
@@ -14,6 +19,7 @@
   padding: 25px 30px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 .card__title {
   margin-bottom: 20px;
@@ -31,17 +37,6 @@
   position: relative;
   overflow: hidden;
 }
-.card__paragraph:after {
-  content: "";
-  text-align: right;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  height: 1.2em;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #333333 100%);
-  pointer-events: none;
-}
 .card__data {
   font-style: normal;
   font-weight: 400;
@@ -52,22 +47,7 @@
 
 @media (max-width: 768px) {
   .card {
-    border: 2px solid #60ad5e;
-  }
-  .card__text_block {
-    padding: 15px;
-  }
-  .card__title {
-    margin-bottom: 15px;
-    font-size: 14px;
-    line-height: 16px;
-  }
-  .card__data {
-    font-size: 10px;
-    line-height: 12px;
-  }
-  .card span {
-    font-size: 8px;
+    border: 3px solid #60ad5e;
   }
 }
 

@@ -2,7 +2,8 @@ $primary-grey: rgb(32, 32, 32);
 $secondary-grey: rgb(43, 43, 43);
 $light-grey: rgb(138, 138, 138);
 $green: #005005 89.58%;
-$light-green: #60ad5e 46.35%;
+$light-green: #60AD5E 46.35%;
+
 * {
   box-sizing: border-box;
 }
@@ -24,7 +25,7 @@ img {
 }
 .footer {
   color: white;
-  background-color: $secondary-grey;
+  background-color: #333333;
   display: flex;
   flex-flow: row wrap;
   width: 100%;

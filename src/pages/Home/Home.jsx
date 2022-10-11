@@ -1,41 +1,63 @@
+import { useEffect, useState } from "react";
 import {
   Cards,
   Header,
-  Carousel,
   Feedback,
-  SwiperLine,
+  Puzzle,
   SwiperParallax,
-  MapContainer,
   ScrollButton,
   Footer,
+  Team,
+  Table,
+  AppDescription,
+  Statistics,
+  MapContainer,
 } from "../../components";
 import MenuStore from "../../store/MenuStore";
-import { useEffect, useState } from "react";
 
 function Home() {
   const [itemslocal, setItemsLocal] = useState([]);
+  const fetchData = async () => {
+    await MenuStore.fetchMenuItems();
+    setItemsLocal(MenuStore.items.map((item) => item));
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      await MenuStore.fetchMenuItems().then(); // запрос на динамические пункты меню
-
-      setItemsLocal(MenuStore.items.map((item) => item.name));
-    };
-    fetchData();
+    fetchData().then();
   }, []);
-
-  //const itemslocal = ;
 
   return (
     <>
       <Header />
-      <SwiperLine menuName={itemslocal[0]} />
-      <Carousel />
-      <SwiperParallax menuName={itemslocal[1]} />
-      <Cards menuName={itemslocal[2]} />
-      <MapContainer menuName={itemslocal[3]} />
+
+      <SwiperParallax />
+      <Statistics />
+      {itemslocal.map((menuItem, menuItemIndex) => {
+        return menuItem.sections.map((sectionItem) =>
+          sectionItem.section_type_id === 1 ? (
+            <Puzzle
+              menuName={itemslocal[menuItemIndex].name}
+              cardsList={sectionItem.cards}
+            />
+          ) : sectionItem.section_type_id === 2 ? (
+            <Cards
+              menuName={itemslocal[menuItemIndex].name}
+              cardsList={sectionItem.cards}
+            />
+          ) : (
+            <Table
+              menuName={itemslocal[menuItemIndex].name}
+              cardsList={sectionItem.cards}
+            />
+          )
+        );
+      })}
+      <MapContainer />
+      <AppDescription />
+      <Team />
       <Feedback />
       <ScrollButton />
+
       <Footer />
     </>
   );

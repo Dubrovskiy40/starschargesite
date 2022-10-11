@@ -1,7 +1,9 @@
+@import "./Station/Station";
+
 :root {
   /* Font Color */
   --light-theme: #f8f9fa;
-  --black-theme: #202020;
+  --black-theme: $color-black;
 
   /* Circle Width */
   --circle-diameter: 400px;
@@ -13,15 +15,7 @@ body {
 }
 
 .map {
-  &__title {
-    margin-bottom: 16px;
-    align-self: flex-start;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 100%;
-    color: #fff;
-  }
+  padding: 0 0 32px 0;
 
   &__main {
     position: relative;
@@ -30,12 +24,17 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
     min-height: 640px;
     background-color: var(--black-theme);
   }
+
+  &__title {
+    align-self: flex-start;
+    color: $color-white;
+  }
+
   /* Content Style */
-  &__yandex {
+  &__google {
     position: relative;
     display: flex;
     justify-content: center;
@@ -49,27 +48,61 @@ body {
     cursor: grab;
     /* Interactive Effect */
     &:hover {
-      width: 80vw;
-      height: 50vh;
+      width: 100%;
+      height: 800px;
       border-radius:20px;
     }
   }
 
   & .map-frame {
-    width: 100vw;
-    height: calc(100vh - 100px);
+    width: 97vw;
+    height: 89vh;
     background-color: var(--light-theme);
-  }
 
-  & iframe {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: visibleStroke;
+    & > iframe {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: visibleStroke;
+    }
   }
 }
 
 ::selection {
-  color: #fff;
+  color: $color-white;
   background-color: var(--light-theme);
+}
+
+@media (max-width: 1190px) {
+  .map {
+
+    & .map-frame {
+      width: 93vw;
+      height: 89vh;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .map {
+
+    &__google {
+      width: 250px;
+      height: 250px;
+      overflow: hidden;
+      border-radius: 250px;
+      background-color: inherit;
+      transition: 1500ms;
+      cursor: grab;
+
+      &:hover {
+        height: 80%;
+      }
+    }
+
+    & .map-frame {
+      width: 89vw;
+      height: 83vh;
+    }
+  }
 }

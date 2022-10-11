@@ -1,0 +1,56 @@
+.content-container {
+  padding-top: 90px; //отступ контента от края страницы из-за фиксации хедера
+}
+
+.section {
+  margin-bottom: 256px; // отступ после каждой секции
+}
+
+//общие стили для заголовков
+.title {
+  @include font_36_1;
+  margin-bottom: 64px;
+}
+
+//общие стили текста на странице
+.descr {
+  @include font_24;
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 30px;
+  padding-top: 90px;
+}
+
+$section: 256px;
+
+@media(max-width: 1190px) {
+  .title {
+    margin-bottom: 32px;
+  }
+
+  .descr {
+    @include font_18;
+  }
+}
+
+@media(max-width: 768px) {
+  .section {
+    margin-bottom: 88px; // отступ после каждой секции
+  }
+
+  .title {
+    @include font_24_1;
+    margin-bottom: 24px;
+  }
+
+  .descr {
+    @include font_14;
+  }
+}

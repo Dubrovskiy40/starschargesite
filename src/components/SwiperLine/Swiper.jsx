@@ -5,7 +5,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./swiperStyles.css";
 import { Pagination, Navigation } from "swiper";
-import MenuStore from "../../store/MenuStore";
 
 export default function SwiperLine(props) {
   return (
@@ -19,22 +18,6 @@ export default function SwiperLine(props) {
         modules={[Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <Puzzle />
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <Puzzle />
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <Puzzle />
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <Puzzle />
-        </SwiperSlide>
-
         <SwiperSlide>
           <Puzzle />
         </SwiperSlide>

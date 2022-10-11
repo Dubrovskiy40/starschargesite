@@ -1,41 +1,68 @@
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  padding-top: 110px;
-  grid-gap: 24px 24px;
-  padding-bottom: 60px;
+
+  img {
+    object-fit: cover;
+  }
+
+  div {
+    width: 100%;
+
+    filter: grayscale(1);
+    transition: 1s;
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
 }
 
 @media (min-width: 320px) {
   .grid {
+
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+
     &__firstCell {
       div {
         padding: 21px;
         max-height: 200px;
       }
+
+      h3 {
+        max-height: 80px;
+        overflow: hidden;
+      }
     }
 
     &__secondCell {
+
       li {
         display: flex;
         flex-direction: row-reverse;
-        min-height: 145px;
-        padding: 10px;
+        justify-content: space-around;
+        max-height: 145px;
+        min-height: 120px;
+        padding: 20px;
+
+        div {
+          padding: 0;
+          margin-right: 20px;
+          min-width: 100px;
+        }
 
         h3 {
           font-size: 10px;
           line-height: 11px;
+          max-height: 80px;
+          overflow: hidden;
         }
 
         p {
-          font-size: 8px;
-          line-height: 9px;
+          display: none;
         }
 
         img {
-          width: 100px;
-          height: 100px;
+          width: 40%;
           object-fit: cover;
           border-radius: inherit;
         }
@@ -46,13 +73,20 @@
       li {
         display: flex;
         flex-direction: row-reverse;
+        justify-content: space-around;
         height: unset;
         max-height: 145px;
-        padding: 10px;
+        min-height: 120px;
+        padding: 20px;
+
+        div {
+          padding: 0;
+          min-width: 100px;
+          margin-right: 15px;
+        }
 
         h3 {
-          font-size: 10px;
-          line-height: 11px;
+          display: none;
         }
 
         p {
@@ -61,8 +95,7 @@
         }
 
         img {
-          width: 100px;
-          height: 100px;
+          width: 40%;
           object-fit: cover;
           border-radius: inherit;
         }
@@ -73,88 +106,42 @@
 
 @media (min-width: 768px) {
   .grid {
+    grid-auto-rows: 45px;  
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px 20px;
 
     &__firstCell {
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 1;
-      grid-row-end: 3;
-    }
+      grid-row: span 6;
 
-    &__restCell {
-      li {
-        display: flex;
-        flex-direction: row-reverse;
-        min-height: 190px;
-        padding: 0;
-
-        div {
-          padding: 15px;
-        }
-
-        h3 {
-          font-size: 10px;
-          line-height: 11px;
-        }
-
-        p {
-          height: 60px;
-          font-size: 8px;
-          line-height: 9px;
-        }
-
-        img {
-          width: 35%;
-          height: unset;
-          object-fit: cover;
-        }
+      img {
+        height: 183px;
       }
-    }
 
-    &__firstCell {
-      grid-column-start: 1;
-      grid-column-end: 4;
-      grid-row-start: 1;
-      grid-row-end: 3;
-    }
-  }
-}
+      h3 {
+        max-height: 80px;
+        overflow: hidden;
+      }
 
-@media (min-width: 1200px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-
-    &__firstCell {
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 1;
-      grid-row-end: 3;
-
-      li {
-        div {
-          padding: 25px 30px;
-          max-height: unset;
-        }
+      div {
+        padding: 20px;
+        max-height: 180px;
       }
     }
 
     &__secondCell {
       grid-column-start: 2;
-      grid-column-end: 2;
       grid-row-start: 1;
-      grid-row-end: 3;
+      grid-row-end: 4;
 
       li {
+        display: flex;
+        // flex-direction: row-reverse;
+        justify-content: unset;
         max-height: unset;
-        display: block;
         padding: 0;
 
-        img {
-          width: unset;
-          height: unset;
+        p {
+          display: block;
         }
 
         h3 {
@@ -162,37 +149,171 @@
           line-height: 16px;
         }
 
+        div {
+          padding: 20px;
+          margin: 0;
+          max-width: unset;
+        }
+  
+        img {
+          width: auto;
+          max-width: 40%;
+        }
+      }
+    }
+
+    &__thirdCell {
+      grid-column-start: 2;
+      grid-row-start: 4;
+      grid-row-end: 7;
+
+      li {
+        display: flex;
+        flex-direction: row-reverse;
+
+        div {
+          padding: 20px;
+          min-height: 130px;
+
+        }
+  
         p {
-          font-size: 10px;
-          line-height: 11px;
+          display: none;
+        }
+  
+        img {
+          max-width: 30%;
         }
       }
     }
 
     &__restCell {
+
+      grid-row: span 2;
+
       li {
-        display: flex;
-        flex-direction: row-reverse;
-        min-height: 100%;
+
+        padding: 0;
+        height: 100%;
+        min-height: unset;
+        justify-content: unset;
+
 
         div {
-          padding: 30px;
+          padding: 15px;
+          margin: 0;
+          max-width: unset;
         }
 
         h3 {
+          display: block;
           font-size: 10px;
           line-height: 11px;
+          overflow: hidden;
         }
 
         p {
-          height: unset;
-          font-size: 8px;
-          line-height: 9px;
+          display: none;
         }
 
         img {
-          width: 35%;
-          object-fit: cover;
+          max-width: 30%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1190px) {
+  .grid {
+    grid-auto-rows: 91px;
+    grid-gap: 24px 24px;
+
+    &__firstCell {
+      grid-row: span 4;
+
+      img {
+        max-height: 206px;
+      }
+
+      div {
+        max-height: 219px;
+      }
+       
+    }
+
+    &__secondCell {
+      grid-row: span 4;
+      grid-column-start: unset;
+
+      li {
+        display: block;
+
+        img {
+          max-height: 260px;
+          width: 100%;
+          max-width: unset;
+        }
+  
+        h3 {
+          display: none;
+        }
+  
+        div {
+          max-height: 171px;
+        }
+      }
+    }
+
+    &__thirdCell {
+      grid-row: span 2;
+      grid-column-start: unset;
+
+      li {
+        display: flex;
+        flex-direction: row-reverse;
+
+        img {
+          max-width: 148px;
+        }
+  
+        h3 {
+          max-height: 100px;
+          overflow: hidden;
+          font-size: 10px;
+        }
+  
+        p {
+          display: block;
+          font-size: 8px;
+        }
+      }
+    }
+
+    &__restCell {
+      grid-row: span 1;
+
+      li {
+        display: flex;
+        flex-direction: row-reverse;
+
+        img {
+          max-width: 146px;
+        }
+
+        p {
+          display: none;
+        }
+  
+        div {
+          padding-top: 16px;
+          padding-bottom: 16px;
+        }
+  
+        h3 {
+          max-height: 47px;
+          margin-bottom: 5px;
+          overflow: hidden;
         }
       }
     }
@@ -202,44 +323,73 @@
 @media (min-width: 2000px) {
   .grid {
     &__firstCell {
+      grid-column-start: 1;
+      grid-row-start: 1;
+      grid-row-end: 6;
+
       li {
-        h3 {
-          font-size: 20px;
-          line-height: 16px;
+        div {
+          max-height: 370px;
         }
+      }
 
-        p {
-          font-size: 14px;
-          line-height: 15px;
-        }
+      h3 {
+        font-size: 20px;
+        line-height: 16px;
+      }
 
-        span {
-          font-size: 12px;
+      img {
+        max-height: 206px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 15px;
+      }
+
+      span {
+        font-size: 12px;
+      }
+    }
+
+    &__secondCell {
+      grid-row: span 2;
+
+      li {
+        display: flex;
+        flex-direction: row-reverse;
+
+        img {
+          max-width: 40%;
         }
       }
     }
 
     &__restCell {
+
       li {
+        display: flex;
+        flex-direction: row-reverse;
+
+        img {
+          max-width: 130px;
+        }
+  
         div {
-          padding: 30px;
+          padding: 15px;
+        }
+  
+        p {
+          display: none;
         }
 
         h3 {
-          font-size: 16px;
-          line-height: 16px;
-        }
-
-        p {
-          height: unset;
-          font-size: 12px;
-          line-height: 16px;
-        }
-
-        span {
-          font-size: 10px;
+          max-height: 70px;
+          overflow: hidden;
         }
       }
     }
   }
 }
+
+

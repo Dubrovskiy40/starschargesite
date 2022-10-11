@@ -1,10 +1,10 @@
+@import "var.scss";
+@import "mixins.scss";
+@import "main.scss";
+
 @import "./fonts/fonts";
 @import "normalize";
 
 @import "allComponents";
 @import "allPage";
 @import "media";
-
-.news {
-  padding-top: 103px; //Высота хедера
-}

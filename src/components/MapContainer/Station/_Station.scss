@@ -1,0 +1,158 @@
+.station {
+  width: 100%;
+  margin: 32px 0;
+  border-radius: 20px;
+  padding: 46px 62px 32px;
+  background: $color-white;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+  }
+
+  &__title_wrap {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+  }
+
+  &__title_top{
+    display: contents;
+    @include font_36;
+    color: $color-black;
+
+    &:before {
+      content: url("../../../assets/images/map/station.svg");
+      margin-right: 32px;
+    }
+  }
+
+  &__count {
+    margin-left: 15px;
+    @include font_36;
+    color: $color-salad;
+  }
+
+  &__description {
+    max-width:376px;
+    @include font_18;
+    color: $color-black;
+  }
+
+  &__title_bottom {
+    text-align: center;
+    @include font_12_1;
+    color: $color-black;
+    margin-bottom: 20px;
+  }
+
+  &__types_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 32px;
+  }
+}
+
+.type {
+  display: flex;
+  align-items: center;
+  padding: 13px 0 13px 16px;
+  background: $color-salad;
+  border-radius: 15px;
+
+  &__img {
+    margin-right: 18px;
+  }
+
+  &__description_wrap {
+    width: 232px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title{
+    margin-bottom:5px;
+    @include font_10_1;
+    color: $color-white;
+  }
+
+  &__characteristics {
+    @include font_8;
+    color: $color-white;
+  }
+
+  &__price {
+    @include font_8;
+    color: $color-white;
+  }
+}
+
+@media (max-width: 1190px) {
+  .type {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .station {
+    margin: 19px 0;
+    padding: 24px;
+
+    &__top {
+      flex-direction: column;
+    }
+
+    &__title_top{
+      display: contents;
+      @include font_24;
+
+      &:before {
+        content: url("../../../assets/images/map/station.svg");
+        margin-right: 32px;
+      }
+    }
+
+    &__count {
+      margin-left: 15px;
+      @include font_36;
+      color: $color-salad;
+    }
+
+    &__description {
+      max-width:376px;
+      @include font_18;
+      color: $color-black;
+    }
+
+    &__title_bottom {
+      text-align: center;
+      @include font_12_1;
+      color: $color-black;
+      margin-bottom: 20px;
+    }
+
+    &__types_wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      column-gap: 32px;
+    }
+  }
+
+  .type {
+    width: 100%;
+    border-radius: 7px;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    &__img {
+      margin-right: 15px;
+    }
+  }
+}

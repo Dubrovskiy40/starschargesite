@@ -1,0 +1,33 @@
+.agreementText {
+  color: $color-black;
+}
+
+.agreement-title {
+  text-align: center;
+  @include font_24_1;
+  color: $color-black;
+}
+
+.subtitle {
+  @include font_18_1;
+  color: $color-black;
+}
+
+.text{
+  @include font_14;
+  color: $color-black;
+}
+
+@media (max-width: 768px) {
+  .agreement-title {
+    @include font_14_1;
+  }
+
+  .subtitle {
+    @include font_12_1;
+  }
+
+  .text{
+    @include font_10;
+  }
+}

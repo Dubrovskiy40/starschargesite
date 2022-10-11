@@ -1,0 +1,43 @@
+.inp__text {
+  width: 100%;
+  padding: 18px 0 18px 24px;
+  border: 4px solid $color-salad;
+  border-radius: 15px;
+  @include font_14;
+  color: $color-white;
+  background: $color-grey;
+
+  &:focus {
+    border: 4px solid $color-salad;
+  }
+
+  &_green {
+    color: $color-salad;
+    border: 4px solid $color-salad;
+  }
+
+  &_red {
+    color: $color-red;
+    border: 4px solid $color-red;
+  }
+}
+
+.react-tel-input {
+  width: 100%;
+  padding: 18px 0 18px 24px;
+  border: 4px solid $color-salad;
+  border-radius: 15px;
+  @include font_14;
+  color: $color-white;
+  background: $color-grey;
+}
+
+@media (max-width: 1190px) {
+}
+
+@media (max-width: 768px) {
+  .inp__text {
+    padding: 19px 0 19px 17px;
+    @include font_12;
+  }
+}

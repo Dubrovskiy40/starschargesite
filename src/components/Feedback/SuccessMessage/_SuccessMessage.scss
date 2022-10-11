@@ -1,0 +1,21 @@
+.successMessage {
+  margin-top: 10px;
+
+  &_show{
+    display: block;
+  }
+
+  &__block {
+    @include font_14;
+  }
+
+  &__block_green{
+    color: $color-green;
+  }
+
+  &__block_red {
+    color: $color-red;
+  }
+
+  &__btn {}
+}
