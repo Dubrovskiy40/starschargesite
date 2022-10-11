@@ -37,6 +37,7 @@ const Feedback = observer(() => {
 
         /// поход на бэк, очистка формы
         if (isTrue) {
+          console.log('values',values)
           setShowSuccessBlock(true);
           clearForm();
           handleUpdateCode();
@@ -172,7 +173,7 @@ const Feedback = observer(() => {
                   : "feedback__btn"
               }
               type="submit"
-              disabled={!isReadAgreement ? true : false}
+              disabled={!isReadAgreement}
             >
               {t("feedback.buttonName")}
             </button>

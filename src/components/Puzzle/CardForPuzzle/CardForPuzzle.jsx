@@ -1,8 +1,9 @@
 import Style from "./cards.module.scss"
 import PropTypes from 'prop-types';
 
+const serverPath = '/static/media/';
+
 const CardForPuzzle = ({ id, imgPath, title, paragraph, dataPublic }) => {
-    const serverPath = 'http://85.193.84.173:8282/media/';
     const fullPath = `${serverPath}${imgPath}`;
 
     return (
