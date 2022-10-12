@@ -42,6 +42,7 @@ const Feedback = observer(() => {
           clearForm();
           handleUpdateCode();
           capthcaStore.store.value = "";
+          capthcaStore.postForm();
         } else setShowSuccessBlock(false);
       } else {
         // ничего

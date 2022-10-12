@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
-import { CORS, CORS_CAPTCHA, getHostInformation } from "./helper";
+import { CORS, CORS_CAPTCHA, getHostInformation, CORS_FORM } from "./helper";
+import { useFeedbackStore } from "./FeedbackStore";
 
 const host = getHostInformation();
 
 export const useCaptcha = () => {
+  const { values } = useFeedbackStore();
+
   const [store, setStore] = useState({
     img: null,
     UUID: "",
@@ -52,6 +55,15 @@ export const useCaptcha = () => {
     }
   };
 
+  const postForm = async () => {
+    const response = await fetch(`${host}/SendQuestion`, CORS_FORM(values));
+    console.log(response);
+    const result = await response.json();
+    if (result !== "Error" && result !== null && response.ok) {
+      console.log("ok");
+    }
+  };
+
   useEffect(() => {
     fetchCaptchaImg();
   }, []);
@@ -61,5 +73,6 @@ export const useCaptcha = () => {
     checkCaptcha,
     fetchCaptchaImg,
     changeCaptchaValue,
+    postForm,
   };
 };
