@@ -12,7 +12,7 @@ import { useCaptcha } from "../../store/CaptchaStore";
 import { useFeedbackStore } from "../../store/FeedbackStore";
 
 const Feedback = observer(() => {
-  const capthcaStore = useCaptcha();
+  const captchaStore = useCaptcha();
   const { values, errors, inputChange, clearForm } = useFeedbackStore();
 
   const { t } = useTranslation();
@@ -27,7 +27,7 @@ const Feedback = observer(() => {
     event.preventDefault();
 
     // для проверки работоспособности капчи
-    capthcaStore.checkCaptcha().then((isCapthaValid) => {
+    captchaStore.checkCaptcha().then((isCapthaValid) => {
       if (isCapthaValid) {
         let isTrue =
           values.name.isValid &&
@@ -37,12 +37,11 @@ const Feedback = observer(() => {
 
         /// поход на бэк, очистка формы
         if (isTrue) {
-          console.log('values',values)
           setShowSuccessBlock(true);
+          captchaStore.postForm(values);
           clearForm();
           handleUpdateCode();
-          capthcaStore.store.value = "";
-          capthcaStore.postForm();
+          captchaStore.store.value = "";
         } else setShowSuccessBlock(false);
       } else {
         // ничего
@@ -51,7 +50,7 @@ const Feedback = observer(() => {
   };
 
   const handleUpdateCode = () => {
-    capthcaStore.fetchCaptchaImg();
+    captchaStore.fetchCaptchaImg();
   };
 
   return (
@@ -130,10 +129,10 @@ const Feedback = observer(() => {
 
           {/*Капча*/}
           <div className="captcha feedback__grid5">
-            {capthcaStore.store.img && (
+            {captchaStore.store.img && (
               <img
                 className="captcha__img"
-                src={URL.createObjectURL(capthcaStore.store.img)}
+                src={URL.createObjectURL(captchaStore.store.img)}
                 alt="капча"
               />
             )}
@@ -142,11 +141,11 @@ const Feedback = observer(() => {
               id="inpCaptcha"
               name="inpCaptcha"
               type="text"
-              value={capthcaStore.store.value}
+              value={captchaStore.store.value}
               placeholder={t("feedback.placeholderCaptcha")}
               required={true}
-              isValid={capthcaStore.store.valid}
-              onChange={(value) => capthcaStore.changeCaptchaValue(value)}
+              isValid={captchaStore.store.valid}
+              onChange={(value) => captchaStore.changeCaptchaValue(value)}
             />
             <CmError error={errors.captcha} />
           </div>
