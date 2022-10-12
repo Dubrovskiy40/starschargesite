@@ -23,19 +23,9 @@ export const CORS_CAPTCHA = (uuid, text) => {
     headers: {
       "Content-Type": "application/json",
       "X-ACCESS-TOKEN": process.env.REACT_APP_TOKEN,
-      get_uuid: uuid,
-      text: text,
+      "get_uuid": uuid,
+      "text": text,
     },
   };
 };
 
-export const CORS_FORM = (values) => {
-  return {
-    method: "POST",
-    body: JSON.stringify(values),
-    headers: {
-      "Content-Type": "application/json",
-      "X-ACCESS-TOKEN": process.env.REACT_APP_TOKEN,
-    },
-  };
-};
