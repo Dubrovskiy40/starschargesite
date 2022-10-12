@@ -6,7 +6,6 @@ const host = getHostInformation();
 
 export const useCaptcha = () => {
   const { values } = useFeedbackStore();
-
   const [store, setStore] = useState({
     img: null,
     UUID: "",
@@ -55,11 +54,11 @@ export const useCaptcha = () => {
     }
   };
 
-  const postForm = async () => {
-    const response = await fetch(`${host}/SendQuestion`, CORS_FORM(values));
-    console.log(response);
+  const postForm = async (values) => {
+    const response = await fetch(`${host}/SendQuestion`,
+      CORS_FORM(values));
     const result = await response.json();
-    if (result !== "Error" && result !== null && response.ok) {
+    if (result !== "Error") {
       console.log("ok");
     }
   };

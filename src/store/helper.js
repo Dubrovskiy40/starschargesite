@@ -31,8 +31,11 @@ export const CORS_CAPTCHA = (uuid, text) => {
 
 export const CORS_FORM = (values) => {
   return {
-    "Content-Type": "application/json",
-    "X-ACCESS-TOKEN": process.env.REACT_APP_TOKEN,
-    values: values,
+    method: "POST",
+    body: JSON.stringify(values),
+    headers: {
+      "Content-Type": "application/json",
+      "X-ACCESS-TOKEN": process.env.REACT_APP_TOKEN,
+    },
   };
 };
