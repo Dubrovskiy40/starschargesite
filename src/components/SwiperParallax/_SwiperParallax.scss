@@ -93,14 +93,14 @@
 .swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
   width: 100%;
   left: 0;
-  bottom: 0px;
+  bottom: 0;
   height: 4px;
-  background: #005005;
+  background: $color-green;
   border-radius: 0;
 }
 
 .swiper-scrollbar-drag {
-  background: #60AD5E;
+  background: $color-salad;
   border-radius: 0;
 }
 
@@ -111,7 +111,7 @@
 }
 
 .hero__text {
-  color: #fff;
+  color: $color-white;
   font-weight: 400;
   font-size: 24px;
   line-height: 100%;

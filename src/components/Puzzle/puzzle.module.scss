@@ -7,9 +7,9 @@
 
   div {
     width: 100%;
-
     filter: grayscale(1);
     transition: 1s;
+
     &:hover {
       filter: grayscale(0);
     }
@@ -18,9 +18,8 @@
 
 @media (min-width: 320px) {
   .grid {
-
-  grid-template-columns: 1fr;
-  grid-gap: 16px;
+    grid-template-columns: 1fr;
+    grid-gap: 16px;
 
     &__firstCell {
       div {
@@ -35,7 +34,6 @@
     }
 
     &__secondCell {
-
       li {
         display: flex;
         flex-direction: row-reverse;
@@ -135,7 +133,6 @@
 
       li {
         display: flex;
-        // flex-direction: row-reverse;
         justify-content: unset;
         max-height: unset;
         padding: 0;
@@ -174,7 +171,6 @@
         div {
           padding: 20px;
           min-height: 130px;
-
         }
   
         p {
@@ -188,16 +184,13 @@
     }
 
     &__restCell {
-
       grid-row: span 2;
 
       li {
-
         padding: 0;
         height: 100%;
         min-height: unset;
         justify-content: unset;
-
 
         div {
           padding: 15px;
@@ -239,7 +232,6 @@
       div {
         max-height: 219px;
       }
-       
     }
 
     &__secondCell {
@@ -366,7 +358,6 @@
     }
 
     &__restCell {
-
       li {
         display: flex;
         flex-direction: row-reverse;

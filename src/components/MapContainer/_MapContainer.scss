@@ -2,7 +2,7 @@
 
 :root {
   /* Font Color */
-  --light-theme: #f8f9fa;
+  --light-theme: $color-white;
   --black-theme: $color-black;
 
   /* Circle Width */
@@ -75,7 +75,6 @@ body {
 
 @media (max-width: 1190px) {
   .map {
-
     & .map-frame {
       width: 93vw;
       height: 89vh;
@@ -85,7 +84,6 @@ body {
 
 @media (max-width: 768px) {
   .map {
-
     &__google {
       width: 250px;
       height: 250px;
