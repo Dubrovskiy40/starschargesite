@@ -30,7 +30,9 @@ class MenuStore {
     }
     // console.log('itemRes',itemRes)
     this.setLoading(false);
+    console.log('fetchMenuItems', this.items)
   };
+
 }
 
 export default new MenuStore();
