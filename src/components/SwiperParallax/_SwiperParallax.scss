@@ -120,9 +120,7 @@
 
 .hero__text {
   color: $color-white;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 100%;
+  @include font_24;
 }
 
 .hero__title {
@@ -131,7 +129,7 @@
 
 @media(max-width: 1500px) {
   .hero__text {
-    font-size: 18px;
+    @include font_18;
   }
 }
 
@@ -154,10 +152,10 @@
   }
 
   .hero__title {
-    font-size: 24px;
+    @include font_24;
   }
 
   .hero__text {
-    font-size: 14px;
+    @include font_14;
   }
 }
