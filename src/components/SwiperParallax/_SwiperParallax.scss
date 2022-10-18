@@ -68,6 +68,14 @@
     }
   }
 
+  .swiper-button-prev, .swiper-button-next {
+    color: $color-salad;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   .swiper-slide {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
