@@ -8,6 +8,7 @@ const getCards = (currentCard, visibleCards, cardsList) => {
   for (let index = currentCard; index < currentCard + visibleCards; index++) {
     content.push(
       <div
+        key={index}
         className={
           index === currentCard
             ? // || (index === currentCard + 1 && visibleCards === 5)
