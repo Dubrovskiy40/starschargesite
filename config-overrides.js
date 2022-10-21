@@ -1,4 +1,5 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require("path");
 
 module.exports = function override(config, env) {
   if (!config.plugins) {

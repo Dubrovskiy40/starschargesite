@@ -15,6 +15,8 @@ import {
 } from "../../components";
 import MenuStore from "../../store/MenuStore";
 
+const API_KEY = process.env.REACT_APP_API_KEY;
+
 function Home() {
   const [itemslocal, setItemsLocal] = useState([]);
   const fetchData = async () => {
@@ -29,7 +31,6 @@ function Home() {
   return (
     <>
       <Header />
-
       <SwiperParallax />
       <Statistics />
       {itemslocal.map((menuItem, menuItemIndex) => {
@@ -59,7 +60,7 @@ function Home() {
           ) : null;
         });
       })}
-      <MapContainer />
+      <MapContainer apiKey={API_KEY} />
       <AppDescription />
       <Team />
       <Feedback />
