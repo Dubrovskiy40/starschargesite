@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { getScreenWidth } from "../../hoc/getScreenWidth";
-import { setI18n, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import "../../utils/i18next";
 import { observer } from "mobx-react";
 import Map from "../Map/Map";
 import { useJsApiLoader } from "@react-google-maps/api";
+import Station from "./Station/Station";
+import StationHover from "./StationHover/StationHover";
 
 const center = {
   lat: 55.75,
@@ -22,10 +24,21 @@ const MapContainer = observer((props) => {
   const { widthScreen, deviceType, apiKey } = props;
   const { t } = useTranslation();
 
+  const [showInfoMapHover, setShowInfoMapHover] = useState(false);
+  const [showInfoMapClick, setShowInfoMapClick] = useState(false);
+  const [elCoordinates, setElCoordinates] = useState({
+    x: '',
+    y: '',
+  });
+
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: apiKey,
   });
+  
+  const getClientXendY = (e) => {
+    console.log('event',e)
+  }; 
 
   return (
     <section id="Станции" className="map">
@@ -35,13 +48,24 @@ const MapContainer = observer((props) => {
           <section className="map__google">
             <div className="map-frame" id="map">
               {isLoaded ? (
-                <Map center={center} stations={stations} />
+                <>
+                  <Map center={center} 
+                       stations={stations} 
+                       setShowInfoMapHover={setShowInfoMapHover} 
+                       setShowInfoMapClick={setShowInfoMapClick}
+                       setElCoordinates={setElCoordinates}
+                  />
+                  { showInfoMapHover && <StationHover elCoordinates={elCoordinates} /> }
+                </>
               ) : (
                 <h2>Loading...</h2>
               )}
             </div>
           </section>
         </div>
+        {
+          showInfoMapClick && <Station />
+        }
       </div>
     </section>
   );

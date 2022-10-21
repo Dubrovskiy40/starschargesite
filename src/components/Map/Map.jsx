@@ -3,7 +3,9 @@ import { useCallback, useRef } from "react";
 import styles from "./Map.module.scss";
 import { options } from "./options";
 
-const Map = ({ center, stations }) => {
+const Map = (props) => {
+  const {center, stations, setShowInfoMapHover, setShowInfoMapClick, setElCoordinates } = props;
+  
   const mapRef = useRef(null);
 
   const onLoad = useCallback(function callback(map) {
@@ -14,9 +16,15 @@ const Map = ({ center, stations }) => {
     mapRef.current = null;
   }, []);
 
+  const handleClickPointMap = (e) => {
+    console.log('click el', e)
+    setShowInfoMapClick(prev => !prev);
+  };
+
   return (
     <div className={styles.container}>
       <GoogleMap
+        className=""
         mapContainerStyle={{
           width: "100%",
           height: "100%",
@@ -27,10 +35,19 @@ const Map = ({ center, stations }) => {
         onUnmount={onUnmount}
         options={options}
       >
-        {stations.map(({ lat, lng }) => (
+        {stations?.map(({ lat, lng }) => (
           <Marker
+            onClick={handleClickPointMap}
             key={lat + lng}
-            onMouseOver={() => console.log(lat)}
+            onMouseOver={(e) => {
+              console.log('навел на элемент')
+              setShowInfoMapHover(prev => !prev);
+              setElCoordinates((prev) => ({...prev, x: 30, y: 30}))
+            }}
+            onMouseOut={() => {
+              console.log('ушел с элемента')
+              setShowInfoMapHover(prev => !prev);
+            }}
             position={{
               lat,
               lng,
