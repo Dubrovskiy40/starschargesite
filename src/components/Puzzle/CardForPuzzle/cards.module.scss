@@ -2,11 +2,12 @@
 @import '../../../scss/var';
 
 .card {
+  display: flex;
+  flex-direction: column;
   width: auto;
   height: 100%;
-  border: 4px solid $color-salad;
+  border: 3px solid $color-salad;
   border-radius: 20px;
-  background: $color-black;
   box-sizing: border-box;
   transition: .3s linear;
 
@@ -17,14 +18,16 @@
 
   &__img {
     width: 100%;
+    object-fit: cover;
     border-radius: inherit;
+    z-index: -1;
   }
 
   &__text_block {
     padding: 25px 30px;
     display: flex;
+    flex: 1;
     flex-direction: column;
-    justify-content: space-between;
   }
 
   &__title {
@@ -36,7 +39,6 @@
   }
 
   &__paragraph {
-    height: 90px;
     @include font_10;
     margin-bottom: 20px;
     position: relative;
@@ -44,6 +46,7 @@
   }
 
   &__data {
+    margin-top: auto;
     @include font_8;
     color: $color-salad;
   }
@@ -52,6 +55,6 @@
 
 @media (max-width: 768px) {
   .card {
-    border: 3px solid $color-salad;
+    border: 2px solid $color-salad;
   }
 }

@@ -34,24 +34,31 @@ function Home() {
       <SwiperParallax />
       <Statistics />
       {itemslocal.map((menuItem, menuItemIndex) => {
-        return menuItem.sections.map((sectionItem) =>
-          sectionItem.section_type_id === 1 ? (
-            <Puzzle
-              menuName={itemslocal[menuItemIndex].name}
-              cardsList={sectionItem.cards}
-            />
+        return menuItem.sections.map((sectionItem) => {
+          return sectionItem.section_type_id === 1 ? (
+            sectionItem.cards.length ? (
+              <Puzzle
+                key={sectionItem.section_type_id}
+                menuName={itemslocal[menuItemIndex].name}
+                cardsList={sectionItem.cards}
+              />
+            ) : null
           ) : sectionItem.section_type_id === 2 ? (
-            <Cards
-              menuName={itemslocal[menuItemIndex].name}
-              cardsList={sectionItem.cards}
-            />
-          ) : (
+            sectionItem.cards.length ? (
+              <Cards
+                key={sectionItem.section_type_id}
+                menuName={itemslocal[menuItemIndex].name}
+                cardsList={sectionItem.cards}
+              />
+            ) : null
+          ) : sectionItem.cards.length ? (
             <Table
+              key={sectionItem.section_type_id}
               menuName={itemslocal[menuItemIndex].name}
               cardsList={sectionItem.cards}
             />
-          )
-        );
+          ) : null;
+        });
       })}
       <MapContainer apiKey={API_KEY} />
       <AppDescription />

@@ -1,12 +1,11 @@
 .grid {
   display: grid;
 
-  img {
-    object-fit: cover;
+  p {
+    overflow: scroll;
   }
 
   div {
-    width: 100%;
     filter: grayscale(1);
     transition: 1s;
 
@@ -22,37 +21,28 @@
     grid-gap: 16px;
 
     &__firstCell {
+
       div {
         padding: 21px;
-        max-height: 200px;
-      }
-
-      h3 {
-        max-height: 80px;
-        overflow: hidden;
       }
     }
 
     &__secondCell {
+
       li {
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-around;
-        max-height: 145px;
-        min-height: 120px;
         padding: 20px;
 
         div {
           padding: 0;
           margin-right: 20px;
-          min-width: 100px;
         }
 
         h3 {
           font-size: 10px;
           line-height: 11px;
-          max-height: 80px;
-          overflow: hidden;
         }
 
         p {
@@ -61,8 +51,6 @@
 
         img {
           width: 40%;
-          object-fit: cover;
-          border-radius: inherit;
         }
       }
     }
@@ -73,13 +61,10 @@
         flex-direction: row-reverse;
         justify-content: space-around;
         height: unset;
-        max-height: 145px;
-        min-height: 120px;
         padding: 20px;
 
         div {
           padding: 0;
-          min-width: 100px;
           margin-right: 15px;
         }
 
@@ -95,7 +80,6 @@
         img {
           width: 40%;
           object-fit: cover;
-          border-radius: inherit;
         }
       }
     }
@@ -108,33 +92,26 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px 20px;
 
+    img {
+      border-radius: 17px;
+    }
+
     &__firstCell {
+
       grid-row: span 6;
-
-      img {
-        height: 183px;
-      }
-
-      h3 {
-        max-height: 80px;
-        overflow: hidden;
-      }
 
       div {
         padding: 20px;
-        max-height: 180px;
       }
     }
 
     &__secondCell {
+
       grid-column-start: 2;
       grid-row-start: 1;
       grid-row-end: 4;
 
       li {
-        display: flex;
-        justify-content: unset;
-        max-height: unset;
         padding: 0;
 
         p {
@@ -149,7 +126,6 @@
         div {
           padding: 20px;
           margin: 0;
-          max-width: unset;
         }
   
         img {
@@ -160,6 +136,7 @@
     }
 
     &__thirdCell {
+
       grid-column-start: 2;
       grid-row-start: 4;
       grid-row-end: 7;
@@ -170,7 +147,6 @@
 
         div {
           padding: 20px;
-          min-height: 130px;
         }
   
         p {
@@ -189,20 +165,16 @@
       li {
         padding: 0;
         height: 100%;
-        min-height: unset;
-        justify-content: unset;
 
         div {
           padding: 15px;
           margin: 0;
-          max-width: unset;
         }
 
         h3 {
           display: block;
           font-size: 10px;
           line-height: 11px;
-          overflow: hidden;
         }
 
         p {
@@ -218,6 +190,7 @@
 }
 
 @media (min-width: 1190px) {
+
   .grid {
     grid-auto-rows: 91px;
     grid-gap: 24px 24px;
@@ -228,31 +201,25 @@
       img {
         max-height: 206px;
       }
-
-      div {
-        max-height: 219px;
-      }
     }
 
     &__secondCell {
+
       grid-row: span 4;
       grid-column-start: unset;
 
       li {
-        display: block;
+        flex-direction: column;
+        justify-content: space-between;
 
         img {
-          max-height: 260px;
           width: 100%;
           max-width: unset;
+          max-height: 250px;
         }
   
         h3 {
           display: none;
-        }
-  
-        div {
-          max-height: 171px;
         }
       }
     }
@@ -266,12 +233,10 @@
         flex-direction: row-reverse;
 
         img {
-          max-width: 148px;
+          max-width: 45%;
         }
   
         h3 {
-          max-height: 100px;
-          overflow: hidden;
           font-size: 10px;
         }
   
@@ -290,7 +255,7 @@
         flex-direction: row-reverse;
 
         img {
-          max-width: 146px;
+          max-width: 45%;
         }
 
         p {
@@ -303,9 +268,7 @@
         }
   
         h3 {
-          max-height: 47px;
           margin-bottom: 5px;
-          overflow: hidden;
         }
       }
     }
@@ -313,25 +276,18 @@
 }
 
 @media (min-width: 2000px) {
+
   .grid {
+
     &__firstCell {
       grid-column-start: 1;
       grid-row-start: 1;
       grid-row-end: 6;
 
-      li {
-        div {
-          max-height: 370px;
-        }
-      }
 
       h3 {
         font-size: 20px;
         line-height: 16px;
-      }
-
-      img {
-        max-height: 206px;
       }
 
       p {
@@ -345,6 +301,7 @@
     }
 
     &__secondCell {
+
       grid-row: span 2;
 
       li {
@@ -358,12 +315,13 @@
     }
 
     &__restCell {
+
       li {
         display: flex;
         flex-direction: row-reverse;
 
         img {
-          max-width: 130px;
+          max-width: 30%;
         }
   
         div {
@@ -372,11 +330,6 @@
   
         p {
           display: none;
-        }
-
-        h3 {
-          max-height: 70px;
-          overflow: hidden;
         }
       }
     }

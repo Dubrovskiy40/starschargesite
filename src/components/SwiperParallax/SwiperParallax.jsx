@@ -1,13 +1,13 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Scrollbar } from "swiper";
+import { Autoplay, Scrollbar, Navigation } from "swiper";
 import "swiper/scss";
 import "swiper/scss/scrollbar";
-
+import "swiper/scss/navigation";
 import staticStation from "../../assets/images/sliderParallax/station.png";
 import firstSlide from "../../assets/images/sliderParallax/light.png";
 
-const SwiperParallax = (props) => {
+const SwiperParallax = () => {
   const arraySliders = [
     {
       id: "1",
@@ -36,10 +36,16 @@ const SwiperParallax = (props) => {
   return (
     <section id="Главная" className="container swiper-parallax">
       <Swiper
+        centeredSlides={true}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        navigation={true}
         scrollbar={{
           draggable: true,
         }}
-        modules={[Scrollbar]}
+        modules={[Autoplay, Scrollbar, Navigation]}
         className="mySwiper"
       >
         <div
@@ -49,7 +55,7 @@ const SwiperParallax = (props) => {
         ></div>
         {arraySliders?.map((slide) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={slide.id}>
               <div className="flex hero__descr">
                 <div className="hero__title title" data-swiper-parallax="-300">
                   {slide.title}
