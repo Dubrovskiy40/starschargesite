@@ -6,9 +6,6 @@
   background: $color-white;
 
   &__top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 22px;
   }
 
@@ -31,14 +28,14 @@
   }
 
   &__count {
-    margin-left: 15px;
+    padding-left: 15px;
     @include font_36;
     font-weight: 700;
     color: $color-salad;
   }
 
   &__description {
-    max-width:376px;
+    max-width: 300px;
     @include font_18;
     color: $color-black;
   }
@@ -54,6 +51,12 @@
     display: grid;
     grid-gap: 32px;
     grid-auto-flow: column;
+  }
+
+  &__wrap_mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
@@ -96,45 +99,61 @@
     margin: 19px 0;
     padding: 24px;
 
+    &__title_wrap {
+      margin-right: 0;
+      margin-bottom: 8px;
+    }
+
     &__top {
-      flex-direction: column;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+
+      &::after {
+        content: url("../../../assets/images/map/station.svg");
+      }
     }
 
     &__title_top{
       display: contents;
       @include font_24;
+      font-weight: 700;
 
-      &:before {
-        content: url("../../../assets/images/map/station.svg");
-        margin-right: 32px;
+      &::before {
+        content: "";
+        margin-right: 0;
       }
     }
 
     &__count {
       margin-left: 15px;
-      @include font_36;
+      display: flex;
+      align-items: center;
+      @include font_24;
+      font-weight: 700;
       color: $color-salad;
     }
 
     &__description {
       max-width:376px;
-      @include font_18;
+      @include font_12;
       color: $color-black;
     }
 
     &__title_bottom {
-      text-align: center;
-      @include font_12_1;
-      color: $color-black;
-      margin-bottom: 20px;
+      display: none;
     }
 
     &__types_wrap {
-      // display: flex;
-      // flex-wrap: wrap;
-      // justify-content: center;
       grid-gap: 16px;
       grid-auto-flow: row;
+    }
+
+    &__wrap_mobile {
+      align-items: unset;
+      flex-direction: column;
+      justify-content: unset;
+      margin-right: 16px;
     }
   }
 
