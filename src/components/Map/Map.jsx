@@ -35,14 +35,14 @@ const Map = (props) => {
         onUnmount={onUnmount}
         options={options}
       >
-        {stations?.map(({ lat, lng }) => (
+        {stations?.map(({stationId, lat, lng}) => (
           <Marker
             onClick={handleClickPointMap}
-            key={lat + lng}
+            key={stationId}
             onMouseOver={(e) => {
               console.log('навел на элемент')
               setShowInfoMapHover(prev => !prev);
-              setElCoordinates((prev) => ({...prev, x: 30, y: 30}))
+              setElCoordinates((prev) => ({...prev, x: 30, y: 30})) // TODO исп. на динамические относительно объекта на карте
             }}
             onMouseOut={() => {
               console.log('ушел с элемента')
