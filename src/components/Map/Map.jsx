@@ -4,8 +4,14 @@ import styles from "./Map.module.scss";
 import { options } from "./options";
 
 const Map = (props) => {
-  const {center, stations, setShowInfoMapHover, setShowInfoMapClick, setElCoordinates } = props;
-  
+  const {
+    center,
+    stations,
+    setShowInfoMapHover,
+    setShowInfoMapClick,
+    setElCoordinates,
+  } = props;
+
   const mapRef = useRef(null);
 
   const onLoad = useCallback(function callback(map) {
@@ -17,8 +23,16 @@ const Map = (props) => {
   }, []);
 
   const handleClickPointMap = (e) => {
-    console.log('click el', e)
-    setShowInfoMapClick(prev => !prev);
+    console.log("click el", e);
+    setShowInfoMapClick((prev) => !prev);
+  };
+
+  const getCoordinates = (elem) => {
+    const box = elem.getBoundingClientRect();
+    return {
+      x: box.top + window.pageYOffset,
+      y: box.left + window.pageXOffset,
+    };
   };
 
   return (
@@ -35,18 +49,20 @@ const Map = (props) => {
         onUnmount={onUnmount}
         options={options}
       >
-        {stations?.map(({stationId, lat, lng}) => (
+        {stations?.map(({ stationId, lat, lng }) => (
           <Marker
             onClick={handleClickPointMap}
             key={stationId}
             onMouseOver={(e) => {
-              console.log('навел на элемент')
-              setShowInfoMapHover(prev => !prev);
-              setElCoordinates((prev) => ({...prev, x: 30, y: 30})) // TODO исп. на динамические относительно объекта на карте
+              const { x, y } = getCoordinates(e.domEvent.target);
+
+              console.log("навел на элемент");
+              setShowInfoMapHover((prev) => !prev);
+              setElCoordinates((prev) => ({ ...prev, x, y })); // TODO исп. на динамические относительно объекта на карте
             }}
             onMouseOut={() => {
-              console.log('ушел с элемента')
-              setShowInfoMapHover(prev => !prev);
+              console.log("ушел с элемента");
+              setShowInfoMapHover((prev) => !prev);
             }}
             position={{
               lat,
