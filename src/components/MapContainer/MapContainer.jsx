@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { getScreenWidth } from "../../hoc/getScreenWidth";
 import { useTranslation } from "react-i18next";
 import "../../utils/i18next";
-import { observer } from "mobx-react";
 import Map from "../Map/Map";
 import { useJsApiLoader } from "@react-google-maps/api";
 import Station from "./Station/Station";
 import StationHover from "./StationHover/StationHover";
+import { observer } from "mobx-react";
 
 const center = {
   lat: 55.75,
@@ -111,7 +111,7 @@ const stations = [
 ];
 
 const MapContainer = observer((props) => {
-  const { widthScreen, deviceType, apiKey } = props;
+  const { widthScreen, deviceType, stations, apiKey } = props;
   const { t } = useTranslation();
 
   const [showInfoMapHover, setShowInfoMapHover] = useState(false);
@@ -156,7 +156,7 @@ const MapContainer = observer((props) => {
             </div>
           </section>
         </div>
-        {showInfoMapClick && <Station />}
+        {showInfoMapClick && <Station stations={stations} />}
       </div>
     </section>
   );
