@@ -28,15 +28,13 @@ const Station = () => {
   return (
     <section className="station">
       <div className="station__top">
-        <div className="station__wrap_mobile">
-          <div className="station__title_wrap">
-            <h2 className="station__title_top">Hotel Petr</h2>
-            <span className="station__count">4.5</span>
-          </div>
-          <span className="station__description">
-            Приморский парк Победы, Крестовский проспект 21, г. Санкт-Петербург
-          </span>
+        <div className="station__title_wrap">
+          <h2 className="station__title_top">Hotel Petr</h2>
+          <span className="station__count">4.5</span>
         </div>
+        <span className="station__description">
+          Приморский парк Победы, Крестовский проспект 21, г. Санкт-Петербург
+        </span>
       </div>
       <div className="station__bottom">
         <h3 className="station__title_bottom">Доступные тарифы</h3>
