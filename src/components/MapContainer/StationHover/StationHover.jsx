@@ -2,14 +2,10 @@ import React from "react";
 import { createPortal } from "react-dom";
 
 const StationHover = (props) => {
-  const { elCoordinates, stations } = props;
+  const { elCoordinates, showInfoMapHover } = props;
 
   return (
-    <>
-      {stations?.map((station) => {
-        return createPortal(
           <section
-            key={station.id}
             className="stationHover"
             style={{
               top: `${Math.abs(elCoordinates.x) + 60}px`,
@@ -18,11 +14,11 @@ const StationHover = (props) => {
           >
             <div className="stationHover__top">
               <div className="stationHover__title_wrap">
-                <h2 className="stationHover__title_top">{station.name}</h2>
+                <h2 className="stationHover__title_top">{showInfoMapHover.st.name}</h2>
                 <span className="stationHover__count">42</span>
               </div>
               <span className="stationHover__description">
-                {station.description}
+                {showInfoMapHover.st.description}
               </span>
             </div>
             <div className="stationHover__bottom">
@@ -52,11 +48,7 @@ const StationHover = (props) => {
                 {/*})}*/}
               </div>
             </div>
-          </section>,
-          document.getElementById("modal")
-        );
-      })}
-    </>
+          </section>
   );
 };
 

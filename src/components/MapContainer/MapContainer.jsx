@@ -9,117 +9,121 @@ import StationHover from "./StationHover/StationHover";
 import { observer } from "mobx-react";
 
 const center = {
-  lat: 55.75,
-  lng: 37.63,
+  // lat: 55.75,
+  // lng: 37.63,
+  lat: 37.57273282939941,
+  lng: 55.754591881471676,
 };
 
-const stations = [
-  {
-    stationId: "1",
-    name: "Hotel Petr",
-    address:
-      "Приморский парк Победы, Крестовский проспект 21, г. Санкт-Петербург",
-    options: [
-      {
-        optionId: "1",
-        path: "/images/map/type1.png",
-        optionTitle: "CHAdeMO",
-        characteristics: "50 кВт",
-        cost: "70 Р/мин",
-      },
-      {
-        optionId: "2",
-        path: "/images/map/type2.png",
-        optionTitle: "Yazaki (Type 1)",
-        characteristics: "23 кВт",
-        cost: "70 Р/мин",
-      },
-      {
-        optionId: "3",
-        path: "/images/map/type3.png",
-        optionTitle: "Mennekes (Type 2)",
-        characteristics: "23 кВт",
-        cost: "50 Р/мин",
-      },
-    ],
-    count: "4.5",
-    lat: 55.75,
-    lng: 37.63,
-  },
-  {
-    stationId: "2",
-    name: "St. Vgik",
-    address: "Бункер, Кр. площадь 1, г. Москва",
-    options: [
-      {
-        optionId: "1",
-        path: "/images/map/type1.png",
-        optionTitle: "CHAdeMO",
-        characteristics: "50 кВт",
-        cost: "70 Р/мин",
-      },
-      {
-        optionId: "2",
-        path: "/images/map/type2.png",
-        optionTitle: "Yazaki (Type 1)",
-        characteristics: "23 кВт",
-        cost: "70 Р/мин",
-      },
-      {
-        optionId: "3",
-        path: "/images/map/type3.png",
-        optionTitle: "Mennekes (Type 2)",
-        characteristics: "23 кВт",
-        cost: "50 Р/мин",
-      },
-    ],
-    count: "4.9",
-    lat: 55.76,
-    lng: 37.672,
-  },
-  {
-    stationId: "3",
-    name: "Hogvards",
-    address: "Сразу за углом, Поворотный пр. 13, г. Круговой",
-    options: [
-      {
-        optionId: "1",
-        path: "/images/map/type1.png",
-        optionTitle: "CHAdeMO",
-        characteristics: "50 кВт",
-        cost: "70 Р/мин",
-      },
-      {
-        optionId: "2",
-        path: "/images/map/type2.png",
-        optionTitle: "Yazaki (Type 1)",
-        characteristics: "23 кВт",
-        cost: "70 Р/мин",
-      },
-      {
-        optionId: "3",
-        path: "/images/map/type3.png",
-        optionTitle: "Mennekes (Type 2)",
-        characteristics: "23 кВт",
-        cost: "50 Р/мин",
-      },
-    ],
-    count: "4.1",
-    lat: 55.753,
-    lng: 37.6,
-  },
-];
+// const stations = [
+//   {
+//     stationId: "1",
+//     name: "Hotel Petr",
+//     address:
+//       "Приморский парк Победы, Крестовский проспект 21, г. Санкт-Петербург",
+//     options: [
+//       {
+//         optionId: "1",
+//         path: "/images/map/type1.png",
+//         optionTitle: "CHAdeMO",
+//         characteristics: "50 кВт",
+//         cost: "70 Р/мин",
+//       },
+//       {
+//         optionId: "2",
+//         path: "/images/map/type2.png",
+//         optionTitle: "Yazaki (Type 1)",
+//         characteristics: "23 кВт",
+//         cost: "70 Р/мин",
+//       },
+//       {
+//         optionId: "3",
+//         path: "/images/map/type3.png",
+//         optionTitle: "Mennekes (Type 2)",
+//         characteristics: "23 кВт",
+//         cost: "50 Р/мин",
+//       },
+//     ],
+//     count: "4.5",
+//     lat: 55.75,
+//     lng: 37.63,
+//   },
+//   {
+//     stationId: "2",
+//     name: "St. Vgik",
+//     address: "Бункер, Кр. площадь 1, г. Москва",
+//     options: [
+//       {
+//         optionId: "1",
+//         path: "/images/map/type1.png",
+//         optionTitle: "CHAdeMO",
+//         characteristics: "50 кВт",
+//         cost: "70 Р/мин",
+//       },
+//       {
+//         optionId: "2",
+//         path: "/images/map/type2.png",
+//         optionTitle: "Yazaki (Type 1)",
+//         characteristics: "23 кВт",
+//         cost: "70 Р/мин",
+//       },
+//       {
+//         optionId: "3",
+//         path: "/images/map/type3.png",
+//         optionTitle: "Mennekes (Type 2)",
+//         characteristics: "23 кВт",
+//         cost: "50 Р/мин",
+//       },
+//     ],
+//     count: "4.9",
+//     lat: 55.76,
+//     lng: 37.672,
+//   },
+//   {
+//     stationId: "3",
+//     name: "Hogvards",
+//     address: "Сразу за углом, Поворотный пр. 13, г. Круговой",
+//     options: [
+//       {
+//         optionId: "1",
+//         path: "/images/map/type1.png",
+//         optionTitle: "CHAdeMO",
+//         characteristics: "50 кВт",
+//         cost: "70 Р/мин",
+//       },
+//       {
+//         optionId: "2",
+//         path: "/images/map/type2.png",
+//         optionTitle: "Yazaki (Type 1)",
+//         characteristics: "23 кВт",
+//         cost: "70 Р/мин",
+//       },
+//       {
+//         optionId: "3",
+//         path: "/images/map/type3.png",
+//         optionTitle: "Mennekes (Type 2)",
+//         characteristics: "23 кВт",
+//         cost: "50 Р/мин",
+//       },
+//     ],
+//     count: "4.1",
+//     lat: 55.753,
+//     lng: 37.6,
+//   },
+// ];
 
 const MapContainer = observer((props) => {
   const { widthScreen, deviceType, stations, apiKey } = props;
   const { t } = useTranslation();
 
-  const [showInfoMapHover, setShowInfoMapHover] = useState(false);
-  const [showInfoMapClick, setShowInfoMapClick] = useState(false);
+  const [showInfoMapHover, setShowInfoMapHover] = useState({isShow: false, st: {}});
+  const [showInfoMapClick, setShowInfoMapClick] = useState({isShow: false, st: {}});
   const [elCoordinates, setElCoordinates] = useState({
     x: "",
     y: "",
   }); // координаты инфо блока при наведении
+
+  console.log(showInfoMapClick, showInfoMapHover)
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
@@ -143,8 +147,9 @@ const MapContainer = observer((props) => {
                     setElCoordinates={setElCoordinates}
                     elCoordinates={elCoordinates}
                   />
-                  {showInfoMapHover && (
+                  {widthScreen >= 1190 && showInfoMapHover.isShow && (
                     <StationHover
+                      showInfoMapHover={showInfoMapHover}
                       elCoordinates={elCoordinates}
                       stations={stations}
                     />
@@ -156,7 +161,7 @@ const MapContainer = observer((props) => {
             </div>
           </section>
         </div>
-        {showInfoMapClick && <Station stations={stations} />}
+        {widthScreen < 1190 && showInfoMapClick.isShow && <Station showInfoMapClick={showInfoMapClick} />}
       </div>
     </section>
   );
