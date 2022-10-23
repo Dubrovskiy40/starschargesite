@@ -8,116 +8,109 @@ import Station from "./Station/Station";
 import StationHover from "./StationHover/StationHover";
 import { observer } from "mobx-react";
 
-const center = {
-  lat: 55.75,
-  lng: 37.63,
-  // lat: 37.57273282939941,
-  // lng: 55.754591881471676,
-};
-
-const stations = [
-  {
-    stationId: "1",
-    name: "Hotel Petr",
-    address:
-      "Приморский парк Победы, Крестовский проспект 21, г. Санкт-Петербург",
-    options: [
-      {
-        optionId: "1",
-        path: "/images/map/type1.png",
-        optionTitle: "CHAdeMO",
-        characteristics: "50 кВт",
-        cost: "70 Р/мин",
-      },
-      {
-        optionId: "2",
-        path: "/images/map/type2.png",
-        optionTitle: "Yazaki (Type 1)",
-        characteristics: "23 кВт",
-        cost: "70 Р/мин",
-      },
-      {
-        optionId: "3",
-        path: "/images/map/type3.png",
-        optionTitle: "Mennekes (Type 2)",
-        characteristics: "23 кВт",
-        cost: "50 Р/мин",
-      },
-    ],
-    count: "4.5",
-    lat: 55.75,
-    lng: 37.63,
-  },
-  {
-    stationId: "2",
-    name: "St. Vgik",
-    address: "Бункер, Кр. площадь 1, г. Москва",
-    options: [
-      {
-        optionId: "1",
-        path: "/images/map/type1.png",
-        optionTitle: "CHAdeMO",
-        characteristics: "50 кВт",
-        cost: "70 Р/мин",
-      },
-      {
-        optionId: "2",
-        path: "/images/map/type2.png",
-        optionTitle: "Yazaki (Type 1)",
-        characteristics: "23 кВт",
-        cost: "70 Р/мин",
-      },
-      {
-        optionId: "3",
-        path: "/images/map/type3.png",
-        optionTitle: "Mennekes (Type 2)",
-        characteristics: "23 кВт",
-        cost: "50 Р/мин",
-      },
-    ],
-    count: "4.9",
-    lat: 55.76,
-    lng: 37.672,
-  },
-  {
-    stationId: "3",
-    name: "Hogvards",
-    address: "Сразу за углом, Поворотный пр. 13, г. Круговой",
-    options: [
-      {
-        optionId: "1",
-        path: "/images/map/type1.png",
-        optionTitle: "CHAdeMO",
-        characteristics: "50 кВт",
-        cost: "70 Р/мин",
-      },
-      {
-        optionId: "2",
-        path: "/images/map/type2.png",
-        optionTitle: "Yazaki (Type 1)",
-        characteristics: "23 кВт",
-        cost: "70 Р/мин",
-      },
-      {
-        optionId: "3",
-        path: "/images/map/type3.png",
-        optionTitle: "Mennekes (Type 2)",
-        characteristics: "23 кВт",
-        cost: "50 Р/мин",
-      },
-    ],
-    count: "4.1",
-    lat: 55.753,
-    lng: 37.6,
-  },
-];
+// const stations = [
+//   {
+//     stationId: "1",
+//     name: "Hotel Petr",
+//     address:
+//       "Приморский парк Победы, Крестовский проспект 21, г. Санкт-Петербург",
+//     options: [
+//       {
+//         optionId: "1",
+//         path: "/images/map/type1.png",
+//         optionTitle: "CHAdeMO",
+//         characteristics: "50 кВт",
+//         cost: "70 Р/мин",
+//       },
+//       {
+//         optionId: "2",
+//         path: "/images/map/type2.png",
+//         optionTitle: "Yazaki (Type 1)",
+//         characteristics: "23 кВт",
+//         cost: "70 Р/мин",
+//       },
+//       {
+//         optionId: "3",
+//         path: "/images/map/type3.png",
+//         optionTitle: "Mennekes (Type 2)",
+//         characteristics: "23 кВт",
+//         cost: "50 Р/мин",
+//       },
+//     ],
+//     count: "4.5",
+//     lat: 55.75,
+//     lng: 37.63,
+//   },
+//   {
+//     stationId: "2",
+//     name: "St. Vgik",
+//     address: "Бункер, Кр. площадь 1, г. Москва",
+//     options: [
+//       {
+//         optionId: "1",
+//         path: "/images/map/type1.png",
+//         optionTitle: "CHAdeMO",
+//         characteristics: "50 кВт",
+//         cost: "70 Р/мин",
+//       },
+//       {
+//         optionId: "2",
+//         path: "/images/map/type2.png",
+//         optionTitle: "Yazaki (Type 1)",
+//         characteristics: "23 кВт",
+//         cost: "70 Р/мин",
+//       },
+//       {
+//         optionId: "3",
+//         path: "/images/map/type3.png",
+//         optionTitle: "Mennekes (Type 2)",
+//         characteristics: "23 кВт",
+//         cost: "50 Р/мин",
+//       },
+//     ],
+//     count: "4.9",
+//     lat: 55.76,
+//     lng: 37.672,
+//   },
+//   {
+//     stationId: "3",
+//     name: "Hogvards",
+//     address: "Сразу за углом, Поворотный пр. 13, г. Круговой",
+//     options: [
+//       {
+//         optionId: "1",
+//         path: "/images/map/type1.png",
+//         optionTitle: "CHAdeMO",
+//         characteristics: "50 кВт",
+//         cost: "70 Р/мин",
+//       },
+//       {
+//         optionId: "2",
+//         path: "/images/map/type2.png",
+//         optionTitle: "Yazaki (Type 1)",
+//         characteristics: "23 кВт",
+//         cost: "70 Р/мин",
+//       },
+//       {
+//         optionId: "3",
+//         path: "/images/map/type3.png",
+//         optionTitle: "Mennekes (Type 2)",
+//         characteristics: "23 кВт",
+//         cost: "50 Р/мин",
+//       },
+//     ],
+//     count: "4.1",
+//     lat: 55.753,
+//     lng: 37.6,
+//   },
+// ];
 
 const MapContainer = observer((props) => {
-  // const center = useMemo(() => ({
-    // lat: 37.57273282939941,
-    // lng: 55.754591881471676,
-  // }), []);
-  const { widthScreen, deviceType, apiKey } = props;
+  const { widthScreen, deviceType, stations, apiKey } = props;
+  const center = useMemo(() => ({
+    lat: 55.754591881471676,
+    lng: 37.57273282939941,
+  }), []);
   const { t } = useTranslation();
 
   const [showInfoMapHover, setShowInfoMapHover] = useState(false);
