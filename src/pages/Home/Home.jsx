@@ -14,14 +14,19 @@ import {
   MapContainer,
 } from "../../components";
 import MenuStore from "../../store/MenuStore";
+import StationsStore from "../../store/StationsStore";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 function Home() {
   const [itemslocal, setItemsLocal] = useState([]);
+  const [stations, setStations] = useState([]);
+  
   const fetchData = async () => {
     await MenuStore.fetchMenuItems();
     setItemsLocal(MenuStore.items.map((item) => item));
+    await StationsStore.fetchStations();
+    setStations(StationsStore.items.map((item) => item));
   };
 
   useEffect(() => {
@@ -60,7 +65,7 @@ function Home() {
           ) : null;
         });
       })}
-      <MapContainer apiKey={API_KEY} />
+      <MapContainer stations={stations} apiKey={API_KEY} />
       <AppDescription />
       <Team />
       <Feedback />

@@ -3,7 +3,7 @@ import { CORS, getHostInformation } from "./helper";
 
 const host = getHostInformation();
 
-class MenuStore {
+class StationsStore {
   isLoading = true;
   items = [];
 
@@ -16,23 +16,18 @@ class MenuStore {
       this.isLoading = bool;
     });
   };
-
-  fetchMenuItems = async () => {
-    const itemReq = await fetch(`${host}/GetContent`, CORS);
+  
+  fetchStations = async () => {
+    const itemReq = await fetch(`${host}/GetStations`, CORS);
     const itemRes = await itemReq.json();
     if (itemReq.ok && itemRes !== null) {
       runInAction(() => {
-        this.items = itemRes
-          .sort(
-            (prev, next) => prev.menu_order - next.menu_order
-          ); // сортировка
+        this.items = itemRes;
       });
     }
-    // console.log('itemRes',itemRes)
     this.setLoading(false);
-    // console.log('fetchMenuItems', this.items)
   };
 
 }
 
-export default new MenuStore();
+export default new StationsStore();
