@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-import {CORS, CORS_CAPTCHA, getHostInformation, POSTCORS} from "./helper";
-import { useFeedbackStore } from "./FeedbackStore";
+import { CORS, CORS_CAPTCHA, getHostInformation, POSTCORS } from "./helper";
 
 const host = getHostInformation();
 
 export const useCaptcha = () => {
-  const { values } = useFeedbackStore();
   const [store, setStore] = useState({
     img: null,
     UUID: "",
@@ -54,14 +52,15 @@ export const useCaptcha = () => {
     }
   };
 
-  const postForm = async () => {
-    const data = {"email": values.email,
-      "name": values.name,
-      "question": values.question,
-      "tel": values.tel
-    }
+  const postForm = async (values) => {
+    const data = {
+      email: values.email.value,
+      name: values.name.value,
+      question: values.question.value,
+      tel: values.tel.value,
+    };
+
     const response = await fetch(`${host}/SendQuestion`, POSTCORS(data));
-    console.log(response);
     const result = await response.json();
     if (result !== "Error" && result !== null && response.ok) {
       console.log("ok");
@@ -80,3 +79,4 @@ export const useCaptcha = () => {
     postForm,
   };
 };
+
