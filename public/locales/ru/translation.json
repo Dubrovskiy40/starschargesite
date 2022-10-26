@@ -1,4 +1,22 @@
 {
+  "statistics": {
+    "station": {
+      "type1": "Станция",
+      "type2": "Станции",
+      "type3": "Станций",
+      "desc": "зарядки"
+    },
+    "user": {
+      "type1": "Пользователь",
+      "type2": "Пользователя",
+      "type3": "Пользователей"
+    },
+    "review": {
+      "type1": "Отзыв",
+      "type2": "Отзыва",
+      "type3": "Отзывов"
+    }
+  },
   "cards": {
     "data": {
       "title1": "Его комната, настоящая, разве что слишком маленькая, но обычная комната, мирно покоилась в своих четырех хорошо знакомых стенах.",
@@ -61,7 +79,7 @@
     "placeholderName": "Имя",
     "inpNameErrMess": "Только буквы!",
     "placeholderPhone": "Телефон",
-    "inpPhoneErrMess": "Некорректный номере",
+    "inpPhoneErrMess": "Некорректный номер",
     "placeholderEmail": "Email",
     "inpEmailErrMess": "Ошибка в email",
     "placeholderArea": "Напишите ваш вопрос",

@@ -85,6 +85,10 @@ ul {
     font-weight: 400;
     text-align: center;
     align-items: center;
+    
+    &__policy {
+      cursor: pointer;
+    }
   }
 }
 @media (max-width: 1024px) {
