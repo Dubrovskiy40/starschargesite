@@ -87,17 +87,25 @@
   transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
 
+.front-side .inner {
+  top: 75%;
+}
+
 .back-side {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  
+  & .inner {
+    top: 50%;
+  }
 }
 
 .inner {
   -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
   transform: translateY(-50%) translateZ(60px) scale(0.94);
-  top: 50%;
+  //top: 75%;
   position: absolute;
   left: 0;
   width: 100%;
