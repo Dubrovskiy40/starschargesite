@@ -1,12 +1,12 @@
-import React, {useMemo, useState} from "react";
+import React, { useMemo, useState } from "react";
 import { getScreenWidth } from "../../hoc/getScreenWidth";
 import { useTranslation } from "react-i18next";
 import "../../utils/i18next";
 import Map from "../Map/Map";
 import { useJsApiLoader } from "@react-google-maps/api";
 import Station from "./Station/Station";
-import StationHover from "./StationHover/StationHover";
 import { observer } from "mobx-react";
+import StationHover from "./StationHover/StationHover";
 
 // const stations = [
 //   {
@@ -107,10 +107,13 @@ import { observer } from "mobx-react";
 
 const MapContainer = observer((props) => {
   const { widthScreen, deviceType, stations, apiKey } = props;
-  const center = useMemo(() => ({
-    lat: 55.754591881471676,
-    lng: 37.57273282939941,
-  }), []);
+  const center = useMemo(
+    () => ({
+      lat: 55.754591881471676,
+      lng: 37.57273282939941,
+    }),
+    []
+  );
   const { t } = useTranslation();
 
   const [showInfoMapHover, setShowInfoMapHover] = useState(false);
@@ -160,9 +163,7 @@ const MapContainer = observer((props) => {
           </section>
         </div>
         {widthScreen < 1190 && showInfoMapClick && (
-          <Station
-            dataMapClick={dataMapClick} 
-          />
+          <Station dataMapClick={dataMapClick} />
         )}
       </div>
     </section>

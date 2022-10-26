@@ -2,10 +2,18 @@ import CardForPuzzle from "./CardForPuzzle/CardForPuzzle";
 import Style from "./puzzle.module.scss";
 import { useState, useEffect } from "react";
 import { getScreenWidth } from "../../hoc/getScreenWidth";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { ContentPasteOffSharp } from "@mui/icons-material";
+import "swiper/scss";
+import "swiper/scss/pagination";
 
 const getCards = (currentCard, visibleCards, cardsList) => {
   let content = [];
-  for (let index = currentCard; index < currentCard + visibleCards; index++) {
+  for (
+    let index = currentCard;
+    index < /*currentCard +*/ visibleCards;
+    index++
+  ) {
     content.push(
       <div
         key={index}
