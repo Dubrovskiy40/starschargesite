@@ -1,4 +1,22 @@
 {
+  "statistics": {
+    "station": {
+      "type1": "Station",
+      "type2": "Station",
+      "type3": "Stations",
+      "desc": "charging"
+    },
+    "user": {
+      "type1": "User",
+      "type2": "User",
+      "type3": "Users"
+    },
+    "review": {
+      "type1": "Review",
+      "type2": "Reviews",
+      "type3": "Reviews"
+    }
+  },
   "cards": {
     "data": {
       "title1": "His room, a real, perhaps too small, but ordinary room, rested peacefully within its four well-known walls.",
