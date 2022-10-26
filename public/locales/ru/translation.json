@@ -79,7 +79,7 @@
     "placeholderName": "Имя",
     "inpNameErrMess": "Только буквы!",
     "placeholderPhone": "Телефон",
-    "inpPhoneErrMess": "Некорректный номере",
+    "inpPhoneErrMess": "Некорректный номер",
     "placeholderEmail": "Email",
     "inpEmailErrMess": "Ошибка в email",
     "placeholderArea": "Напишите ваш вопрос",
