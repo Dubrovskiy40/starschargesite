@@ -1,8 +1,8 @@
 @import '../../scss/var';
 
 .header__logo-link {
-  height: 56px;
   position: relative;
+  display: flex;
 
   &::after {
     content: "";
@@ -28,16 +28,4 @@
 
 .header__logo:hover {
   transform: scale(1.1);
-}
-
-@media(max-width: 1500px) {
-  .header__logo-link {
-    height: 46px;
-  }
-}
-
-@media(max-width: 1024px) {
-  .header__logo-link {
-    height: 40px;
-  }
 }
