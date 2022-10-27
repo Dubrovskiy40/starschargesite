@@ -16,7 +16,7 @@ const Menu = observer(({ items, active, setActive }) => {
               className="header__nav-item"
               onClick={() => setActive(false)}
             >
-              <a href={`#${item.name_eng}`} className="header__nav-link">
+              <a href={`#${item.name}`} className="header__nav-link">
                 {lang === 'ru' ? item.name : item.name_eng}
               </a>
             </li>
