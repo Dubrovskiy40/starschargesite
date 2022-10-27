@@ -2,6 +2,8 @@ import CardForPuzzle from "./CardForPuzzle/CardForPuzzle";
 import Style from "./puzzle.module.scss";
 import { useState, useEffect } from "react";
 import { getScreenWidth } from "../../hoc/getScreenWidth";
+import { useTranslation } from "react-i18next";
+import "../../utils/i18next";
 
 const getCards = (currentCard, visibleCards, cardsList) => {
   let content = [];
@@ -39,6 +41,8 @@ const getCards = (currentCard, visibleCards, cardsList) => {
 };
 
 const Puzzle = (props) => {
+  const { t } = useTranslation();
+  
   const { widthScreen, menuName, deviceType, cardsList } = props;
   console.log("widthScreen", widthScreen);
   console.log("deviceType", deviceType);
@@ -59,7 +63,7 @@ const Puzzle = (props) => {
     <>
       <section id={menuName} />
       <div className="container">
-        <h2 className="title">Новости</h2>
+        <h2 className="title">{t("news.title")}</h2>
         <div className={Style.grid}>
           {getCards(
             currentCard,

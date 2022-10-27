@@ -17,6 +17,9 @@
       "type3": "Reviews"
     }
   },
+  "news": {
+    "title": "News"
+  },
   "cards": {
     "data": {
       "title1": "His room, a real, perhaps too small, but ordinary room, rested peacefully within its four well-known walls.",
