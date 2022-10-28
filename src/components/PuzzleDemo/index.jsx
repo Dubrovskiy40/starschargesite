@@ -10,8 +10,11 @@ import styles from "./styles.module.scss";
 import "swiper/scss";
 import "swiper/scss/pagination";
 import "./swiper.scss";
+import { useTranslation } from "react-i18next";
 
 const PuzzleDemo = ({ deviceType, menuName, cards }) => {
+  const { t } = useTranslation();
+
   const slidesData = [];
 
   const cardsView =
@@ -32,7 +35,7 @@ const PuzzleDemo = ({ deviceType, menuName, cards }) => {
   return (
     <section id={menuName} className={styles.section}>
       <div className={styles.container}>
-        <h2 className={styles.title}>Новости</h2>
+        <h2 className={styles.title}>{t("news.title")}</h2>
         <Swiper
           pagination={pagination}
           modules={[Pagination]}

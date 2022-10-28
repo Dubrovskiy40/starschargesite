@@ -1,6 +1,6 @@
 import appStore from "../../assets/images/app/appStore.png";
 import googleStore from "../../assets/images/app/googleStore.png";
-// import charge from "../../assets/images/app/appDescr.svg";
+import charge from "../../assets/images/app/appDescr.svg";
 import { AppCard } from "./svg";
 import { useTranslation } from "react-i18next";
 import "../../utils/i18next";
@@ -54,11 +54,7 @@ const App = () => {
                 </a>
               </div>
             </div>
-            <img
-              className="app__img_bg"
-              src={/*charge || */ ""}
-              alt="description"
-            />
+            <img className="app__img_bg" src={charge} alt="description" />
           </div>
           <ul className="app__bottomCards">
             {data?.map((card) => {
