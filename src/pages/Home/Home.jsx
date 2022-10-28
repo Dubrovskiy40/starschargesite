@@ -3,7 +3,6 @@ import {
   Cards,
   Header,
   Feedback,
-  Puzzle,
   SwiperParallax,
   ScrollButton,
   Footer,
@@ -43,12 +42,6 @@ function Home() {
         return menuItem.sections.map((sectionItem) => {
           return sectionItem.section_type_id === 1 ? (
             sectionItem.cards.length ? (
-              // <Puzzle
-              //   key={sectionItem.section_type_id}
-              //   menuName={itemslocal[menuItemIndex].name}
-              //   cardsList={sectionItem.cards}
-              // />
-
               <PuzzleDemo
                 cards={sectionItem.cards}
                 menuName={itemslocal[menuItemIndex].name}
