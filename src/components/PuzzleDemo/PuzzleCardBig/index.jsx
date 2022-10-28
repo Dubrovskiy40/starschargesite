@@ -1,17 +1,13 @@
 import styles from "./styles.module.scss";
 
 const PuzzleCardBig = (props) => {
-  const { imgPath, header, text, date } = props;
+  const { img, header, text, date } = props;
 
   if (Object.keys(props).length === 0) return null;
 
   return (
     <div className={styles.container}>
-      <img
-        className={styles.image}
-        src={`/static/media/${imgPath}`}
-        alt="img"
-      />
+      <img className={styles.image} src={`/static/media/${img}`} alt="img" />
       <a
         href="https://www.asus.com/ru/"
         target="_blank"
