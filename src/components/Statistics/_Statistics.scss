@@ -1,5 +1,5 @@
 .statistics {
-  padding: 316px 0 258px;
+  padding: 250px 0 250px;
 
   &__list {
     display: flex;
@@ -39,7 +39,7 @@
 
 @media (max-width: 1190px) {
   .statistics {
-    padding: 256px 0;
+    padding: 156px 0;
 
     &__img {
       width: 65px;
@@ -73,6 +73,8 @@
       &:not(:last-child) {
         margin-bottom: 64px;
       }
+      width: 180px;
+      justify-content: unset;
     }
 
     &__img {

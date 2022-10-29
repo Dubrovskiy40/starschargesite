@@ -1,9 +1,6 @@
-.content-container {
-  padding-top: 90px; //отступ контента от края страницы из-за фиксации хедера
-}
-
-.section {
-  margin-bottom: 256px; // отступ после каждой секции
+section {
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 //общие стили для заголовков
@@ -24,13 +21,22 @@
 .container {
   max-width: 1920px;
   margin: 0 auto;
-  padding: 0 30px;
-  padding-top: 90px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 $section: 256px;
 
 @media(max-width: 1190px) {
+  .container {
+    max-width: calc(1190px - 32px * 2);
+  }
+
+  section {
+    padding-top: 85px;
+    padding-bottom: 40px;
+  }
+
   .title {
     margin-bottom: 32px;
   }
@@ -41,8 +47,14 @@ $section: 256px;
 }
 
 @media(max-width: 768px) {
-  .section {
-    margin-bottom: 88px; // отступ после каждой секции
+
+  .container {
+    max-width: calc(768px - 32px * 2);
+  }
+
+  section {
+    padding-top: 85px;
+    padding-bottom: 0;
   }
 
   .title {

@@ -10,31 +10,35 @@ const Header = observer(() => {
 
   return (
     <div className="header">
-      <div className="header__container">
-        <Logo />
-        <div
-          onClick={() => setModalActive(!modalActive)}
-          className={modalActive ? "header__menu active" : "header__menu"}
-        >
-          <Menu
-            items={MenuStore.items}
-            active={modalActive}
-            setActive={setModalActive}
-          />
-          <div className="header__lang-mobile">
-            <Lang />
-          </div>
-        </div>
-        <div className="header__right-block">
-          <div className="header__lang-desktop">
-            <Lang />
-          </div>
-          <button
+      <div className="container">
+        <div className="header__container">
+          <Logo />
+          <div
             onClick={() => setModalActive(!modalActive)}
-            className={modalActive ? "burg__menu burger--active" : "burg__menu"}
+            className={modalActive ? "header__menu active" : "header__menu"}
           >
-            <span />
-          </button>
+            <Menu
+              items={MenuStore.items}
+              active={modalActive}
+              setActive={setModalActive}
+            />
+            <div className="header__lang-mobile">
+              <Lang />
+            </div>
+          </div>
+          <div className="header__right-block">
+            <div className="header__lang-desktop">
+              <Lang />
+            </div>
+            <button
+              onClick={() => setModalActive(!modalActive)}
+              className={
+                modalActive ? "burg__menu burger--active" : "burg__menu"
+              }
+            >
+              <span />
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -5,8 +5,6 @@ import { getScreenWidth } from "../../hoc/getScreenWidth";
 import PuzzleCardBig from "./PuzzleCardBig";
 import PuzzleCardSmall from "./PuzzleCardSmall";
 import { memo } from "react";
-
-import styles from "./styles.module.scss";
 import "swiper/scss";
 import "swiper/scss/pagination";
 import "./swiper.scss";
@@ -33,9 +31,9 @@ const PuzzleDemo = ({ deviceType, menuName, cards }) => {
   };
 
   return (
-    <section id={menuName} className={styles.section}>
-      <div className={styles.container}>
-        <h2 className={styles.title}>{t("news.title")}</h2>
+    <section id={menuName}>
+      <div className="container">
+        <h2 className="title">{t("news.title")}</h2>
         <Swiper
           pagination={pagination}
           modules={[Pagination]}

@@ -29,6 +29,10 @@
 }
 
 @media (max-width: 768px) {
+  .swiper {
+    padding-bottom: 20px;
+  }
+  
   .swiper-pagination {
     display: flex;
     padding: 0 15px;
