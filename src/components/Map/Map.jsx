@@ -51,10 +51,10 @@ const Map = (props) => {
         onUnmount={onUnmount}
         options={options}
       >
-        {stations?.map((station) => (
+        {stations?.filter((station) => station.is_visible).map((station) => (
           <Marker
             onClick={handleClickPointMap}
-            key={station.stationId}
+            key={station.id}
             onMouseOver={(e) => {
               const { x, y } = getCoordinates(e.domEvent.target);
               setShowInfoMapHover((prev) => !prev);

@@ -1,7 +1,12 @@
 import styles from "./styles.module.scss";
+import { useTranslation } from "react-i18next";
+import "../../../utils/i18next";
 
 const PuzzleCardBig = (props) => {
-  const { img, header, text, date } = props;
+  const { i18n } = useTranslation();
+  let lang = i18n.language;
+  
+  const { img, header, header_eng, text, text_eng, date } = props;
 
   if (Object.keys(props).length === 0) return null;
 
@@ -14,11 +19,24 @@ const PuzzleCardBig = (props) => {
         rel="noreferrer"
         className={styles.link}
       >
-        {header}
+        {lang === 'ru'
+          ? header
+          : header_eng
+        }
       </a>
       <div className={styles.textContent}>
-        <h3 className={styles.title}>{header}</h3>
-        <p className={styles.text}>{text}</p>
+        <h3 className={styles.title}>
+          {lang === 'ru'
+            ? header
+            : header_eng
+          }
+        </h3>
+        <p className={styles.text}>
+          {lang === 'ru'
+            ? text
+            : text_eng
+          }
+        </p>
         <p className={styles.date}>{date}</p>
       </div>
     </div>
