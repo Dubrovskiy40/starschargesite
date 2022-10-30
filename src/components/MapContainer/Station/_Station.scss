@@ -1,9 +1,11 @@
 .station {
+  position: relative;
   width: 100%;
   margin: 32px 0 0 0;
   border-radius: 20px;
   padding: 46px 62px 32px;
   background: $color-white;
+  overflow: hidden;
 
   &__top {
     margin-bottom: 22px;
@@ -15,7 +17,7 @@
     margin-right: 30px;
   }
 
-  &__title_top{
+  &__title_top {
     display: contents;
     @include font_36;
     font-weight: 700;
@@ -57,6 +59,23 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  &__info_show {
+    display: inline-block;
+    position: absolute;
+    top: 26px;
+    right: -59px;
+    bottom: 0;
+    width: 200px;
+    background: $light-grey;
+    color: $color-white;
+    transform: rotate(45deg);
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    box-shadow: 0 0 1px $light-grey;
   }
 }
 

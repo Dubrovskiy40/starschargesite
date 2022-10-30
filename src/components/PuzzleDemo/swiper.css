@@ -1,0 +1,38 @@
+.swiper-pagination {
+  display: flex;
+  padding: 0 65px;
+  bottom: 25px !important;
+}
+
+.swiper-pagination-bullet {
+  width: 100%;
+  margin: 0 !important;
+  height: 4px;
+  border-radius: 0;
+  text-align: center;
+  opacity: 1;
+  background: #005005;
+}
+
+.swiper-pagination-bullet-active {
+  background: #60AD5E;
+}
+
+@media (max-width: 1190px) {
+  .swiper-pagination {
+    display: flex;
+    padding: 0 30px;
+    bottom: 0 !important;
+  }
+}
+@media (max-width: 768px) {
+  .swiper {
+    padding-bottom: 20px;
+  }
+  .swiper-pagination {
+    display: flex;
+    padding: 0 15px;
+  }
+}
+
+/*# sourceMappingURL=swiper.css.map */

@@ -1,38 +1,30 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
+import "../../../utils/i18next";
 
 const Station = ({ dataMapClick }) => {
+  const { i18n } = useTranslation();
+  let lang = i18n.language;
 
   return (
-    <section className="station">
-      <div className="station__top">
-        <div className="station__title_wrap">
-          <h2 className="station__title_top">{dataMapClick.name}</h2>
-          <span className="station__count">{dataMapClick.count}</span>
-        </div>
-        <span className="station__description">
-          {dataMapClick.address}
-        </span>
-      </div>
-      <div className="station__bottom">
-        <h3 className="station__title_bottom">Доступные тарифы</h3>
-        <div className="station__types_wrap">
-          {dataMapClick.options?.map((el) => {
-            return (
-              <div key={el.optionId} className="type">
-                <img className="type__img" src={el.path} alt={el.optionTitle} />
-                <div className="type__description_wrap">
-                  <h5 className="type__title">{el.optionId}</h5>
-                  <span className="type__characteristics">
-                    {el.characteristics}
-                  </span>
-                  <span className="type__price">{el.cost}</span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
+        <section className="station">
+          <div className="station__top">
+            <div className="station__title_wrap">
+              <h2 className="station__title_top">
+                {lang === 'ru' 
+                ? dataMapClick.name 
+                : dataMapClick.name_eng
+                }
+              </h2>
+            </div>
+            <span className="station__description">
+              {lang === 'ru' 
+                ? dataMapClick.description 
+                : dataMapClick.description_eng}
+            </span>
+          </div>
+          {!dataMapClick.is_active && <span className="station__info_show">Ремонт</span>}
+        </section>
   );
 };
 
