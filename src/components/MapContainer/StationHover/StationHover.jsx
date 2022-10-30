@@ -33,6 +33,7 @@ const StationHover = (props) => {
           }
         </span>
       </div>
+      {!dataMapHover.is_active && <span className="stationHover__info_show">Ремонт</span>}
   </section>, document.getElementById('modal'));
 };
 

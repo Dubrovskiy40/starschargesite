@@ -23,6 +23,7 @@ const Station = ({ dataMapClick }) => {
                 : dataMapClick.description_eng}
             </span>
           </div>
+          {!dataMapClick.is_active && <span className="station__info_show">Ремонт</span>}
         </section>
   );
 };
