@@ -16,7 +16,6 @@ body {
 }
 
 .map {
-  padding: 0 0 32px 0;
 
   &__main {
     position: relative;
@@ -25,7 +24,6 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 640px;
     background-color: var(--black-theme);
   }
 

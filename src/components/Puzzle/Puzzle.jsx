@@ -7,7 +7,11 @@ import "../../utils/i18next";
 
 const getCards = (currentCard, visibleCards, cardsList) => {
   let content = [];
-  for (let index = currentCard; index < currentCard + visibleCards; index++) {
+  for (
+    let index = currentCard;
+    index < /*currentCard +*/ visibleCards;
+    index++
+  ) {
     content.push(
       <div
         key={index}
@@ -42,7 +46,7 @@ const getCards = (currentCard, visibleCards, cardsList) => {
 
 const Puzzle = (props) => {
   const { t } = useTranslation();
-  
+
   const { widthScreen, menuName, deviceType, cardsList } = props;
   console.log("widthScreen", widthScreen);
   console.log("deviceType", deviceType);

@@ -1,18 +1,18 @@
-import appStore from "../../assets/images/app/appStore.png";
-import googleStore from "../../assets/images/app/googleStore.png";
+import appStore from "../../assets/images/app/apple.png";
+import googleStore from "../../assets/images/app/google.png";
 import charge from "../../assets/images/app/appDescr.svg";
-import { AppCard } from "./svg";
-import { useTranslation } from "react-i18next";
+import {AppCard} from "./svg";
+import {useTranslation} from "react-i18next";
 import "../../utils/i18next";
 
 const App = () => {
-  const { t } = useTranslation();
+  const {t} = useTranslation();
 
   const data = [
-    { id: "1", name: t("app.item1") },
-    { id: "2", name: t("app.item2") },
-    { id: "3", name: t("app.item3") },
-    { id: "4", name: t("app.item4") },
+    {id: "1", name: t("app.item1")},
+    {id: "2", name: t("app.item2")},
+    {id: "3", name: t("app.item3")},
+    {id: "4", name: t("app.item4")},
   ];
 
   return (
@@ -27,7 +27,7 @@ const App = () => {
                 вопроса и коварных точках c запятой, но текст не дал сбить себя
                 c толку.
               </p>
-              <div className="flex">
+              <div className="app__link-wrap flex">
                 <a
                   className="app__appStore_link app__link"
                   href="#s"
@@ -39,6 +39,7 @@ const App = () => {
                     src={appStore}
                     alt="appStore"
                   />
+                  <span className="app__appStore_text">App Store</span>
                 </a>
                 <a
                   className="app__googleStore_link app__link"
@@ -51,16 +52,17 @@ const App = () => {
                     src={googleStore}
                     alt="googleStore"
                   />
+                  <span className="app__googleStore-text">Google Play</span>
                 </a>
               </div>
             </div>
-            <img className="app__img_bg" src={charge} alt="description" />
+            <img className="app__img_bg" src={charge} alt="description"/>
           </div>
           <ul className="app__bottomCards">
             {data?.map((card) => {
               return (
                 <li className="app__bottomCard" key={card.id}>
-                  <AppCard className="app__bottomCard_svg" />
+                  <AppCard className="app__bottomCard_svg"/>
                   <p className="app__bottomCard_text">{card.name}</p>
                 </li>
               );
@@ -73,4 +75,3 @@ const App = () => {
 };
 
 export default App;
-

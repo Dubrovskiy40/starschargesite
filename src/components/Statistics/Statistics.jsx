@@ -3,11 +3,13 @@ import StatisticsItem from "./StatisticsItem/StatisticsItem";
 import { useTranslation } from "react-i18next";
 import "../../utils/i18next";
 
-const Statistics = () => {
+const Statistics = (props) => {
+  const {stationsCount} = props;
+  
   const { t } = useTranslation();
   
   const data = [
-    { type: "station", value: 123 },
+    { type: "station", value: stationsCount },
     { type: "user", value: 24000 },
     { type: "review", value: 1200 },
   ];

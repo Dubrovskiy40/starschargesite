@@ -1,0 +1,86 @@
+@import '../../../scss/var';
+
+.container {
+  position: relative;
+  border: 4px solid $color-salad;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 206px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.link {
+  position: absolute;
+  display: inline-block;
+  inset: 0;
+  color: transparent;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 30px;
+  min-height: 222px;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2; // количество строк
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  margin-bottom: auto;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 7; // количество строк
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.date {
+  font-weight: 400;
+  font-size: 8px;
+  color: $color-salad;
+}
+
+@media (max-width: 1190px) {
+  .image {
+    height: 183px;
+  }
+
+  .textContent {
+    padding: 21px 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .image {
+    height: 137px;
+  }
+
+  .textContent {
+    padding: 16px 24px;
+  }
+
+  .text {
+    -webkit-line-clamp: 4; // количество строк
+  }
+}

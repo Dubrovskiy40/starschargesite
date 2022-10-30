@@ -1,7 +1,12 @@
 import React from "react";
 import { createPortal } from "react-dom";
+import { useTranslation } from "react-i18next";
+import "../../../utils/i18next";
 
 const StationHover = (props) => {
+  const { i18n } = useTranslation();
+  let lang = i18n.language;
+  
   const { elCoordinates, dataMapHover } = props;
 
   return createPortal(
@@ -14,40 +19,21 @@ const StationHover = (props) => {
     >
       <div className="stationHover__top">
         <div className="stationHover__title_wrap">
-          <h2 className="stationHover__title_top">{dataMapHover.name}</h2>
-          <span className="stationHover__count">{dataMapHover.count}</span>
+          <h2 className="stationHover__title_top">
+            {lang === 'ru'
+              ? dataMapHover.name
+              : dataMapHover.name_eng
+            }
+          </h2>
         </div>
         <span className="stationHover__description">
-                  {dataMapHover.address}
-                </span>
+          {lang === 'ru'
+            ? dataMapHover.description
+            : dataMapHover.description_eng
+          }
+        </span>
       </div>
-    <div className="stationHover__bottom">
-      <h3 className="stationHover__title_bottom">Доступные тарифы</h3>
-      <div className="stationHover__types_wrap">
-        {dataMapHover.options?.map((option) => {
-          return (
-            <div key={option.optionId} className="stationHover__type">
-              <img
-                className="stationHover__type_img"
-                src={option.path}
-                alt={option.optionTitle}
-              />
-              <div className="stationHover__type_description_wrap">
-                <h5 className="stationHover__type_title">
-                  {option.optionTitle}
-                </h5>
-                <span className="stationHover__type_characteristics">
-                          {option.characteristics}
-                        </span>
-                <span className="stationHover__type_price">
-                          {option.cost}
-                        </span>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
+      {!dataMapHover.is_active && <span className="stationHover__info_show">Ремонт</span>}
   </section>, document.getElementById('modal'));
 };
 

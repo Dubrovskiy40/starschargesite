@@ -3,7 +3,6 @@ import {
   Cards,
   Header,
   Feedback,
-  Puzzle,
   SwiperParallax,
   ScrollButton,
   Footer,
@@ -13,6 +12,7 @@ import {
   Statistics,
   MapContainer,
 } from "../../components";
+import PuzzleDemo from "../../components/PuzzleDemo";
 import MenuStore from "../../store/MenuStore";
 import StationsStore from "../../store/StationsStore";
 
@@ -21,7 +21,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 function Home() {
   const [itemslocal, setItemsLocal] = useState([]);
   const [stations, setStations] = useState([]);
-  
+
   const fetchData = async () => {
     await MenuStore.fetchMenuItems();
     setItemsLocal(MenuStore.items.map((item) => item));
@@ -37,15 +37,15 @@ function Home() {
     <>
       <Header />
       <SwiperParallax />
-      <Statistics />
+      <Statistics stationsCount={stations.length}/>
       {itemslocal.map((menuItem, menuItemIndex) => {
         return menuItem.sections.map((sectionItem) => {
           return sectionItem.section_type_id === 1 ? (
             sectionItem.cards.length ? (
-              <Puzzle
-                key={sectionItem.section_type_id}
+              <PuzzleDemo
+                cards={sectionItem.cards}
                 menuName={itemslocal[menuItemIndex].name}
-                cardsList={sectionItem.cards}
+                key={sectionItem.section_type_id}
               />
             ) : null
           ) : sectionItem.section_type_id === 2 ? (
