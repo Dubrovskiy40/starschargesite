@@ -1,15 +1,19 @@
-import React from 'react';
+import React from "react";
 
 const SuccessMessage = ({ successfullySent }) => {
-
-    return (
-      <div className="successMessage">
-        <div
-          className="successMessage__block ${successfullySent ? successMessage__block_green : successMessage__block_red}">
-          {successfullySent ? 'Форма успешно отправлена.' : 'Форма не отправлена. Устраните ошибки и повторите отправку.'}
+  return (
+    <div className="successMessage">
+      {successfullySent === "success" ? (
+        <div className="successMessage__block_green">
+          Форма успешно отправлена
         </div>
-      </div>
-    );
+      ) : (
+        <div className="successMessage__block_red">
+          Все поля формы обязательны для заполнения
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default SuccessMessage;
