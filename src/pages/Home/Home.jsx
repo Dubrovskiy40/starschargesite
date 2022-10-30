@@ -37,7 +37,7 @@ function Home() {
     <>
       <Header />
       <SwiperParallax />
-      <Statistics />
+      <Statistics stationsCount={stations.length}/>
       {itemslocal.map((menuItem, menuItemIndex) => {
         return menuItem.sections.map((sectionItem) => {
           return sectionItem.section_type_id === 1 ? (

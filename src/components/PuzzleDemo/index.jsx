@@ -5,6 +5,7 @@ import { getScreenWidth } from "../../hoc/getScreenWidth";
 import PuzzleCardBig from "./PuzzleCardBig";
 import PuzzleCardSmall from "./PuzzleCardSmall";
 import { memo } from "react";
+import styles from "./styles.module.scss";
 import "swiper/scss";
 import "swiper/scss/pagination";
 import "./swiper.scss";
@@ -12,7 +13,7 @@ import { useTranslation } from "react-i18next";
 
 const PuzzleDemo = ({ deviceType, menuName, cards }) => {
   const { t } = useTranslation();
-
+  
   const slidesData = [];
 
   const cardsView =
