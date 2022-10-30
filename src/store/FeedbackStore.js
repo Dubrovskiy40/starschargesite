@@ -25,6 +25,25 @@ export const useFeedbackStore = () => {
     captcha: "",
   }); // объект ошибок
 
+  const setFalse = (input) => {
+    switch (input) {
+      case "name":
+        setName({ ...name, isValid: false });
+        break;
+      case "tel":
+        setTel({ ...tel, isValid: false });
+        break;
+      case "email":
+        setEmail({ ...email, isValid: false });
+        break;
+      case "question":
+        setQuestion({ ...question, isValid: false });
+        break;
+      default:
+        break;
+    }
+  };
+
   const onChangeInput = (value, name) => {
     switch (name) {
       case "inpName":
@@ -77,5 +96,6 @@ export const useFeedbackStore = () => {
       setEmail({ isValid: true, value: "" });
       setQuestion({ isValid: true, value: "" });
     },
+    setFalse: setFalse,
   };
 };
