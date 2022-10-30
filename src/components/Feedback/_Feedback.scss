@@ -7,7 +7,6 @@
 .feedback_wrap {
   background: $color-grey;
   color: $color-white;
-  padding: 0 57px;
 }
 
 .feedback__title {
@@ -132,9 +131,6 @@
 }
 
 @media (max-width: 1190px) {
-  .feedback_wrap {
-    padding: 64px 0;
-  }
 
   .feedback {
     padding-left: 0;

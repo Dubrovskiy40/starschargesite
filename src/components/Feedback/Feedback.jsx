@@ -20,8 +20,8 @@ const Feedback = observer(() => {
   const [openModalWindow, setOpenModalWindow] = useState(false); // модальное окно
   const [isReadAgreement, setIsReadAgreement] = useState(false); // прочитано ли соглашение
 
-  const [successfullySent, setSuccessfullySent] = useState(true); // статус отправки формы
-  const [showSuccessBlock, setShowSuccessBlock] = useState(false); // блок подтверждения отправки формы
+  const [formValidate, setFormValidate] = useState(false);
+  const [errorValidate, setErrorValidate] = useState(false);
 
   const handleSubmitForm = (event) => {
     event.preventDefault();
@@ -31,20 +31,25 @@ const Feedback = observer(() => {
       if (isCapthaValid) {
         let isTrue =
           values.name.isValid &&
+          values.name.value.trim().length > 1 &&
           values.tel.isValid &&
+          values.tel.value.trim().length > 1 &&
           values.email.isValid &&
-          values.question.isValid;
-
+          values.email.value.trim().length > 1 &&
+          values.question.isValid &&
+          values.question.value.trim().length > 10;
         /// поход на бэк, очистка формы
         if (isTrue) {
-          setShowSuccessBlock(true);
+          captchaStore.store.value = "";
+          setFormValidate(true);
+          setErrorValidate(false);
           captchaStore.postForm(values);
           clearForm();
           handleUpdateCode();
-          captchaStore.store.value = "";
-        } else setShowSuccessBlock(false);
-      } else {
-        // ничего
+        } else {
+          setFormValidate(false);
+          setErrorValidate(true);
+        }
       }
     });
   };
@@ -71,9 +76,6 @@ const Feedback = observer(() => {
               type="text"
               value={values.name.value}
               placeholder={t("feedback.placeholderName")}
-              minLength={2}
-              maxLength={30}
-              required={true}
               isValid={values.name.isValid}
               onChange={inputChange}
             />
@@ -87,9 +89,6 @@ const Feedback = observer(() => {
               type="tel"
               value={values.tel.value}
               placeholder={t("feedback.placeholderPhone")}
-              minLength={10}
-              maxLength={18}
-              required={true}
               isValid={values.tel.isValid}
               onChange={inputChange}
             />
@@ -103,7 +102,6 @@ const Feedback = observer(() => {
               type="email"
               value={values.email.value}
               placeholder={t("feedback.placeholderEmail")}
-              required={true}
               isValid={values.email.isValid}
               onChange={inputChange}
             />
@@ -118,9 +116,6 @@ const Feedback = observer(() => {
               placeholder={t("feedback.placeholderArea")}
               rows="5"
               cols="30"
-              minLength={10}
-              maxLength={300}
-              required={true}
               isValid={values.question.isValid}
               onChange={inputChange}
             />
@@ -143,7 +138,6 @@ const Feedback = observer(() => {
               type="text"
               value={captchaStore.store.value}
               placeholder={t("feedback.placeholderCaptcha")}
-              required={true}
               isValid={captchaStore.store.valid}
               onChange={(value) => captchaStore.changeCaptchaValue(value)}
             />
@@ -180,12 +174,8 @@ const Feedback = observer(() => {
           </div>
           <div className="feedback__img_wrap feedback__grid9"></div>
         </form>
-        {/*/Сообщение об успешной отправки формы*/}
-        {showSuccessBlock && (
-          <div className="feedback__message_wrap">
-            <SuccessMessage successfullySent={successfullySent} />
-          </div>
-        )}
+        {formValidate && <SuccessMessage successfullySent={"success"} />}
+        {errorValidate && <SuccessMessage successfullySent={""} />}
         <ModalWindow
           openModalWindow={openModalWindow}
           setOpenModalWindow={setOpenModalWindow}

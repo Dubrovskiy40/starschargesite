@@ -32,7 +32,7 @@ export const useFeedbackStore = () => {
         setName({ isValid: !!resultName, value: value });
         setErrors({
           ...errors,
-          name: !resultName && t("feedback.inpNameErrMess"),
+          name: resultName ? "" : t("feedback.inpNameErrMess"),
         });
         break;
       case "inpTel":
@@ -40,7 +40,7 @@ export const useFeedbackStore = () => {
         setTel({ isValid: !!resultTel, value: value });
         setErrors({
           ...errors,
-          tel: !resultTel && t("feedback.inpPhoneErrMess"),
+          tel: resultTel ? "" : t("feedback.inpPhoneErrMess"),
         });
         break;
       case "inpEmail":
@@ -48,7 +48,7 @@ export const useFeedbackStore = () => {
         setEmail({ isValid: !!resultEmail, value: value });
         setErrors({
           ...errors,
-          email: !resultEmail && t("feedback.inpEmailErrMess"),
+          email: resultEmail ? "" : t("feedback.inpEmailErrMess"),
         });
         break;
       case "inpArea":
@@ -56,7 +56,7 @@ export const useFeedbackStore = () => {
         setQuestion({ isValid: !!resultText, value: value });
         setErrors({
           ...errors,
-          question: !resultText && t("feedback.inpAreaErrMess"),
+          question: resultText ? "" : t("feedback.inpAreaErrMess"),
         });
         break;
       default: // линт выдает ошибку без этой строчки

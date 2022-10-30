@@ -8,8 +8,8 @@ const Logo = () => {
   return (
     <a href="#Главная" className="header__logo-link">
       <picture>
-        <source srcset={logo_tabl} media="(max-width: 1024px)" />
-        <source srcset={logo_desc} media="(max-width: 1500px)" />
+        <source srcSet={logo_tabl} media="(max-width: 1024px)" />
+        <source srcSet={logo_desc} media="(max-width: 1500px)" />
         <img src={logo} alt="logo" className="header__logo"></img>
       </picture>
     </a>
