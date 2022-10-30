@@ -13,7 +13,8 @@ import { useFeedbackStore } from "../../store/FeedbackStore";
 
 const Feedback = observer(() => {
   const captchaStore = useCaptcha();
-  const { values, errors, inputChange, clearForm } = useFeedbackStore();
+  const { values, errors, inputChange, clearForm, setFalse } =
+    useFeedbackStore();
 
   const { t } = useTranslation();
 
@@ -28,27 +29,29 @@ const Feedback = observer(() => {
 
     // для проверки работоспособности капчи
     captchaStore.checkCaptcha().then((isCapthaValid) => {
+      console.log();
       if (isCapthaValid) {
-        let isTrue =
-          values.name.isValid &&
-          values.name.value.trim().length > 1 &&
-          values.tel.isValid &&
-          values.tel.value.trim().length > 1 &&
-          values.email.isValid &&
-          values.email.value.trim().length > 1 &&
-          values.question.isValid &&
-          values.question.value.trim().length > 10;
+        let isTrue = true;
+
+        for (const input in values) {
+          if (
+            values[input].value.trim().length < 1 &&
+            !values[input].value.isValid
+          ) {
+            console.log(input);
+            isTrue = false;
+            setFalse(input);
+          }
+        }
+
         /// поход на бэк, очистка формы
         if (isTrue) {
           captchaStore.store.value = "";
           setFormValidate(true);
           setErrorValidate(false);
           captchaStore.postForm(values);
-          clearForm();
           handleUpdateCode();
-        } else {
-          setFormValidate(false);
-          setErrorValidate(true);
+          captchaStore.store.value = "";
         }
       }
     });
