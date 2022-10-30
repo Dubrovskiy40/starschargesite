@@ -1,0 +1,18 @@
+.container * {
+  box-sizing: border-box;
+}
+
+.section {
+  margin: 0 auto;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+@media (max-width: 768px) {
+  .section h2 {
+    font-size: 24px;
+  }
+}
+
+/*# sourceMappingURL=styles.module.css.map */

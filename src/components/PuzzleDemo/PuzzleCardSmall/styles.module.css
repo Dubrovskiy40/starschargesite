@@ -1,0 +1,82 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  border: 4px solid #60AD5E;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image {
+  display: block;
+  width: 37%;
+  height: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.link {
+  position: absolute;
+  display: inline-block;
+  inset: 0;
+  color: transparent;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  width: 53%;
+  padding: 20px;
+  height: 100%;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  margin-bottom: auto;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.date {
+  font-weight: 400;
+  font-size: 8px;
+  color: #60AD5E;
+}
+
+@media (max-width: 1190px) {
+  .textContent {
+    padding: 17px;
+  }
+}
+@media (max-width: 768px) {
+  .image {
+    height: 137px;
+  }
+  .textContent {
+    padding: 14px;
+  }
+  .text {
+    -webkit-line-clamp: 4;
+  }
+}
+
+/*# sourceMappingURL=styles.module.css.map */
