@@ -1,12 +1,11 @@
 .stationHover {
   position: absolute;
-  //top: 50%;
-  //left: 50%;
   background: $color-grey;
   z-index: 200;
   width: 280px;
   border-radius: 20px;
   padding: 24px;
+  overflow: hidden;
 
   &__top {
     display: flex;
@@ -92,72 +91,21 @@
       color: $color-white;
     }
   }
-}
 
-//@media (max-width: 1190px) {
-//  .type {
-//    &:not(:last-child) {
-//      margin-bottom: 16px;
-//    }
-//  }
-//}
-//
-//@media (max-width: 768px) {
-//  .station {
-//    margin: 19px 0;
-//    padding: 24px;
-//
-//    &__top {
-//      flex-direction: column;
-//    }
-//
-//    &__title_top{
-//      display: contents;
-//      @include font_24;
-//
-//      &:before {
-//        content: url("../../../assets/images/map/station.svg");
-//        margin-right: 32px;
-//      }
-//    }
-//
-//    &__count {
-//      margin-left: 15px;
-//      @include font_36;
-//      color: $color-salad;
-//    }
-//
-//    &__description {
-//      max-width:376px;
-//      @include font_18;
-//      color: $color-black;
-//    }
-//
-//    &__title_bottom {
-//      text-align: center;
-//      @include font_12_1;
-//      color: $color-black;
-//      margin-bottom: 20px;
-//    }
-//
-//    &__types_wrap {
-//      display: flex;
-//      flex-wrap: wrap;
-//      justify-content: center;
-//      column-gap: 32px;
-//    }
-//  }
-//
-//  .type {
-//    width: 100%;
-//    border-radius: 7px;
-//
-//    &:not(:last-child) {
-//      margin-bottom: 16px;
-//    }
-//
-//    &__img {
-//      margin-right: 15px;
-//    }
-//  }
-//}
+  &__info_show {
+    display: inline-block;
+    position: absolute;
+    top: 26px;
+    right: -59px;
+    bottom: 0;
+    width: 200px;
+    background: $light-grey;
+    color: $color-white;
+    transform: rotate(45deg);
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    box-shadow: 0 0 1px $light-grey;
+  }
+}

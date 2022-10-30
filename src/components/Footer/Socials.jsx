@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import { Vk } from "./SVG/Vk";
 import { Tg } from "./SVG/Tg";
 
@@ -6,14 +5,14 @@ const Socials = () => {
   return (
     <div className="socials">
       <li className="link">
-        <NavLink className="img" to="#">
+        <a className="img" target="_blank" rel="noreferrer" href="https://t.me/+Q4YtW9gQfYFkMDhi">
           <Tg />
-        </NavLink>
+        </a>
       </li>
       <li className="link">
-        <NavLink className="img" to="#">
+        <a className="img" target="_blank" rel="noreferrer" href="https://vk.com/starscharge">
           <Vk />
-        </NavLink>
+        </a>
       </li>
     </div>
   );
