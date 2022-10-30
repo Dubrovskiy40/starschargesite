@@ -9,7 +9,7 @@ export const options = {
   rotateControl: false,
   clickableIcons: true,
   keyboardShortcuts: false,
-  scrollwheel: false,
+  scrollwheel: true,
   disableDoubleClickZoom: false,
   fullscreenControl: false,
   styles: defaultTheme,
