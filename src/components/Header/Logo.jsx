@@ -1,6 +1,5 @@
-// import { NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo/logo.svg";
-import logo_mobile from "../../assets/images/logo/logo-1500.svg";
+import logo_mobile from "../../assets/images/logo/logo-3x.png";
 import "./Logo.scss";
 
 const Logo = () => {
