@@ -15,6 +15,10 @@
     max-width: 60%;
   }
 
+  picture {
+    max-width: 30%;
+  }
+
   &__text {
     margin-bottom: 64px;
   }
@@ -22,9 +26,9 @@
   &__link {
     display: flex;
     align-items: center;
-    width: 11rem;
+    justify-content: space-around;
     border-radius: 35px;
-    padding: 18px 38px;
+    padding: 23px 56px;
     background-color: $color-total_black;
   }
 
@@ -93,11 +97,6 @@
       margin-bottom: 55px;
     }
 
-    &__link {
-      padding: 13px 28px;
-      width: 7rem;
-    }
-
     &__appStore_link {
       margin-right: 8px;
     }
@@ -107,8 +106,8 @@
       @include font_18_1;
     }
 
-    &__img_bg {
-      width: 40%;
+    picture {
+      max-width: unset;
     }
     
     &__bottomCard {
@@ -153,8 +152,9 @@
     }
 
     &__link {
-      padding: 6px 13px;
-      max-width: 8rem;
+      width: 100%;
+      max-width: 250px;
+      padding: 16px 50px;
     }
 
     &__appStore_link {
@@ -166,8 +166,8 @@
       @include font_14_1;
     }
 
-    &__img_bg {
-      width: unset;
+    picture {
+      max-width: 70%;
       margin: 0 auto;
     }
 
@@ -197,5 +197,13 @@
   .card__svg {
     width: 42px;
     height: 27px;
+  }
+}
+
+@media(max-width: 768px) {
+  .app {
+    picture {
+      max-width: unset;
+    }
   }
 }

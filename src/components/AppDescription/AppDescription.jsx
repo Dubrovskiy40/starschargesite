@@ -1,18 +1,19 @@
 import appStore from "../../assets/images/app/apple.png";
 import googleStore from "../../assets/images/app/google.png";
 import charge from "../../assets/images/app/appDescr.svg";
-import {AppCard} from "./svg";
-import {useTranslation} from "react-i18next";
+import charge_retina from "../../assets/images/app/app-2x.png";
+import { AppCard } from "./svg";
+import { useTranslation } from "react-i18next";
 import "../../utils/i18next";
 
 const App = () => {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
   const data = [
-    {id: "1", name: t("app.item1")},
-    {id: "2", name: t("app.item2")},
-    {id: "3", name: t("app.item3")},
-    {id: "4", name: t("app.item4")},
+    { id: "1", name: t("app.item1") },
+    { id: "2", name: t("app.item2") },
+    { id: "3", name: t("app.item3") },
+    { id: "4", name: t("app.item4") },
   ];
 
   return (
@@ -56,13 +57,19 @@ const App = () => {
                 </a>
               </div>
             </div>
-            <img className="app__img_bg" src={charge} alt="description"/>
+            <picture>
+              <source
+                media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"
+                srcSet={charge_retina}
+              ></source>
+              <img className="app__img_bg" src={charge} alt="description" />
+            </picture>
           </div>
           <ul className="app__bottomCards">
             {data?.map((card) => {
               return (
                 <li className="app__bottomCard" key={card.id}>
-                  <AppCard className="app__bottomCard_svg"/>
+                  <AppCard className="app__bottomCard_svg" />
                   <p className="app__bottomCard_text">{card.name}</p>
                 </li>
               );
@@ -75,3 +82,4 @@ const App = () => {
 };
 
 export default App;
+
