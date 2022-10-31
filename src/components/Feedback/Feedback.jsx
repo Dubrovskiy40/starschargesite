@@ -144,7 +144,8 @@ const Feedback = observer(() => {
               isValid={captchaStore.store.valid}
               onChange={(value) => captchaStore.changeCaptchaValue(value)}
             />
-            <CmError error={errors.captcha} />
+            {/*<CmError error={errors.captcha} />*/}
+            {!captchaStore.store.valid && <span className="captcha__error error__text">{t("feedback.inpCaptchaErrMess")}</span>}
           </div>
           <div
             className="feedback__update-code feedback__grid6"

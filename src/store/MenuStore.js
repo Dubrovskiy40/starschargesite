@@ -23,14 +23,12 @@ class MenuStore {
     if (itemReq.ok && itemRes !== null) {
       runInAction(() => {
         this.items = itemRes
-          .sort(
-            (prev, next) => prev.menu_order - next.menu_order
-          ); // сортировка
+          // .sort(
+          //   (prev, next) => prev.menu_order - next.menu_order
+          // ); // сортировка
       });
     }
-    // console.log('itemRes',itemRes)
     this.setLoading(false);
-    // console.log('fetchMenuItems', this.items)
   };
 
 }

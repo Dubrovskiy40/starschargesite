@@ -70,7 +70,6 @@ function Home() {
       <Team />
       <Feedback />
       <ScrollButton />
-
       <Footer />
     </>
   );
