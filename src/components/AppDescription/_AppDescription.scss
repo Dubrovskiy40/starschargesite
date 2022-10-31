@@ -167,19 +167,20 @@
     }
 
     &__img_bg {
-      width: 60%;
+      width: unset;
       margin: 0 auto;
     }
 
     &__bottomCards {
-      display: flex;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      width: 100%;
       gap: 8px;
-      flex-wrap: wrap;
     }
 
     &__bottomCard {
-      width: 100px;
+      width: 100%;
       padding: 17px 5px;
       border-radius: 15px;
 
