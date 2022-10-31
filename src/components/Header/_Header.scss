@@ -64,6 +64,10 @@
 
 @media(max-width: 1500px) {
 
+  .header__container {
+    padding: 15px 0
+  }
+
   .header {
     @include font_14_1;
   }
