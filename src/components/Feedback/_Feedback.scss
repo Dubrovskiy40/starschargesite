@@ -40,10 +40,15 @@
     }
   }
 
+  &__btn_wrap {
+    min-width: 278px;
+  }
+
   &__btn {
     border-radius: 20px;
     border: 2px solid $color-salad;
     padding: 16px 76px;
+    width: 100%;
     @include font_24;
     color: $color-white;
     background: $color-salad;
@@ -189,10 +194,6 @@
     &__btn {
       width: 256px;
       padding: 16px 0;
-    }
-
-    &__img_wrap {
-      background-size: contain;
     }
 
     &__update-code {
