@@ -1,6 +1,8 @@
 @import '../../../scss/var';
 
 .container {
+  display: flex;
+  flex-direction: column;
   position: relative;
   border: 4px solid $color-salad;
   border-radius: 20px;
@@ -27,8 +29,9 @@
 .textContent {
   display: flex;
   flex-direction: column;
+  flex: 1;
   padding: 24px 30px;
-  min-height: 222px;
+  // min-height: 222px;
 }
 
 .title {
