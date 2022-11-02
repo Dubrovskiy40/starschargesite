@@ -9,8 +9,6 @@ const PuzzleCardSmall = (props) => {
   const { img, header, header_eng, text, text_eng, date, link } = props;
   if (Object.keys(props).length === 0) return null;
 
-  console.log(props);
-
   return (
     <div className={`${styles.container} ${link ? styles.hover : ""}`}>
       <img className={styles.image} src={`/static/media/${img}`} alt="img" />

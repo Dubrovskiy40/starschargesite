@@ -12,6 +12,7 @@ import {
   Statistics,
   MapContainer,
 } from "../../components";
+import Counter from "../../components/Counter";
 import PuzzleDemo from "../../components/PuzzleDemo";
 import MenuStore from "../../store/MenuStore";
 import StationsStore from "../../store/StationsStore";
@@ -37,7 +38,7 @@ function Home() {
     <>
       <Header />
       <SwiperParallax />
-      <Statistics stationsCount={stations.length}/>
+      <Statistics stationsCount={stations.length} />
       {itemslocal.map((menuItem, menuItemIndex) => {
         return menuItem.sections.map((sectionItem) => {
           return sectionItem.section_type_id === 1 ? (

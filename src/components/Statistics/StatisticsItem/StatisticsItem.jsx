@@ -1,4 +1,8 @@
+import Counter from "../../Counter";
+
 const StatisticsItem = ({ title, text }) => {
+  console.log(title);
+
   return (
     <li className="statistics__item">
       <div className="statistics__img_wrap">
@@ -18,7 +22,9 @@ const StatisticsItem = ({ title, text }) => {
         </svg>
       </div>
       <div className="statistics__description">
-        <span className="statistics__title">{title}</span>
+        <span className="statistics__title">
+          <Counter maxNumber={parseInt(title)} />
+        </span>
         <span className="statistics__text">{text}</span>
       </div>
     </li>

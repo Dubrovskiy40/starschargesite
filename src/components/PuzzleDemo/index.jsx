@@ -39,8 +39,8 @@ const PuzzleDemo = ({ deviceType, menuName, cards }) => {
           modules={[Pagination]}
           spaceBetween={50}
         >
-          {slidesData.map((slideData) => (
-            <SwiperSlide>
+          {slidesData.map((slideData, index) => (
+            <SwiperSlide key={slideData.length + index}>
               <PuzzleSlide
                 slots={[
                   <PuzzleCardBig {...slideData[0]} />,
