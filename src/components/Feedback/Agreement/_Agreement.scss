@@ -10,6 +10,7 @@
   &__link {
     @include font_14;
     color: $color-white;
+    max-width: 1320px;
 
     &:hover {
       cursor: pointer;
