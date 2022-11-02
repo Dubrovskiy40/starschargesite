@@ -3,7 +3,7 @@ import { CORS, getHostInformation } from "./helper";
 
 const host = getHostInformation();
 
-class StationsStore {
+class StatisticsStore {
   isLoading = true;
   items = [];
 
@@ -16,17 +16,17 @@ class StationsStore {
       this.isLoading = bool;
     });
   };
-  
-  fetchStations = async () => {
-    const itemReq = await fetch(`${host}/GetStations`, CORS);
+
+  fetchStatistics = async () => {
+    const itemReq = await fetch(`${host}/GetCounter`, CORS);
     const itemRes = await itemReq.json();
     if (itemReq.ok && itemRes !== null) {
       runInAction(() => {
-        this.items = itemRes;
+        this.items = itemRes
       });
     }
     this.setLoading(false);
   };
 }
 
-export default new StationsStore();
+export default new StatisticsStore();
