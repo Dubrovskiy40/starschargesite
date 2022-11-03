@@ -2,16 +2,16 @@ import React from "react";
 import StatisticsItem from "./StatisticsItem/StatisticsItem";
 import { useTranslation } from "react-i18next";
 import "../../utils/i18next";
+import { observer } from "mobx-react";
 
-const Statistics = (props) => {
-  const { stationsCount } = props;
-
+const Statistics = observer((props) => {
+  const { stationsCount, statistics } = props;
   const { t } = useTranslation();
 
   const data = [
     { type: "station", value: stationsCount },
-    { type: "user", value: 24000 },
-    { type: "review", value: 1200 },
+    { type: "user", value: statistics.users },
+    { type: "review", value: statistics.feedbacks },
   ];
 
   const numWord = (value, words) => {
@@ -60,6 +60,6 @@ const Statistics = (props) => {
       </div>
     </section>
   );
-};
+});
 
 export default Statistics;

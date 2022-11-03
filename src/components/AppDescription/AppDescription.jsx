@@ -29,22 +29,22 @@ const App = () => {
                 c толку.
               </p>
               <div className="app__link-wrap flex">
-                <a
-                  className="app__appStore_link app__link"
-                  href="#s"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img
-                    className="app__appStore_img app__img"
-                    src={appStore}
-                    alt="appStore"
-                  />
-                  <span className="app__appStore_text">App Store</span>
-                </a>
+                {/*<a*/}
+                {/*  className="app__appStore_link app__link"*/}
+                {/*  href="#s"*/}
+                {/*  target="_blank"*/}
+                {/*  rel="noreferrer"*/}
+                {/*>*/}
+                {/*  <img*/}
+                {/*    className="app__appStore_img app__img"*/}
+                {/*    src={appStore}*/}
+                {/*    alt="appStore"*/}
+                {/*  />*/}
+                {/*  <span className="app__appStore_text">App Store</span>*/}
+                {/*</a>*/}
                 <a
                   className="app__googleStore_link app__link"
-                  href="#s"
+                  href="https://play.google.com/store/apps/details?id=com.d.watt"
                   target="_blank"
                   rel="noreferrer"
                 >

@@ -12,10 +12,10 @@ export const useCaptcha = () => {
   });
   const CAPTCHA_REGEXP_TEST = /[A-Za-z0-9]{4}/;
   const testRegexp = (regExp, value) => regExp.test(value);
-  
+
   const changeCaptchaValue = (value) => {
     let isValid = testRegexp(CAPTCHA_REGEXP_TEST, value);
-    
+
     if (isValid) {
       setStore((store) => ({
         ...store,
@@ -29,7 +29,6 @@ export const useCaptcha = () => {
         valid: false,
       }));
     }
-    
   };
 
   const fetchCaptchaImg = async () => {
