@@ -88,7 +88,7 @@
     "placeholderArea": "Write your question",
     "inpAreaErrMess": "min length 10 characters",
     "placeholderCaptcha": "Enter the code from the image",
-    "inpCaptchaErrMess": "Error in captcha",
+    "inpCaptchaErrMess": "Latin, 4 symbols",
     "code": "Update Code",
     "termsOfUse": "By clicking the button, I accept the terms of the User Agreement and give my consent to the processing of my personal data, in accordance with Federal Law No. 152-FZ of July 27, 2006 \"On Personal Data.",
     "agreement": {
