@@ -80,7 +80,9 @@ const Feedback = observer(() => {
               isValid={values.name.isValid}
               onChange={inputChange}
             />
-            <CmError error={errors.name} />
+            <CmError
+              error={values.name.isValid ? "" : t("feedback.inpNameErrMess")}
+            />
           </div>
           <div className="feedback__inp_wrap feedback__grid2">
             <CmInput
@@ -93,7 +95,9 @@ const Feedback = observer(() => {
               isValid={values.tel.isValid}
               onChange={inputChange}
             />
-            <CmError error={errors.tel} />
+            <CmError
+              error={values.tel.isValid ? "" : t("feedback.inpPhoneErrMess")}
+            />
           </div>
           <div className="feedback__inp_wrap feedback__grid3">
             <CmInput
@@ -106,7 +110,9 @@ const Feedback = observer(() => {
               isValid={values.email.isValid}
               onChange={inputChange}
             />
-            <CmError error={errors.email} />
+            <CmError
+              error={values.email.isValid ? "" : t("feedback.inpEmailErrMess")}
+            />
           </div>
           <div className="feedback__inp_wrap feedback__grid4">
             <CmInput
@@ -120,7 +126,11 @@ const Feedback = observer(() => {
               isValid={values.question.isValid}
               onChange={inputChange}
             />
-            <CmError error={errors.question} />
+            <CmError
+              error={
+                values.question.isValid ? "" : t("feedback.inpAreaErrMess")
+              }
+            />
           </div>
 
           {/*Капча*/}

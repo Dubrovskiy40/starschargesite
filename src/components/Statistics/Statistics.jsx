@@ -54,8 +54,14 @@ const Statistics = observer((props) => {
             title={stationsCount}
             text={`${station} ${t("statistics.station.desc")}`}
           />
-          <StatisticsItem title={`${data[1].value}+`} text={user} />
-          <StatisticsItem title={data[2].value} text={review} />
+          <StatisticsItem
+            title={`${data[1]?.value ? data[1].value : "1500"} +`}
+            text={user}
+          />
+          <StatisticsItem
+            title={data[2]?.value ? data[2].value : "9000"}
+            text={review}
+          />
         </ul>
       </div>
     </section>

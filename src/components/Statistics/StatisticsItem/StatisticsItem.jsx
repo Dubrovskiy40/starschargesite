@@ -1,8 +1,6 @@
 import Counter from "../../Counter";
 
 const StatisticsItem = ({ title, text }) => {
-  console.log(title);
-
   return (
     <li className="statistics__item">
       <div className="statistics__img_wrap">
