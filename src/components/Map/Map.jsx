@@ -1,5 +1,5 @@
 import { GoogleMap, Marker } from "@react-google-maps/api";
-import {useCallback, useRef} from "react";
+import { useCallback, useRef } from "react";
 import styles from "./Map.module.scss";
 import { options } from "./options";
 
@@ -25,7 +25,6 @@ const Map = (props) => {
   }, []);
 
   const handleClickPointMap = (e) => {
-    console.log("click el", e);
     setShowInfoMapClick((prev) => !prev);
   };
 
@@ -82,7 +81,6 @@ const Map = (props) => {
       </GoogleMap>
     </div>
   );
-
 };
 
 export default Map;
