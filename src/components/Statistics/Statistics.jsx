@@ -5,7 +5,7 @@ import "../../utils/i18next";
 import { observer } from "mobx-react";
 
 const Statistics = observer((props) => {
-  const {stationsCount, statistics} = props;
+  const { stationsCount, statistics } = props;
   const { t } = useTranslation();
 
   const data = [
@@ -25,21 +25,36 @@ const Statistics = observer((props) => {
     return words[2];
   };
 
-  const stationArr = [t("statistics.station.type1"), t("statistics.station.type2"), t("statistics.station.type3")];
+  const stationArr = [
+    t("statistics.station.type1"),
+    t("statistics.station.type2"),
+    t("statistics.station.type3"),
+  ];
   const station = numWord(data[0].value, stationArr);
 
-  const userArr = [t("statistics.user.type1"), t("statistics.user.type2"), t("statistics.user.type3")];
+  const userArr = [
+    t("statistics.user.type1"),
+    t("statistics.user.type2"),
+    t("statistics.user.type3"),
+  ];
   const user = numWord(data[1].value, userArr);
 
-  const reviewArr = [t("statistics.review.type1"), t("statistics.review.type2"), t("statistics.review.type3")];
+  const reviewArr = [
+    t("statistics.review.type1"),
+    t("statistics.review.type2"),
+    t("statistics.review.type3"),
+  ];
   const review = numWord(data[2].value, reviewArr);
 
   return (
     <section className="statistics">
       <div className="container">
         <ul className="statistics__list">
-          <StatisticsItem title={data[0].value} text={station} />
-          <StatisticsItem title={`${data[1].value}`} text={user} />
+          <StatisticsItem
+            title={stationsCount}
+            text={`${station} ${t("statistics.station.desc")}`}
+          />
+          <StatisticsItem title={`${data[1].value}+`} text={user} />
           <StatisticsItem title={data[2].value} text={review} />
         </ul>
       </div>

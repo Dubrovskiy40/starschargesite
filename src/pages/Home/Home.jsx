@@ -12,6 +12,7 @@ import {
   Statistics,
   MapContainer,
 } from "../../components";
+import Counter from "../../components/Counter";
 import PuzzleDemo from "../../components/PuzzleDemo";
 import MenuStore from "../../store/MenuStore";
 import StationsStore from "../../store/StationsStore";
