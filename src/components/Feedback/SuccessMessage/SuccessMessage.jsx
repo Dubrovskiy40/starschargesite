@@ -5,7 +5,7 @@ const SuccessMessage = ({ successfullySent }) => {
     <div className="successMessage">
       {successfullySent === "success" ? (
         <div className="successMessage__block_green">
-          Форма успешно отправлена
+          Вопрос успешно отправлен
         </div>
       ) : (
         <div className="successMessage__block_red">
@@ -17,3 +17,4 @@ const SuccessMessage = ({ successfullySent }) => {
 };
 
 export default SuccessMessage;
+
