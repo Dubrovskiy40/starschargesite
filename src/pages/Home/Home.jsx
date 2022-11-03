@@ -23,14 +23,13 @@ function Home() {
   const [itemslocal, setItemsLocal] = useState([]);
   const [stations, setStations] = useState([]);
   const [statistics, setStatistics] = useState([]);
-  console.log('StatisticsStore.items',StatisticsStore?.items)
   const fetchData = async () => {
     await MenuStore.fetchMenuItems();
     setItemsLocal(MenuStore.items.map((item) => item));
     await StationsStore.fetchStations();
     setStations(StationsStore.items.map((item) => item));
     await StatisticsStore.fetchStatistics();
-    setStatistics(StatisticsStore.items.map((item) => item));
+    setStatistics(StatisticsStore.items);
   };
 
   useEffect(() => {

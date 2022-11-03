@@ -29,7 +29,6 @@ const Feedback = observer(() => {
 
     // для проверки работоспособности капчи
     captchaStore.checkCaptcha().then((isCapthaValid) => {
-      console.log();
       if (isCapthaValid) {
         let isTrue = true;
 
@@ -38,7 +37,6 @@ const Feedback = observer(() => {
             values[input].value.trim().length < 1 &&
             !values[input].value.isValid
           ) {
-            console.log(input);
             isTrue = false;
             setFalse(input);
           }
@@ -145,7 +143,11 @@ const Feedback = observer(() => {
               onChange={(value) => captchaStore.changeCaptchaValue(value)}
             />
             {/*<CmError error={errors.captcha} />*/}
-            {!captchaStore.store.valid && <span className="captcha__error error__text">{t("feedback.inpCaptchaErrMess")}</span>}
+            {!captchaStore.store.valid && (
+              <span className="captcha__error error__text">
+                {t("feedback.inpCaptchaErrMess")}
+              </span>
+            )}
           </div>
           <div
             className="feedback__update-code feedback__grid6"
