@@ -14,6 +14,8 @@ const Statistics = observer((props) => {
     { type: "review", value: statistics.feedbacks },
   ];
 
+  console.log(statistics);
+
   const numWord = (value, words) => {
     value = Math.abs(value) % 100;
     const lastNum = value % 10;
@@ -51,15 +53,12 @@ const Statistics = observer((props) => {
       <div className="container">
         <ul className="statistics__list">
           <StatisticsItem
-            title={stationsCount}
+            title={stationsCount || 100}
             text={`${station} ${t("statistics.station.desc")}`}
           />
+          <StatisticsItem title={statistics.users || 100000} text={user} />
           <StatisticsItem
-            title={`${data[1]?.value ? data[1].value : "1500"} +`}
-            text={user}
-          />
-          <StatisticsItem
-            title={data[2]?.value ? data[2].value : "9000"}
+            title={statistics.feedbacks || 1000000}
             text={review}
           />
         </ul>
