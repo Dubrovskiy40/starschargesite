@@ -171,7 +171,7 @@
   .header__menu {
     top: -1000px;
     flex-direction: column;
-    height: 100vh;
+    //height: 100vh;
     @include font_18;
     &.active {
       height: 100vh;
