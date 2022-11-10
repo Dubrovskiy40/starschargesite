@@ -17,4 +17,3 @@ const SuccessMessage = ({ successfullySent }) => {
 };
 
 export default SuccessMessage;
-
