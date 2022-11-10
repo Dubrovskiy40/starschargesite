@@ -24,6 +24,9 @@ const Feedback = observer(() => {
   const [formValidate, setFormValidate] = useState(false);
   const [errorValidate, setErrorValidate] = useState(false);
 
+  const [capchaValue, setCapchaValue] = useState(captchaStore.store.value);
+  const [showSuccesMessage, setShowSuccesMessage] = useState(false);
+
   const handleSubmitForm = (event) => {
     event.preventDefault();
 
@@ -44,12 +47,18 @@ const Feedback = observer(() => {
 
         /// поход на бэк, очистка формы
         if (isTrue) {
-          captchaStore.store.value = "";
           setFormValidate(true);
           setErrorValidate(false);
           captchaStore.postForm(values);
           handleUpdateCode();
           captchaStore.store.value = "";
+
+          clearForm();
+          setCapchaValue("");
+          setShowSuccesMessage(true);
+          setTimeout(() => {
+            setShowSuccesMessage(false);
+          }, 3000);
         }
       }
     });
@@ -147,12 +156,14 @@ const Feedback = observer(() => {
               id="inpCaptcha"
               name="inpCaptcha"
               type="text"
-              value={captchaStore.store.value}
+              value={capchaValue}
               placeholder={t("feedback.placeholderCaptcha")}
               isValid={captchaStore.store.valid}
-              onChange={(value) => captchaStore.changeCaptchaValue(value)}
+              onChange={(value) => {
+                captchaStore.changeCaptchaValue(value);
+                setCapchaValue(value);
+              }}
             />
-            {/*<CmError error={errors.captcha} />*/}
             {!captchaStore.store.valid && (
               <span className="captcha__error error__text">
                 {t("feedback.inpCaptchaErrMess")}
@@ -190,8 +201,12 @@ const Feedback = observer(() => {
           </div>
           <div className="feedback__img_wrap feedback__grid9"></div>
         </form>
-        {formValidate && <SuccessMessage successfullySent={"success"} />}
-        {errorValidate && <SuccessMessage successfullySent={""} />}
+        {formValidate && showSuccesMessage && (
+          <SuccessMessage successfullySent={"success"} />
+        )}
+        {errorValidate && showSuccesMessage && (
+          <SuccessMessage successfullySent={""} />
+        )}
         <ModalWindow
           openModalWindow={openModalWindow}
           setOpenModalWindow={setOpenModalWindow}
