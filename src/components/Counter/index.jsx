@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import { useEffect } from "react";
 
 const Counter = ({ maxNumber = 1000 }) => {
-  console.log("maxNumber", maxNumber);
   const TIME = 1000;
   const STEP =
     maxNumber < 10

@@ -24,10 +24,6 @@ const Map = (props) => {
     mapRef.current = null;
   }, []);
 
-  const handleClickPointMap = (e) => {
-    setShowInfoMapClick((prev) => !prev);
-  };
-
   const getCoordinates = (elem) => {
     const box = elem.getBoundingClientRect();
     return {
@@ -52,12 +48,14 @@ const Map = (props) => {
       >
         {stations?.map((station) => (
           <Marker
-            onClick={handleClickPointMap}
+            onClick={() => {
+              setShowInfoMapClick((prev) => !prev);
+              setDataMapClick(station);
+            }}
             key={station.id}
             onMouseOver={(e) => {
               const { x, y } = getCoordinates(e.domEvent.target);
               setShowInfoMapHover((prev) => !prev);
-              setDataMapClick(station);
               setDataMapHover(station);
               setElCoordinates((prev) => ({ ...prev, x, y }));
             }}
