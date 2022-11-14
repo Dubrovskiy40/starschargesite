@@ -12,11 +12,11 @@ import {
   Statistics,
   MapContainer,
 } from "../../components";
-import Counter from "../../components/Counter";
 import PuzzleDemo from "../../components/PuzzleDemo";
 import MenuStore from "../../store/MenuStore";
 import StationsStore from "../../store/StationsStore";
 import StatisticsStore from "../../store/StatisticsStore";
+import Partners from "../../components/Partners/Partners";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -73,6 +73,7 @@ function Home() {
       <AppDescription />
       <Team />
       <Feedback />
+      <Partners />
       <ScrollButton />
       <Footer />
     </>

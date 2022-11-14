@@ -158,6 +158,9 @@
     "cmError": {
     }
   },
+  "partners": {
+    "title": "Partners"
+  },
   "footer" : {
     "policy": "StarsCharge, all rights reserved",
     "politics": "Privacy Policy"

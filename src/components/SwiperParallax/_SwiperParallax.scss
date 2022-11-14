@@ -7,7 +7,7 @@
     height: 100%;
   }
 
-  img {
+  .hero__img_puls {
     animation: scale 1400ms infinite;
   }
 
@@ -145,7 +145,7 @@
     flex-direction: column;
     padding: 0;
 
-    img {
+    .hero__img_puls {
       max-width: 100%;
       max-height: 270px;
     }

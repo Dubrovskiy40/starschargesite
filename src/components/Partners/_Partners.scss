@@ -1,0 +1,39 @@
+.partners {
+  padding: 30px 0 62px 0;
+  
+  &__title {
+    align-self: flex-start;
+    color: $color-white;
+  }
+  
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  &__item {
+    max-width: 12%;
+  }
+
+  &__img {
+    width: 100%;
+  }
+}
+
+@media(max-width: 768px) {
+  .partners {
+    padding: 15px 0;
+
+    &__list {
+      gap: 10px;
+    }
+    
+    &__item {
+      max-width: 20%;
+    }
+  }
+  
+}
