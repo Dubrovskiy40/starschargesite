@@ -65,7 +65,7 @@ const SwiperParallax = () => {
                 </div>
               </div>
               <div className="hero__img">
-                <img src={slide.img} alt="descrImg"></img>
+                <img className="hero__img_puls" src={slide.img} alt="descrImg"></img>
                 <img
                   className="hero__animation"
                   src={staticStation}

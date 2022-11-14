@@ -158,6 +158,9 @@
     "cmError": {
     }
   },
+  "partners": {
+    "title": "Партнеры"
+  },
   "footer" : {
     "policy": "StarsCharge, все права защищены",
     "politics": "Политика конфиденциальности"
