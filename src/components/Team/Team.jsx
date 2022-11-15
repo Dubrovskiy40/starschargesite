@@ -2,10 +2,10 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import "../../utils/i18next";
 import teamDescr from "../../assets/images/team/team.png";
-import ilya from "../../assets/images/team/Dmitry.jpg";
-import vadim from "../../assets/images/team/Dmitry.jpg";
+import ilya from "../../assets/images/team/Ilia.jpg";
+import vadim from "../../assets/images/team/Vadim.jpg";
 import dmitry from "../../assets/images/team/Dmitry.jpg";
-import stanislav from "../../assets/images/team/Dmitry.jpg";
+import stanislav from "../../assets/images/team/Stas.jpg";
 
 const Team = () => {
   const { t } = useTranslation();
@@ -15,16 +15,14 @@ const Team = () => {
       firstName: t("team.member1.firstName"),
       lastName: t("team.member1.lastName"),
       position: t("team.member1.position"),
-      imgPath:
-        "https://storage.yandexcloud.net/newspressfeed/wp-content/uploads/2018/11/marketing-director.jpg",
+      imgPath: ilya,
     },
     {
       id: "2",
       firstName: t("team.member2.firstName"),
       lastName: t("team.member2.lastName"),
       position: t("team.member2.position"),
-      imgPath:
-        "https://storage.yandexcloud.net/newspressfeed/wp-content/uploads/2018/11/marketing-director.jpg",
+      imgPath: vadim,
     },
     {
       id: "3",
@@ -38,8 +36,7 @@ const Team = () => {
       firstName: t("team.member4.firstName"),
       lastName: t("team.member4.lastName"),
       position: t("team.member4.position"),
-      imgPath:
-        "https://storage.yandexcloud.net/newspressfeed/wp-content/uploads/2018/11/marketing-director.jpg",
+      imgPath: stanislav,
     },
   ];
 
