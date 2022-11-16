@@ -38,7 +38,7 @@ const SwiperParallax = () => {
       <Swiper
         centeredSlides={true}
         autoplay={{
-          delay: 3000,
+          delay: 5000,
           disableOnInteraction: false,
         }}
         navigation={true}
@@ -65,7 +65,11 @@ const SwiperParallax = () => {
                 </div>
               </div>
               <div className="hero__img">
-                <img className="hero__img_puls" src={slide.img} alt="descrImg"></img>
+                <img
+                  className="hero__img_puls"
+                  src={slide.img}
+                  alt="descrImg"
+                ></img>
                 <img
                   className="hero__animation"
                   src={staticStation}
