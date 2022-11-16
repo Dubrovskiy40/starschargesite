@@ -83,14 +83,27 @@ ul {
   .policy {
     color: $color-salad;
     width: 100%;
-    margin: 20px;
+    margin: 20px 0 0;
     font-size: 14px;
     font-weight: 400;
     text-align: center;
     align-items: center;
     
+    &__copy {
+      float: right;
+    }
+
     &__policy {
       cursor: pointer;
+      float: left;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      border-top: 2px solid white;
+      margin-bottom: 20px;
     }
   }
 }
@@ -102,6 +115,7 @@ ul {
     justify-content: center;
     .policy {
       font-size: 12px;
+      padding: 0 30px;
     }
   }
 }
@@ -125,6 +139,15 @@ ul {
     }
     .policy {
       font-size: 14px;
+
+      &__copy {
+        display: block;
+        float: none;
+      }
+
+      &__policy {
+        float: none;
+      }
     }
     .img {
       margin: 5px;
