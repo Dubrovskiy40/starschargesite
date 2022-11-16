@@ -53,14 +53,16 @@ const Team = () => {
             чешуйками живот, на верхушке которого еле держалось готовое вот-вот
             окончательно сползти одеяло.
           </p>
-          <img src={teamDescr} alt="team background" />
         </div>
         <ul className="team__list">
           {teamsList?.map((man) => {
             return (
               <li className="team__item image-parlax" key={man.id}>
                 <div className="image-container">
-                  <div className="front-side" style={{"backgroundImage": `url(${man.imgPath})`}}>
+                  <div
+                    className="front-side"
+                    style={{ backgroundImage: `url(${man.imgPath})` }}
+                  >
                     <div className="inner">
                       <p>{man.firstName}</p>
                       <p>{man.lastName}</p>

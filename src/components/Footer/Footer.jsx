@@ -5,6 +5,7 @@ import { useState } from "react";
 import { observer } from "mobx-react";
 import MenuStore from "../../store/MenuStore";
 import "./_Footer.scss";
+import Contacts from "./Contacts";
 
 const Footer = observer(() => {
   const [modalActive, setModalActive] = useState(false);
@@ -15,6 +16,7 @@ const Footer = observer(() => {
         active={modalActive}
         setActive={setModalActive}
       />
+      <Contacts />
       <Socials />
       <Policy />
     </footer>
