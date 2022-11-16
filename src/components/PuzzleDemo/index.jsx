@@ -4,11 +4,12 @@ import PuzzleSlide from "./PuzzleSlide";
 import { getScreenWidth } from "../../hoc/getScreenWidth";
 import PuzzleCardBig from "./PuzzleCardBig";
 import PuzzleCardSmall from "./PuzzleCardSmall";
-import { memo } from "react";
+import { memo, useEffect } from "react";
 import "swiper/scss";
 import "swiper/scss/pagination";
 import "./swiper.scss";
 import { useTranslation } from "react-i18next";
+import PuzzleSlider from "./PuzzleSlider";
 
 const PuzzleDemo = ({ deviceType, menuName, cards }) => {
   const { t } = useTranslation();
@@ -23,45 +24,14 @@ const PuzzleDemo = ({ deviceType, menuName, cards }) => {
     slidesData[i] = cards.slice(i * cardsView, cardsView + i * cardsView);
   }
 
-  const pagination = {
-    clickable: true,
-    renderBullet: function (index, className) {
-      return `<span class="${className}"></span>`;
-    },
-  };
-
   return (
     <section id={menuName}>
       <div className="container">
         <h2 className="title">{t("news.title")}</h2>
-        <Swiper
-          pagination={pagination}
-          modules={[Pagination]}
-          spaceBetween={50}
-        >
-          {slidesData.map((slideData, index) => (
-            <SwiperSlide key={slideData.length + index}>
-              <PuzzleSlide
-                slots={[
-                  <PuzzleCardBig {...slideData[0]} />,
-                  // --------------
-                  cardsView === 4 ? (
-                    <PuzzleCardBig {...slideData[1]} />
-                  ) : (
-                    <PuzzleCardSmall {...slideData[1]} />
-                  ),
-                  // ---------------
-                  <PuzzleCardSmall {...slideData[2]} />,
-                  <PuzzleCardSmall {...slideData[3]} />,
-                  <PuzzleCardSmall {...slideData[4]} />,
-                ]}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <PuzzleSlider slidesData={slidesData} cardsView={cardsView} />
       </div>
     </section>
   );
 };
 
-export default getScreenWidth(memo(PuzzleDemo));
+export default getScreenWidth(PuzzleDemo);
