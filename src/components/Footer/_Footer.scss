@@ -56,8 +56,19 @@ ul {
     width: 100%;
     .link {
       display: inline;
+      padding: 0 4px;
       :hover {
         svg path {
+          fill: $color-salad;
+        }
+        svg#Skype {
+          fill: $color-salad;
+          path {
+            fill: #333;
+          }
+        }
+
+        svg#WhatsApp {
           fill: $color-salad;
         }
       }
@@ -65,18 +76,6 @@ ul {
         svg path {
           fill: $color-salad;
         }
-      }
-      svg {
-        width: 30px;
-        .tg {
-          height: 20px;
-        }
-        .vk {
-          height: 20px;
-        }
-        //.inst {
-        //  height: 20px;
-        //}
       }
     }
   }

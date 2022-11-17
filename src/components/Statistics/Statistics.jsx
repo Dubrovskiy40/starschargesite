@@ -14,8 +14,6 @@ const Statistics = observer((props) => {
     { type: "review", value: statistics.feedbacks },
   ];
 
-  console.log(statistics);
-
   const numWord = (value, words) => {
     value = Math.abs(value) % 100;
     const lastNum = value % 10;

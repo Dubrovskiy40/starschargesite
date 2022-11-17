@@ -5,7 +5,7 @@ const host = getHostInformation();
 
 class SettingsStore {
   isLoading = true;
-  items = [];
+  items = {};
 
   constructor() {
     makeAutoObservable(this);

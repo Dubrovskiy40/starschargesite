@@ -24,6 +24,7 @@ function Home() {
   const [itemslocal, setItemsLocal] = useState([]);
   const [stations, setStations] = useState([]);
   const [statistics, setStatistics] = useState([]);
+  const [contacts, setContacts] = useState({});
 
   const fetchData = async () => {
     await MenuStore.fetchMenuItems();
@@ -31,7 +32,8 @@ function Home() {
     await StationsStore.fetchStations();
     setStations(StationsStore.items.map((item) => item));
     await SettingsStore.fetchSettings();
-    setStatistics(SettingsStore.items);
+    setStatistics(SettingsStore.items.statistics);
+    setContacts(SettingsStore.items.contacts);
   };
 
   useEffect(() => {
@@ -76,7 +78,7 @@ function Home() {
       <Feedback />
       <Partners />
       <ScrollButton />
-      <Footer />
+      <Footer contacts={contacts} />
     </>
   );
 }
