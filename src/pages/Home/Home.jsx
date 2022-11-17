@@ -15,7 +15,7 @@ import {
 import PuzzleDemo from "../../components/PuzzleDemo";
 import MenuStore from "../../store/MenuStore";
 import StationsStore from "../../store/StationsStore";
-import StatisticsStore from "../../store/StatisticsStore";
+import SettingsStore from "../../store/SettingsStore";
 import Partners from "../../components/Partners/Partners";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -24,13 +24,14 @@ function Home() {
   const [itemslocal, setItemsLocal] = useState([]);
   const [stations, setStations] = useState([]);
   const [statistics, setStatistics] = useState([]);
+
   const fetchData = async () => {
     await MenuStore.fetchMenuItems();
     setItemsLocal(MenuStore.items.map((item) => item));
     await StationsStore.fetchStations();
     setStations(StationsStore.items.map((item) => item));
-    await StatisticsStore.fetchStatistics();
-    setStatistics(StatisticsStore.items);
+    await SettingsStore.fetchSettings();
+    setStatistics(SettingsStore.items);
   };
 
   useEffect(() => {
