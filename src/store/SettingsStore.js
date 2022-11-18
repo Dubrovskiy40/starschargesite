@@ -21,7 +21,6 @@ class SettingsStore {
     const itemReq = await fetch(`${host}/GetSettings`, CORS);
     const itemRes = await itemReq.json();
 
-    console.log(itemRes);
     if (itemReq.ok && itemRes !== null) {
       runInAction(() => {
         this.items = itemRes;
