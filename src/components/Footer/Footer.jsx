@@ -7,8 +7,9 @@ import MenuStore from "../../store/MenuStore";
 import "./_Footer.scss";
 import Contacts from "./Contacts";
 
-const Footer = observer(() => {
+const Footer = observer(({ contacts }) => {
   const [modalActive, setModalActive] = useState(false);
+
   return (
     <footer className="footer">
       <Links
@@ -16,8 +17,8 @@ const Footer = observer(() => {
         active={modalActive}
         setActive={setModalActive}
       />
-      <Contacts />
-      <Socials />
+      <Contacts contacts={contacts} />
+      <Socials contacts={contacts} />
       <Policy />
     </footer>
   );

@@ -1,3 +1,5 @@
+@import '../../../scss/var';
+
 .addressWrapper {
   box-sizing: border-box;
   display: flex;
@@ -13,11 +15,16 @@
     font-weight: 600;
   }
 
-  & div {
+  div {
     display: flex;
     flex-direction: column;
     max-width: 150px;
+
+    a:hover {
+      color: $color-salad;
+    }
   }
+
 }
 
 @media (max-width: 1024px) {
