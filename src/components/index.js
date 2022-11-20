@@ -1,14 +1,10 @@
 export { default as AppDescription } from "./AppDescription/AppDescription";
-export { default as Cards } from "./Cards/Cards";
 export { default as Feedback } from "./Feedback/Feedback";
 export { default as Footer } from "./Footer/Footer";
 export { default as Header } from "./Header/Header";
 export { default as Loader } from "./Loader/Loader";
 export { default as MapContainer } from "./MapContainer/MapContainer";
-export { default as Puzzle } from "./Puzzle/Puzzle";
 export { default as ScrollButton } from "./ScrollButton/ScrollButton";
 export { default as Statistics } from "./Statistics/Statistics";
-export { default as SwiperLine } from "./SwiperLine/Swiper";
 export { default as SwiperParallax } from "./SwiperParallax/SwiperParallax";
-export { default as Table } from "./Table/Table";
 export { default as Team } from "./Team/Team";
