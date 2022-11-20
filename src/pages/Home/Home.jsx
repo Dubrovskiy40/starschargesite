@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import {
-  // Cards,
   Header,
   Feedback,
   SwiperParallax,
   ScrollButton,
   Footer,
   Team,
-  // Table,
   AppDescription,
   Statistics,
   MapContainer,

@@ -23,6 +23,8 @@ const PuzzleDemo = ({ deviceType, data }) => {
     slidesData[i] = cards.slice(i * cardsView, cardsView + i * cardsView);
   }
 
+  console.log(slidesData);
+
   return (
     <section id={name}>
       <div className="container">
