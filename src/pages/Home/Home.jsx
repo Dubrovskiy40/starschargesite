@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import {
-  Cards,
+  // Cards,
   Header,
   Feedback,
   SwiperParallax,
   ScrollButton,
   Footer,
   Team,
-  Table,
+  // Table,
   AppDescription,
   Statistics,
   MapContainer,
@@ -45,33 +45,9 @@ function Home() {
       <Header />
       <SwiperParallax />
       <Statistics stationsCount={stations.length} statistics={statistics} />
-      {itemslocal.map((menuItem, menuItemIndex) => {
-        return menuItem.sections.map((sectionItem) => {
-          return sectionItem.section_type_id === 1 ? (
-            sectionItem.cards.length ? (
-              <PuzzleDemo
-                cards={sectionItem.cards}
-                menuName={itemslocal[menuItemIndex].name}
-                key={sectionItem.section_type_id}
-              />
-            ) : null
-          ) : sectionItem.section_type_id === 2 ? (
-            sectionItem.cards.length ? (
-              <Cards
-                key={sectionItem.section_type_id}
-                menuName={itemslocal[menuItemIndex].name}
-                cardsList={sectionItem.cards}
-              />
-            ) : null
-          ) : sectionItem.cards.length ? (
-            <Table
-              key={sectionItem.section_type_id}
-              menuName={itemslocal[menuItemIndex].name}
-              cardsList={sectionItem.cards}
-            />
-          ) : null;
-        });
-      })}
+      {itemslocal.length && (
+        <PuzzleDemo data={itemslocal?.find(({ id }) => id === 1)} />
+      )}
       <MapContainer stations={stations} apiKey={API_KEY} />
       <AppDescription />
       <Team />

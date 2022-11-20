@@ -20,14 +20,14 @@ class MenuStore {
   fetchMenuItems = async () => {
     const itemReq = await fetch(`${host}/GetContent`, CORS);
     const itemRes = await itemReq.json();
+
     if (itemReq.ok && itemRes !== null) {
       runInAction(() => {
-        this.items = itemRes
+        this.items = itemRes;
       });
     }
     this.setLoading(false);
   };
-
 }
 
 export default new MenuStore();

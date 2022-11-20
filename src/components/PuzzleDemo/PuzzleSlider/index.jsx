@@ -1,7 +1,6 @@
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import PuzzleCardBig from "../PuzzleCardBig";
-import PuzzleCardSmall from "../PuzzleCardSmall";
+import PuzzleCard from "../PuzzleCard";
 import PuzzleSlide from "../PuzzleSlide";
 
 const PuzzleSlider = ({ slidesData, cardsView }) => {
@@ -14,21 +13,21 @@ const PuzzleSlider = ({ slidesData, cardsView }) => {
 
   return (
     <Swiper pagination={pagination} modules={[Pagination]} spaceBetween={50}>
-      {slidesData.map((slideData, index) => (
-        <SwiperSlide key={Math.random() * index}>
+      {slidesData.map((slideData) => (
+        <SwiperSlide key={Math.random()}>
           <PuzzleSlide
             slots={[
-              <PuzzleCardBig {...slideData[0]} />,
+              <PuzzleCard {...slideData[0]} />,
               // --------------
               cardsView === 4 ? (
-                <PuzzleCardBig {...slideData[1]} />
+                <PuzzleCard {...slideData[1]} />
               ) : (
-                <PuzzleCardSmall {...slideData[1]} />
+                <PuzzleCard {...slideData[1]} small />
               ),
               // ---------------
-              <PuzzleCardSmall {...slideData[2]} />,
-              <PuzzleCardSmall {...slideData[3]} />,
-              <PuzzleCardSmall {...slideData[4]} />,
+              <PuzzleCard {...slideData[2]} small />,
+              <PuzzleCard {...slideData[3]} small />,
+              <PuzzleCard {...slideData[4]} small />,
             ]}
           />
         </SwiperSlide>

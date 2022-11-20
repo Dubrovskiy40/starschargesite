@@ -1,18 +1,17 @@
-import { Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import PuzzleSlide from "./PuzzleSlide";
 import { getScreenWidth } from "../../hoc/getScreenWidth";
-import PuzzleCardBig from "./PuzzleCardBig";
-import PuzzleCardSmall from "./PuzzleCardSmall";
-import { memo, useEffect } from "react";
 import "swiper/scss";
 import "swiper/scss/pagination";
 import "./swiper.scss";
 import { useTranslation } from "react-i18next";
 import PuzzleSlider from "./PuzzleSlider";
 
-const PuzzleDemo = ({ deviceType, menuName, cards }) => {
+const PuzzleDemo = ({ deviceType, data }) => {
   const { t } = useTranslation();
+
+  const {
+    name,
+    sections: [{ cards }],
+  } = data;
 
   const slidesData = [];
 
@@ -25,7 +24,7 @@ const PuzzleDemo = ({ deviceType, menuName, cards }) => {
   }
 
   return (
-    <section id={menuName}>
+    <section id={name}>
       <div className="container">
         <h2 className="title">{t("news.title")}</h2>
         <PuzzleSlider slidesData={slidesData} cardsView={cardsView} />
