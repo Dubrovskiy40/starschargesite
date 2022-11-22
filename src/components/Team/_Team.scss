@@ -12,7 +12,6 @@
   }
 
   &__item {
-    //position: relative;
     & > div {
       width: 260px;
       height: 260px;
@@ -26,6 +25,7 @@
 
   &__descr {
     margin-bottom: 66px;
+    min-height: 6rem;
 
     img {
       object-fit: cover;
@@ -60,7 +60,6 @@
   backface-visibility: hidden;
 }
 .back-side {
-  //position: relative;
   background: $color-black;
   background: -webkit-linear-gradient(45deg,  $color-black 0%, $color-total_black 100%);
   background: -o-linear-gradient(45deg,  $color-black 0%, $color-total_black 100%);
@@ -93,10 +92,6 @@
 
 .front-side .inner {
   top: 65%;
-  
-  //p {
-  //  z-index: -1100;
-  //}
 }
 
 .back-side {
@@ -114,7 +109,6 @@
 .inner {
   -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
   transform: translateY(-50%) translateZ(60px) scale(0.94);
-  //top: 50%;
   position: absolute;
   left: 0;
   width: 100%;
