@@ -1,13 +1,30 @@
 import styles from "./styles.module.scss";
-import ModalWindow from "../ModalWindow/ModalWindow";
+import Modal from "../Modal";
 
-const ModalNews = ({ open, setOpen, data }) => {
+const ModalNews = ({ close, data }) => {
   return (
-    <ModalWindow setOpenModalWindow={setOpen} openModalWindow={open}>
-      <h2>{data.header}</h2>
-      <p>{data.text}</p>
-      <p>{data.date}</p>
-    </ModalWindow>
+    <Modal close={close}>
+      <div className={styles.container}>
+        <img className={styles.img} src={data.img} alt="img" />
+        <h2 className={styles.title}>{data.header}</h2>
+        <p className={styles.text}>
+          {data.text}
+          {data.text}
+          {data.text}
+          {data.text}
+          {data.text}
+          {data.text}
+          {data.text}
+          {data.text}
+          {data.text}
+          {data.text}
+          {data.text}
+          {data.text}
+          {data.text}
+        </p>
+        <p className={styles.data}>{data.date}</p>
+      </div>
+    </Modal>
   );
 };
 

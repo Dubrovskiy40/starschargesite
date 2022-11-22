@@ -1,11 +1,14 @@
 import { createPortal } from "react-dom";
 import styles from "./styles.module.scss";
 
-const Modal = ({ close }) => {
+const Modal = ({ close, children }) => {
   return createPortal(
-    <div className={styles.background}>
+    <div className={styles.background} onClick={close}>
       <div className={styles.window}>
-        <button onClick={() => close()}>×</button>
+        <button className={styles.button} onClick={close}>
+          ×
+        </button>
+        {children}
       </div>
     </div>,
     document.getElementById("modal")

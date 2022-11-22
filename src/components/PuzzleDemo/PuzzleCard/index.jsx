@@ -45,11 +45,13 @@ const PuzzleCardBig = (props) => {
           <p className={styles.date}>{date}</p>
         </div>
       </div>
-      <ModalNews
-        open={openModal}
-        setOpen={setOpenModal}
-        data={{ ...props, lang }}
-      />
+
+      {openModal && (
+        <ModalNews
+          close={() => setOpenModal(false)}
+          data={{ ...props, lang }}
+        />
+      )}
     </>
   );
 };
