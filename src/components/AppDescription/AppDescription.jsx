@@ -1,4 +1,3 @@
-import appStore from "../../assets/images/app/apple.png";
 import googleStore from "../../assets/images/app/google.png";
 import charge from "../../assets/images/app/appDescr.svg";
 import charge_retina from "../../assets/images/app/app-2x.png";
@@ -24,24 +23,9 @@ const App = () => {
             <div className="app__descr">
               <h2 className="app__title title">{t("app.title")}</h2>
               <p className="app__text descr">
-                Великий Оксмокс предупреждал ee o злых запятых, диких знаках
-                вопроса и коварных точках c запятой, но текст не дал сбить себя
-                c толку.
+                {t("app.description")}
               </p>
               <div className="app__link-wrap flex">
-                {/*<a*/}
-                {/*  className="app__appStore_link app__link"*/}
-                {/*  href="#s"*/}
-                {/*  target="_blank"*/}
-                {/*  rel="noreferrer"*/}
-                {/*>*/}
-                {/*  <img*/}
-                {/*    className="app__appStore_img app__img"*/}
-                {/*    src={appStore}*/}
-                {/*    alt="appStore"*/}
-                {/*  />*/}
-                {/*  <span className="app__appStore_text">App Store</span>*/}
-                {/*</a>*/}
                 <a
                   className="app__googleStore_link app__link"
                   href="https://play.google.com/store/apps/details?id=com.d.watt"
