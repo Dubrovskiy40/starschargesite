@@ -6,29 +6,29 @@ import "swiper/scss/scrollbar";
 import "swiper/scss/navigation";
 import staticStation from "../../assets/images/sliderParallax/station.png";
 import firstSlide from "../../assets/images/sliderParallax/light.png";
+import { useTranslation } from "react-i18next";
+import "../../utils/i18next";
 
 const SwiperParallax = () => {
+  const { t } = useTranslation();
+  
   const arraySliders = [
     {
       id: "1",
-      title: "Будущее уже наступило",
-      text:
-        "Найдите нужную станцию. Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. " +
-        "Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана.",
+      title: t("sliders.slider1.title"),
+      text: t("sliders.slider1.description"),
       img: firstSlide,
     },
     {
       id: "2",
-      title: "Рыбный текст для проверки",
-      text: "Его комната, настоящая, разве что слишком маленькая, но обычная комната, мирно покоилась в своих четырех хорошо знакомых стенах.",
+      title: t("sliders.slider2.title"),
+      text: t("sliders.slider2.description"),
       img: firstSlide,
     },
     {
       id: "3",
-      title: "Будущее уже наступило",
-      text:
-        "Найдите нужную станцию. Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. " +
-        "Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана.",
+      title: t("sliders.slider3.title"),
+      text: t("sliders.slider3.description"),
       img: firstSlide,
     },
   ];
