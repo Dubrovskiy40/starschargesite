@@ -1,6 +1,4 @@
 export const phoneFormating = (phone) => {
-  if (!phone) return;
-
   const result = [];
   const number = phone.match(/[0-9+]/g).join("");
   result.push(number);

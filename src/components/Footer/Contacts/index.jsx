@@ -2,7 +2,8 @@ import { phoneFormating } from "../../../utils/phoneFormating";
 import styles from "./styles.module.scss";
 
 const Contacts = ({ contacts }) => {
-  const oficePhone = contacts.phone?.map((phone, i) => {
+  const oficePhone = contacts?.phone?.map((phone, i) => {
+    if (!phone) return null;
     const [tel, formatedPhone] = phoneFormating(phone);
 
     return (
@@ -12,7 +13,8 @@ const Contacts = ({ contacts }) => {
     );
   });
 
-  const mobilePhone = contacts.mobile_phone?.map((phone, i) => {
+  const mobilePhone = contacts?.mobile_phone?.map((phone, i) => {
+    if (!phone) return null;
     const [tel, formatedPhone] = phoneFormating(phone);
 
     return (
@@ -22,11 +24,15 @@ const Contacts = ({ contacts }) => {
     );
   });
 
-  const emails = contacts.mail?.map((email, i) => (
-    <a href={`mailto:${email}`} key={email + i}>
-      {email}
-    </a>
-  ));
+  const emails = contacts?.mail?.map((email, i) => {
+    if (!email) return null;
+
+    return (
+      <a href={`mailto:${email}`} key={email + i}>
+        {email}
+      </a>
+    );
+  });
 
   return (
     <address className={styles.addressWrapper}>
