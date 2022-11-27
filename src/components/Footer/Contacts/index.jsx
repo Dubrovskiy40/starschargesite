@@ -49,7 +49,7 @@ const Contacts = ({ contacts }) => {
         {mobilePhone}
       </div>
       <div className={styles.mails}>
-        <p>mail</p>
+        <p>mail </p>
         {emails}
       </div>
     </address>
