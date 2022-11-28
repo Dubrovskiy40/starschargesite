@@ -2,15 +2,15 @@
   "sliders": {
     "slider1": {
       "title": "About the application",
-      "description" : "We have developed the most convenient mobile application so that you do not waste time looking for a charger for your car.\nWe work with both our own and partner stations. Only you choose the speed and price of charging.\nPossibility to install an individual station with limited access.\nAffordable rates, 24/7 support and a charger is always there for you."
+      "description" : "You don't need to waste time looking for a car charger, the app will do everything for you. You only choose the speed and price of charging.\nSet up an individual station with limited access.\nYou'll always have the best rates, 24/7 support, and a charger near you.\n"
     },
     "slider2": {
       "title": "Green direction",
-      "description" : "Electric vehicles are an environmentally friendly mode of transport. There is no need for the usual fuel, which means there is no exhaust system and CO2 emissions into the atmosphere. As a rule, electric cars are made from recyclable materials, which keeps solid pollution to a minimum.\nLow noise level reduces sound pollution of the environment."
+      "description" : "Electric cars are environmentally friendly vehicles. No conventional fuel is needed, which means no exhaust system and no CO2 emissions. Electric cars are made from recyclable materials, which keeps solid pollution to a minimum.\nLow noise levels eliminate sound pollution.\n"
     },
     "slider3": {
       "title": "About company",
-      "description" : "We will help you solve the problem of the lack of a charger for your car.\nReliability, support and the best technology."
+      "description" : "We can help you solve the problem of missing a charger for your car. \nReliability, support and the best technology.\n"
     }
   },
   "statistics": {
@@ -70,7 +70,7 @@
   },
   "team": {
     "title": "Our team",
-    "description": "We have developed the most convenient mobile application for finding charging stations for your car. With the ability to select the charging speed mode.\nWe work with all stations, we will always help you find the nearest one.\nYou can create a unique account linked to specific objects (RCs, shopping and business centers) with the ability to book a station only with unique accounts.",
+    "description": "We have developed the most convenient mobile application for finding charging stations for your car. With the ability to choose the charging speed mode. \nWe work with all stations, we will always help you find the nearest one.\nYou can create a unique account with a link to specific objects (housing estates, shopping and business centers) with the possibility of booking the station only by unique accounts.\n",
     "member1":{
       "firstName": "Ilya",
       "lastName": "Denisov",
