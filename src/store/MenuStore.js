@@ -18,7 +18,7 @@ class MenuStore {
   };
 
   fetchMenuItems = async () => {
-    const itemReq = await fetch(`/GetContent`, CORS);
+    const itemReq = await fetch(`${host}/GetContent`, CORS);
     const itemRes = await itemReq.json();
 
     if (itemReq.ok && itemRes !== null) {
