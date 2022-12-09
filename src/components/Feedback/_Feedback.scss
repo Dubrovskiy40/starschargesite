@@ -188,12 +188,13 @@
 
     &__btn_wrap {
       width: 100%;
+      min-width: inherit;
       display: flex;
       justify-content: center;
     }
 
     &__btn {
-      width: 256px;
+      width: 100%;
       padding: 16px 0;
     }
 
