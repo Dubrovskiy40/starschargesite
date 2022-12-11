@@ -19,7 +19,7 @@ const Partners = () => {
   ];
   
   return (
-    <div className="partners">
+    <div className="partners" id="Партнеры">
       <div className="container">
         <h2 className="partners__title title">{t("partners.title")}</h2>
         <ul className="partners__list">
