@@ -74,22 +74,26 @@
     "member1":{
       "firstName": "Ilya",
       "lastName": "Denisov",
-      "position": "Director"
+      "position": "Director",
+      "userDescription": "CEO and founder of STARS does not really like being called a director at all. One of the first projects to launch electric charging stations for cars was inspired in St. Petersburg.\nAnd now he began to create his own \"silicon valley\" in Russia."
     },
     "member2":{
       "firstName": "Vadim",
       "lastName": "Malkov",
-      "position": "Technical Director"
+      "position": "Technical Director",
+      "userDescription": "The technical component, a lot of crazy ideas and implementations, combined with extensive experience in the development and implementation of IT projects, allow us to take on absolutely crazy developments and technologies of the future, all thanks to our technical director."
     },
     "member3":{
       "firstName": "Dmitry",
       "lastName": "Kravchenko",
-      "position": "IT Architect"
+      "position": "IT Architect",
+      "userDescription": "Detailed development of the backend structure from Web applications, mobile applications, website development and ending with the deployment of a cloud structure for banking systems.\n15 years together with IT, also at the international level, all this in our Information Systems Architect."
     },
     "member4":{
       "firstName": "Stanislav",
       "lastName": "Shvedovich",
-      "position": "Chief Engineer"
+      "position": "Chief Engineer",
+      "userDescription": "Based on the latest scientific and technological achievements, advanced domestic and foreign experience in the design, construction and operation of facilities using design automation tools, Revit develops and puts into operation objects and masters the design capacity, the genius of engineering networks."
     }
   },
   "feedback": {
