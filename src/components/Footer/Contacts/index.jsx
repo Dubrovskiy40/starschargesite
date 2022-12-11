@@ -37,19 +37,19 @@ const Contacts = ({ contacts }) => {
   return (
     <address className={styles.addressWrapper}>
       <div className={styles.address}>
-        <p>адрес</p>
+        <p>Адрес</p>
         <span className={styles.addressText}>
           <span className={styles.index}>{contacts.post_code}</span>,{" "}
           {contacts.address}
         </span>
       </div>
       <div className={styles.phones}>
-        <p>тел.</p>
+        <p>Телефон</p>
         {oficePhone}
         {mobilePhone}
       </div>
       <div className={styles.mails}>
-        <p>mail </p>
+        <p>Email </p>
         {emails}
       </div>
     </address>
