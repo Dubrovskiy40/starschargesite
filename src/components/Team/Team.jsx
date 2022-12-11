@@ -21,8 +21,7 @@ const Team = () => {
       lastName: t("team.member1.lastName"),
       position: t("team.member1.position"),
       imgPath: ilya,
-      userDescription: 'Проснувшись однажды утром после беспокойного сна, Грегор Замза\n' +
-        '            обнаружил, что он у себя в постели превратился в страшное насекомое. Ilia',
+      userDescription: t("team.member1.userDescription"),
     },
     {
       id: "2",
@@ -30,8 +29,7 @@ const Team = () => {
       lastName: t("team.member2.lastName"),
       position: t("team.member2.position"),
       imgPath: vadim,
-      userDescription: 'Проснувшись однажды утром после беспокойного сна, Грегор Замза\n' +
-        '            обнаружил, что он у себя в постели превратился в страшное насекомое. Vadim',
+      userDescription: t("team.member2.userDescription"),
     },
     {
       id: "3",
@@ -39,8 +37,7 @@ const Team = () => {
       lastName: t("team.member3.lastName"),
       position: t("team.member3.position"),
       imgPath: dmitry,
-      userDescription: 'Проснувшись однажды утром после беспокойного сна, Грегор Замза\n' +
-        '            обнаружил, что он у себя в постели превратился в страшное насекомое. Dmitriy',
+      userDescription: t("team.member3.userDescription"),
     },
     {
       id: "4",
@@ -48,8 +45,7 @@ const Team = () => {
       lastName: t("team.member4.lastName"),
       position: t("team.member4.position"),
       imgPath: stanislav,
-      userDescription: 'Проснувшись однажды утром после беспокойного сна, Грегор Замза\n' +
-        '            обнаружил, что он у себя в постели превратился в страшное насекомое. Stanislav',
+      userDescription: t("team.member4.userDescription"),
     },
   ];
   
