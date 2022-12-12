@@ -9,15 +9,13 @@ i18n
   .use(initReactI18next)
   .init({
     supportedLngs: ["ru", "en"],
-    fallbackLng: "ru", // дефолтный язык
+    fallbackLng: "ru",
+    lng: "ru",
     debug: false,
     detection: {
       order: ["cookie", "localStorage", "htmlTag", "path", "subdomain"],
       caches: ["cookie"],
     },
-    // backend: {
-    //   loadPath: "/locales/{{lng}}/translation.json",
-    // },
     interpolation: {
       escapeValue: false // react already safes from xss => https://www.i18next.com/translation-function/interpolation#unescape
     }
