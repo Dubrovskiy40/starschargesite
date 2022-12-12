@@ -1,12 +1,24 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .team {
   &__title {
+    -ms-flex-item-align: start;
     align-self: flex-start;
     color: $color-white;
     text-align: center;
   }
 
   &__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     gap: 25px;
   }
@@ -28,6 +40,7 @@
     min-height: 6rem;
 
     img {
+      -o-object-fit: cover;
       object-fit: cover;
       border-radius: 20px;
     }
@@ -48,6 +61,7 @@
   background-position: center;
   height: 260px; /* Высота изображения */
   border-radius: 50%; /* Скругление углов */
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.25);
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.25);
   text-align: center;
   color: $color-white;
@@ -61,7 +75,6 @@
 }
 .back-side {
   background: $color-black;
-  background: -webkit-linear-gradient(45deg,  $color-black 0%, $color-total_black 100%);
   background: -o-linear-gradient(45deg,  $color-black 0%, $color-total_black 100%);
   background: linear-gradient(45deg,  $color-black 0%, $color-total_black 100%);
 }
@@ -99,7 +112,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  
+
   & .inner {
     top: 50%;
     width: 95%;
@@ -164,6 +177,7 @@
 
     &__list {
       gap: 10px;
+      -ms-flex-pack: distribute;
       justify-content: space-around;
     }
 
@@ -194,16 +208,27 @@
     &__list {
       gap: 32px;
 
+      -webkit-box-orient: vertical;
+
+      -webkit-box-direction: normal;
+
+      -ms-flex-direction: column;
+
       flex-direction: column;
       max-width: 171px;
       margin: 0 auto;
     }
 
     &__descr {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column;
 
       img {
         max-width: 90%;
+        -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
         align-self: center;
       }
     }
