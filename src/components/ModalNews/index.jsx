@@ -5,7 +5,7 @@ const ModalNews = ({ close, data }) => {
   return (
     <Modal close={close}>
       <div className={styles.container}>
-        <img className={styles.img} src={data.img} alt="img" />
+        {data.img && <img className={styles.img} src={data.img} alt="img" />}
         <h2 className={styles.title}>
           {data.lang === "ru" ? data.header : data.header_eng}
         </h2>
