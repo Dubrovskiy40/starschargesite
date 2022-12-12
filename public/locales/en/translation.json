@@ -1,4 +1,18 @@
 {
+  "sliders": {
+    "slider1": {
+      "title": "About the application",
+      "description" : "We have developed the most convenient mobile application so that you do not waste time looking for a charger for your car.\nWe work with both our own and partner stations. Only you choose the speed and price of charging.\nPossibility to install an individual station with limited access.\nAffordable rates, 24/7 support and a charger is always there for you."
+    },
+    "slider2": {
+      "title": "Green direction",
+      "description" : "Electric vehicles are an environmentally friendly mode of transport. There is no need for the usual fuel, which means there is no exhaust system and CO2 emissions into the atmosphere. As a rule, electric cars are made from recyclable materials, which keeps solid pollution to a minimum.\nLow noise level reduces sound pollution of the environment."
+    },
+    "slider3": {
+      "title": "About company",
+      "description" : "We will help you solve the problem of the lack of a charger for your car.\nReliability, support and the best technology."
+    }
+  },
   "statistics": {
     "station": {
       "type1": "Station",
@@ -48,6 +62,7 @@
   },
   "app": {
     "title": "Book and charge with our app",
+    "description": "Do business, and leave the search for a charger to our application.",
     "item1": "Quality",
     "item2": "Speed",
     "item3": "Location",
@@ -55,26 +70,30 @@
   },
   "team": {
     "title": "Our team",
-    "description": "",
+    "description": "We have developed the most convenient mobile application for finding charging stations for your car. With the ability to select the charging speed mode.\nWe work with all stations, we will always help you find the nearest one.\nYou can create a unique account linked to specific objects (RCs, shopping and business centers) with the ability to book a station only with unique accounts.",
     "member1":{
       "firstName": "Ilya",
       "lastName": "Denisov",
-      "position": "Director"
+      "position": "Director",
+      "userDescription": "CEO and founder of STARS does not really like being called a director at all. One of the first projects to launch electric charging stations for cars was inspired in St. Petersburg.\nAnd now he began to create his own \"silicon valley\" in Russia."
     },
     "member2":{
       "firstName": "Vadim",
       "lastName": "Malkov",
-      "position": "Technical Director"
+      "position": "Technical Director",
+      "userDescription": "The technical component, a lot of crazy ideas and implementations, combined with extensive experience in the development and implementation of IT projects, allow us to take on absolutely crazy developments and technologies of the future, all thanks to our technical director."
     },
     "member3":{
       "firstName": "Dmitry",
       "lastName": "Kravchenko",
-      "position": "IT Architect"
+      "position": "IT Architect",
+      "userDescription": "Detailed development of the backend structure from Web applications, mobile applications, website development and ending with the deployment of a cloud structure for banking systems.\n15 years together with IT, also at the international level, all this in our Information Systems Architect."
     },
     "member4":{
       "firstName": "Stanislav",
       "lastName": "Shvedovich",
-      "position": "Chief Engineer"
+      "position": "Chief Engineer",
+      "userDescription": "Based on the latest scientific and technological achievements, advanced domestic and foreign experience in the design, construction and operation of facilities using design automation tools, Revit develops and puts into operation objects and masters the design capacity, the genius of engineering networks."
     }
   },
   "feedback": {
