@@ -19,7 +19,7 @@ const PuzzleCardBig = (props) => {
           styles.container
         } ${link ? styles.hover : ""}`}
       >
-        <img className={styles.image} src={`/static/media/${img}`} alt="img" />
+        <img className={styles.image} src={`/${img}`} alt="img" />
         {link ? (
           <a
             href={link}
