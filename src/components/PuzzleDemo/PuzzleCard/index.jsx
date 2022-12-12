@@ -10,7 +10,6 @@ const PuzzleCardBig = (props) => {
 
   let lang = i18n.language;
   const { img, header, header_eng, text, text_eng, date, link, small } = props;
-
   if (Object.keys(props).length <= 1) return null;
 
   return (
@@ -21,7 +20,7 @@ const PuzzleCardBig = (props) => {
         } ${link ? styles.hover : ""}`}
       >
         <img className={styles.image} src={`/static/media/${img}`} alt="img" />
-        {link && (
+        {link ? (
           <a
             href={link}
             target="_blank"
@@ -30,8 +29,7 @@ const PuzzleCardBig = (props) => {
           >
             {lang === "ru" ? header : header_eng}
           </a>
-        )}
-        {!link && (
+        ) : (
           <button
             onClick={() => setOpenModal(true)}
             className={styles.wrapAll}
@@ -45,7 +43,6 @@ const PuzzleCardBig = (props) => {
           <p className={styles.date}>{date}</p>
         </div>
       </div>
-
       {openModal && (
         <ModalNews
           close={() => setOpenModal(false)}

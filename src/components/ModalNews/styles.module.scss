@@ -3,8 +3,8 @@
 .img {
   display: block;
   margin-bottom: 40px;
-  height: 320px;
-  background-color: $color-salad;
+  min-height: 300px;
+  border-radius: 20px;
 }
 
 .title {
