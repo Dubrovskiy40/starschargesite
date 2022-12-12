@@ -1,0 +1,26 @@
+@import '../../scss/var';
+
+.img {
+  display: block;
+  margin-bottom: 40px;
+  min-height: 300px;
+  border-radius: 20px;
+}
+
+.title {
+  margin-bottom: 20px;
+  text-align: center;
+  color: $color-salad;
+}
+
+.text {
+  margin-bottom: 20px;
+  text-align: justify;
+  font-size: 16px;
+}
+
+.data {
+  text-align: end;
+  font-size: 14px;
+}
+

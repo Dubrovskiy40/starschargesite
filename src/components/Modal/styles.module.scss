@@ -1,0 +1,42 @@
+@import '../../scss/var';
+
+:has(.background) {
+  overflow: hidden;
+}
+
+.background {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  background-color: rgba(0, 0, 0, .9);
+  z-index: 100;
+}
+
+.window {
+  max-height: 100vh;
+  padding: 60px 50px 40px;
+  overflow: auto;
+}
+
+.button {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  font-size: 36px;
+  cursor: pointer;
+  color: white;
+  transition: color 150ms ease-in, 
+    background-color 100ms ease-in;
+  line-height: 18px;
+
+  &:hover {
+    color: $color-salad;
+  }
+  
+  &:active {
+    background-color: grey;
+  }
+}
+
