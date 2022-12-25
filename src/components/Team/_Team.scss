@@ -130,7 +130,8 @@
   outline: 1px solid transparent;
   -webkit-perspective: inherit;
   perspective: inherit;
-  z-index: 2;
+  z-index: 1;
+  opacity: .99;
 }
 
 .image-container .back-side {
