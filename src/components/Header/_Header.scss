@@ -219,3 +219,24 @@
     width: 22px;
   }
 }
+
+@media (max-height: 520px) {
+  .header__menu {
+    &.active {
+      top: 25%;
+    }
+  }
+
+  .header__nav {
+    margin-bottom: 30px;
+    margin-top: 0%;
+
+    &::after {
+      bottom: -20px;
+    }
+  }
+
+  .header__nav-item:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
