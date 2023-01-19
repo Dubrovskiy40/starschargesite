@@ -1,0 +1,187 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  padding-top: 110px;
+  grid-gap: 24px 24px;
+  padding-bottom: 60px;
+}
+
+@media (min-width: 320px) {
+  .grid__firstCell div {
+    padding: 21px;
+    max-height: 200px;
+  }
+  .grid__secondCell li {
+    display: flex;
+    flex-direction: row-reverse;
+    min-height: 145px;
+    padding: 10px;
+  }
+  .grid__secondCell li h3 {
+    font-size: 10px;
+    line-height: 11px;
+  }
+  .grid__secondCell li p {
+    font-size: 8px;
+    line-height: 9px;
+  }
+  .grid__secondCell li img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: inherit;
+  }
+  .grid__restCell li {
+    display: flex;
+    flex-direction: row-reverse;
+    height: unset;
+    max-height: 145px;
+    padding: 10px;
+  }
+  .grid__restCell li h3 {
+    font-size: 10px;
+    line-height: 11px;
+  }
+  .grid__restCell li p {
+    font-size: 8px;
+    line-height: 9px;
+  }
+  .grid__restCell li img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: inherit;
+  }
+}
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .grid__firstCell {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  .grid__restCell li {
+    display: flex;
+    flex-direction: row-reverse;
+    min-height: 190px;
+    padding: 0;
+  }
+  .grid__restCell li div {
+    padding: 15px;
+  }
+  .grid__restCell li h3 {
+    font-size: 10px;
+    line-height: 11px;
+  }
+  .grid__restCell li p {
+    height: 60px;
+    font-size: 8px;
+    line-height: 9px;
+  }
+  .grid__restCell li img {
+    width: 35%;
+    height: unset;
+    object-fit: cover;
+  }
+  .grid__firstCell {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+}
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .grid__firstCell {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  .grid__firstCell li div {
+    padding: 25px 30px;
+    max-height: unset;
+  }
+  .grid__secondCell {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  .grid__secondCell li {
+    max-height: unset;
+    display: block;
+    padding: 0;
+  }
+  .grid__secondCell li img {
+    width: unset;
+    height: unset;
+  }
+  .grid__secondCell li h3 {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .grid__secondCell li p {
+    font-size: 10px;
+    line-height: 11px;
+  }
+  .grid__restCell li {
+    display: flex;
+    flex-direction: row-reverse;
+    min-height: 100%;
+  }
+  .grid__restCell li div {
+    padding: 30px;
+  }
+  .grid__restCell li h3 {
+    font-size: 10px;
+    line-height: 11px;
+  }
+  .grid__restCell li p {
+    height: unset;
+    font-size: 8px;
+    line-height: 9px;
+  }
+  .grid__restCell li img {
+    width: 35%;
+    object-fit: cover;
+  }
+}
+@media (min-width: 2000px) {
+  .grid__firstCell li h3 {
+    font-size: 20px;
+    line-height: 16px;
+  }
+  .grid__firstCell li p {
+    font-size: 14px;
+    line-height: 15px;
+  }
+  .grid__firstCell li span {
+    font-size: 12px;
+  }
+  .grid__restCell li div {
+    padding: 30px;
+  }
+  .grid__restCell li h3 {
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .grid__restCell li p {
+    height: unset;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .grid__restCell li span {
+    font-size: 10px;
+  }
+}
+
+/*# sourceMappingURL=puzzle.module.css.map */

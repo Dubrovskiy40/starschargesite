@@ -1,0 +1,40 @@
+.addressWrapper {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 16px;
+  font-style: normal;
+  margin-bottom: 15px;
+}
+.addressWrapper p {
+  font-size: 14px;
+  font-weight: 600;
+}
+.addressWrapper div {
+  display: flex;
+  flex-direction: column;
+  max-width: 150px;
+}
+.addressWrapper div a:hover {
+  color: #60AD5E;
+}
+
+@media (max-width: 1024px) {
+  .addressWrapper {
+    flex-direction: column;
+    padding: 0 30px;
+    font-size: 14px;
+  }
+  .addressWrapper div:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 576px) {
+  .addressWrapper div {
+    max-width: none;
+  }
+}
+
+/*# sourceMappingURL=styles.module.css.map */

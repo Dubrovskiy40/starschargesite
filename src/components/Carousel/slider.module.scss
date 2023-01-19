@@ -1,0 +1,28 @@
+.carousel {
+  width: 100%;
+  height: calc(100vh - 120px);
+  background: url('../../assets/images/carousel/bgi.png') 90% 90% no-repeat fixed,
+    url('../../assets/images/carousel/lightning.png') 95% 0% no-repeat fixed;
+  background-size: auto, contain;
+  background-color: #333333;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__slide_block {
+    max-width: 50%;
+  }
+
+  &__title {
+    color: #fff;
+  }
+
+  &__subtitle {
+    color: #fff;
+  }
+
+  &__text {
+    color: #fff;
+  }
+}

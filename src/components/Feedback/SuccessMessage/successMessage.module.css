@@ -1,0 +1,14 @@
+.successMessage {
+  margin-top: 10px;
+}
+.successMessage_show {
+  display: block;
+}
+.successMessage__block_green {
+  color: green;
+}
+.successMessage__block_red {
+  color: red;
+}
+
+/*# sourceMappingURL=successMessage.module.css.map */

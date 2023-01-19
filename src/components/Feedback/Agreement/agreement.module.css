@@ -1,0 +1,25 @@
+.agreement__link {
+  margin-left: 5px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #fff;
+}
+.agreement__link:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 1190px) {
+  .agreement__link {
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
+@media (max-width: 768px) {
+  .agreement__link {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+/*# sourceMappingURL=agreement.module.css.map */
