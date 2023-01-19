@@ -1,7 +1,7 @@
 .header__lang-link {
   font-weight: 700;
   cursor: pointer;
-  color: #fff;
+  color: #ffffff;
   opacity: 0.5;
   transition: opacity 0.3s ease-in-out;
 }
@@ -19,13 +19,14 @@
 
 @media (max-width: 1500px) {
   .header__lang {
+    font-weight: 700;
     font-size: 14px;
+    line-height: 100%;
   }
 }
 @media (max-width: 1024px) {
   .header__lang {
     margin-right: 60px;
-    font-size: 14px;
   }
 }
 @media (max-width: 768px) {
@@ -34,7 +35,10 @@
     justify-content: center;
   }
   .header__lang {
+    font-style: normal;
+    font-weight: 700;
     font-size: 18px;
+    line-height: 100%;
     margin-right: 0;
   }
   .header__lang-link:not(:last-child) {

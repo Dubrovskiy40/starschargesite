@@ -1,6 +1,6 @@
 .header__logo-link {
-  height: 56px;
   position: relative;
+  display: flex;
 }
 .header__logo-link::after {
   content: "";
@@ -27,13 +27,8 @@
 }
 
 @media (max-width: 1500px) {
-  .header__logo-link {
-    height: 46px;
-  }
-}
-@media (max-width: 1024px) {
-  .header__logo-link {
-    height: 40px;
+  .header__logo-link img {
+    max-height: 38px;
   }
 }
 
